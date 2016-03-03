@@ -81,8 +81,48 @@ Catalog - Solaris
     —————————————————————————————————————————————————————————————————————————————————————
     
     -> For the sales representative, he is responsible for:
-    1) Sell products (laptops) to customers
-    2) Update sales results (in the application) 
+    1) Sell products (laptops) to customers:
+    <When?>
+    When sales representatives meet clients and try to sell the products to them.
+    <What?>
+    Sales representatives need to demonstrate laptops in the application to clients, 
+    give them suggestions or recommendations about which laptop to purchase, and 
+    eventually persuade them to buy one/ a number of products.
+    <Where?>
+    In his office, or at the venue where the appointment with clients holds.
+    <Sample Workflow>
+    Goal: Recommend a laptop to a client
+    Flow:
+    1. Sales representative S meets the target client at a Cafe;
+    2. S comprehends the client's requirements and expectations about the laptop by
+       consulting the client; 
+    3. S summarizes the client's needs and generalizes some selection criteria (e.g. 
+       light-weighted, fancy appearance, designed for games, etc);
+    4. S launches the application;
+    5. S logs in with his sales representative account;
+    6. S goes to the product list from navigations;
+    7. S applies selection criteria to the search filters on the product list page;
+    8. S recommend some laptops resulted from the search filters to the customer.
+    
+    2) Submit sales results (in the application):
+    <When?>
+    When a deal is completed.
+    <What?>
+    Sales representatives need to submit the details of the deal (model, quantity, deal
+    price, client name, client contact, deal date, etc) to the system.
+    <Where?>
+    In his office, or at the venue where the deal with the client was done.
+    <Sample Workflow>
+    Goal: Submit a deal to the application
+    Flow: 
+    1. Sales representative S launches the application;
+    2. S logs in with his sales representative account;
+    3. S goes to the sales tab from navigations;
+    4. S initiates a new sales submission by clicking "New Submission" button;
+    5. S fills in the deal details (model, quantity, deal, price, client name,
+       client contact, deal date, etc); 
+    6. S corrects any possible format errors of fields above detected by the application;
+    7. S submits the deal by hitting "Submit" button.
     
     —————————————————————————————————————————————————————————————————————————————————————
     
