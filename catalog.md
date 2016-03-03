@@ -1,4 +1,4 @@
-Catalog - [Application Name]
+Catalog - Solaris
 ======
 
 **Your Name:** Liu Weiran
@@ -22,9 +22,9 @@ Catalog - [Application Name]
     4 different groups of user role get involved in this business model: administrators, sales, marketings, and accountants.
     [Administrators] Manager for the application and the firm. In a small-scaled company like this case, this role is taken by the CEO and/or sales managers. Number of users for this role ranges from 1 to 5.
     
-    [Sales] Formed by the employees of sales team  in the company. The most major group of users of this application, with a number which is approximately 30.
+    [Sales Representatives] Formed by the employees of sales team  in the company. The most major group of users of this application, with a number which is approximately 30.
     
-    [Marketings] Formed by the employees from marketing department of this company. Number of users from this role could be about 5.
+    [Marketing Executives] Formed by the employees from marketing department of this company. Number of users from this role could be about 5.
     
     [Accountants] Formed by the employees from accounting team. This group of users probably contains 1 or 2 people.
 
@@ -33,24 +33,57 @@ Catalog - [Application Name]
 
     Each of the 4 types of users involved in this business plays their own roles and collaborates with each other to deliver a better sales results for the company. 
     
-    For the administrator, he is responsible for:
+    -> For the administrator, he is responsible for:
     1) Management of employees:
-       <When?> When there are new employees joining the company / employees leaving the company;
-       <What?> He is responsible to create user account for the new employee in based on his role and personal information such as name, age, gender, email, contact number and so on. In the case of leaving employees, he is in charge of the deactivation of the user account;
-       <Where?> In his office.
-    2) Management of products:
-       <When?> When there are needs to add/ delete/ modify details of certain products;
-       <What?> He is in charge of add new products into the system / delete discarded products / modify specifications of a product;
-       <Where?> In his office.
+    <When?> 
+    When there are new employees joining the company / employees leaving the company;
+    <What?> 
+    He is responsible to create user account for the new employee in based on his role and personal information such as name, age, gender, email, contact number and so on. In the case of leaving employees, he is in charge of the deactivation of the user account;
+    <Where?> 
+    In his office.
+    <Sample Workflow> 
+    Goal: Add one new sales representative to the application
+    Flow:
+    1. Administrator A launches the application Solaris;
+    2. A logs into Solaris with his admin account;
+    3. A clicks the employee tab from the navigations;
+    4. A chooses "Add" button from the employee management page's menu;
+    5. A fills in the personal information of the new employee: name, age, gender, email, mobile number, title, address, role etc; 
+    6. A corrects any possible format errors of the information above detected by Solaris
+    7. A completes the registration for the new employee by hitting the submit button
        
-    For the sales, he is responsible for:
-    1) Promote products to customers
+    -> For the sales representative, he is responsible for:
+    1) Sell products (laptops) to customers
+    2) Update sales results (in the application) 
     
-    For the marketings, he is responsible for:
-    1) 
-    2)
+    -> For the marketings, he is responsible for:
+    1) Management of products:
+    <When?> 
+    When the company launches new products, addition is needed;
+    When the company abandons a product, deletion is required;
+    When there is a promotion/adjustment of certain product, modification is required 
+    <What?> 
+    He is in charge of add new products into the system /delete discarded products /modify specifications of a product for promotions or adjustments;
+    <Where?> 
+    In his office.
+    <Sample Workflow>
+    Goal: Add a new laptop to the product list
+    Flow: 
+    1. Executive E launches the application Solaris;
+    2. E logs in with his marketing executive account;
+    3. E go to the product management page;
+    4. E clicks the "Add" button to start creating a new product profile;
+    5. E fills in the product details(Laptop brand, type, series number, hardware specifications, weight, size, features, tags, etc) in the creation page;
+    6. E corrects any possible format errors of above fields detected by the application
+    7. E completes the creation task by hitting the submission button
     
-    For the accountants, he is responsible for:
+    2) Promotion of products:
+    <When?>
+    <What?>
+    <Where?>
+    
+    
+    -> For the accountants, he is responsible for:
     1) 
     2)
 
