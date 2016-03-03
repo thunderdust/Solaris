@@ -150,7 +150,7 @@ Catalog - Solaris
        application;
     7. E completes the creation task by hitting the submission button.
     
-    2) Promotion of products:
+    2) Promote products:
     <When?>
     When there is a need to promote certain products to increase sales; 
     <What?>
@@ -176,9 +176,50 @@ Catalog - Solaris
     
     —————————————————————————————————————————————————————————————————————————————————————
     
-    -> For the accountants, he is responsible for:
-    1) 
-    2)
+    -> For the accountant, he is in charge of:
+    1) Sums up sales results 
+    <When?>
+    At the end of every month, when it is time to summarize the sales statistics for the 
+    company.
+    <What?>
+    The accountant needs to add up the sales amount based on specific requirements. For 
+    instance, sum up the total sales certain representative has achieved for current 
+    month; or sum up the total sales for all representatives in current month.
+    <Where?>
+    At the accountant's office.
+    <Sample Workflow>
+    Goal: Add up sales amount of sales representative S in January 2016.
+    Flow:
+    1. Accountant A launches the application Solaris;
+    2. A logs in with his accountant account;
+    3. A goes to the accountant tab from navigations;
+    4. A chooses the "Summarize" function from the menu;
+    5. A sets the filter specifically for representative S and for January;
+    6. A calculates the sum by clicking the "Sum" button;
+    7. A gets the sum results and records it down.
+    
+    2) Generates sales report 
+    <When?>
+    When marketing team needs to make new strategies (e.g. making promotions, importing new    
+    products, discarding products with poor sales performance, etc) to improve future sales
+    by analysing the sales report.
+    Or when the administrator wants to know the performance of sales.
+    <What?>
+    Generates sales report according to different requiremenst.
+    <Where?>
+    In his office.
+    <Sample Workflow>
+    Goal: Generating sales report to find out which model of laptop sells the best last month.
+    Flow:
+    1. Accountant A launches the application;
+    2. A logs in with his accountant account;
+    3. A accesses accountant tab from navigations;
+    4. A chooses the "Rank" function from the menu;
+    5. A sets the ranking criteria to be: rank models of laptop by sales amount, with descending
+       order;
+    6. A initiates the ranking process by hitting "Start" button;
+    7. A obtains the ranking results and add them into the sales report.
+    
 
 ---
 
