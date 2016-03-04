@@ -32,8 +32,8 @@ Catalog - Solaris
     
     [Administrators] 
     Manager for the application and the firm. In a small-scaled company 
-    like this case, this role is taken by the CEO and/or sales managers. Number of users 
-    for this role ranges from 1 to 5.
+    like this case, this role is taken by the CEO and/or general managers. Number of 
+    users for this role ranges from 1 to 3.
     
     [Sales Representatives] 
     Formed by the employees of sales team  in the company. The 
@@ -251,8 +251,10 @@ Your proposal to solve the object
    and workflow to simplify the process of adding / removing user accounts. Use input 
    validations and auto-completion where applicable to reduce the chance for errors and
    increase the efficiency. 
-2. Use MySQL database secured with passwords; design the database schema such that passwords of      users are encrypted before saving to the database to increase security level.
-3. Apply customized selection criteria to the sales report function to suit different requirements for the sales performance supervision: 
+2. Use MySQL database secured with passwords; design the database schema such that passwords of      
+   users are encrypted before saving to the database to increase security level.
+3. Apply customized selection criteria to the sales report function to suit different requirements 
+   for the sales performance supervision: 
    - GM can view the sales performance of individual sales representatives in certain month
    - GM can view the sales performance of certain product model in selected period of time
    - GM can view the total amount of sales in selected period of time
@@ -266,7 +268,8 @@ IT literacy: Basic IT knowledge; Able to use web appplications
 
 Frequency of using the software: Daily
 
-Purpose of using the software: Assit sales activities by demonstrating products to clients and making purchase recommendations to them; Report sales results 
+Purpose of using the software: Assit sales activities by demonstrating products to clients and 
+making purchase recommendations to them; Report sales results 
 
 Situation of using the software: 
 1. When meeting clients and showing them about specifications of some laptops;
@@ -297,7 +300,8 @@ Your proposal to solve the object
    - profile images
    
    Design elegant and attracting user interface to enhance the visual effects of demonstrations.
-   Support the demonstrations with powerful search functions which can help sale reperesentatives    locate the product they want to show to clients within shortest time.
+   Support the demonstrations with powerful search functions which can help sale reperesentatives    
+   locate the product they want to show to clients within shortest time.
    
 2. Design a search function which filters products by user's preferences such as brand, size, 
    weight, screen size, price range, battery performance, hardware specifications etc. On top 
@@ -307,7 +311,9 @@ Your proposal to solve the object
    light-weighted and easy-to-use. The recommendation function will choose products for target 
    clients based on the filters and tags aforementioned. 
 
-3. Design the sales submission function for sales representatives such that they can upddate their    sales performance efficiently. Use elegant user interfaces and workflow to simplify the process    of submission. Use input validations and auto-completion where applicable to reduce the chance 
+3. Design the sales submission function for sales representatives such that they can upddate their    
+   sales performance efficiently. Use elegant user interfaces and workflow to simplify the process    
+   of submission. Use input validations and auto-completion where applicable to reduce the chance 
    for errors and increase the efficiency. 
 
 ### [User C] 
@@ -317,7 +323,8 @@ IT literacy: Limited knowledge about IT; Capable of using web applications
 
 Frequency of using the software: Daily
 
-Purpose of using the software: Adjust product managements to fit the marketing strategies; Analyze sales performances to assist the creation of marketing strategits; Initiate product promotions.
+Purpose of using the software: Adjust product managements to fit the marketing strategies; Analyze 
+sales performances to assist the creation of marketing strategits; Initiate product promotions.
 
 Situation of using the software: 
 1. When there is a need to introduce new products according to marketing strategies. 
@@ -340,18 +347,22 @@ Your proposal to solve the object
 2. Authorize the access to sales reports to all marketing executive roles. When marketing 
    executives logs into the system with their own account, they have the sales report sections 
    displayed by default. 
-3. Build promotion functionality which can apply to selected list of products. The items in a list    can be selected by specifying models, brands, tags or other customized standards. Users can 
+3. Build promotion functionality which can apply to selected list of products. The items in a list    
+   can be selected by specifying models, brands, tags or other customized standards. Users can 
    also set the promotion name, valid period, discount amount etc. 
 
 
 ### [User D] 
 Post/Position: Accountant
 
-IT literacy: Medium knowledge about IT; Capable of using web applications; Capable of utilizing some accounting softwares and office software suites. 
+IT literacy: Medium knowledge about IT; Capable of using web applications; Capable of utilizing some 
+accounting softwares and office software suites. 
 
-Frequency of using the software: Few times per month (usually at the end of month when sales reports are required).
+Frequency of using the software: Few times per month (usually at the end of month when sales reports 
+are required).
 
-Purpose of using the software: Sum up sales amounts; Produce sales reports based on the sales performance records.
+Purpose of using the software: Sum up sales amounts; Produce sales reports based on the sales 
+performance records.
 
 Situation of using the software: 
 1. When accountants need to calculate the total sales amount for a month
@@ -361,48 +372,65 @@ Situation of using the software:
 
 Describe what user expects.
 1. The software should accelerate and/or simplify the process of summing up sales amount.
-2. The software should be able to present various forms of data based on customized standards. For instance, 
-   generate the sales amount for certain model of laptop for certain period of time, or generate sales performance
-   of some sales representatives for last month.
+2. The software should be able to present various forms of data based on customized standards. 
+   For instance, generate the sales amount for certain model of laptop for certain period of time, 
+   or generate sales performance of some sales representatives for last month.
 3. The software should be helpful to accountants when they want to produce the sales report 
 
 Your proposal to solve the object
-1. Design the accounting functions such that sales amount are dynamically calculated whenever there is a change 
-   on it. When accountants need the sum all they need to do is to request this already existed data from the software.  
-2. Build various search filters for the sales data presentation functions. Users can tailor the data presented by many 
-   options, such as model, sales representative name, period etc. 
-3. Build advanced report functions to assist the sales report production. Users are not only allowed to filter data by some 
-   pre-defiend attributes, but also able to obtain some advanced statistics such as the monthly sales growth rate of certain 
-   products, monthly sales performance growth rate of certain sales representatives, monthly business growth rate of the 
-   company, the percentage certain products hold in the total sales amount for certain month, etc.  
+1. Design the accounting functions such that sales amount are dynamically calculated whenever 
+   there is a change on it. When accountants need the sum all they need to do is to request 
+   this already existed data from the software.  
+2. Build various search filters for the sales data presentation functions. Users can tailor 
+   the data presented by many options, such as model, sales representative name, period etc. 
+3. Build advanced report functions to assist the sales report production. Users are not only 
+   allowed to filter data by some pre-defiend attributes, but also able to obtain some advanced 
+   statistics such as the monthly sales growth rate of certain products, monthly sales performance 
+   growth rate of certain sales representatives, monthly business growth rate of the company, the 
+   percentage certain products hold in the total sales amount for certain month, etc.  
 ---
 ## Chapter 3 - Descriptions of each "Merit"
 
-### [Merit N] -- Duplicate when necessary
+### [Merit 1] -- Support product promotions
 
-#### [Function 1 to achieve Merit]
+The application can stimulate sales by promotions. When customized promotions are applied to 
+certain product list, all items under the list will have some discounts to attract customers 
+accordingly. 
 
-**Priority:** [High/Medium/Low]
+#### [Function 1: Promotion Creation]
 
-**Implemented:** [Y/N]
+**Priority:** High
 
-#### [Function 2 to achieve Merit]
+**Implemented:** N
 
-**Priority:** [High/Medium/Low]
+#### [Function 2: Promotion Inquiry]
 
-**Implemented:** [Y/N]
+**Priority:** Medium
 
-#### [Function 3 to achieve Merit]
+**Implemented:** N
 
-**Priority:** [High/Medium/Low]
+### [Merit 2] -- Sales report assistant
+The application is capable of delivering basic and advanced data to assist accountants to
+produce the sales report, which will be used by marketing executives and examed by general 
+managers.
+#### [Function 1: Sales Summary]
 
-**Implemented:** [Y/N]
+**Priority:** High
 
-#### [Function N to achieve Merit]
+**Implemented:** N
 
-**Priority:** [High/Medium/Low]
+#### [Function 2: Customized Data Inquiry]
 
-**Implemented:** [Y/N]
+**Priority:** Low
+
+**Implemented:** N
+
+#### [Function 3: Advanced Sales Statistics Generation]
+
+**Priority:** Medium
+
+**Implemented:** N
+
 ---
 
 ## Chapter 4 - ReadMe
