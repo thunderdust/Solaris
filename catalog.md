@@ -226,27 +226,136 @@ Catalog - Solaris
 ## Chapter 2 - Details of the user profiles
 Please provide profile for **ALL** users of your system. 
 
-### [User A] -- Duplicate when necessary
-Post/Position:
+### [User A] 
+Post/Position: General Manager
 
-IT literacy:
+IT literacy: Limited knowledge about IT; Capable of using web applications 
 
-Frequency of using the software:
+Frequency of using the software: 3 to 5 times per week
 
-Purpose of using the software:
+Purpose of using the software: Manage employees and supervise the business development
 
-Situation of using the software:
+Situation of using the software: 
+1. When new employees enter the company, GM uses the software to create account for him.
+2. When employess resign from the company, GM uses the softwar to deactivate their account.
+3. When GM wants to check the sales performances of the sales representatives, he can use 
+   the accountant functions of the software 
 
 Describe what user expects.
-1. [Expectation]
-2. [Expectation]
-3. [Expectation]
+1. Easy-to-use functions for adding / removing employee accounts
+2. Reliable and secured database without leaking employee information easily
+3. The software delivers comprehensive reflections of sales performances 
+
+Your proposal to solve the object
+1. Design a function specifically for user management. Use elegant user interfaces 
+   and workflow to simplify the process of adding / removing user accounts. Use input 
+   validations and auto-completion where applicable to reduce the chance for errors and
+   increase the efficiency. 
+2. Use MySQL database secured with passwords; design the database schema such that passwords of      users are encrypted before saving to the database to increase security level.
+3. Apply customized selection criteria to the sales report function to suit different requirements for the sales performance supervision: 
+   - GM can view the sales performance of individual sales representatives in certain month
+   - GM can view the sales performance of certain product model in selected period of time
+   - GM can view the total amount of sales in selected period of time
+   - GM can view the monthly sales growth rate for specified products
+
+
+### [User B] 
+Post/Position: Sales Representative
+
+IT literacy: Basic IT knowledge; Able to use web appplications
+
+Frequency of using the software: Daily
+
+Purpose of using the software: Assit sales activities by demonstrating products to clients and making purchase recommendations to them; Report sales results 
+
+Situation of using the software: 
+1. When meeting clients and showing them about specifications of some laptops;
+2. When clients have some expectations and requirements for the laptop they want to purchase and 
+   request for recommnendations;
+3. When sales representatives finish a deal with clients, and need to submit the deal details to 
+   the system. 
+
+Describe what user expects.
+1. Powerful demonstration functions to showcase every details about the products 
+2. Savy and flexible recommendation function to suit customer's needs the most
+3. Convenient gateway to report sales results 
+
+Your proposal to solve the object
+1. Design a complete and fully-detailed database schema to store product information. 
+   This database must contain every details about the product, including but not limited to:
+   - Laptop name
+   - model
+   - brand
+   - series number
+   - dimensions
+   - weight
+   - battery volume
+   - screen size
+   - memory size
+   - hard disk volume
+   - processor model
+   
+2. Design a search function which filters products by user's preferences such as brand, size, 
+   weight, screen size, price range, battery performance, hardware specifications etc. On top 
+   of that, assign each laptop with one or a few tags which describes the specialised features 
+   of the product. For instance, [Gaming Laptop] tag for products with high performance on display
+   effect and game processing; or [Specialized for Girls] tag for laptops which are fancy,    
+   light-weighted and easy-to-use. The recommendation function will choose products for target 
+   clients based on the filters and tags aforementioned. 
+
+3. Design the sales submission function for sales representatives such that they can upddate their    sales performance efficiently. Use elegant user interfaces and workflow to simplify the process    of submission. Use input validations and auto-completion where applicable to reduce the chance 
+   for errors and increase the efficiency. 
+
+### [User C] 
+Post/Position: General Manager
+
+IT literacy: Limited knowledge about IT; Capable of using web applications 
+
+Frequency of using the software: 3 to 5 times per week
+
+Purpose of using the software: Manage employees and supervise the business development
+
+Situation of using the software: 
+1. When new employees enter the company, GM uses the software to create account for him.
+2. When employess resign from the company, GM uses the softwar to deactivate their account.
+3. When GM wants to check the sales performances of the sales representatives, he can use 
+   the accountant functions of the software 
+
+Describe what user expects.
+1. Easy-to-use functions for adding / removing employee accounts
+2. Reliable and secured database without leaking employee information easily
+3. The software can conveniently and automatically reflect sales performance 
 
 Your proposal to solve the object
 1. [Solution]
 2. [Solution]
 3. [Solution]
 
+
+### [User D] 
+Post/Position: General Manager
+
+IT literacy: Limited knowledge about IT; Capable of using web applications 
+
+Frequency of using the software: 3 to 5 times per week
+
+Purpose of using the software: Manage employees and supervise the business development
+
+Situation of using the software: 
+1. When new employees enter the company, GM uses the software to create account for him.
+2. When employess resign from the company, GM uses the softwar to deactivate their account.
+3. When GM wants to check the sales performances of the sales representatives, he can use 
+   the accountant functions of the software 
+
+Describe what user expects.
+1. Easy-to-use functions for adding / removing employee accounts
+2. Reliable and secured database without leaking employee information easily
+3. The software can conveniently and automatically reflect sales performance 
+
+Your proposal to solve the object
+1. [Solution]
+2. [Solution]
+3. [Solution]
 ---
 ## Chapter 3 - Descriptions of each "Merit"
 
