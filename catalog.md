@@ -24,16 +24,13 @@ Catalog - Solaris
     4 different groups of user role get involved in this business model: administrators, sales, marketings, and accountants.
      
     [Administrators] 
-    Manager for the application and the firm. In a small-scaled company like this case, this role is taken by the CEO and/or general managers. Number of users for this role ranges from 1 to 3.
+    General manager of the business. This role is also in charge of managing the employees in the company. Number of users for this role ranges from 1 to 3.
     
     [Sales Representatives] 
     Formed by the employees of sales team  in the company. The most major group of users of this application, with a number which is approximately 30.
     
     [Marketing Executives] 
     Formed by the employees from marketing department of this company. Number of users from this role could be about 5.
-    
-    [Accountants] 
-    Formed by the employees from accounting team. This group of users probably contains 1 or 2 people.
 
 
 **3. Describe each of their work flow: WHAT are they responsible for? WHEN, WHERE and WHAT do they work?**
@@ -142,46 +139,6 @@ Catalog - Solaris
     6. E corrects any possible format errors of above fields detected by the application;
     7. E sets the range which this new promotion applies to by selecting models of laptop that are available for this promotion;
     8. E finish the creation of this promotion by submitting it.
-    
-    —————————————————————————————————————————————
-    
-    -> For the accountant, he is in charge of:
-    1) Sums up sales results 
-    <When?>
-    At the end of every month, when it is time to summarize the sales statistics for the company.
-    <What?>
-    The accountant needs to add up the sales amount based on specific requirements. For instance, sum up the total sales certain representative has achieved for current month; or sum up the total sales for all representatives in current month.
-    <Where?>
-    At the accountant's office.
-    <Sample Workflow>
-    Goal: Add up sales amount of sales representative S in January 2016.
-    Flow:
-    1. Accountant A launches the application Solaris;
-    2. A logs in with his accountant account;
-    3. A goes to the accountant tab from navigations;
-    4. A chooses the "Summarize" function from the menu;
-    5. A sets the filter specifically for representative S and for January;
-    6. A calculates the sum by clicking the "Sum" button;
-    7. A gets the sum results and records it down.
-    
-    2) Generates sales report 
-    <When?>
-    When marketing team needs to make new strategies (e.g. making promotions, importing new products, discarding products with poor sales performance, etc) to improve future sales by analyzing the sales report. Or when the administrator wants to know the performance of sales.
-    <What?>
-    Generates sales report according to different requiremenst.
-    <Where?>
-    In his office.
-    <Sample Workflow>
-    Goal: Generating sales report to find out which model of laptop sells the best last month.
-    Flow:
-    1. Accountant A launches the application;
-    2. A logs in with his accountant account;
-    3. A accesses accountant tab from navigations;
-    4. A chooses the "Rank" function from the menu;
-    5. A sets the ranking criteria to be: rank models of laptop by sales amount, with descending order;
-    6. A initiates the ranking process by hitting "Start" button;
-    7. A obtains the ranking results and add them into the sales report.
-    
 
 ---
 
@@ -293,33 +250,6 @@ Your proposal to solve the object
 2. Authorize the access to sales reports to all marketing executive roles. When marketing executives logs into the system with their own account, they have the sales report sections displayed by default. 
 3. Build promotion functionality which can apply to selected list of products. The items in a list can be selected by specifying models, brands, tags or other customized standards. Users can also set the promotion name, valid period, discount amount etc. 
 
-
-### [User D] 
-Post/Position: 
-Accountant
-
-IT literacy: 
-Medium knowledge about IT; Capable of using web applications; Capable of utilizing some accounting software and office software suites. 
-
-Frequency of using the software: 
-Few times per month (usually at the end of month when sales reports are required).
-
-Purpose of using the software: 
-Sum up sales amounts; Produce sales reports based on the sales performance records.
-
-Situation of using the software: 
-1. When accountants need to calculate the total sales amount for a month
-2. When sales reports are needed for marketing analysis or as requested by the general manager, accountants have to use the software to obtain data that is essential for producing the reports.
-
-Describe what user expects.
-1. The software should accelerate and/or simplify the process of summing up sales amount.
-2. The software should be able to present various forms of data based on customized standards. For instance, generate the sales amount for certain model of laptop for certain period of time, or generate sales performance of some sales representatives for last month.
-3. The software should be helpful to accountants when they want to produce the sales report 
-
-Your proposal to solve the object
-1. Design the accounting functions such that sales amount are dynamically calculated whenever there is a change on it. When accountants need the sum all they need to do is to request this already existed data from the software.  
-2. Build various search filters for the sales data presentation functions. Users can tailor the data presented by many options, such as model, sales representative name, period etc. 
-3. Build advanced report functions to assist the sales report production. Users are not only allowed to filter data by some pre-defined attributes, but also able to obtain some advanced statistics such as the monthly sales growth rate of certain products, monthly sales performance growth rate of certain sales representatives, monthly business growth rate of the company, the percentage certain products hold in the total sales amount for certain month, etc.
 
 ---
 ## Chapter 3 - Descriptions of each "Merit"
