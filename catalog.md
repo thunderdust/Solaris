@@ -11,7 +11,7 @@ Catalog - Solaris
 
 ## Chapter 1 - Describe the business situation of 'R&D3' with "5W1H"
 **1. What is your business model? Describe industry, product, client, company size etc.**
-  
+         
     The business involved is direct sales of laptops. The product involved is laptops from all mainstream laptop brands (e.g. HP, Lenovo, Toshiba, Acer, Asus, etc. 
     
     The targeted client company is a small-scaled enterprise in infocomm products industry, with less than 50 employees, including manager(s), sales team, accounting team and marketing team. Enterprises which are aiming for business growths and are developing into bigger scales in future as also our clients.  
@@ -21,16 +21,16 @@ Catalog - Solaris
 
 **2. Who do you think would be involved in your business? List up role, person, or group as many as possible.**
 
-    4 different groups of user role get involved in this business model: administrators, sales, marketings, and accountants.
+    Three different groups of user get involved in this business: administrators, sales representatives, and marketing executives.
      
     [Administrators] 
-    General manager of the business. This role is also in charge of managing the employees in the company. Number of users for this role ranges from 1 to 3.
+    General manager of the business. This role is also in charge of managing the employees in the company.
     
     [Sales Representatives] 
-    Formed by the employees of sales team  in the company. The most major group of users of this application, with a number which is approximately 30.
+    Formed by the employees of sales team in the company. This is the most major group of users of the firm, who make the most of the profits for the business.
     
     [Marketing Executives] 
-    Formed by the employees from marketing department of this company. Number of users from this role could be about 5.
+    Formed by the employees from marketing department of this company. They analyze current situations and make marketing plans and strategies for the company.
 
 
 **3. Describe each of their work flow: WHAT are they responsible for? WHEN, WHERE and WHAT do they work?**
