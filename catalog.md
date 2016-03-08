@@ -11,13 +11,12 @@ Catalog - Solaris
 
 ## Chapter 1 - Describe the business situation of 'R&D3' with "5W1H"
 **1. What is your business model? Describe industry, product, client, company size etc.**
-
-    The business is direct sales of laptops. This business belongs to Infocomm Products industry. The product involved is laptops. The company is a small-scaled enterprise, with less than 50 employees, including CEO, support team, sales team, accounting team and marketing team.  
+  
+    The business involved is direct sales of laptops. The product involved is laptops from all mainstream laptop brands (e.g. HP, Lenovo, Toshiba, Acer, Asus, etc. 
     
-    Clients for this business are categorised into 2 groups: 
-    1) individual consumers； 
-    2) group consumers 
-    The former purchase the laptop for their own uses, and hence in most cases the amount of purchase is very small (usually 1 item at a time). The second type, group consumers, on the other hand, are purchasing laptops for certain group of people, such as members of an organisation, receivers of a donation programme, or employees of a firm. 
+    The targeted client company is a small-scaled enterprise in infocomm products industry, with less than 50 employees, including manager(s), sales team, accounting team and marketing team. Enterprises which are aiming for business growths and are developing into bigger scales in future as also our clients.  
+
+    Our application helps clients to increase their sales productivity and management efficiency at a low cost (to purchase the software) so that they can concentrate on growing their business and make more profits within the same unit of time.
     
 
 **2. Who do you think would be involved in your business? List up role, person, or group as many as possible.**
