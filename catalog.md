@@ -40,25 +40,32 @@ Catalog - Solaris
     [ Administrator ]
     
     1) Management of employees:
-    Working in his office, when there are new employees joining the company / employees leaving the company, he is responsible to create user account for the new employee in based on his role and personal information such as name, age, gender, email, contact number and so on. In the case of leaving employees, he is in charge of the deactivation of the user account;
+    Working in his office, when there are new joiners, he is responsible to create the account and the profile for the new employee based on his role and personal information such as name, age, gender, email, contact number and so on. 
+    At the end of a quarter or a year, administrator is also responsible for assessing and evaluating employees, and hence deciding the promotion or demotion of the them.
     
     [ Sales Representative]
     
     1) Sell products (laptops) to customers:
-    Sales representative can work in his office, or at the appointment with clients. When sales representatives meet clients and try to sell the products to them, they need to demonstrate products to clients, give them suggestions or recommendations about which laptop to purchase, and eventually persuade them to buy the products.
+    Sales representative can work in his office, or at the appointment with clients. When sales representatives meet clients, their job is to sell laptops to clients by demonstrating products to clients, giving them suggestions or recommendations about which laptop to purchase, and eventually persuading them to buy the products.
         
-    2) Submit sales results (in the application):
-    When a deal is completed, sales representatives need to submit the details of the deal (model sold, quantity of purchase, deal price, client name, client contact, deal date, etc) to the system.
+    2) Submit sales results:
+    When a deal with customers is finished, sales representatives need to submit the details of the deal (deal number, deal date, laptop model, quantity of purchase, deal price, client name, client contact information, etc) to the company.
     
     [ Marketing Executive ]
     
     1) Management of products:
-    Marketing executives work in their offices. When marketing team decide to launch new products, product addition is needed; When marketing team decide to abandon a product, product deletion is required; When there is a promotion/adjustment of certain product, modification is required. In aforementioned cases, he is in charge of adding new products into the system / deleting discarded products / modifying specifications of a product for promotions or adjustments.
+    Marketing executives work in their offices. When it is necessary to launch new products, they ought to execute product addition; 
+    When a product is outdated and abandoned by the market, they are responsible for product deletion; 
     
-    2) Promote products:
-    When there is a need to promote certain products to increase sales, it's the job of marketing executives. The promotion is conducted by giving discount to laptops involved in this promotion. They need to create promotions, decide the explicit discount amount, and apply the promotion to target products.
+    2) Product promotions:
+    When the sales for some products perform poorly or there is a demand to increase sales for certain products, it's the job of marketing executives to conduct product promotions.
     
+    3) Market analysis and strategy making
+    It's the responsibility of marketing executives to analyze the market situations and detect trends. They also need to combine the analysis result with the sales performances of the company, and think of marketing strategies for the upcoming future.  
+    
+
 ---
+
 
 ## Chapter 2 - Details of the user profiles
 Please provide profile for **ALL** users of your system. 
