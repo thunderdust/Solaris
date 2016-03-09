@@ -227,23 +227,38 @@ Frequency of using the software:
 Daily
 
 Purpose of using the software: 
-Adjust product managements to fit the marketing strategies; Analyze sales performances to assist the creation of marketing strategies; Initiate product promotions.
+
+1. Analyze sales performances 
+2. Update product list 
+3. Manage product promotions.
 
 Situation of using the software: 
-1. When there is a need to introduce new products according to marketing strategies. 
-2. When there is a need to discard some products due to bad sales performance or vanishing market demands.
-3. When marketing executives need to use the sales performance summary to assit marketing analysis.
-4. When there is a need to launch a new promotion for some products to stimulate sales.
+
+1. Marketing executives need to analyse the sales performances, and combine the analysis with their observations about the marketing trends to come up with new marketing decisions for the future business growth of the company. 
+
+2. When there is a need to discard some products due to bad sales performance or vanishing market demands, marketing executives need to remove the product from the 'laptop library'. Similarly, when they make a decision to introduce new products based on marketing analysis, they need to add the target laptop into the library as well. 
+
+3. Sometimes the sales for some products do not perform well. Launching a promotion for these products can stimulate the sales, which is the job of marketing executives. 
 
 Describe what user expects.
-1. Convenient and simple operations for add/remove products
-2. Easy access to sales performances
-3. Functionality to support launch of promotions
+
+1. Easy access to up-to-date sales performances reports
+    
+    The marketing analysis would be very difficult to proceed if marketing executives do not have an easy access to the updated sales performances report whenever they want. The access to sales report will become a bottleneck to restrict marketing executives' job.
+
+2. Convenient and simple operations for updating product list
+
+3. Launch promotions and apply them to list of products conveniently and error-freely
+    
+    Apply promotions to a list of target products manually is repetitive and tedious. It is also very easy to miss out some products which are supposed to apply promotions, or to introduce some confusions if the marketing executives mistakenly apply multiple promotions to the same product. Marketing executives need a more systematic, efficient way to manage these promotions.
 
 Your proposal to solve the object
-1. Design a function specifically for product management. Use elegant user interfaces and workflow to simplify the process of adding / removing products. Use input validations and auto-completion where applicable to reduce the chance for errors and increase the efficiency.
-2. Authorize the access to sales reports to all marketing executive roles. When marketing executives logs into the system with their own account, they have the sales report sections displayed by default. 
-3. Build promotion functionality which can apply to selected list of products. The items in a list can be selected by specifying models, brands, tags or other customized standards. Users can also set the promotion name, valid period, discount amount etc. 
+
+1. Authorize the access to sales reports to all marketing executive roles. When marketing executives logs into the system with their own account, they have the sales report sections displayed by default. 
+
+2. Design a function specifically for product management. Use elegant user interfaces and workflow to simplify the process of adding / removing products. Use input validations and auto-completion where applicable to reduce the chance for errors and increase the efficiency.
+
+3. Build promotion functionality which can apply to selected list of products. The items in a list can be selected by specifying models, brands, tags or other customized standards. A validation will be gone through to pick out any product in the list with multiple promotions applied. Users can also set the promotion name, valid period, discount amount etc. 
 
 
 ---
