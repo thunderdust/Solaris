@@ -80,6 +80,7 @@ Frequency of using the software:
 3 to 5 times per week
 
 Purpose of using the software: 
+
 1. Manage employees
 2. Supervise the sales performances						
 
@@ -152,21 +153,15 @@ Frequency of using the software:
 Daily
 
 Purpose of using the software: 
-Assist sales activities by demonstrating products to clients and making purchase recommendations to them; Report sales results 
+
+1. Present products, make suggestions and sell products to customers
+2. Report sales results to the company
 
 Situation of using the software: 
-1. When meeting clients and showing them about specifications of some laptops;
-2. When clients have some expectations and requirements for the laptop they want to purchase and request for recommendations;
-3. When sales representatives finish a deal with clients, and need to submit the deal details to the system. 
 
-Describe what user expects.
-1. Powerful demonstration functions to showcase every details about the products 
-2. Savy and flexible recommendation function to suit customer's needs the most
-3. Convenient gateway to report sales results 
-
-Your proposal to solve the object
-1. Design a complete and fully-detailed database schema to store product information. This database must contain every details about the product, including but not limited to:
-   - Laptop name
+1. When sales meet clients for discussion of purchase
+    If the client already knows what laptop to purchase, they need to demonstrate laptop information to clients upon request: 
+   - laptop name
    - model
    - brand
    - series number
@@ -178,12 +173,48 @@ Your proposal to solve the object
    - hard disk volume
    - processor model
    - profile images
+   - promotions for this laptop
    
-1. Design elegant and attracting user interface to enhance the visual effects of demonstrations. Support the demonstrations with powerful search functions which can help sale representatives locate the product they want to show to clients within shortest time.
+   If the customer has no idea about how to choose a laptop, but has some expectations or requirements of the product, sales need to filter out products which satisfy customer's requirements. 
    
-2. Design a search function which filters products by user's preferences such as brand, size, weight, screen size, price range, battery performance, hardware specifications etc. On top of that, assign each laptop with one or a few tags which describes the specialized features of the product. For instance, [Gaming Laptop] tag for products with high performance on display effect and game processing; or [Specialized for Girls] tag for laptops which are fancy, light-weighted and easy-to-use. The recommendation function will choose products for target clients based on the filters and tags aforementioned. 
+   If the customer totally has no ideas what kind of laptop to buy, sales representatives need to make suggestions for the clients based on some standards:
+   - price range
+   - brand
+   - performance
+   - appearance
+   - featured usage (e.g. gaming laptop, business laptop, portable laptop, etc.) 
+   - battery life
+   - weight / size
 
-3. Design the sales submission function for sales representatives such that they can update their sales performance efficiently. Use elegant user interfaces and workflow to simplify the process of submission. Use input validations and auto-completion where applicable to reduce the chance for errors and increase the efficiency. 
+2. When sales representatives finish a deal with clients, they need to submit the deal details back to the company:
+    - deal date
+    - laptop model sold
+    - unit price
+    - quantity of purchase
+    - customer name
+    - customer contact information
+
+Describe what user expects.
+
+1. An easy-to-operate but powerful demonstration to showcase products to customers as detailed as possible
+    
+    It is impossible for sales to bring all different models of laptops for the customers to choose. Hence presentation of laptops on a computer screen must be persuasive and convincing enough. The demonstration should be able to provide information of products as detailed as possible, yet not too complicated to operate or to watch. 
+
+2. Being able to efficiently make recommendations based on various requirements of clients
+
+    Clients can have all kinds of different requirements about their ideal laptops. At the same time, their only have limited patience. Hence it is hard for sales representatives to quickly find out the product(s) which match the customer needs. If they fail to do so, the business opportunity might be wasted. 
+
+3. Conveniently submit deals results 
+    
+    Due to the nature of the work, sales representatives spend lots of their time working with the clients and often being out of the office. In a traditional manner, when one deal is done, they need to record the details down and go back to the office and report to whoever is managing the deal results. This is very troublesome and inefficient for both the sales and the staff who manages the deal results (Even if sales can report the results via a phone call or an email it still takes much extra time for the staff who manages sale results to process and record all the information). So it is very necessary to have a new way to submit deal results without so much trouble.
+
+Your proposal to solve the object
+
+1. Create a comprehensive and fully-detailed 'laptop library' to store information of all models of products that the company holds. Design an elegant, user-friendly interface in the application for the showcase to enhance visual effects. Use images of laptops with the actual dimensions to make it more vivid. Quantify the performance and battery life of laptops to give customers a more accurate and straightforward evaluation. 
+   
+2. Design powerful search functions which filters products by user's preferences such as brand, size, weight, screen size, price range, battery performance, hardware specifications etc. There can be more than one search criteria. On top of that, assign each laptop with one or a few tags which describes the specialized features of the product. For instance, [Gaming Laptop] tag for products with high performance on display effect and game processing; or [Specialized for Girls] tag for laptops which are fancy, light-weighted and easy-to-use. The recommendation function will choose products for target clients based on the filters and tags. 
+
+3. Design a deal submission function for sales representatives. Use elegant user interfaces and workflow to simplify the process of submission. Use input validations and auto-completion where applicable to reduce the chance for errors and increase the efficiency. 
 
 ### [User C] 
 Post/Position: 
