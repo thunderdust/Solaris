@@ -80,30 +80,69 @@ Frequency of using the software:
 3 to 5 times per week
 
 Purpose of using the software: 
-Manage employees and supervise the business development
+1. Manage employees
+2. Supervise the sales performances						
 
 Situation of using the software: 
-1. When new employees enter the company, GM uses the software to create account for him.
-2. When employess resign from the company, GM uses the softwar to deactivate their account.
-3. When GM wants to check the sales performances of the sales representatives, he can use the accountant functions of the software 
+
+1. When new employee A join the company, GM needs to create an account for him:
+
+    1)  Open up a new account for A;
+    2)  Create a company identity number for A;
+    3)  Record A's joining date; 
+    4)  Record A's name, email address, contact number, home address;
+    5)  Set the job title for A (sales representative, marketing executive etc.);
+    6)  (If A is a sales representative) Set the initial sales target of A;
+    7)  Set the basic salary of A;
+    8)  Check all the information and confirm the new account ;
+    9)  Notify A that his account in this company has been successfully set up.
+
+2. When sales representative S resigns from the company, GM needs to deactivate S's account:
+
+    1) Look up for S's account from the account book;
+    2) Cross out the S's row on the records table; 
+    3) Look up for S's account from the sales amount records book;
+    4) Cross out his record page from the sales amount records book
+    5) Cross out his name from the sales team 
+
+3. When GM wants to check the sales performances of the sales representatives:
+
+    1) Look up for sales representative A's record page from the sales amount records book;
+    2) (With the help of accountant) Add up his sales amount record by record;
+    3) Record down A's sales summary;
+    4) Repeat step 1-3 for any sales representatives that GM wants to check, say B, C, D, E, F, ... etc.
+
 
 Describe what user expects.
-1. Easy-to-use functions for adding / removing employee accounts
-2. Reliable and secured database without leaking employee information easily
-3. The software delivers comprehensive reflections of sales performances 
 
+1. Effortlessly add / remove employee accounts
+    
+    Create or remove accounts of employees can be troublesome. As described above, to create an account is a tedious and repetitive work. The workflow to accomplish this task is very similar from time to time except for the differences in personal information. As for deletion of accounts, manager has to look up for the related records in multiple linked record tables ( When delete an account from employee list, his sales record table needs to be deactivated as well ). Therefore user wants to simplify these two tasks and make them less tedious. 
+    
+2. Reliable and secured management of employee information 
+    
+    The management of employee information can be challenging in terms of information security. How to keep all the sensitive information without leaking it to outside of company is a serious challenging for the manager.  Traditional way of keeping everything on paper is not secured enough: the information can be damaged or leaked out easily. User expects a more reliable, secured method to manage the employee information. 
+    
+3. Convenient and up-to-date way to check sales performances
+
+    By the traditional way supervising sales performances is inefficient. Every time when the manager wants to check some sales representative's performance, he has to look up for this person's sales records from a large number of rows, and then asks the accountant to add up all sales amount of this person before he can actually sees the sales performance. This is slow, inefficient and very inconvenient. The worse part is that the calculated sales result of this person is not real-time, meaning the result does not include deals of this person submitted after the start of the calculation (This could happen because the time spend from start looking up for the sales person's records to finally obtain the sales amount can be very long). Hence the manager would be very glad to have a faster mechanism to check the up-to-date sales performances.
+    
 Your proposal to solve the object
-1. Design a function specifically for user management. Use elegant user interfaces and workflow to simplify the process of adding / removing user accounts. Use input validations and auto-completion where applicable to reduce the chance for errors and increase the efficiency. 
-2. Use MySQL database secured with passwords; design the database schema such that passwords of users are encrypted before saving to the database to increase security level.
-3. Apply customized selection criteria to the sales report function to suit different requirements for the sales performance supervision: 
-   - GM can view the sales performance of individual sales representatives in certain month
-   - GM can view the sales performance of certain product model in selected period of time
-   - GM can view the total amount of sales in selected period of time
-   - GM can view the monthly sales growth rate for specified products
+
+1. Implement a function in the Solaris application specifically for employee management. Use elegant user interfaces and workflow to simplify the process of adding / removing user accounts:  
+- Identity number will be auto-generated and saved 
+- Account creation date is current date by default 
+- Use input validations where applicable to reduce the chance for errors. For example, check the email format automatically to prevent invalid email address; or check if the employee name is an empty input to prevent absence of information 
+- Provide auto-completion where applicable to speed up the process of creating account. For example, use selection menu for the "job title" input field with options of manager, sales, marketing etc. And once an option is selected, the system will fill in the basic salary automatically (assuming for each type of job the basic salary is pre-defined, and if not manager can always amend it manually). 
+
+2. Information of each employee will be stored in the same schema as a data entity with encryption, from where the read / addition / modification / deletion is executed. This mechanism will protect the information from leaking out. 
+Each employee will be assigned an account for the use of ONLY himself which is protected by a unique password. This will ensure the privacy of each employee is protected, and make sure they can only access data that belongs to themselves.
+
+3. Build sales report function to meet manager's requirement of sales performance supervision: Individual sales person can be located easily with a single operation of search (by name or company identity number), and his sales amount will be calculated dynamically upon the search request. This is much faster than manually looking up for his records and sum them up, and therefore achieves up-to-date sales performance check as well. 
 
 
 ### [User B] 
-Post/Position: 
+Post/Position:  
 Sales Representative
 
 IT literacy: 
