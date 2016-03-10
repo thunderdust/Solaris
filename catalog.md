@@ -212,7 +212,7 @@ Your proposal to solve the object
 
 1. Create a comprehensive and fully-detailed 'laptop library' to store information of all models of products that the company holds. Design an elegant, user-friendly interface in the application for the showcase to enhance visual effects. Use images of laptops with the actual dimensions to make it more vivid. Quantify the performance and battery life of laptops to give customers a more accurate and straightforward evaluation. 
    
-2. Design powerful search functions which filters products by user's preferences such as brand, size, weight, screen size, price range, battery performance, hardware specifications etc. There can be more than one search criteria. On top of that, assign each laptop with one or a few tags which describes the specialized features of the product. For instance, [Gaming Laptop] tag for products with high performance on display effect and game processing; or [Specialized for Girls] tag for laptops which are fancy, light-weighted and easy-to-use. The recommendation function will choose products for target clients based on the filters and tags. 
+2. Design powerful search functions which filters products by user's preferences such as brand, size, weight, screen size, price range, battery performance, hardware specifications etc. There can be more than one search criteria. On top of that, assign each laptop with one or a few tags which describes the specialized features of the product. For instance, [Gaming Laptop] tag for products with high performance on display effect and game processing; or [Specialized for Girls] tag for laptops which are fancy, light-weighted and easy-to-use. The recommendation function will choose products for target clients based on the filters and tags. If customers do not have any requirements / expectations / preferences about the laptop, the system can still make recommendations based on customer's features such as gender, age, salary, occupation etc.
 
 3. Design a deal submission function for sales representatives. Use elegant user interfaces and workflow to simplify the process of submission. Use input validations and auto-completion where applicable to reduce the chance for errors and increase the efficiency. 
 
@@ -264,37 +264,104 @@ Your proposal to solve the object
 ---
 ## Chapter 3 - Descriptions of each "Merit"
 
-### [Merit 1] -- Support product promotions
+### [Merit 1] --  Convenient and efficient sales managements
 
-The application can stimulate sales by promotions. When customized promotions are applied to certain product list, all items under the list will have some discounts to attract customers accordingly. 
+The most valuable merit of the application is that it eases the management for sales activities from several aspects:
+ 
+1. Systematic and secured management for information of sales employees 
+2. Attractive, convincing and customized product demonstrations
+3. Convenient way to submit finished deal details wherever sales representatives are 
 
-#### [Function 1: Promotion Creation]
+#### [Function 1: Employee account management function]
+
+Support account creation, deactivation, and update.  
 
 **Priority:** High
 
 **Implemented:** N
 
-#### [Function 2: Promotion Inquiry]
+#### [Function 2: Product list update ]
+
+Add, remove, or modify product information.
 
 **Priority:** Medium
 
 **Implemented:** N
 
-### [Merit 2] -- Sales report assistant
-The application is capable of delivering basic and advanced data to assist accountants to produce the sales report, which will be used by marketing executives and examed by general managers.
-#### [Function 1: Sales Summary]
 
-**Priority:** High
+#### [Function 3: Present laptop information ]
+
+Present details of laptops via the user interface. 
+
+**Priority:** Medium
 
 **Implemented:** N
 
-#### [Function 2: Customized Data Inquiry]
+
+#### [Function 4: Submit deals ]
+
+Submit information of completed deals to the system.
 
 **Priority:** Low
 
 **Implemented:** N
 
-#### [Function 3: Advanced Sales Statistics Generation]
+
+
+### [Merit 2] -- Effective product promotions
+
+Another unique advantage of the application is that it supports product promotion, which is an effective way to stimulate the sales performance. 
+
+#### [Function 1: Create promotions]
+
+Specify the promotion name, discount percentage / amount, and valid period to create a new promotion.
+
+**Priority:** Medium
+
+**Implemented:** N
+
+#### [Function 2: Apply promotions]
+
+After a promotion is created, it needs to be applied to specific list of products.
+
+**Priority:** Medium
+
+**Implemented:** N
+
+
+### [Merit 3] -- Accurate product recommendations
+
+Product recommendation plays an important part in sales if the recommendation can accurately meet client's requirements. This application supports accurate product recommendations which can finds the most suitable selection for the customer based on their requirements / expectations / preferences (if they have none of the above, the system can still make recommendations based on customer's features such as gender, age, salary, occupation etc).
+
+#### [Function 1: Search with multiple filters]
+
+Such function is critical for the recommendation feature, because when customers have several requirements, the system has to quickly find out the list of products which are qualified. 
+
+**Priority:** High
+
+**Implemented:** N
+
+#### [Function 2: Assign tags to laptops]
+
+Assign tags that describe the features or merits of a laptop, such as [gaming laptop] or [business laptop] or [ultra notebook], etc. Then tags become a recommendation criteria. 
+
+**Priority:** Low
+
+**Implemented:** N
+
+
+#### [Function 3: Blur Matching ]
+
+It is almost impossible to find an ideal recommendation that matches all requirements from the customer. As long as the major expectations are met by the recommendation, it can be a good match. Blur matching permits products which do not fully satisfy all criteria to become a recommendation.    
+
+**Priority:** Medium
+
+**Implemented:** N
+
+
+#### [Function 4: Rank recommendations by suitability ]
+
+Due to the blur matching function, there can be more than one recommendation for each customer. Ranking is required to let the customers know which recommendation is the best option. Intuitively, ranking the results by the degree to which the recommendation matches customer's requirements is the most rational method. 
 
 **Priority:** Medium
 
