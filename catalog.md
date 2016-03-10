@@ -217,6 +217,7 @@ Your proposal to solve the object
 3. Design a deal submission function for sales representatives. Use elegant user interfaces and workflow to simplify the process of submission. Use input validations and auto-completion where applicable to reduce the chance for errors and increase the efficiency. 
 
 ### [User C] 
+
 Post/Position: 
 Marketing Executive
 
@@ -242,11 +243,13 @@ Situation of using the software:
 
 Describe what user expects.
 
-1. Easy access to up-to-date sales performances reports
+1. Easy access to up-to-date sales reports
     
-    The marketing analysis would be very difficult to proceed if marketing executives do not have an easy access to the updated sales performances report whenever they want. The access to sales report will become a bottleneck to restrict marketing executives' job.
+    For marketing executives, the marketing analysis would be very difficult to proceed if they do not have an easy access to the updated sales performances report whenever they want. Hence the accessibility to sales report becomes a bottleneck to restrict marketing executives' job, which is exactly what happens in a typical cooperation between marketing executives and report producers. They wish to have an easier, faster way to obtain the updated sales conditions when they need to do marketing analysis. 
 
 2. Convenient and simple operations for updating product list
+    
+    After a marketing decision related to adjustments of product is made, marketing executives need to update the product list. When a product needs to be aborted, the challenge they would face is that they have to take tremendous time and effort to look for it from the large list of all kinds of products. After that, they still need to take extra time to make a back-up information for this removed product in case the company will re-import this product in the future. When a new product is going to be imported into the list, the process of checking for redundant items, filling in all the information of this new product, and linking it to all other related data (e.g. tags, promotions etc) is definitely a pain for them as well. Therefore, they would like to have a more convenient, efficient tool to help them accomplish these tasks. 
 
 3. Launch promotions and apply them to list of products conveniently and error-freely
     
