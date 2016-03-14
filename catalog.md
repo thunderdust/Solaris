@@ -258,7 +258,7 @@ Describe what user expects.
 Your proposal to solve the object
 
 1. Use our application Solaris to maintain purchase records and use the after-sales function of Solaris to help the services. The agent can conveniently obtain customer's record within a second by searching it with customer's order number, or name, or contact number.  And the purchased date, warranty length, whether warranty has expired (with a status of YES or NO) will be automatically displayed when the record is been found. Agents can save huge amount of time finding the customer's purchase information, checking with customer about the warranty status, and validating it. It is also so easy to process this service request after the call as it is still within the same application system.  
-With our application, the after-sales services will be largely improved, which contributes a crucial part to the sales performance as customers value after-sales services a lot when it comes to laptop purchase, and poor services bring the company a damaged reputation. 
+With our application, the after-sales services will be largely improved, which contributes an essential part to the sales performance as customers value after-sales services a lot when it comes to laptop purchase, and poor services bring the company a damaged reputation. 
   
    
 
@@ -308,6 +308,50 @@ Your proposal to solve the object
 2. Design a function specifically for product management. Use elegant user interfaces and workflow to simplify the process of adding / removing products. Use input validations and auto-completion where applicable to reduce the chance for errors and increase the efficiency.
 
 3. Build promotion functionality which can apply to selected list of products. The items in a list can be selected by specifying models, brands, tags or other customized standards. A validation will be gone through to pick out any product in the list with multiple promotions applied. Users can also set the promotion name, valid period, discount amount etc. 
+
+
+### [User E] 
+Post/Position:  
+Sales Accountants
+
+IT literacy: 
+Limited IT knowledge; Able to use accounting software  
+
+Frequency of using the software: 
+Daily
+
+Purpose of using the software: 
+
+1. Cost calculation
+2. Sales sum up
+3. Profit calculation
+4. Finance reports production
+
+Situation of using the software: 
+
+1. Sales accountants have to compute the cost for each deal for the calculation of profit 
+
+2. Sales accountants have to sum up sales amount for production of finance and sales reports
+
+3. Sales accountants have to calculate the profits the whole company and each of the sales representatives have made
+
+4. Sales accountants have to combine all the information above to produce reports to reflect the company's business dynamics. 
+
+Describe what user expects.
+
+1. Faster calculations with less errors:
+    
+The calculations and summaries are very tedious, easy to make mistakes yet hard to find out the errors. Errors on calculations can cause serious loss for the company. Accountants need some assistants to help them deliver their work with faster speed and higher accuracy. 
+
+2. Efficiently generate diverse reports 
+
+The range of finance reports or sales report vary from time to time, accountants have to process some repetitive data over and over again to produce reports for managers or market analyzers. Again, this work is tedious, and has a high risk for errors. A better tool to generate reports efficiently according to the demands is definitely expected from accountants, because it can increase the efficiency largely and avoid most of the calculation errors. 
+
+Your proposal to solve the object
+
+1. Use the accounting function of Solaris to help accelerate calculations. All the data required such as laptop purchased price, sold price, sales amounts are all entered before in linked data storage,  which saves the time of looking up for all the records to get the data. With several simple operations to specify the scope and goal for calculation, Solaris will present the correct results within seconds. 
+
+2. Use the report function of Solaris to generate reports. Accountants just need to set the type and scope of the report, all the rest will be handled by the application. For example, for monthly sales report of each sales representative, the accountant just need to select "sales report" option, specify the time range to be January, choose "sort by employee name", and click "Generate", an accurate, detailed, comprehensive report will be created in a few seconds. Of course, instead of the standard settings for reports, they can also customized the results to be presented in the report. For example, they can set filter criteria so that the sales report only shows performances of employees who joined the company for less than 3 months. 
 
 
 ---
