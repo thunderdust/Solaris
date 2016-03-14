@@ -25,15 +25,15 @@ Catalog - Solaris
      
     [Managers] 
     General manager of the business and the employees in the company.
+
+    [Sales Managers] 
+    Formed by managers of sales representatives from sales department. 
     
     [Sales Representatives] 
     Formed by the employees of sales team in the company. This is the major user group, who produce the most of the profits for the business.
 
     [After-sale Service Agent]
     This group of employees are responsible for dealing with the after-sale services. 
-    
-    [Marketing Executives] 
-    Formed by the employees from marketing department of this company. They analyze current situations and make marketing plans and strategies for the company.
 
     [Sales Accountants]
     Sales accountants need to prepare the sales reports for managers and marketing executives. 
@@ -43,18 +43,23 @@ Catalog - Solaris
 
     Each of the 3 types of users involved in this business plays their own roles and collaborates with each other to deliver a better sales results for the company. 
     
-    [ Managers ]
-    
+    [ General Managers ]
     1) Management of human resources:
     Working in his office, when there are new joiners, he is responsible to create the account and the profile for the new employee.
     When there are leavers, he is responsible for deactivating the account for the leaver.
     Manager is also responsible for assessing and evaluating employees, and deciding the salary and position adjustments.
      
     2) Business decision making 
-    Managers need to make decisions on purchases, inventory, sales and so on based on his judgement or marketing executive's suggestions.
+    Managers need to make decisions on purchases, inventory, sales and so on based on his judgement and sales manager's suggestions.
+
+    [ Sales Managers ]
+    1) Market analysis and strategy making
+    It's the responsibility of them to analyze the market situations, including the laptop purchase price changes, comparisons of laptop vendors, the market demand trends and so on. They also need to combine the analysis result with the current sales performances, and make suggestions for future strategies.
+    
+    2) Product promotions:
+    When the sales for some products perform poorly or there is a demand to increase sales for certain products, it's the job of marketing executives to conduct product promotions.
     
     [ Sales Representative]
-    
     1) Sell laptops (to customers):
     Sales representative can work in his office, or at the appointment with clients. When sales representatives meet clients, their job is to sell laptops to clients by demonstrating products to clients, giving them suggestions or recommendations about which laptop to purchase, and eventually persuading them to buy the products.
 
@@ -64,18 +69,19 @@ Catalog - Solaris
     3) Submit sales results:
     When a deal with customers is finished, sales representatives need to submit the details of the deal (deal number, deal date, laptop model, quantity of purchase, deal price, client name, client contact information, etc) to the accounting department.
 
-    [After-sale Service Agent]
-    
+    [After-sale Service Agent] 
     1) Handle after-sale service requests at the service center of the company.
+      
+    [ Sales Accountant ]
+    1) Sum up sales amount 
+    Accountants have to do summation of sales amount weekly, monthly, quarterly or yearly according to specific situations. 
+     
+    2) Calculate profit
+    It is their job to compute how much profit the company has made during a period of time as well. 
+    
+    3) Produce sales report 
+    Upon the request of manager or market analyzers, accountant has to produce various kinds of sales reports tailored for different purposes. 
 
-    [ Marketing Executive ]
-    
-    1) Product promotions:
-    When the sales for some products perform poorly or there is a demand to increase sales for certain products, it's the job of marketing executives to conduct product promotions.
-    
-    2) Market analysis and strategy making
-    It's the responsibility of marketing executives to analyze the market situations and detect trends. They also need to combine the analysis result with the sales performances of the company, and think of marketing strategies for the upcoming future.  
-    
 
 ---
 
@@ -94,8 +100,8 @@ Frequency of using the software:
 
 Purpose of using the software: 
 
-1. Manage employees
-2. Supervise the sales performances						
+1. *Manage employees*
+2. *Supervise and evaluate sales performances*						
 
 Situation of using the software: 
 
@@ -121,25 +127,26 @@ Situation of using the software:
 
 3. When GM wants to check the sales performances of the sales representatives:
 
-    1) Look up for sales representative A's record page from the sales amount records book;
-    2) (With the help of accountant) Add up his sales amount record by record;
+    1) Look up for sales representative A's record page from the sales records;
+    2) (With the help of accountant) Add up his sales amount;
     3) Record down A's sales summary;
     4) Repeat step 1-3 for any sales representatives that GM wants to check, say B, C, D, E, F, ... etc.
+    5) Compare and evaluate the performances of sales representatives
 
 
 Describe what user expects.
 
-1. Effortlessly add / remove employee accounts
+1. *Add / remove employee accounts easily*
     
-    Create or remove accounts of employees can be troublesome. As described above, to create an account is a tedious and repetitive work. The workflow to accomplish this task is very similar from time to time except for the differences in personal information. As for deletion of accounts, manager has to look up for the related records in multiple linked record tables ( When delete an account from employee list, his sales record table needs to be deactivated as well ). Therefore user wants to simplify these two tasks and make them less tedious. 
+   Creating an account is a tedious and repetitive work. The workflow to accomplish this task is very similar from time to time except for the differences in personal information. For account deletion, manager has to look up for the related records in multiple linked record tables ( When delete an account from employee list, his sales record table needs to be deactivated as well ). Therefore user wants to simplify these two tasks and make them less tedious. 
     
-2. Reliable and secured management of employee information 
+2. *Reliable and secured management of employee information* 
     
-    The management of employee information can be challenging in terms of information security. How to keep all the sensitive information without leaking it to outside of company is a serious challenging for the manager.  Traditional way of keeping everything on paper is not secured enough: the information can be damaged or leaked out easily. User expects a more reliable, secured method to manage the employee information. 
+    The management of employee information can be challenging in terms of information security. How to keep all the sensitive information without leaking it to outside of company is a serious problem for the manager.  Traditional way of keeping everything on paper is not secured enough: the information can be damaged or leaked out easily. Hence managers expect a more reliable, secured method to manage the employee information. 
     
-3. Convenient and up-to-date way to check sales performances
+3. *Effectively evaluate the most updated sales performances*
 
-    By the traditional way supervising sales performances is inefficient. Every time when the manager wants to check some sales representative's performance, he has to look up for this person's sales records from a large number of rows, and then asks the accountant to add up all sales amount of this person before he can actually sees the sales performance. This is slow, inefficient and very inconvenient. The worse part is that the calculated sales result of this person is not real-time, meaning the result does not include deals of this person submitted after the start of the calculation (This could happen because the time spend from start looking up for the sales person's records to finally obtain the sales amount can be very long). Hence the manager would be very glad to have a faster mechanism to check the up-to-date sales performances.
+    By the traditional way supervising sales performances is inefficient. Every time when the manager wants to check some sales representative's performance, he (or the accountant) has to look up for this person's sales records from a large number of rows, and then asks the accountant to add up all sales amount of this person before he can actually sees the sales performance for a single person. The worse part is that the calculated sales result of this person is not real-time, meaning the result does not include changes happen after start of the calculation (time spend can be very long due to slow computation). Hence the manager would be very glad to have a faster, more effective, and more updated sales performances evaluation.
     
 Your proposal to solve the object
 
@@ -152,10 +159,58 @@ Your proposal to solve the object
 2. Information of each employee will be stored in the same schema as a data entity with encryption, from where the read / addition / modification / deletion is executed. This mechanism will protect the information from leaking out. 
 Each employee will be assigned an account for the use of ONLY himself which is protected by a unique password. This will ensure the privacy of each employee is protected, and make sure they can only access data that belongs to themselves.
 
-3. Build sales report function to meet manager's requirement of sales performance supervision: Individual sales person can be located easily with a single operation of search (by name or company identity number), and his sales amount will be calculated dynamically upon the search request. This is much faster than manually looking up for his records and sum them up, and therefore achieves up-to-date sales performance check as well. 
+3. Utilize report function of Solaris to meet manager's needs for sales performance evaluation: Individual sales person can be targeted easily with a single operation of search (by name / company identity number). His sales amount will be calculated dynamically and shown upon the search request. Manager can view the performance of this person in a second. This is much faster than manually looking up for his records and sum them up, and therefore ensures the up-to-date sales performance evaluation as well. 
 
 
 ### [User B] 
+
+Post/Position: 
+Sales Managers
+
+IT literacy: 
+Limited knowledge about IT; Capable of using web applications 
+
+Frequency of using the software: 
+Daily
+
+Purpose of using the software: 
+
+1. Analyze market 
+2. Manage product promotions.
+
+Situation of using the software: 
+
+1. Marketing executives need to analyse the sales performances, and combine the analysis with their observations about the marketing trends to come up with new marketing decisions for the future business growth of the company. 
+
+2. When there is a need to discard some products due to bad sales performance or vanishing market demands, marketing executives need to remove the product from the 'laptop library'. Similarly, when they make a decision to introduce new products based on marketing analysis, they need to add the target laptop into the library as well. 
+
+3. Sometimes the sales for some products do not perform well. Launching a promotion for these products can stimulate the sales, which is the job of marketing executives. 
+
+Describe what user expects.
+
+1. Easy access to up-to-date sales reports
+    
+    For marketing executives, the marketing analysis would be very difficult to proceed if they do not have an easy access to the updated sales performances report whenever they want. Hence the accessibility to sales report becomes a bottleneck to restrict marketing executives' job, which is exactly what happens in a typical cooperation between marketing executives and report producers. They wish to have an easier, faster way to obtain the updated sales conditions when they need to do marketing analysis. 
+
+2. Convenient and simple operations for updating product list
+    
+    After a marketing decision related to adjustments of product is made, marketing executives need to update the product list. When a product needs to be aborted, the challenge they would face is that they have to take tremendous time and effort to look for it from the large list of all kinds of products. After that, they still need to take extra time to make a back-up information for this removed product in case the company will re-import this product in the future. When a new product is going to be imported into the list, the process of checking for redundant items, filling in all the information of this new product, and linking it to all other related data (e.g. tags, promotions etc) is definitely a pain for them as well. Therefore, they would like to have a more convenient, efficient tool to help them accomplish these tasks. 
+
+3. Launch promotions and apply them to list of products conveniently and error-freely
+    
+    Apply promotions to a list of target products manually is repetitive and tedious. It is also very easy to miss out some products which are supposed to apply promotions, or to introduce some confusions if the marketing executives mistakenly apply multiple promotions to the same product. Marketing executives need a more systematic, efficient way to manage these promotions.
+
+Your proposal to solve the object
+
+1. Authorize the access to sales reports to all marketing executive roles. When marketing executives logs into the system with their own account, they have the sales report sections displayed by default. 
+
+2. Design a function specifically for product management. Use elegant user interfaces and workflow to simplify the process of adding / removing products. Use input validations and auto-completion where applicable to reduce the chance for errors and increase the efficiency.
+
+3. Build promotion functionality which can apply to selected list of products. The items in a list can be selected by specifying models, brands, tags or other customized standards. A validation will be gone through to pick out any product in the list with multiple promotions applied. Users can also set the promotion name, valid period, discount amount etc. 
+
+
+### [User C] 
+
 Post/Position:  
 Sales Representative
 
@@ -167,8 +222,8 @@ Daily
 
 Purpose of using the software: 
 
-1. Present products, make suggestions and sell products to customers
-2. Report sales results to the company
+1. *Present products, make suggestions and sell products to customers*
+2. *Report sales results to the company*
 
 Situation of using the software: 
 
@@ -209,15 +264,15 @@ Situation of using the software:
 
 Describe what user expects.
 
-1. An easy-to-operate but powerful demonstration to showcase products to customers as detailed as possible
+1. *An easy-to-operate but powerful demonstration to showcase products to customers as detailed as possible*
     
     It is impossible for sales to bring all different models of laptops for the customers to choose. Hence presentation of laptops on a computer screen must be persuasive and convincing enough. The demonstration should be able to provide information of products as detailed as possible, yet not too complicated to operate or to watch. 
 
-2. Being able to efficiently make recommendations based on various requirements of clients
+2. *Being able to efficiently make recommendations based on various requirements of clients*
 
     Clients can have all kinds of different requirements about their ideal laptops. At the same time, their only have limited patience. Hence it is hard for sales representatives to quickly find out the product(s) which match the customer needs. If they fail to do so, the business opportunity might be wasted. 
 
-3. Conveniently submit deals results 
+3. *Conveniently submit deals results* 
     
     Due to the nature of the work, sales representatives spend lots of their time working with the clients and often being out of the office. In a traditional manner, when one deal is done, they need to record the details down and go back to the office and report to whoever is managing the deal results. This is very troublesome and inefficient for both the sales and the staff who manages the deal results (Even if sales can report the results via a phone call or an email it still takes much extra time for the staff who manages sale results to process and record all the information). So it is very necessary to have a new way to submit deal results without so much trouble.
 
@@ -243,71 +298,28 @@ Daily
 
 Purpose of using the software: 
 
-1. Process after-sale service requests of replacement and repair from clients
+1. *Deal with after-sale service requests of laptop replacement and repair from clients*
 
 Situation of using the software: 
 
-1. When a customer calls service center and asks for replacement / repair of the laptop he purchased, after-sales service agents need to handle the request and serve as mediator between customer and the company. 
+1. When a customer calls service center and asks for replacement / repair of the laptop he purchased, after-sales service agents need to handle the request. He serves as a mediator between customer and the company to provide customers with satisfying after-sales services.  
 
 Describe what user expects.
 
-1. Conveniently check customer's purchase records and get crucial information as purchased model, purchased date, warranty length etc.
+1. *Conveniently check customer's purchase records and get crucial information like purchased model, purchased date, warranty length etc in time.*
     
-    Looking for particular customer's purchase information such as purchased model, purchased date, warranty length from hundreds of different records manually is way to slow for a customer to wait for. The quality of after-sales service will be largely affected by this slow responding time. Maintenance of all such information is also difficult and troublesome. After-sales agents need a faster and more convenient way to do this indeed. 
+    Looking for particular customer's purchase information such as purchased model, purchased date, warranty length from hundreds of different records manually is way to slow for a customer to wait for. The quality of after-sales service will be largely affected by the responding time. Maintenance of all such information is also difficult and troublesome when there is no systematic management for it. Such after-sales services contribute an essential part to the sales performance as customers value it a lot when it comes to laptop purchase. Poor services might bring the company a damaged reputation. Hence after-sales agents need a faster and more convenient way to do this task indeed. 
+
+2. *Easy to track the status of maintenance services* 
+    
+     After validating after-sales service requests from customers and transferred them to technical staff, the next task on after-sales service agent's shoulders is to keep track of the progress of the service.  However this is not easy. There can be a lot of requests going on at the same time, which come from different clients, involve different products, ask for different services (replacement, return, repair, etc). The whole maintenance service will be extremely messy without a sophisticated management of all these different requests. So the service agents expect a much more easier way to track progress of all different requests, so they can follow up the cases accordingly with order.  
 
 Your proposal to solve the object
 
 1. Use our application Solaris to maintain purchase records and use the after-sales function of Solaris to help the services. The agent can conveniently obtain customer's record within a second by searching it with customer's order number, or name, or contact number.  And the purchased date, warranty length, whether warranty has expired (with a status of YES or NO) will be automatically displayed when the record is been found. Agents can save huge amount of time finding the customer's purchase information, checking with customer about the warranty status, and validating it. It is also so easy to process this service request after the call as it is still within the same application system.  
-With our application, the after-sales services will be largely improved, which contributes an essential part to the sales performance as customers value after-sales services a lot when it comes to laptop purchase, and poor services bring the company a damaged reputation. 
+
+2. Use the after-sales function of Solaris to do the management of different service requests. When agents receive a new call from a customer, they will simply create a new request in the system for the customer. This request is automatically associated with the customer's order. As the progress of this maintenance request changes, its status in the system will be updated accordingly (e.g. status might vary from 'Pending' to 'Queuing', 'In progress', 'Almost Finished' or 'Ready'). Agents can follow up the status any time they wish with simply a search by the request index or by the name of the customer and update the progress to the customer promptly. They can also check the requests categorized by the status. For example, they can find out which requests are still queuing, then tell the customers to wait; or they can look for 'Almost Finished' requests and inform customers that they can receive the results in a short time. 
   
-   
-
-### [User D] 
-
-Post/Position: 
-Marketing Executive
-
-IT literacy: 
-Limited knowledge about IT; Capable of using web applications 
-
-Frequency of using the software: 
-Daily
-
-Purpose of using the software: 
-
-1. Analyze sales performances 
-2. Update product list 
-3. Manage product promotions.
-
-Situation of using the software: 
-
-1. Marketing executives need to analyse the sales performances, and combine the analysis with their observations about the marketing trends to come up with new marketing decisions for the future business growth of the company. 
-
-2. When there is a need to discard some products due to bad sales performance or vanishing market demands, marketing executives need to remove the product from the 'laptop library'. Similarly, when they make a decision to introduce new products based on marketing analysis, they need to add the target laptop into the library as well. 
-
-3. Sometimes the sales for some products do not perform well. Launching a promotion for these products can stimulate the sales, which is the job of marketing executives. 
-
-Describe what user expects.
-
-1. Easy access to up-to-date sales reports
-    
-    For marketing executives, the marketing analysis would be very difficult to proceed if they do not have an easy access to the updated sales performances report whenever they want. Hence the accessibility to sales report becomes a bottleneck to restrict marketing executives' job, which is exactly what happens in a typical cooperation between marketing executives and report producers. They wish to have an easier, faster way to obtain the updated sales conditions when they need to do marketing analysis. 
-
-2. Convenient and simple operations for updating product list
-    
-    After a marketing decision related to adjustments of product is made, marketing executives need to update the product list. When a product needs to be aborted, the challenge they would face is that they have to take tremendous time and effort to look for it from the large list of all kinds of products. After that, they still need to take extra time to make a back-up information for this removed product in case the company will re-import this product in the future. When a new product is going to be imported into the list, the process of checking for redundant items, filling in all the information of this new product, and linking it to all other related data (e.g. tags, promotions etc) is definitely a pain for them as well. Therefore, they would like to have a more convenient, efficient tool to help them accomplish these tasks. 
-
-3. Launch promotions and apply them to list of products conveniently and error-freely
-    
-    Apply promotions to a list of target products manually is repetitive and tedious. It is also very easy to miss out some products which are supposed to apply promotions, or to introduce some confusions if the marketing executives mistakenly apply multiple promotions to the same product. Marketing executives need a more systematic, efficient way to manage these promotions.
-
-Your proposal to solve the object
-
-1. Authorize the access to sales reports to all marketing executive roles. When marketing executives logs into the system with their own account, they have the sales report sections displayed by default. 
-
-2. Design a function specifically for product management. Use elegant user interfaces and workflow to simplify the process of adding / removing products. Use input validations and auto-completion where applicable to reduce the chance for errors and increase the efficiency.
-
-3. Build promotion functionality which can apply to selected list of products. The items in a list can be selected by specifying models, brands, tags or other customized standards. A validation will be gone through to pick out any product in the list with multiple promotions applied. Users can also set the promotion name, valid period, discount amount etc. 
 
 
 ### [User E] 
