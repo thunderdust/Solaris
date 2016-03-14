@@ -3,9 +3,9 @@ Catalog - Solaris
 
 **Your Name:** Liu Weiran
 
-**Submission number:** 02
+**Submission number:** 03
 
-**Last-Modified Date:** 03/10/2016
+**Last-Modified Date:** 03/14/2016
 
 ---
 
@@ -162,54 +162,8 @@ Each employee will be assigned an account for the use of ONLY himself which is p
 3. Utilize report function of Solaris to meet manager's needs for sales performance evaluation: Individual sales person can be targeted easily with a single operation of search (by name / company identity number). His sales amount will be calculated dynamically and shown upon the search request. Manager can view the performance of this person in a second. This is much faster than manually looking up for his records and sum them up, and therefore ensures the up-to-date sales performance evaluation as well. 
 
 
+
 ### [User B] 
-
-Post/Position: 
-Sales Managers
-
-IT literacy: 
-Limited knowledge about IT; Capable of using web applications 
-
-Frequency of using the software: 
-Daily
-
-Purpose of using the software: 
-
-1. Analyze market 
-2. Manage product promotions.
-
-Situation of using the software: 
-
-1. Marketing executives need to analyse the sales performances, and combine the analysis with their observations about the marketing trends to come up with new marketing decisions for the future business growth of the company. 
-
-2. When there is a need to discard some products due to bad sales performance or vanishing market demands, marketing executives need to remove the product from the 'laptop library'. Similarly, when they make a decision to introduce new products based on marketing analysis, they need to add the target laptop into the library as well. 
-
-3. Sometimes the sales for some products do not perform well. Launching a promotion for these products can stimulate the sales, which is the job of marketing executives. 
-
-Describe what user expects.
-
-1. Easy access to up-to-date sales reports
-    
-    For marketing executives, the marketing analysis would be very difficult to proceed if they do not have an easy access to the updated sales performances report whenever they want. Hence the accessibility to sales report becomes a bottleneck to restrict marketing executives' job, which is exactly what happens in a typical cooperation between marketing executives and report producers. They wish to have an easier, faster way to obtain the updated sales conditions when they need to do marketing analysis. 
-
-2. Convenient and simple operations for updating product list
-    
-    After a marketing decision related to adjustments of product is made, marketing executives need to update the product list. When a product needs to be aborted, the challenge they would face is that they have to take tremendous time and effort to look for it from the large list of all kinds of products. After that, they still need to take extra time to make a back-up information for this removed product in case the company will re-import this product in the future. When a new product is going to be imported into the list, the process of checking for redundant items, filling in all the information of this new product, and linking it to all other related data (e.g. tags, promotions etc) is definitely a pain for them as well. Therefore, they would like to have a more convenient, efficient tool to help them accomplish these tasks. 
-
-3. Launch promotions and apply them to list of products conveniently and error-freely
-    
-    Apply promotions to a list of target products manually is repetitive and tedious. It is also very easy to miss out some products which are supposed to apply promotions, or to introduce some confusions if the marketing executives mistakenly apply multiple promotions to the same product. Marketing executives need a more systematic, efficient way to manage these promotions.
-
-Your proposal to solve the object
-
-1. Authorize the access to sales reports to all marketing executive roles. When marketing executives logs into the system with their own account, they have the sales report sections displayed by default. 
-
-2. Design a function specifically for product management. Use elegant user interfaces and workflow to simplify the process of adding / removing products. Use input validations and auto-completion where applicable to reduce the chance for errors and increase the efficiency.
-
-3. Build promotion functionality which can apply to selected list of products. The items in a list can be selected by specifying models, brands, tags or other customized standards. A validation will be gone through to pick out any product in the list with multiple promotions applied. Users can also set the promotion name, valid period, discount amount etc. 
-
-
-### [User C] 
 
 Post/Position:  
 Sales Representative
@@ -223,7 +177,9 @@ Daily
 Purpose of using the software: 
 
 1. *Present products, make suggestions and sell products to customers*
-2. *Report sales results to the company*
+2. *collect/ amend / submit / withdraw orders* 
+3. *Report sales results to the accounting team*
+4. *Track order delivery status*
 
 Situation of using the software: 
 
@@ -261,6 +217,12 @@ Situation of using the software:
     - quantity of purchase
     - customer name
     - customer contact information
+  
+3. When sales representatives have confirmed an order with the customer, they need to submit the order back to the company for the following activities (such as delivery).
+ 
+4. When there is a change / cancellation on submitted deals (which happened quite often for **small-scaled** companies), sales representatives have to amend the orders or withdraw them. 
+
+5. When an order is confirmed and submitted, the sales representatives still need to track the product delivery to make sure clients can get their laptop on time. 
 
 Describe what user expects.
 
@@ -276,6 +238,15 @@ Describe what user expects.
     
     Due to the nature of the work, sales representatives spend lots of their time working with the clients and often being out of the office. In a traditional manner, when one deal is done, they need to record the details down and go back to the office and report to whoever is managing the deal results. This is very troublesome and inefficient for both the sales and the staff who manages the deal results (Even if sales can report the results via a phone call or an email it still takes much extra time for the staff who manages sale results to process and record all the information). So it is very necessary to have a new way to submit deal results without so much trouble.
 
+4. *Agile and flexible order system which allows modifications and cancellations even after submission* 
+    
+    As a small-scaled company, one of the advantages our client hold is that they can be flexible on the order processing. There are always customers who regret after the deal has been confirmed. To retain these clients, the sales representatives are expecting an order system which permits modifications or even cancellations after submission. This is difficult to operate manually and very easy to cause mistakes. So sales representatives are need a more robust and agile system to realize this function. 
+
+5. *Easily track the order delivery status* 
+
+    Delivery delay or loss caused by not tracking delivery status after order is confirmed can be a serious problem during the sales. Sales representatives need a more convenient way to check the deliveries whenever they want and wherever they are to make sure the deliveries are on time.
+
+
 Your proposal to solve the object
 
 1. Create a comprehensive and fully-detailed 'laptop library' to store information of all models of products that the company holds. Design an elegant, user-friendly interface in the application for the showcase to enhance visual effects. Use images of laptops with the actual dimensions to make it more vivid. Quantify the performance and battery life of laptops to give customers a more accurate and straightforward evaluation. 
@@ -283,6 +254,11 @@ Your proposal to solve the object
 2. Design powerful search functions which filters products by user's preferences such as brand, size, weight, screen size, price range, battery performance, hardware specifications etc. There can be more than one search criteria. On top of that, assign each laptop with one or a few tags which describes the specialized features of the product. For instance, [Gaming Laptop] tag for products with high performance on display effect and game processing; or [Specialized for Girls] tag for laptops which are fancy, light-weighted and easy-to-use. The recommendation function will choose products for target clients based on the filters and tags. If customers do not have any requirements / expectations / preferences about the laptop, the system can still make recommendations based on customer's features such as gender, age, salary, occupation etc.
 
 3. Design a deal submission function for sales representatives. Use elegant user interfaces and workflow to simplify the process of submission. Use input validations and auto-completion where applicable to reduce the chance for errors and increase the efficiency. 
+
+4. Use the order system in our application Solaris, sales representatives can access the submitted orders from remote and do modifications or cancellations. The result will be effective immediately. Submitted orders are stored as it is for at least 24 hours, within which any modifications / cancellations are allowed.  
+
+5. Use the tracking function in the order system of Solaris, sales representatives are able to check the real-time delivery status of any order of his clients. He only needs to enter the order series number, and all the information he needs will be presented, with frequent updates. He can also choose to receive a notification in the application when an order he is in charge of has been safely delivered to the customer.  
+
 
 
 
@@ -322,7 +298,8 @@ Your proposal to solve the object
   
 
 
-### [User E] 
+### [User D] 
+
 Post/Position:  
 Sales Accountants
 
@@ -366,16 +343,67 @@ Your proposal to solve the object
 2. Use the report function of Solaris to generate reports. Accountants just need to set the type and scope of the report, all the rest will be handled by the application. For example, for monthly sales report of each sales representative, the accountant just need to select "sales report" option, specify the time range to be January, choose "sort by employee name", and click "Generate", an accurate, detailed, comprehensive report will be created in a few seconds. Of course, instead of the standard settings for reports, they can also customized the results to be presented in the report. For example, they can set filter criteria so that the sales report only shows performances of employees who joined the company for less than 3 months. 
 
 
+
+### [User E] 
+
+Post/Position: 
+Sales Managers
+
+IT literacy: 
+Limited knowledge about IT; Capable of using web applications 
+
+Frequency of using the software: 
+Daily
+
+Purpose of using the software: 
+
+1. *Retrieve product information for market analysis*
+2. *Retrieve sales performance information for market analysis*
+3. *Manage product promotions*
+
+Situation of using the software: 
+
+1. When sales manager want to analyse the market from the perspective of product purchases, he needs to obtain information about the product, such as the current price, historical prices (highest and lowest price, average price etc), and prices change trends between several vendors. Also, he has to know the inventory for the products for the sake of market analysis. 
+
+2. When sales manager want to analyse the market from the perspective of sales performance, he need to obtain sales reports for: the recent total sales situation for the company, the recent total sales for each model of product, the recent sales for each sales representatives, etc. 
+
+3. Sometimes the sales for some products do not perform well. Launching a promotion for these products can stimulate the sales, which is the job of sales managers. 
+
+Describe what user expects.
+
+1. *Access to abundant product information* 
+    
+    For sales managers, the marketing analysis would be very difficult to proceed if they do not have an easy access to the updated product information. In the current situation, there is no such a system for them to instantly check the historical price records, not to mention comparing which are the highest / lowest prices. They have to took extra time to find the record they want, and they can't detect the price change promptly. So it would be a lot better if they have an easier, faster way to obtain the more updated prices when they need to do marketing analysis. 
+
+2. *Conveniently obtain sales performance reports upon request* 
+    
+    When sales managers want to study the sales performance of certain product or certain representative, the conventional method of producing sales report is too slow and rigid. Also, he has to go through the complicated workflow with the accountants from request for a sales to report, to wait for sales representatives to submit their deals, to wait for accountants to compute the amounts, to wait for them to produce the sales report, and finally to receive the sales report from the accountants. The whole process is so tedious and time-consuming that it becomes a serious problem for sales managers, especially when they need to analyse newly-updated sales reports frequently. They definitely need a new solution to conveniently obtain sales performance reports upon requests.
+
+3. *Manage promotions and group pricing easily*
+    
+    Apply promotions to a list of target products, or set different prices for different group of users are common strategies for increasing sales. However these promotions are not easy to operate. It is very easy to miss out some products which are supposed to apply promotions, or to introduce some confusions of multiple promotions to the same product. The product information would also easily become messy if group pricing is not managed well. Sales managers need a more systematic, efficient way to manage these promotions.
+
+Your proposal to solve the object
+
+1. Use the product information storage in the application Solaris to record more data for each product, including: historical price, current price, and current inventory. Also, comparisons for historical highest / lowest prices can be easily retrieved with this function as well. Moreover, a real-time pricing function refreshes frequently to let users know the most recent price for this product. 
+
+2. Authorize the access to sales reports to all sales manager roles. They can obtain all forms of sales reports as fast as sales accountants. 
+
+3. Use the promotion functionality of Solaris which can apply to selected list of products or customers types. The items in a list can be selected by specifying models, brands, tags or other customized standards. A validation will be gone through to pick out any product in the list with multiple promotions applied. Users can also set the promotion name, valid period, discount amount etc. In a dashboard, sales managers can manage all the active promotions all together. This function will largely relief 
+
+
 ---
 ## Chapter 3 - Descriptions of each "Merit"
 
-### [Merit 1] --  Convenient and efficient sales managements
+### [Merit 1] --  Systematic, productive sales managements
 
 The most valuable merit of the application is that it eases the management for sales activities from several aspects:
  
 1. Systematic and secured management for information of sales employees 
 2. Attractive, convincing and customized product demonstrations
 3. Convenient way to submit finished deal details wherever sales representatives are 
+4. Support order modification/ deletion and delivery tracking 
+5. Efficient and responsive after-sales services 
 
 #### [Function 1: Employee account management function]
 
@@ -408,6 +436,40 @@ Present details of laptops via the user interface.
 Submit information of completed deals to the system.
 
 **Priority:** Low
+
+**Implemented:** N
+
+
+#### [Function 5: Amend orders ]
+
+Modify the submitted orders remotely.
+
+**Priority:** Medium
+
+**Implemented:** N
+
+
+#### [Function 6: Cancel orders ]
+
+Cancel the submitted orders remotely. 
+
+**Priority:** Low
+
+**Implemented:** N
+
+#### [Function 7: Delivery track ]
+
+Present the delivery status when requested for tracking.
+
+**Priority:** Medium
+
+**Implemented:** N
+
+#### [Function 8: Delivery notification]
+
+Notify the sales representative in the system about the completion of order delivery. 
+
+**Priority:** Medium
 
 **Implemented:** N
 
@@ -471,6 +533,64 @@ Due to the blur matching function, there can be more than one recommendation for
 **Priority:** Medium
 
 **Implemented:** N
+
+
+### [Merit 4] -- Accounting automation
+
+Another unique advantage of the application to evidently improve customer's productivity by realizing accounting automation. 
+
+#### [Function 1: Submit deals ]
+
+After sales close a deal, they can update the sales amount promptly even if they are still outside. 
+
+**Priority:** Medium
+
+**Implemented:** N
+
+#### [Function 2: Cost computation]
+
+**Priority:** Low
+
+**Implemented:** N
+
+#### [Function 3: Profit computation]
+
+**Priority:** Medium
+
+**Implemented:** N
+
+#### [Function 4: Sales summation]
+
+**Priority:** Medium
+
+**Implemented:** N
+
+
+### [Merit 5] -- Strong support for marketing analysis
+
+With our application, getting valuable information about the current market and sales performance is so convenient. We also build strong supports for marketing analysis by providing abundant product and sales data. 
+
+#### [Function 1: Generate sales reports ]
+There are various kinds of sales reports which reflect the sales performance for each product, each sales representative, the whole company, and much more. 
+
+**Priority:** High
+
+**Implemented:** N
+
+#### [Function 2: Product purchase price inquiry]
+Users can use the system to look for historical prices of a product, compare its prices between several vendors, or the highest / lowest price ever for this product to help make better purchase decisions. 
+
+**Priority:** Medium
+
+**Implemented:** N
+
+#### [Function 3: Product inventory inquiry]
+Users can use the system to look for inventory of certain product. 
+
+**Priority:** Low
+
+**Implemented:** N
+
 
 ---
 
