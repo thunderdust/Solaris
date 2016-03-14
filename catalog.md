@@ -21,46 +21,59 @@ Catalog - Solaris
 
 **2. Who do you think would be involved in your business? List up role, person, or group as many as possible.**
 
-    Three different groups of user get involved in this business: administrators, sales representatives, and marketing executives.
+    Three different groups of user get involved in this business: Managers, sales representatives, and marketing executives.
      
-    [Administrators] 
-    General manager of the business. This role is also in charge of managing the employees in the company.
+    [Managers] 
+    General manager of the business and the employees in the company.
     
     [Sales Representatives] 
-    Formed by the employees of sales team in the company. This is the most major group of users of the firm, who make the most of the profits for the business.
+    Formed by the employees of sales team in the company. This is the major user group, who produce the most of the profits for the business.
+
+    [After-sale Service Agent]
+    This group of employees are responsible for dealing with the after-sale services. 
     
     [Marketing Executives] 
     Formed by the employees from marketing department of this company. They analyze current situations and make marketing plans and strategies for the company.
+
+    [Sales Accountants]
+    Sales accountants need to prepare the sales reports for managers and marketing executives. 
 
 
 **3. Describe each of their work flow: WHAT are they responsible for? WHEN, WHERE and WHAT do they work?**
 
     Each of the 3 types of users involved in this business plays their own roles and collaborates with each other to deliver a better sales results for the company. 
     
-    [ Administrator ]
+    [ Managers ]
     
-    1) Management of employees:
-    Working in his office, when there are new joiners, he is responsible to create the account and the profile for the new employee based on his role and personal information such as name, age, gender, email, contact number and so on. 
-    At the end of a quarter or a year, administrator is also responsible for assessing and evaluating employees, and hence deciding the promotion or demotion of the them.
+    1) Management of human resources:
+    Working in his office, when there are new joiners, he is responsible to create the account and the profile for the new employee.
+    When there are leavers, he is responsible for deactivating the account for the leaver.
+    Manager is also responsible for assessing and evaluating employees, and deciding the salary and position adjustments.
+     
+    2) Business decision making 
+    Managers need to make decisions on purchases, inventory, sales and so on based on his judgement or marketing executive's suggestions.
     
     [ Sales Representative]
     
-    1) Sell products (laptops) to customers:
+    1) Sell laptops (to customers):
     Sales representative can work in his office, or at the appointment with clients. When sales representatives meet clients, their job is to sell laptops to clients by demonstrating products to clients, giving them suggestions or recommendations about which laptop to purchase, and eventually persuading them to buy the products.
+
+    2) Confirm orders with customers and submit orders:
+    After customers agree to buy the product, sales representatives need to confirm the order with them, and submit the signed orders back to the company.
         
-    2) Submit sales results:
-    When a deal with customers is finished, sales representatives need to submit the details of the deal (deal number, deal date, laptop model, quantity of purchase, deal price, client name, client contact information, etc) to the company.
+    3) Submit sales results:
+    When a deal with customers is finished, sales representatives need to submit the details of the deal (deal number, deal date, laptop model, quantity of purchase, deal price, client name, client contact information, etc) to the accounting department.
+
+    [After-sale Service Agent]
     
+    1) Handle after-sale service requests at the service center of the company.
+
     [ Marketing Executive ]
     
-    1) Management of products:
-    Marketing executives work in their offices. When it is necessary to launch new products, they ought to execute product addition; 
-    When a product is outdated and abandoned by the market, they are responsible for product deletion; 
-    
-    2) Product promotions:
+    1) Product promotions:
     When the sales for some products perform poorly or there is a demand to increase sales for certain products, it's the job of marketing executives to conduct product promotions.
     
-    3) Market analysis and strategy making
+    2) Market analysis and strategy making
     It's the responsibility of marketing executives to analyze the market situations and detect trends. They also need to combine the analysis result with the sales performances of the company, and think of marketing strategies for the upcoming future.  
     
 
@@ -147,7 +160,7 @@ Post/Position:
 Sales Representative
 
 IT literacy: 
-Basic IT knowledge; Able to use web appplications
+Basic IT knowledge; Able to use web applications
 
 Frequency of using the software: 
 Daily
@@ -216,7 +229,40 @@ Your proposal to solve the object
 
 3. Design a deal submission function for sales representatives. Use elegant user interfaces and workflow to simplify the process of submission. Use input validations and auto-completion where applicable to reduce the chance for errors and increase the efficiency. 
 
+
+
 ### [User C] 
+Post/Position:  
+After-sales Service Agent 
+
+IT literacy: 
+Medium IT knowledge; Understand basic knowledge about laptop software and hardware  
+
+Frequency of using the software: 
+Daily
+
+Purpose of using the software: 
+
+1. Process after-sale service requests of replacement and repair from clients
+
+Situation of using the software: 
+
+1. When a customer calls service center and asks for replacement / repair of the laptop he purchased, after-sales service agents need to handle the request and serve as mediator between customer and the company. 
+
+Describe what user expects.
+
+1. Conveniently check customer's purchase records and get crucial information as purchased model, purchased date, warranty length etc.
+    
+    Looking for particular customer's purchase information such as purchased model, purchased date, warranty length from hundreds of different records manually is way to slow for a customer to wait for. The quality of after-sales service will be largely affected by this slow responding time. Maintenance of all such information is also difficult and troublesome. After-sales agents need a faster and more convenient way to do this indeed. 
+
+Your proposal to solve the object
+
+1. Use our application Solaris to maintain purchase records and use the after-sales function of Solaris to help the services. The agent can conveniently obtain customer's record within a second by searching it with customer's order number, or name, or contact number.  And the purchased date, warranty length, whether warranty has expired (with a status of YES or NO) will be automatically displayed when the record is been found. Agents can save huge amount of time finding the customer's purchase information, checking with customer about the warranty status, and validating it. It is also so easy to process this service request after the call as it is still within the same application system.  
+With our application, the after-sales services will be largely improved, which contributes a crucial part to the sales performance as customers value after-sales services a lot when it comes to laptop purchase, and poor services bring the company a damaged reputation. 
+  
+   
+
+### [User D] 
 
 Post/Position: 
 Marketing Executive
