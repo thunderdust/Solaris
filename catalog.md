@@ -180,6 +180,10 @@ Describe what user expects.
 4. *Access to comprehensive, profound market information*
 
     In a small scaled company like our client company, the human resources for collecting market information is very limited. There might not be enough employees specifically work as marketing roles, not to mention make useful analysis of the market. Doing all the information collection and processing by the manager himself is also not realistic. Hence the general manager really need an easy access to comprehensive, profound market information to help him make business decisions. 
+
+5. *Fast, systematic, accurate employee assessment*
+    
+    Due to the **limited HR team power** in small-scaled companies, and the **nature of laptops** they sell (price, sales amount and profit of different laptops vary a lot from one to another, which are vogue, brutal standards to evaluate sale representatives' performances), traditional way of assessing employees simply by sales amount is not efficient (it takes too much time to count all the sales statistics before the manager can evaluate employees) and not accurate (some laptops are easier to sell by nature, some laptops have low sales amount but each order produces more profits, it is hard to tell which indicates a better sales person). What the GM wants is a faster, more accurate assessment system with diverse evaluation criteria. 
     
 Your proposal to solve the object
 
@@ -196,7 +200,7 @@ Each employee will be assigned an account for the use of ONLY himself which is p
 
 4. Our application would collect and process marketing data for the managers to utilize automatically. Solaris will present the dashboard of marketing information, including the latest products in the market, the current trends of product demands, the purchase price trends, the performance of the competitors and so on. Solaris will also make predictions to the upcoming market changes based on the information it collects. With this function group, general managers can easily access the very useful and profound information without paying for a unnecessarily high cost.
 
-
+5. Our application provides the client company with a more sophisticated and efficient assessment solution. All the essential data such as individual sales amount accumulations, average sales per month, total profits produced and so on are computed and shared among many components of the application. This ensures the much more faster speed to retrieve necessary data when doing employee assessment compared to the conventional manual method. Solaris adopts a diversity of standards to evaluate employee performances, and takes the **special properties of laptops** (e.g. sales differences between different models or even brands, high order cancel rates) into account to make assessment more fair and accurate. 
 
 ### [User B] 
 
@@ -215,6 +219,7 @@ Purpose of using the software:
 2. *collect/ amend / submit / withdraw orders* 
 3. *Report sales results to the accounting team*
 4. *Track order delivery status*
+5. *Receive laptop sales training*
 
 Situation of using the software: 
 
@@ -259,6 +264,8 @@ Situation of using the software:
 
 5. When an order is confirmed and submitted, the sales representatives still need to track the product delivery to make sure clients can get their laptop on time. 
 
+6. When a employee newly joins the company as a sales representative, he needs to go through related training before he starts to sell laptops.  
+
 Describe what user expects.
 
 1. *An easy-to-operate but powerful demonstration to showcase products to customers as detailed as possible*
@@ -281,6 +288,10 @@ Describe what user expects.
 
     Delivery delay or loss caused by not tracking delivery status after order is confirmed can be a serious problem during the sales. Sales representatives need a more convenient way to check the deliveries whenever they want and wherever they are to make sure the deliveries are on time.
 
+6. *Complete, professional training*
+
+     Sales in a laptop selling company is different from other sales. They have to own adequate **IT backgrounds** and strong **knowledge about laptop specifications**. However new joiners can seldom receive enough training to help them equip themselves with the essential professional skills. This is a problem especially for small-scaled companies who do not have training resources. A complete, professional IT&sales training for employees is indeed necessary for the sales representatives. 
+
 
 Your proposal to solve the object
 
@@ -293,6 +304,8 @@ Your proposal to solve the object
 4. Use the order system in our application Solaris, sales representatives can access the submitted orders from remote and do modifications or cancellations. The result will be effective immediately. Submitted orders are stored as it is for at least 24 hours, within which any modifications / cancellations are allowed.  
 
 5. Use the tracking function in the order system of Solaris, sales representatives are able to check the real-time delivery status of any order of his clients. He only needs to enter the order series number, and all the information he needs will be presented, with frequent updates. He can also choose to receive a notification in the application when an order he is in charge of has been safely delivered to the customer.  
+
+6. Use the training system of Solaris to help fresh sales representatives obtain required professional backgrounds. 
 
 
 
