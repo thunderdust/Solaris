@@ -15,13 +15,13 @@ Catalog - Solaris
     The business involved is direct sales of laptops. The product involved is laptops from all mainstream laptop brands.
     
     The targeted client company is a small-scaled enterprise in infocomm products industry, with less than 50 employees, including manager(s), sales team, and accounting team. Enterprises which are aiming for business growths and are developing into bigger scales in future as also our clients. Our client has the following properties:   
+  
+    Advantages:
     
-    Advantages:   
-   
      - Simple company structures 
      - Agile and flexible sale forms  
      - Diversity on product types (laptops from all mainstream brands) 
-    
+ 
     Shortcomings:
     
      - Small number of employees (Lacking of human resources)
@@ -73,8 +73,7 @@ Catalog - Solaris
     1. General Managers 
     
     1.1 < Management of human resources >
-    Working in his office, when there are new joiners, he is responsible to create the account and the profile for the new employee.
-    When there are leavers, he is responsible for deactivating the account for the leaver.
+    Working in his office, when there are new joiners or leavers, the general manager is responsible for managing account creation/ deactivation and related HR works.
     Manager is also responsible for assessing and evaluating employees, and deciding the salary and position adjustments.
      
     1.2 < Business decision making >
@@ -85,14 +84,14 @@ Catalog - Solaris
     2. Sales Managers
     
     2.1 < Market analysis and strategy making >
-    It's the responsibility of them to analyze the market situations, including the laptop purchase price changes, comparisons of laptop vendors, the market demand trends and so on. They also need to combine the analysis result with the current sales performances, and make suggestions for future strategies.
+    It's the responsibility of them to analyze the market situations, including product purchase price changes, comparisons of laptop vendors, the market demand trends, behavior of competitors and so on. They also need to combine the analysis result with the current sales performances, and make suggestions about future marketing strategies.
     
     2.2 < Product promotion >
     When the sales for some products perform poorly or there is a demand to increase sales for certain products, it's the job of sales managers to conduct product promotions.
 
-    2.3 < Guide sales representatives >
+    2.3 < Guide & train sales representatives >
     
-    Sales managers are also responsible to guide the work of sales representatives, especially for the new-comers. 
+    Sales managers are also responsible to guide the work of sales representatives. They need to conduct training for fresh sales representatives. 
 
     
     3. Sales Representative
@@ -104,22 +103,30 @@ Catalog - Solaris
     After customers agree to buy the product, sales representatives need to confirm the detailed order with them, and submit the signed orders back to the company.
         
     3.3 < Report sales results >
-    
     When a deal with customers is finished, sales representatives need to submit the details of the deal (deal number, deal date, laptop model, quantity of purchase, deal price, client name, client contact information, etc) to the accounting department.
+     
+     3.4 < After-sale tracking >
+     After a deal has been done with the client, sales representatives still need to continue their after-sales work, such as tracking the delivery of orders, ask for feedback from the customer, or cooperate with after-sales service center to deal with some after-sales service issues. 
 
 
     4. After-sale Service Agent
     
     4.1 < Provide after-sale services >
     Handle after-sale service requests (such as replacement, repair, or return of purchase) at the service center of the company.
+
+    4.2 < Collect and respond to customer feedback >
+    Collect customers' feedback on after-sales services, and reply to their inquiries.
       
     5. Accountant 
 
-    5.1 < Sum up sales amount >
-    Accountants have to do summation of sales amount weekly, monthly, quarterly or yearly according to specific situations. 
+    5.1 < Sales accounting >
+    Accountants have to do summation and verification for sales amount weekly, monthly, quarterly or yearly according to specific situations. 
      
+    5.2 < Calculate cost >
+    It is their job to compute how much the company has spent on purchase, storage, delivery etc. 
+
     5.2 < Calculate profit >
-    It is their job to compute how much profit the company has made during a period of time as well. 
+   Accountants need to compute how much profit the company has made for a period of time.
     
     5.3 < Produce sales report >
     Upon the request of manager or market analyzers, accountant has to produce various kinds of sales reports tailored for different purposes. 
