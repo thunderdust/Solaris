@@ -3,25 +3,52 @@ Catalog - Solaris
 
 **Your Name:** Liu Weiran
 
-**Submission number:** 03
+**Submission number:** 04
 
-**Last-Modified Date:** 03/14/2016
+**Last-Modified Date:** 03/15/2016
 
 ---
 
 ## Chapter 1 - Describe the business situation of 'R&D3' with "5W1H"
 **1. What is your business model? Describe industry, product, client, company size etc.**
          
-    The business involved is direct sales of laptops. The product involved is laptops from all mainstream laptop brands (e.g. HP, Lenovo, Toshiba, Acer, Asus, etc. 
+    The business involved is direct sales of laptops. The product involved is laptops from all mainstream laptop brands.
     
-    The targeted client company is a small-scaled enterprise in infocomm products industry, with less than 50 employees, including manager(s), sales team, accounting team and marketing team. Enterprises which are aiming for business growths and are developing into bigger scales in future as also our clients.  
+    The targeted client company is a small-scaled enterprise in infocomm products industry, with less than 50 employees, including manager(s), sales team, and accounting team. Enterprises which are aiming for business growths and are developing into bigger scales in future as also our clients. Our client has the following properties:   
+    
+    Advantages:   
+   
+     - Simple company structures 
+     - Agile and flexible sale forms  
+     - Diversity on product types (laptops from all mainstream brands) 
+    
+    Shortcomings:
+    
+     - Small number of employees (Lacking of human resources)
+     - Frequent changes on employees 
+     - Limited budget and resources for HR management
+     - Lack of internal management forces 
+     - Limited capacity for product inventory 
+     - Poor/simple employee assessment mechanism 
+     - Low business stability (frequent changes or cancellations of orders) 
+     - Limited order delivery ability
+     - Many competitors with similar business properties 
+     - Inadequate resources for employee training 
+     - Long working hours, might require work outside of office  
 
-    Our application helps clients to increase their sales productivity and management efficiency at a low cost (to purchase the software) so that they can concentrate on growing their business and make more profits within the same unit of time.
+    Neutral:
+    
+     - Small product purchase amount
+     - Overlapping between management division and execution division
+     - Highly concentrated managing / decision-making power 
+     - Small / medium sales amount
+     - More individual customers than bulk purchase from enterprises
+     - Overlapping responsibilities for each employee 
+     
+    Our application helps clients to improve their sales in terms of productivity and management efficiency at a low cost. Then they can concentrate on making more profits and growing their business.
     
 
 **2. Who do you think would be involved in your business? List up role, person, or group as many as possible.**
-
-    Three different groups of user get involved in this business: Managers, sales representatives, and marketing executives.
      
     [Managers] 
     General manager of the business and the employees in the company.
@@ -35,44 +62,60 @@ Catalog - Solaris
     [After-sale Service Agent]
     This group of employees are responsible for dealing with the after-sale services. 
 
-    [Sales Accountants]
-    Sales accountants need to prepare the sales reports for managers and marketing executives. 
+    [Accountants]
+    Accountants need to prepare the sales reports for managers.
 
 
 **3. Describe each of their work flow: WHAT are they responsible for? WHEN, WHERE and WHAT do they work?**
 
-    Each of the 3 types of users involved in this business plays their own roles and collaborates with each other to deliver a better sales results for the company. 
+    Each of the different types of users involved in this business plays their own roles and collaborates with each other to deliver a better sales results for the company. 
     
-    [ General Managers ]
-    1) Management of human resources:
+    1. General Managers 
+    
+    1.1 < Management of human resources >
     Working in his office, when there are new joiners, he is responsible to create the account and the profile for the new employee.
     When there are leavers, he is responsible for deactivating the account for the leaver.
     Manager is also responsible for assessing and evaluating employees, and deciding the salary and position adjustments.
      
-    2) Business decision making 
+    1.2 < Business decision making >
+    
     Managers need to make decisions on purchases, inventory, sales and so on based on his judgement and sales manager's suggestions.
 
-    [ Sales Managers ]
-    1) Market analysis and strategy making
+
+    2. Sales Managers
+    
+    2.1 < Market analysis and strategy making >
     It's the responsibility of them to analyze the market situations, including the laptop purchase price changes, comparisons of laptop vendors, the market demand trends and so on. They also need to combine the analysis result with the current sales performances, and make suggestions for future strategies.
     
-    2) Product promotions:
-    When the sales for some products perform poorly or there is a demand to increase sales for certain products, it's the job of marketing executives to conduct product promotions.
+    2.2 < Product promotion >
+    When the sales for some products perform poorly or there is a demand to increase sales for certain products, it's the job of sales managers to conduct product promotions.
+
+    2.3 < Guide sales representatives >
     
-    [ Sales Representative]
-    1) Sell laptops (to customers):
+    Sales managers are also responsible to guide the work of sales representatives, especially for the new-comers. 
+
+    
+    3. Sales Representative
+    
+    3.1 Execute sales 
     Sales representative can work in his office, or at the appointment with clients. When sales representatives meet clients, their job is to sell laptops to clients by demonstrating products to clients, giving them suggestions or recommendations about which laptop to purchase, and eventually persuading them to buy the products.
 
-    2) Confirm orders with customers and submit orders:
-    After customers agree to buy the product, sales representatives need to confirm the order with them, and submit the signed orders back to the company.
+    3.2 Order confirmation and submission 
+    .
+    After customers agree to buy the product, sales representatives need to confirm the detailed order with them, and submit the signed orders back to the company.
         
-    3) Submit sales results:
+    3.3 Report sales results:
+    
     When a deal with customers is finished, sales representatives need to submit the details of the deal (deal number, deal date, laptop model, quantity of purchase, deal price, client name, client contact information, etc) to the accounting department.
 
-    [After-sale Service Agent] 
+
+
+    4. After-sale Service Agent
+    
     1) Handle after-sale service requests at the service center of the company.
       
-    [ Sales Accountant ]
+    [ Accountant ]
+
     1) Sum up sales amount 
     Accountants have to do summation of sales amount weekly, monthly, quarterly or yearly according to specific situations. 
      
@@ -90,7 +133,7 @@ Catalog - Solaris
 Please provide profile for **ALL** users of your system. 
 
 ### [User A] 
-Post/Position: General Manager
+Post/Position: General Manager (GM)
 
 IT literacy: 
 Limited knowledge about IT; Capable of using web applications 
@@ -111,7 +154,7 @@ Situation of using the software:
     2)  Create a company identity number for A;
     3)  Record A's joining date; 
     4)  Record A's name, email address, contact number, home address;
-    5)  Set the job title for A (sales representative, marketing executive etc.);
+    5)  Set the job title for A (sales representative, sales manager etc.);
     6)  (If A is a sales representative) Set the initial sales target of A;
     7)  Set the basic salary of A;
     8)  Check all the information and confirm the new account ;
@@ -136,9 +179,9 @@ Situation of using the software:
 
 Describe what user expects.
 
-1. *Add / remove employee accounts easily*
+1. *Simple management for employees*
     
-   Creating an account is a tedious and repetitive work. The workflow to accomplish this task is very similar from time to time except for the differences in personal information. For account deletion, manager has to look up for the related records in multiple linked record tables ( When delete an account from employee list, his sales record table needs to be deactivated as well ). Therefore user wants to simplify these two tasks and make them less tedious. 
+   Creating an account is a tedious and repetitive work. The workflow to accomplish this task is very similar from time to time except for the differences in personal information. For account deletion, manager has to look up for the related records in multiple linked record tables ( When delete an account from employee list, his sales record table needs to be deactivated as well ). For a **small-scaled** sales company, it would be a remarkable cost to hire extra HR team to take these tasks. It would be a great advantage if the employee management can be simplified and become manageable wants to simplify these two tasks and make them less tedious. 
     
 2. *Reliable and secured management of employee information* 
     
@@ -166,7 +209,7 @@ Each employee will be assigned an account for the use of ONLY himself which is p
 ### [User B] 
 
 Post/Position:  
-Sales Representative
+Sales Representative (SR)
 
 IT literacy: 
 Basic IT knowledge; Able to use web applications
@@ -264,7 +307,7 @@ Your proposal to solve the object
 
 ### [User C] 
 Post/Position:  
-After-sales Service Agent 
+After-sales Service Agent (ASA)
 
 IT literacy: 
 Medium IT knowledge; Understand basic knowledge about laptop software and hardware  
@@ -301,7 +344,7 @@ Your proposal to solve the object
 ### [User D] 
 
 Post/Position:  
-Sales Accountants
+Accountants (AC)
 
 IT literacy: 
 Limited IT knowledge; Able to use accounting software  
@@ -318,13 +361,13 @@ Purpose of using the software:
 
 Situation of using the software: 
 
-1. Sales accountants have to compute the cost for each deal for the calculation of profit 
+1. Accountants have to compute the cost for each deal for the calculation of profit 
 
-2. Sales accountants have to sum up sales amount for production of finance and sales reports
+2. Accountants have to sum up sales amount for production of finance and sales reports
 
-3. Sales accountants have to calculate the profits the whole company and each of the sales representatives have made
+3. Accountants have to calculate the profits the whole company and each of the sales representatives have made
 
-4. Sales accountants have to combine all the information above to produce reports to reflect the company's business dynamics. 
+4. Accountants have to combine all the information above to produce reports to reflect the company's business dynamics. 
 
 Describe what user expects.
 
@@ -347,7 +390,7 @@ Your proposal to solve the object
 ### [User E] 
 
 Post/Position: 
-Sales Managers
+Sales Managers (SM)
 
 IT literacy: 
 Limited knowledge about IT; Capable of using web applications 
@@ -387,7 +430,7 @@ Your proposal to solve the object
 
 1. Use the product information storage in the application Solaris to record more data for each product, including: historical price, current price, and current inventory. Also, comparisons for historical highest / lowest prices can be easily retrieved with this function as well. Moreover, a real-time pricing function refreshes frequently to let users know the most recent price for this product. 
 
-2. Authorize the access to sales reports to all sales manager roles. They can obtain all forms of sales reports as fast as sales accountants. 
+2. Authorize the access to sales reports to all sales manager roles. They can obtain all forms of sales reports as fast as accountants. 
 
 3. Use the promotion functionality of Solaris which can apply to selected list of products or customers types. The items in a list can be selected by specifying models, brands, tags or other customized standards. A validation will be gone through to pick out any product in the list with multiple promotions applied. Users can also set the promotion name, valid period, discount amount etc. In a dashboard, sales managers can manage all the active promotions all together. This function will largely relief 
 
@@ -593,24 +636,3 @@ Users can use the system to look for inventory of certain product.
 
 
 ---
-
-## Chapter 4 - ReadMe
-
-[This will serve as a guide to the users of your system]
-
----
-
-## Chapter 5 - Improvement Content List
-
-#### Correspondence N
-**Date:** [Date]
-
-**Feedback:** 
-- [Feedback]
-- [Feedback]
-- [Feedback]
-
-**Result:**
-- [Improvement]
-- [Improvement]
-- [Improvement]
