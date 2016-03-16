@@ -126,7 +126,7 @@ Catalog - Solaris
     It is their job to compute how much the company has spent on purchase, storage, delivery etc. 
 
     5.2 < Calculate profit >
-   Accountants need to compute how much profit the company has made for a period of time.
+    Accountants need to compute how much profit the company has made for a period of time.
     
     5.3 < Produce sales report >
     Upon the request of manager or market analyzers, accountant has to produce various kinds of sales reports tailored for different purposes. 
@@ -154,40 +154,20 @@ Purpose of using the software:
 
 Situation of using the software: 
 
-1. When new employee A join the company, GM needs to create an account for him:
+1. When new employee A join the company, GM needs to create an account for him.
 
-    1)  Open up a new account for A;
-    2)  Create a company identity number for A;
-    3)  Record A's joining date; 
-    4)  Record A's name, email address, contact number, home address;
-    5)  Set the job title for A (sales representative, sales manager etc.);
-    6)  (If A is a sales representative) Set the initial sales target of A;
-    7)  Set the basic salary of A;
-    8)  Check all the information and confirm the new account ;
-    9)  Notify A that his account in this company has been successfully set up.
+2. When sales representative S resigns from the company, GM needs to deactivate S's account
 
-2. When sales representative S resigns from the company, GM needs to deactivate S's account:
+3. When GM wants to check the sales performances of the sales representatives
 
-    1) Look up for S's account from the account book;
-    2) Cross out the S's row on the records table; 
-    3) Look up for S's account from the sales amount records book;
-    4) Cross out his record page from the sales amount records book
-    5) Cross out his name from the sales team 
-
-3. When GM wants to check the sales performances of the sales representatives:
-
-    1) Look up for sales representative A's record page from the sales records;
-    2) (With the help of accountant) Add up his sales amount;
-    3) Record down A's sales summary;
-    4) Repeat step 1-3 for any sales representatives that GM wants to check, say B, C, D, E, F, ... etc.
-    5) Compare and evaluate the performances of sales representatives
-
+4. When GM wants to check the market situations 
 
 Describe what user expects.
 
 1. *Simple management for employees*
     
-   Creating an account is a tedious and repetitive work. The workflow to accomplish this task is very similar from time to time except for the differences in personal information. For account deletion, manager has to look up for the related records in multiple linked record tables ( When delete an account from employee list, his sales record table needs to be deactivated as well ). For a **small-scaled** sales company, it would be a remarkable cost to hire extra HR team to take these tasks. It would be a great advantage if the employee management can be simplified and become manageable wants to simplify these two tasks and make them less tedious. 
+   Creating new accounts is a tedious and repetitive work. The workflow to accomplish this task is very similar from time to time except for the differences in personal information. For account deletion, manager has to look up for the related records in multiple linked record tables ( When delete an account from employee list, his sales record table needs to be deactivated as well ). 
+   For a **small-scaled** sales company, there are **frequent personnel changes** due to the instability. Employee management becomes difficult because of these frequent creation / deactivation of accounts. There is not enough human resources to take the work as small-scaled companies have limited number of employees (<50 people). It would be a remarkable cost to hire extra HR team to take care of these tasks as well. So, it would be a great advantage if the employee management can be simplified and become more manageable with less human resources. 
     
 2. *Reliable and secured management of employee information* 
     
@@ -196,6 +176,10 @@ Describe what user expects.
 3. *Effectively evaluate the most updated sales performances*
 
     By the traditional way supervising sales performances is inefficient. Every time when the manager wants to check some sales representative's performance, he (or the accountant) has to look up for this person's sales records from a large number of rows, and then asks the accountant to add up all sales amount of this person before he can actually sees the sales performance for a single person. The worse part is that the calculated sales result of this person is not real-time, meaning the result does not include changes happen after start of the calculation (time spend can be very long due to slow computation). Hence the manager would be very glad to have a faster, more effective, and more updated sales performances evaluation.
+
+4. *Access to comprehensive, profound market information*
+
+    In a small scaled company like our client company, the human resources for collecting market information is very limited. There might not be enough employees specifically work as marketing roles, not to mention make useful analysis of the market. Doing all the information collection and processing by the manager himself is also not realistic. Hence the general manager really need an easy access to comprehensive, profound market information to help him make business decisions. 
     
 Your proposal to solve the object
 
@@ -209,6 +193,8 @@ Your proposal to solve the object
 Each employee will be assigned an account for the use of ONLY himself which is protected by a unique password. This will ensure the privacy of each employee is protected, and make sure they can only access data that belongs to themselves.
 
 3. Utilize report function of Solaris to meet manager's needs for sales performance evaluation: Individual sales person can be targeted easily with a single operation of search (by name / company identity number). His sales amount will be calculated dynamically and shown upon the search request. Manager can view the performance of this person in a second. This is much faster than manually looking up for his records and sum them up, and therefore ensures the up-to-date sales performance evaluation as well. 
+
+4. Our application would collect and process marketing data for the managers to utilize automatically. Solaris will present the dashboard of marketing information, including the latest products in the market, the current trends of product demands, the purchase price trends, the performance of the competitors and so on. Solaris will also make predictions to the upcoming market changes based on the information it collects. With this function group, general managers can easily access the very useful and profound information without paying for a unnecessarily high cost.
 
 
 
@@ -409,6 +395,7 @@ Purpose of using the software:
 1. *Retrieve product information for market analysis*
 2. *Retrieve sales performance information for market analysis*
 3. *Manage product promotions*
+4. *Manage sales representatives (training, guiding, setting targets)*
 
 Situation of using the software: 
 
