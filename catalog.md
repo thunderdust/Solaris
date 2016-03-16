@@ -97,32 +97,31 @@ Catalog - Solaris
     
     3. Sales Representative
     
-    3.1 Execute sales 
+    3.1 < Execute sales >
     Sales representative can work in his office, or at the appointment with clients. When sales representatives meet clients, their job is to sell laptops to clients by demonstrating products to clients, giving them suggestions or recommendations about which laptop to purchase, and eventually persuading them to buy the products.
 
-    3.2 Order confirmation and submission 
-    .
+    3.2 < Order confirmation and submission >
     After customers agree to buy the product, sales representatives need to confirm the detailed order with them, and submit the signed orders back to the company.
         
-    3.3 Report sales results:
+    3.3 < Report sales results >
     
     When a deal with customers is finished, sales representatives need to submit the details of the deal (deal number, deal date, laptop model, quantity of purchase, deal price, client name, client contact information, etc) to the accounting department.
 
 
-
     4. After-sale Service Agent
     
-    1) Handle after-sale service requests at the service center of the company.
+    4.1 < Provide after-sale services >
+    Handle after-sale service requests (such as replacement, repair, or return of purchase) at the service center of the company.
       
-    [ Accountant ]
+    5. Accountant 
 
-    1) Sum up sales amount 
+    5.1 < Sum up sales amount >
     Accountants have to do summation of sales amount weekly, monthly, quarterly or yearly according to specific situations. 
      
-    2) Calculate profit
+    5.2 < Calculate profit >
     It is their job to compute how much profit the company has made during a period of time as well. 
     
-    3) Produce sales report 
+    5.3 < Produce sales report >
     Upon the request of manager or market analyzers, accountant has to produce various kinds of sales reports tailored for different purposes. 
 
 
