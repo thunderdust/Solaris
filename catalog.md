@@ -276,19 +276,22 @@ Describe what user expects.
 
     Clients can have all kinds of different requirements about their ideal laptops. At the same time, their only have limited patience. Hence it is hard for sales representatives to quickly find out the product(s) which match the customer needs. If they fail to do so, the business opportunity might be wasted. 
 
-3. *Conveniently submit deals results* 
+3. *Easy way to check additional services such as warranty and add-ons*
+    A special property of laptop sales is that sales representatives have to deal with all **various additional services**. For instance, this laptop provides 2 years of warranty, but there is no build-in anti-virus software for the purchase. Meanwhile another laptop only has 6 months warranty, but provides a totally free office software suite included in the purchase. These additional services play an important role in attracting customers and convince them to buy the products. But these services are so different from one product to another, making sales representatives so confused that it can affect his sales success rate. They need a more clear, easy check on these additional services for all the products, so they can handle related customer's questions. 
+
+4. *Conveniently submit deals results* 
     
     Due to the nature of the work, sales representatives spend lots of their time working with the clients and often being out of the office. In a traditional manner, when one deal is done, they need to record the details down and go back to the office and report to whoever is managing the deal results. This is very troublesome and inefficient for both the sales and the staff who manages the deal results (Even if sales can report the results via a phone call or an email it still takes much extra time for the staff who manages sale results to process and record all the information). So it is very necessary to have a new way to submit deal results without so much trouble.
 
-4. *Agile and flexible order system which allows modifications and cancellations even after submission* 
+5. *Agile and flexible order system which allows modifications and cancellations even after submission* 
     
-    As a small-scaled company, one of the advantages our client hold is that they can be flexible on the order processing. There are always customers who regret after the deal has been confirmed. To retain these clients, the sales representatives are expecting an order system which permits modifications or even cancellations after submission. This is difficult to operate manually and very easy to cause mistakes. So sales representatives are need a more robust and agile system to realize this function. 
+    As a small-scaled company, one of the drawbacks is the **instability of business**. There are more individual customers, and they can change their minds after the deal has been confirmed more frequently compared to a client enterprise. To retain these clients, an order mechanism which permits modifications or even cancellations after deal submission is needed. This is difficult to operate and very easy to cause mistakes if it is executed manually. So sales representatives need a more robust and agile system to implement this function. 
 
-5. *Easily track the order delivery status* 
+6. *Easily track the order delivery status* 
 
     Delivery delay or loss caused by not tracking delivery status after order is confirmed can be a serious problem during the sales. Sales representatives need a more convenient way to check the deliveries whenever they want and wherever they are to make sure the deliveries are on time.
 
-6. *Complete, professional training*
+7. *Complete, professional training*
 
      Sales in a laptop selling company is different from other sales. They have to own adequate **IT backgrounds** and strong **knowledge about laptop specifications**. However new joiners can seldom receive enough training to help them equip themselves with the essential professional skills. This is a problem especially for small-scaled companies who do not have training resources. A complete, professional IT&sales training for employees is indeed necessary for the sales representatives. 
 
@@ -299,13 +302,15 @@ Your proposal to solve the object
    
 2. Design powerful search functions which filters products by user's preferences such as brand, size, weight, screen size, price range, battery performance, hardware specifications etc. There can be more than one search criteria. On top of that, assign each laptop with one or a few tags which describes the specialized features of the product. For instance, [Gaming Laptop] tag for products with high performance on display effect and game processing; or [Specialized for Girls] tag for laptops which are fancy, light-weighted and easy-to-use. The recommendation function will choose products for target clients based on the filters and tags. If customers do not have any requirements / expectations / preferences about the laptop, the system can still make recommendations based on customer's features such as gender, age, salary, occupation etc.
 
-3. Design a deal submission function for sales representatives. Use elegant user interfaces and workflow to simplify the process of submission. Use input validations and auto-completion where applicable to reduce the chance for errors and increase the efficiency. 
+3. Use our application Solaris to check all the add-on services such as warranty, anti-virus packages, office software suites and additional gifts uniformly. 
 
-4. Use the order system in our application Solaris, sales representatives can access the submitted orders from remote and do modifications or cancellations. The result will be effective immediately. Submitted orders are stored as it is for at least 24 hours, within which any modifications / cancellations are allowed.  
+4. Design a deal submission function for sales representatives. Use elegant user interfaces and workflow to simplify the process of submission. Use input validations and auto-completion where applicable to reduce the chance for errors and increase the efficiency. 
 
-5. Use the tracking function in the order system of Solaris, sales representatives are able to check the real-time delivery status of any order of his clients. He only needs to enter the order series number, and all the information he needs will be presented, with frequent updates. He can also choose to receive a notification in the application when an order he is in charge of has been safely delivered to the customer.  
+5. Use the order system in our application Solaris, sales representatives can access the submitted orders from remote and do modifications or cancellations. The result will be effective immediately. Submitted orders are stored as it is for at least 24 hours, within which any modifications / cancellations are allowed.  
 
-6. Use the training system of Solaris to help fresh sales representatives obtain required professional backgrounds. 
+6. Use the tracking function in the order system of Solaris, sales representatives are able to check the real-time delivery status of any order of his clients. He only needs to enter the order series number, and all the information he needs will be presented, with frequent updates. He can also choose to receive a notification in the application when an order he is in charge of has been safely delivered to the customer.  
+
+7. Use the training system of Solaris to help fresh sales representatives obtain required professional knowledge. The training includes sales training, general IT knowledge training, and laptop knowledge training. The grades of training can be used as an index for evaluating new employees as well.  
 
 
 
