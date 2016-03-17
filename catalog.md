@@ -426,11 +426,13 @@ Purpose of using the software:
 
 Situation of using the software: 
 
-1. When sales manager want to analyse the market from the perspective of product purchases, he needs to obtain information about the product, such as the current price, historical prices (highest and lowest price, average price etc), and prices change trends between several vendors. Also, he has to know the inventory for the products for the sake of market analysis. 
+1. When sales manager want to analyse the market from the perspective of product purchases, he needs to obtain information about the product, such as the current price, historical prices (highest and lowest price, average price etc),  prices change trends between several vendors, and the current inventory etc. 
 
-2. When sales manager want to analyse the market from the perspective of sales performance, he need to obtain sales reports for: the recent total sales situation for the company, the recent total sales for each model of product, the recent sales for each sales representatives, etc. 
+2. When sales manager want to analyse the market from the perspective of sales performance, he need to obtain sales reports for: the recent total sales for the company, the recent total sales for each model of product, the recent sales for each sales representatives, etc. 
 
 3. Sometimes the sales for some products do not perform well. Launching a promotion for these products can stimulate the sales, which is the job of sales managers. 
+
+4. It is also the job of sales managers to give guidance and training to sales representatives. They also need to set sales target for each representative at the beginning of a month. 
 
 Describe what user expects.
 
@@ -446,13 +448,25 @@ Describe what user expects.
     
     Apply promotions to a list of target products, or set different prices for different group of users are common strategies for increasing sales. However these promotions are not easy to operate. It is very easy to miss out some products which are supposed to apply promotions, or to introduce some confusions of multiple promotions to the same product. The product information would also easily become messy if group pricing is not managed well. Sales managers need a more systematic, efficient way to manage these promotions.
 
+4. *Guide and train fresh sales representatives efficiently*
+
+     For small-scaled companies, it is hard to have a specific HR team focus on training new employees and guiding them into their jobs. It is not possible for a sales manager to train everyone by himself either. However, guidance and training are crucial for increasing sales abilities of the employees, especially for laptop sales, which requires both **general sales skills and IT knowledge**. Due to the **inadequate training resources**, sales managers in our target client companies need a more efficient helper to give guidance and training to new employees.
+
+5. "Set targets for employees diversely and flexibly"
+
+    For *laptop selling business*, evaluating performances simply by sales amount is not accurate. There are too many **different laptop models**, each of them has different popularity and makes different profit per unit. Due to this diversity, setting targets for sales staff is hard and complicated. Sales managers have to set targets and evaluate sales staffs according to their experiences and the products they are selling. This is tedious and hard to quantify. Sales managers definitely wish to do this more diversely and flexibly, with a convenient way. 
+
 Your proposal to solve the object
 
 1. Use the product information storage in the application Solaris to record more data for each product, including: historical price, current price, and current inventory. Also, comparisons for historical highest / lowest prices can be easily retrieved with this function as well. Moreover, a real-time pricing function refreshes frequently to let users know the most recent price for this product. 
 
 2. Authorize the access to sales reports to all sales manager roles. They can obtain all forms of sales reports as fast as accountants. 
 
-3. Use the promotion functionality of Solaris which can apply to selected list of products or customers types. The items in a list can be selected by specifying models, brands, tags or other customized standards. A validation will be gone through to pick out any product in the list with multiple promotions applied. Users can also set the promotion name, valid period, discount amount etc. In a dashboard, sales managers can manage all the active promotions all together. This function will largely relief 
+3. Use the promotion functionality of Solaris which can apply to selected list of products or customers types. The items in a list can be selected by specifying models, brands, tags or other customized standards. A validation will be gone through to pick out any product in the list with multiple promotions applied. Users can also set the promotion name, valid period, discount amount etc. In a dashboard, sales managers can manage all the active promotions all together. 
+
+4. Use the training system of Solaris to accomplish training goals. The training contains sales strategies and skills, basic IT knowledge such as software/hardware, operating systems, networking, security, anti-virus, laptop knowledge such as the meaning of all the hardware specifications like processor, screen, keyboard, motherboard, display card, hard disk and so on. There is also an assessment function to test how much employee has learned after the training. 
+
+5. Use the employee management function of Solaris to assist target setting. Solaris will automatically compute a default target which is customized for every single employee based on his role, experience, starting salary, the laptop brands / models he sells, his results in training assessment etc. This mechanism provides a more flexible and fair target setting process for employees of various situations.    
 
 
 ---
