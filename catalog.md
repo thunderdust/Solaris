@@ -310,7 +310,7 @@ Your proposal to solve the object
 
 6. Use the tracking function in the order system of Solaris, sales representatives are able to check the real-time delivery status of any order of his clients. He only needs to enter the order series number, and all the information he needs will be presented, with frequent updates. He can also choose to receive a notification in the application when an order he is in charge of has been safely delivered to the customer.  
 
-7. Use the training system of Solaris to help fresh sales representatives obtain required professional knowledge. The training includes sales training, general IT knowledge training, and laptop knowledge training. The grades of training can be used as an index for evaluating new employees as well.  
+7. Use the training system of Solaris to help fresh sales representatives obtain professional knowledge required. The training includes sales training, general IT knowledge training, and laptop knowledge training. The grades of training can be used as an index for evaluating new employees as well.  
 
 
 
@@ -376,7 +376,7 @@ Purpose of using the software:
 1. Cost calculation
 2. Sales sum up
 3. Profit calculation
-4. Finance reports production
+4. Reports production
 
 Situation of using the software: 
 
@@ -386,23 +386,23 @@ Situation of using the software:
 
 3. Accountants have to calculate the profits the whole company and each of the sales representatives have made
 
-4. Accountants have to combine all the information above to produce reports to reflect the company's business dynamics. 
+4. Accountants have to combine all the information above to produce reports to reflect the company's business dynamics, and to provide indication of employee performances. 
 
 Describe what user expects.
 
 1. Faster calculations with less errors:
     
-The calculations and summaries are very tedious, easy to make mistakes yet hard to find out the errors. Errors on calculations can cause serious loss for the company. Accountants need some assistants to help them deliver their work with faster speed and higher accuracy. 
+    The calculations and summaries are very tedious, easy to make mistakes yet hard to find out the errors. Errors on calculations can cause serious loss for the company. Accountants need some assistants to help them deliver their work with faster speed and higher accuracy. 
 
 2. Efficiently generate diverse reports 
 
-The range of finance reports or sales report vary from time to time, accountants have to process some repetitive data over and over again to produce reports for managers or market analyzers. Again, this work is tedious, and has a high risk for errors. A better tool to generate reports efficiently according to the demands is definitely expected from accountants, because it can increase the efficiency largely and avoid most of the calculation errors. 
+    The range of finance reports or sales report vary from time to time, accountants have to process some repetitive data over and over again to produce reports for managers or market analyzers. Again, this work is tedious, and has a high error rate. A better tool to generate reports efficiently according to the demands is definitely expected from accountants, because it can increase the efficiency largely and avoid most of the calculation errors. 
 
 Your proposal to solve the object
 
 1. Use the accounting function of Solaris to help accelerate calculations. All the data required such as laptop purchased price, sold price, sales amounts are all entered before in linked data storage,  which saves the time of looking up for all the records to get the data. With several simple operations to specify the scope and goal for calculation, Solaris will present the correct results within seconds. 
 
-2. Use the report function of Solaris to generate reports. Accountants just need to set the type and scope of the report, all the rest will be handled by the application. For example, for monthly sales report of each sales representative, the accountant just need to select "sales report" option, specify the time range to be January, choose "sort by employee name", and click "Generate", an accurate, detailed, comprehensive report will be created in a few seconds. Of course, instead of the standard settings for reports, they can also customized the results to be presented in the report. For example, they can set filter criteria so that the sales report only shows performances of employees who joined the company for less than 3 months. 
+2. Use the report function of Solaris to generate reports. Accountants just need to set the type and scope of the report, all the rest will be handled by the application. For example, for monthly sales report of each sales representative, the accountant just need to select "sales report" option, specify the time range to be say January, choose "sort by employee name", and click "Generate", an accurate, detailed, comprehensive report will be created in a few seconds. Of course, instead of the standard settings for reports, they can also customized the results to be presented in the report. For example, they can set filter criteria so that the sales report only shows performances of employees who joined the company for less than 3 months. 
 
 
 
