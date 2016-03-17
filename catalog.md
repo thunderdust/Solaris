@@ -327,11 +327,14 @@ Daily
 
 Purpose of using the software: 
 
-1. *Deal with after-sale service requests of laptop replacement and repair from clients*
+1. *Deal with after-sale service requests of laptop replacement / repair from clients*
+2. *Collect customers' feedback on after-sales services*
 
 Situation of using the software: 
 
-1. When a customer calls service center and asks for replacement / repair of the laptop he purchased, after-sales service agents need to handle the request. He serves as a mediator between customer and the company to provide customers with satisfying after-sales services.  
+1. When a customer calls / emails service center and asks for replacement / repair of the laptop he purchased, after-sales service agents need to handle the request. He serves as a mediator between customer and the company to provide customers with satisfying after-sales services.  
+
+2. When a after-sale service has been processed, the agent needs to collect customer's feedback on the service to help improve it in future. He might ask the customers a few questions, or ask the customer to rate the service. 
 
 Describe what user expects.
 
@@ -343,11 +346,17 @@ Describe what user expects.
     
      After validating after-sales service requests from customers and transferred them to technical staff, the next task on after-sales service agent's shoulders is to keep track of the progress of the service.  However this is not easy. There can be a lot of requests going on at the same time, which come from different clients, involve different products, ask for different services (replacement, return, repair, etc). The whole maintenance service will be extremely messy without a sophisticated management of all these different requests. So the service agents expect a much more easier way to track progress of all different requests, so they can follow up the cases accordingly with order.  
 
+3. *Effectively collect customers feedback*
+    
+    Traditional of asking feedback from customers is inefficient and low-response. Many customers do not have the patience to spend extra time on feedback surveys. It is also a burden for service agents to keep asking for feedback from numerous customers. Hence the agents need a more effective tool to help them do this task. 
+
 Your proposal to solve the object
 
 1. Use our application Solaris to maintain purchase records and use the after-sales function of Solaris to help the services. The agent can conveniently obtain customer's record within a second by searching it with customer's order number, or name, or contact number.  And the purchased date, warranty length, whether warranty has expired (with a status of YES or NO) will be automatically displayed when the record is been found. Agents can save huge amount of time finding the customer's purchase information, checking with customer about the warranty status, and validating it. It is also so easy to process this service request after the call as it is still within the same application system.  
 
 2. Use the after-sales function of Solaris to do the management of different service requests. When agents receive a new call from a customer, they will simply create a new request in the system for the customer. This request is automatically associated with the customer's order. As the progress of this maintenance request changes, its status in the system will be updated accordingly (e.g. status might vary from 'Pending' to 'Queuing', 'In progress', 'Almost Finished' or 'Ready'). Agents can follow up the status any time they wish with simply a search by the request index or by the name of the customer and update the progress to the customer promptly. They can also check the requests categorized by the status. For example, they can find out which requests are still queuing, then tell the customers to wait; or they can look for 'Almost Finished' requests and inform customers that they can receive the results in a short time. 
+
+3. Use the after-sales function of Solaris to handle the service feedback task. Every time when a after-sale service is done, Solaris will automatically send a simple survey to the customer's email address (which can be found in customer data shared within Solaris system components). Customer's response will be recorded into the system automatically. Even if they ignore the email, system will also record their response as 'Not responding'.
   
 
 
