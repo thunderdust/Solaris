@@ -5,7 +5,7 @@ Catalog - Solaris
 
 **Submission number:** 04
 
-**Last-Modified Date:** 03/17/2016
+**Last-Modified Date:** 03/18/2016
 
 ---
 
@@ -675,35 +675,94 @@ Among these 5 criteria, the customer insists that price <= 850 SGD is the compul
 
 ### [Merit 3] -- Sales training specially for laptop sellers 
 
-With our application, getting valuable information about the current market and sales performance is so convenient. We also build strong supports for marketing analysis by providing abundant product and sales data. 
+The training system in Solaris is very valuable for our target clients because it saves a lot of extra human resource cost of training new employees for them. Moreover, the training is **specially designed for laptop sales**, which is more effective for our client's business. 
 
 #### [Function 1: General sales training  ]
-There are various kinds of sales reports which reflect the sales performance for each product, each sales representative, the whole company, and much more. 
 
-**Priority:** High
+Sales representatives have the access to this training. It focuses on: 
+
+ - general sales introductions
+ - sales methodology 
+ 
+    - conversation skills
+    - reception skills
+    - promotion skills
+    - sales psychology  
+ - sales principles 
+ - sales strategies
+
+**Priority:** Low
 
 **Implemented:** N
 
 #### [Function 2: IT basic knowledge training ]
-Users can use the system to look for historical prices of a product, compare its prices between several vendors, or the highest / lowest price ever for this product to help make better purchase decisions. 
+
+Sales representatives (SR) and after-sales service agent (ASA) are eligible for this training. This part of the training system will give trainees basic knowledge of IT, including:
+
+ - Computer hardware general knowledge 
+ - Computer software general knowledge
+ - Operating System 
+ - Internet basics
+ - Basic computer security 
+ - Anti-virus
+ - Office softwares
+ - Browser basics 
+ - Network basic knowledge 
+
+Trainees can receive training course for above topics in the system. Also, the system provides trainees with related practice assignments to enhance the training effect.  
+
+**Priority:** Medium
+
+**Implemented:** Low
+
+#### [Function 3: Laptop specifications training ]
+
+This part of training applies to both SR and ASA. This training is designed especially for **laptop sales** business. Trainees will learn about basic knowledge about all laptop specifications such as:
+
+- brand
+- screen size
+- screen resolution
+- screen type
+- dimensions
+- weight 
+- battery life
+- keyboard
+- trackpad
+- camera
+- number of ports
+- CPU
+- GPU
+- hard disk 
+- RAM
+- motherboard
+- wireless 
+- connectivity
+- audio
+- network adapter
+- drivers 
+- operating system 
+- anti-virus software
+- back-up software
+- office software suite 
+- warranty
+
+They will also learn how to explain the meaning of these technical terms to customers, who usually have little related knowledge. Practice assignments will be given to trainee to enhance their understanding about these laptop specifications. 
+
 
 **Priority:** Medium
 
 **Implemented:** N
 
-#### [Function 3: Laptop specifications training ]
-Users can use the system to look for inventory of certain product. 
+#### [Function 4: Test training results ]
 
-**Priority:** Low
+After receiving above training, managers need to evaluate how much have the new employees grown from it as a laptop sales representative or after-sales service agent. Also their training results contribute largely to their performance evaluations. The test function is used for this evaluation.
 
-**Implemented:** N
+Each trainee can take multiple times of test. Every test result will be recorded in Solaris system and the best one will be used to evaluate the trainee's performance in the training program. Managers can directly view the results of trainees from the 'Employee Management' tab of Solaris.  
 
-#### [Function 4: Evaluate training effects ]
-Users can use the system to look for inventory of certain product. 
-
-**Priority:** Low
+**Priority:** Medium
 
 **Implemented:** N
+
 
 
 ### [Merit 4] -- Laptop inventory inspection 
