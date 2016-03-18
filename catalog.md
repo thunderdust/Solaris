@@ -5,7 +5,7 @@ Catalog - Solaris
 
 **Submission number:** 04
 
-**Last-Modified Date:** 03/15/2016
+**Last-Modified Date:** 03/17/2016
 
 ---
 
@@ -300,7 +300,7 @@ Your proposal to solve the object
 
 1. Create a comprehensive and fully-detailed 'laptop library' to store information of all models of products that the company holds. Design an elegant, user-friendly interface in the application for the showcase to enhance visual effects. Use images of laptops with the actual dimensions to make it more vivid. Quantify the performance and battery life of laptops to give customers a more accurate and straightforward evaluation. 
    
-2. Design powerful search functions which filters products by user's preferences such as brand, size, weight, screen size, price range, battery performance, hardware specifications etc. There can be more than one search criteria. On top of that, assign each laptop with one or a few tags which describes the specialized features of the product. For instance, [Gaming Laptop] tag for products with high performance on display effect and game processing; or [Specialized for Girls] tag for laptops which are fancy, light-weighted and easy-to-use. The recommendation function will choose products for target clients based on the filters and tags. If customers do not have any requirements / expectations / preferences about the laptop, the system can still make recommendations based on customer's features such as gender, age, salary, occupation etc.
+2. Design powerful search functions which filters products by user's preferences such as brand, size, weight, screen size, price range, battery performance, hardware specifications etc. There can be more than one search criteria. On top of that, assign each laptop with one or a few tags which describes the specialised features of the product. For instance, [Gaming Laptop] tag for products with high performance on display effect and game processing; or [Specialised for Girls] tag for laptops which are fancy, light-weighted and easy-to-use. The recommendation function will choose products for target clients based on the filters and tags. If customers do not have any requirements / expectations / preferences about the laptop, the system can still make recommendations based on customer's features such as gender, age, salary, occupation etc.
 
 3. Use our application Solaris to check all the add-on services such as warranty, anti-virus packages, office software suites and additional gifts uniformly. 
 
@@ -493,7 +493,7 @@ Steps:
 1. Launch Solaris and select < employee management > tab.
 2. Press 'create account' button 
 3. Choose 'import personal information from CV' option
-4. Select the CV of Jason and press 'import'
+4. Select the CV of Jason and press 'import' 
 5. Jason's basic information in his CV, such as name, email, contact number, email, address etc will be captured from the CV file and filled in automatically
 6. Any invalid (e.g. invalid email, non-numeric inputs in a contact number, etc) or empty fields will be indicated by auto-validation of Solaris 
 7. Correct the invalid or empty fields 
@@ -585,100 +585,128 @@ Steps:
 **Implemented:** N
 
 
+### [Merit 2] -- Accurate laptop search & recommendations
 
-
-### [Merit 2] -- Effective product promotions
-
-Another unique advantage of the application is that it supports product promotion, which is an effective way to stimulate the sales performance. 
-
-#### [Function 1: Create promotions]
-
-Specify the promotion name, discount percentage / amount, and valid period to create a new promotion.
-
-**Priority:** Medium
-
-**Implemented:** N
-
-#### [Function 2: Apply promotions]
-
-After a promotion is created, it needs to be applied to specific list of products.
-
-**Priority:** Medium
-
-**Implemented:** N
-
-
-### [Merit 3] -- Accurate product recommendations
-
-Product recommendation plays an important part in sales if the recommendation can accurately meet client's requirements. This application supports accurate product recommendations which can finds the most suitable selection for the customer based on their requirements / expectations / preferences (if they have none of the above, the system can still make recommendations based on customer's features such as gender, age, salary, occupation etc).
+Product recommendation plays an important part in sales if the recommendation can accurately meet client's requirements. This is especially true for **laptop sales**, where most of the customers know little about the technical specifications of the product they are going to purchase. Solaris supports accurate laptop recommendations which can finds the most suitable selection for the customer based on their requirements / expectations / preferences (if they have none of the above, the system can still make recommendations based on customer's features such as gender, age, salary, occupation etc).
 
 #### [Function 1: Search with multiple filters]
 
 Such function is critical for the recommendation feature, because when customers have several requirements, the system has to quickly find out the list of products which are qualified. 
+Solaris supports search filters for the laptop specifications below:
 
-**Priority:** High
+   - laptop name
+   - model
+   - brand
+   - series number
+   - dimensions
+   - weight
+   - battery volume
+   - screen size
+   - memory
+   - hard disk
+   - processor model
+   - graphic processor model 
+
+Setting price range is also a supported search criteria. 
+Search by **laptop tags** is also supported. Function 2 below will explain about tags. 
+In the product demonstration interface, sales representatives can apply any number of filters above to find the exact match for customers.  
+
+**Priority:** Medium 
 
 **Implemented:** N
 
 #### [Function 2: Assign tags to laptops]
 
-Assign tags that describe the features or merits of a laptop, such as [gaming laptop] or [business laptop] or [ultra notebook], etc. Then tags become a recommendation criteria. 
+Tags is a search property specially designed for the laptop recommendation function. They describe the special features or merits of a laptop, which are used to quickly classify all various laptops. For instance, [Gaming Laptop] tag for products with high performance on display effect and game processing; or [For Girls] tag for laptops which are fancy, light-weighted and easy-to-use; or [Business Laptop] tag for laptops specially designed for office usages, with high security protections and business designs. 
 
-**Priority:** Low
+Sales managers have the access for assigning tags. The workflow is very simple: 
+Goal:  assign [Gaming Laptop] to Lenovo-CL2300 laptop.
+Steps:
+
+1. Launch Solaris
+2. Go to 'Product Management' tab
+3. Search target laptop with its model name
+4. Click the searched result to go to detail information page
+5. Press 'add tags' button
+6. If [Gaming laptop] tag is already existed, just click it;
+    If it does not exist yet, press the '+' button at the tags field and create it 
+7. Click 'update' button to save the assigned tag
+
+**Priority:** Medium
 
 **Implemented:** N
 
 
 #### [Function 3: Blur Matching ]
 
-It is almost impossible to find an ideal recommendation that matches all requirements from the customer. As long as the major expectations are met by the recommendation, it can be a good match. Blur matching permits products which do not fully satisfy all criteria to become a recommendation.    
+It is almost impossible to find an ideal recommendation that matches all search filters. As long as the major expectations of customer are met by the search results, they can be a good recommendations. Blur matching permits products which do not fully satisfy all criteria to become a recommendation. However it still requires 80% of the search filters are matched.
+Aside from the 80% rule, Solaris also supports selecting some filters as compulsory matches. That means, these filters have to be matched even with blur matching scheme. All other laptops do not match these compulsory filters will not be shown in the recommendation results even if they meet 80% of search filters. This scheme helps increase the accuracy of matching results.
 
+< Use Case 1 >
+- Sales representative S meets with his client and talks about the laptop that the client wants
+- According to the description of the client, S summarises 5 search filters for the laptop that the client expects: 
+
+1. weight <= 2.5kg
+2. the brand has to be DELL or Lenovo
+3. screen size must be bigger than 13'
+4. price <= 1000 SGD
+5. memory must be larger than 3GB
+
+After applying filters above, blur matching will function so that any laptops meets at least 4 requirements above will be shown in the results.  
+
+< Use Case 2 >
+- Sales representative M meets with his client and talks about the laptop that the client wants
+- According to the description of the client, M summarises 5 search filters for the laptop that the client expects: 
+
+1. weight <= 2.5kg
+2. Battery life >= 5 hours
+3. screen size <= 13'
+4. price <= 850 SGD
+5. hard disk volume >= 500GB
+
+Among these 5 criteria, the customer insists that price <= 850 SGD is the compulsory match filter. After applying filters above, and setting 'price <= 850 SGD' as compulsory, result only shows laptops with price <= 850 SGD, **and** match at least 4 of the filters above (including price <= 850 SGD). 
+
+ 
 **Priority:** Medium
 
 **Implemented:** N
 
 
-#### [Function 4: Rank recommendations by suitability ]
 
-Due to the blur matching function, there can be more than one recommendation for each customer. Ranking is required to let the customers know which recommendation is the best option. Intuitively, ranking the results by the degree to which the recommendation matches customer's requirements is the most rational method. 
+### [Merit 3] -- Sales training specially for laptop sellers 
+
+With our application, getting valuable information about the current market and sales performance is so convenient. We also build strong supports for marketing analysis by providing abundant product and sales data. 
+
+#### [Function 1: General sales training  ]
+There are various kinds of sales reports which reflect the sales performance for each product, each sales representative, the whole company, and much more. 
+
+**Priority:** High
+
+**Implemented:** N
+
+#### [Function 2: IT basic knowledge training ]
+Users can use the system to look for historical prices of a product, compare its prices between several vendors, or the highest / lowest price ever for this product to help make better purchase decisions. 
 
 **Priority:** Medium
 
 **Implemented:** N
 
-
-### [Merit 4] -- Accounting automation
-
-Another unique advantage of the application to evidently improve customer's productivity by realizing accounting automation. 
-
-#### [Function 1: Submit deals ]
-
-After sales close a deal, they can update the sales amount promptly even if they are still outside. 
-
-**Priority:** Medium
-
-**Implemented:** N
-
-#### [Function 2: Cost computation]
+#### [Function 3: Laptop specifications training ]
+Users can use the system to look for inventory of certain product. 
 
 **Priority:** Low
 
 **Implemented:** N
 
-#### [Function 3: Profit computation]
+#### [Function 4: Evaluate training effects ]
+Users can use the system to look for inventory of certain product. 
 
-**Priority:** Medium
-
-**Implemented:** N
-
-#### [Function 4: Sales summation]
-
-**Priority:** Medium
+**Priority:** Low
 
 **Implemented:** N
 
 
-### [Merit 5] -- Strong support for marketing analysis
+### [Merit 4] -- Laptop inventory inspection 
 
 With our application, getting valuable information about the current market and sales performance is so convenient. We also build strong supports for marketing analysis by providing abundant product and sales data. 
 
@@ -702,6 +730,61 @@ Users can use the system to look for inventory of certain product.
 **Priority:** Low
 
 **Implemented:** N
+
+
+
+### [Merit 5] -- Unique laptop pricing solutions (inventory, market trends, user group, ....)
+
+With our application, getting valuable information about the current market and sales performance is so convenient. We also build strong supports for marketing analysis by providing abundant product and sales data. 
+
+#### [Function 1: Generate sales reports ]
+There are various kinds of sales reports which reflect the sales performance for each product, each sales representative, the whole company, and much more. 
+
+**Priority:** High
+
+**Implemented:** N
+
+#### [Function 2: Product purchase price inquiry]
+Users can use the system to look for historical prices of a product, compare its prices between several vendors, or the highest / lowest price ever for this product to help make better purchase decisions. 
+
+**Priority:** Medium
+
+**Implemented:** N
+
+#### [Function 3: Product inventory inquiry]
+Users can use the system to look for inventory of certain product. 
+
+**Priority:** Low
+
+**Implemented:** N
+
+
+### [Merit 6] -- Laptop after-sales service management 
+
+With our application, getting valuable information about the current market and sales performance is so convenient. We also build strong supports for marketing analysis by providing abundant product and sales data. 
+
+#### [Function 1: Generate sales reports ]
+There are various kinds of sales reports which reflect the sales performance for each product, each sales representative, the whole company, and much more. 
+
+**Priority:** High
+
+**Implemented:** N
+
+#### [Function 2: Product purchase price inquiry]
+Users can use the system to look for historical prices of a product, compare its prices between several vendors, or the highest / lowest price ever for this product to help make better purchase decisions. 
+
+**Priority:** Medium
+
+**Implemented:** N
+
+#### [Function 3: Product inventory inquiry]
+Users can use the system to look for inventory of certain product. 
+
+**Priority:** Low
+
+**Implemented:** N
+
+
 
 
 ---
