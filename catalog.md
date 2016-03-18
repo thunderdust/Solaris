@@ -774,30 +774,40 @@ Each trainee can take multiple times of test. Every test result will be recorded
 
 
 
-### [Merit 4] -- Laptop inventory inspection 
+### [Merit 4] -- Order system customized for laptop sales 
 
-With our application, getting valuable information about the current market and sales performance is so convenient. We also build strong supports for marketing analysis by providing abundant product and sales data. 
+Compared to other product sales business, laptop sales has **shorter sales cycle** (*choose, order, pay, receive,* much shorter compared to sales for cars, house, insurance etc), more **frequent order changes** (especially for small-scaled companies like our target clients, they have to allow flexibility on orders to retain their customers and to compete with larger companies), and customers expect **faster delivery**. Solaris has an order system specially customized for laptop sales business to meet these special requirements. 
 
-#### [Function 1: Generate sales reports ]
-There are various kinds of sales reports which reflect the sales performance for each product, each sales representative, the whole company, and much more. 
+#### [Function 1: Amend order after order is confirmed/ submitted ]
+
 
 **Priority:** High
 
 **Implemented:** N
 
-#### [Function 2: Product purchase price inquiry]
-Users can use the system to look for historical prices of a product, compare its prices between several vendors, or the highest / lowest price ever for this product to help make better purchase decisions. 
+#### [Function 2: Cancel order after order is confirmed/ submitted]
+
 
 **Priority:** Medium
 
 **Implemented:** N
 
-#### [Function 3: Product inventory inquiry]
-Users can use the system to look for inventory of certain product. 
+#### [Function 3: Support multiple payment methods ]
+
 
 **Priority:** Low
 
 **Implemented:** N
+
+
+
+#### [Function 4: Track order delivery ]
+
+
+**Priority:** Low
+
+**Implemented:** N
+
 
 
 
@@ -829,24 +839,55 @@ Users can use the system to look for inventory of certain product.
 
 ### [Merit 6] -- Laptop after-sales service management 
 
-With our application, getting valuable information about the current market and sales performance is so convenient. We also build strong supports for marketing analysis by providing abundant product and sales data. 
+The after-sales service management of our application is specially designed for laptop after-sales service to resolve several typical problems:
 
-#### [Function 1: Generate sales reports ]
-There are various kinds of sales reports which reflect the sales performance for each product, each sales representative, the whole company, and much more. 
+1. Dealing with all different kinds of warranty details of various laptops 
+2. Searching and checking after-sales service conditions of customer's laptops is time-consuming
+3. Slow and unresponsive service progress updates 
 
-**Priority:** High
+#### [Function 1: Quick search for after-sales service information of customers ]
 
-**Implemented:** N
+Looking for particular after-sales service information such as purchased model, purchased date, warranty period from hundreds of records is too slow for a customer to wait for. The quality of after-sales service will be largely affected by the responding time. This function resolves this problem.
 
-#### [Function 2: Product purchase price inquiry]
-Users can use the system to look for historical prices of a product, compare its prices between several vendors, or the highest / lowest price ever for this product to help make better purchase decisions. 
+For instance, a customer A calls the after-sales service center to request for replacement of the laptop he purchased. Service agent Lily picks up the phone and handles this request. 
+
+< Use case 1 >
+
+Goal: 
+Lily needs to find after-sales information of customer A and handles his request according to the information
+
+Steps:
+
+1. Launch Solaris
+2. Ask for customer A's name and the order number of the laptop he purchased 
+3. Go to 'After-sales Services' tab
+4. Find his transaction record by name and order number from the search bar
+5. A's order details, including purchased date, warranty period, laptop components under warranty (some laptops only have warranty for some components), whether warranty has expired (a status of YES or NO) will be automatically displayed when the record is been found
+6. Lily can proceed with the information found and validate if A's laptop is qualified for a replacement 
+7. If the replacement is qualified, Lily will create new after-sales service request for A by clicking 'Add Request' button on the searched result
+8. A request number for this case is automatically generated and this request will be transferred to related staff to handle 
 
 **Priority:** Medium
 
 **Implemented:** N
 
-#### [Function 3: Product inventory inquiry]
-Users can use the system to look for inventory of certain product. 
+
+#### [Function 2: Real-time after-sales service progress inquiry & update ]
+
+After after-sales service request has been created, as the progress changes, its status in the system will be updated accordingly (e.g. status might vary from 'Pending' to 'Queuing', 'In progress', 'Almost Finished' or 'Ready'). Agents can follow up the status any time with simply a search by the request number or by the name of the customer and update the progress to the customer promptly. 
+
+They can also check the requests categorized by the status. For example, they can find out which requests are still queuing, then tell the customers to wait; or they can look for 'Almost Finished' requests and inform customers that they can receive the results of the service within a short time. 
+
+When a request has been solved, an email of notification will be automatically sent to customer's mailbox by Solaris. 
+
+**Priority:** Medium
+
+**Implemented:** N
+
+
+#### [Function 3: Send & collect customer feedback ]
+
+After a request is resolved, Solaris uses automatically sent email to investigate user feedback instead of making phone calls and taking a long time to interview customers for feedback manually. The responses from customers will be recorded into the system. 
 
 **Priority:** Low
 
