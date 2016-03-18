@@ -672,6 +672,15 @@ Among these 5 criteria, the customer insists that price <= 850 SGD is the compul
 **Implemented:** N
 
 
+#### [Function 4: Recommendation without requirements ]
+
+ The three previous functions are based on the assumption that customers have some ideas about the laptop they are going to buy, either some requirements or some expectations. But sometimes customers just totally have no idea about the laptops. In this case, the system can still make recommendations based on customer's features such as gender, age, salary, occupation etc. 
+ 
+**Priority:** Low
+
+**Implemented:** N
+
+
 
 ### [Merit 3] -- Sales training specially for laptop sellers 
 
