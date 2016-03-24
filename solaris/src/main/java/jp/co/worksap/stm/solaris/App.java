@@ -1,4 +1,4 @@
-package assignment_implementation.max;
+package jp.co.worksap.stm.solaris;
 
 /**
  * Hello world!

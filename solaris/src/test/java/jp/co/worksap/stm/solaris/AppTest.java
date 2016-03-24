@@ -1,4 +1,4 @@
-package assignment_implementation.max;
+package jp.co.worksap.stm.solaris;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
