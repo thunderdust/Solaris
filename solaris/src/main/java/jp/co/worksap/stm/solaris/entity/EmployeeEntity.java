@@ -15,8 +15,8 @@ import jp.co.worksap.stm.solaris.dto.EmployeeDto;
  * */
 
 public class EmployeeEntity implements Serializable {
-	
-	//private static final long serialVersionUID = -7395917071437157624L;
+
+	// private static final long serialVersionUID = -7395917071437157624L;
 
 	private String firstName;
 	private String lastName;
@@ -24,7 +24,7 @@ public class EmployeeEntity implements Serializable {
 	private int id;
 	private String email;
 	private String number;
-	private List<Integer> roles;
+	private String roles;
 	private String accountName;
 	private String password;
 	private String timeJoined;
@@ -37,7 +37,7 @@ public class EmployeeEntity implements Serializable {
 		this.id = e.getId();
 		this.email = e.getEmail();
 		this.number = e.getNumber();
-		this.roles = e.getRoles();
+		this.roles = e.getRole();
 		this.accountName = e.getAccountName();
 		this.password = e.getPassword();
 		this.timeJoined = e.getTimeJoined();

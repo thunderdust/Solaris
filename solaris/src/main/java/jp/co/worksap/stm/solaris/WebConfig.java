@@ -3,7 +3,7 @@ package jp.co.worksap.stm.solaris;
 import java.util.Locale;
 
 import jp.co.worksap.stm.solaris.interceptors.AccessControllInterceptor;
-import jp.co.worksap.stm.solaris.services.EmployeeService;
+import jp.co.worksap.stm.solaris.services.specification.EmployeeService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
@@ -49,7 +49,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 	}
 
 	/*
-	 * Add Spring MVC lifecycle interceptors for pre- and post-processing of
+	 * Add Spring MVC life-cycle interceptors for PRE and POST processing of
 	 * controller method invocations. Interceptors can be registered to apply to
 	 * all requests or be limited to a subset of URL patterns.
 	 */

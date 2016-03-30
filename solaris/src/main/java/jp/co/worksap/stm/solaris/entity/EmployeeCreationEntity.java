@@ -16,24 +16,24 @@ public class EmployeeCreationEntity {
 	private int id;
 	private String email;
 	private String number;
-	private List<Integer> roles;
+	private String role;
 	private String accountName;
 	private String password;
 	private String timeJoined;
 	private String timeLeaved;
 
-	public EmployeeCreationEntity (EmployeeDto e){
-		
+	public EmployeeCreationEntity(EmployeeDto e) {
+
 		this.firstName = e.getFirstName();
 		this.lastName = e.getLastName();
 		this.gender = e.getGender();
 		this.id = e.getId();
 		this.email = e.getEmail();
 		this.number = e.getNumber();
-		this.roles = e.getRoles();
+		this.role = e.getRole();
 		this.accountName = e.getAccountName();
 		this.password = e.getPassword();
 		this.timeJoined = e.getTimeJoined();
-		this.timeLeaved = e.getTimeLeaved();	
+		this.timeLeaved = e.getTimeLeaved();
 	}
 }

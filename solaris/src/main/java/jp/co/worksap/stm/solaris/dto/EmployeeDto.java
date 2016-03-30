@@ -19,7 +19,7 @@ public class EmployeeDto {
 	private int id;
 	private String email;
 	private String number;
-	private List<Integer> roles;
+	private String role;
 	private String accountName;
 	private String password;
 	private String timeJoined;
@@ -33,7 +33,7 @@ public class EmployeeDto {
 		id = e.getId();
 		email = e.getEmail();
 		number = e.getNumber();
-		roles = e.getRoles();
+		role = e.getRole();
 		accountName = e.getAccountName();
 		if (e.getPassword()!=null){
 			// hash password
