@@ -1,6 +1,5 @@
 package jp.co.worksap.stm.solaris.interceptors;
 
-import java.util.Locale;
 import java.util.stream.Collectors;
 
 import javax.servlet.http.HttpServletRequest;
@@ -12,11 +11,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
-//for simplified implementation of pre-only/post-only interceptor
-public class AccessControllInterceptor extends HandlerInterceptorAdapter {
-
+@Component
+// for simplified implementation of pre-only/post-only interceptor
+public class AccessControlInterceptor extends HandlerInterceptorAdapter {
 
 	@Autowired
 	private EmployeeService employeeService;

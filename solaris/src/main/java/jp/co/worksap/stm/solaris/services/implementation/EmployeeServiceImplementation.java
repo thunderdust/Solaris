@@ -9,7 +9,9 @@ import jp.co.worksap.stm.solaris.exceptions.ServiceException;
 import jp.co.worksap.stm.solaris.services.specification.EmployeeService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class EmployeeServiceImplementation implements EmployeeService {
 
 	@Autowired

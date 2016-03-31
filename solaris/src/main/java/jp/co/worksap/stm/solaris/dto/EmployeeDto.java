@@ -23,10 +23,9 @@ public class EmployeeDto {
 	private String accountName;
 	private String password;
 	private String timeJoined;
-	private String timeLeaved;
 
 	public EmployeeDto(EmployeeCreationEntity e) {
-		
+
 		firstName = e.getFirstName();
 		lastName = e.getLastName();
 		gender = e.getGender();
@@ -35,13 +34,11 @@ public class EmployeeDto {
 		number = e.getNumber();
 		role = e.getRole();
 		accountName = e.getAccountName();
-		if (e.getPassword()!=null){
+		if (e.getPassword() != null) {
 			// hash password
 			PasswordHash hash = new PasswordHash();
-			password = hash.encode (e.getPassword());
+			password = hash.encode(e.getPassword());
 		}
 		timeJoined = e.getTimeJoined();
-		timeLeaved = e.getTimeLeaved();
-
 	}
 }

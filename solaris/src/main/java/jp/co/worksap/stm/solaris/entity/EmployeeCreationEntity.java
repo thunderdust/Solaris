@@ -20,7 +20,6 @@ public class EmployeeCreationEntity {
 	private String accountName;
 	private String password;
 	private String timeJoined;
-	private String timeLeaved;
 
 	public EmployeeCreationEntity(EmployeeDto e) {
 
@@ -34,6 +33,5 @@ public class EmployeeCreationEntity {
 		this.accountName = e.getAccountName();
 		this.password = e.getPassword();
 		this.timeJoined = e.getTimeJoined();
-		this.timeLeaved = e.getTimeLeaved();
 	}
 }

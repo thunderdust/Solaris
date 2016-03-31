@@ -2,7 +2,7 @@ package jp.co.worksap.stm.solaris;
 
 import java.util.Locale;
 
-import jp.co.worksap.stm.solaris.interceptors.AccessControllInterceptor;
+import jp.co.worksap.stm.solaris.interceptors.AccessControlInterceptor;
 import jp.co.worksap.stm.solaris.services.specification.EmployeeService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +26,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 	private EmployeeService service;
 
 	@Autowired
-	AccessControllInterceptor accessControlInterceptor;
+	AccessControlInterceptor accessControlInterceptor;
 
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {

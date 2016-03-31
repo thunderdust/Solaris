@@ -45,7 +45,7 @@ public class EmployeeDaoImplementation implements EmployeeDao {
 										.getString("contact_number"), rs
 										.getString("account_name"), rs
 										.getString("password"), rs
-										.getString("time_joined"), null);
+										.getString("time_joined"));
 					}, id);
 
 		} catch (DataAccessException e) {
@@ -71,7 +71,7 @@ public class EmployeeDaoImplementation implements EmployeeDao {
 										.getString("contact_number"), rs
 										.getString("account_name"), rs
 										.getString("password"), rs
-										.getString("time_joined"), null);
+										.getString("time_joined"));
 
 					});
 
