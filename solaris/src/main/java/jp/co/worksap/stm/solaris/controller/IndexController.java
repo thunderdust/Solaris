@@ -19,6 +19,7 @@ public class IndexController {
 	@RequestMapping(value = { "/", "/index" })
 	public String index(Model model, HttpSession session) {
 		model.addAttribute("appName", APP_NAME);
+		// return template "index"
 		return "index";
 	}
 
