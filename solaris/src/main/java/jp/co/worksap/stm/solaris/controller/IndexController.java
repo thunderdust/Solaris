@@ -21,4 +21,5 @@ public class IndexController {
 		model.addAttribute("appName", APP_NAME);
 		return "index";
 	}
+
 }

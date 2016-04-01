@@ -1,19 +1,30 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
-<title>Solaris Login</title>
-<link rel="stylesheet" href="resources/app/css/bookstore-signin.css" />
+<title>Solaris - Login</title>
+<link rel="stylesheet" href="" />
 </head>
 <body>
+	<div class="header-img">
+		<img alt="logo" src="resources/app/img/logo.png" />
+	</div>
+
+	<div th:if="${param.logout}">You have been logged out.</div>
 	<div>
-		<form method="post">
+		<form th:action="@{/login}" method="post">
 			<h2>Login</h2>
-			<label for="inputUsername">Username</label> <input type="text"
-				id="inputUsername" name="userId" placeholder="Username" required="required" autofocus="autofocus" />
-			<label for="inputPassword">Password</label> <input type="password"
-				id="inputPassword" name="password" placeholder="Password" required="required" />
-			<button class="btn btn-lg btn-primary btn-block" type="submit">Sign
-				in</button>
+			<div>
+				<input type="text" name="username" placeHolder="Username" />
+			</div>
+			<div>
+				<input type="password" name="password" placeHolder="Password" />
+			</div>
+			<div th:if="${param.error}">Invalid username or password.</div>
+			<div>
+				<input type="submit" value="Sign In" />
+			</div>
 		</form>
 	</div>
 </body>

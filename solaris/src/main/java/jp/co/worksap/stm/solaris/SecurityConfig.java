@@ -24,14 +24,14 @@ class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	private UserDetailsService userDetailsService;
 
+	// Customized matcher to allow some request skip from CSRF protection
 	RequestMatcher csrfRequestMatcher = new RequestMatcher() {
 
 		private String allowedMethod = "GET";
 
 		private AntPathRequestMatcher[] requestMatchers = {
 				new AntPathRequestMatcher("/login"),
-				new AntPathRequestMatcher("/logout"),
-				new AntPathRequestMatcher("/employeemanagement/**") };
+				new AntPathRequestMatcher("/logout") };
 
 		@Override
 		public boolean matches(HttpServletRequest request) {
@@ -51,28 +51,40 @@ class SecurityConfig extends WebSecurityConfigurerAdapter {
 	// Configure access for different URLs
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.csrf()
-				.requireCsrfProtectionMatcher(csrfRequestMatcher)
-				.and()
-				// anyone can access /login url
-				.authorizeRequests().antMatchers("/login/**").permitAll()
-				.anyRequest().authenticated()
+		http
+		// anyone can access /login url
+		// free access to resources files
+		.authorizeRequests().antMatchers("/resources/**", "/login/**")
+				.permitAll().anyRequest().authenticated()
 				.and()
 				// specify login form url and url when login failed
 				.formLogin().loginPage("/login")
-				.failureUrl("/login")
+				.failureUrl("/login?error")
 				// specify login parameters
-				.passwordParameter("password").usernameParameter("username")
-				.permitAll().and()
+				.passwordParameter("password").permitAll()
+				.and()
 				// specify logout settings
 				.logout().logoutUrl("/logout").logoutSuccessUrl("/login")
-				.permitAll();
+				.permitAll()
+				// Apply customized csrf request mathcer
+				.and().csrf().requireCsrfProtectionMatcher(csrfRequestMatcher)
+				.and();
 	}
-
-	// Configure the password encoder for authentication
+    
+	/*
+	// authentication with hashed password
 	@Override
 	public void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(userDetailsService).passwordEncoder(
 				new PasswordHash());
+	}
+	*/
+
+	// for test purpose
+	@Autowired
+	public void configureGlobal(AuthenticationManagerBuilder auth)
+			throws Exception {
+		auth.inMemoryAuthentication().withUser("user").password("password")
+				.roles("USER");
 	}
 }
