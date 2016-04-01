@@ -2,33 +2,54 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:remove="tag" th:fragment="commonhead">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="resources/lib/css/bootstrap.min.css" />
 </head>
 <body>
-	<nav th:fragment="header"
-		class="navbar navbar-default navbar-fixed-top">
-		<div class="container">
+	<nav th:fragment="header" class="navbar navbar-default">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
-				<button class="navbar-toggle" type="button" data-toggle="collapse"
-					data-target="navbar-collapse">
-					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+					aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="./" th:text="#{book.store}">Book
-					Store</a>
+				<a href="index"><img class="navbar-brand"
+					src="resources/app/img/branding.png" alt="branding" /></a>
 			</div>
-			<form id="language-form" method="post"
-				action="employeemanagement/updateLanguage">
-				<input id="language-input" type="hidden" name="language" value="" />
-			</form>
-			<nav class="navbar-collapse collapse">
-				<ul id="book-store-navbar" class="nav navbar-nav">
-					<li id="nav-home"><a href="./index" th:text="#{home}">Home</a></li>
-					<li id="nav-logout"><a href="./logout" th:text="#{logout}">Logout</a></li>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+
 				</ul>
-			</nav>
+				<form class="navbar-form navbar-left" role="search">
+					<div class="form-group">
+						<input type="text" class="form-control"
+							placeholder="Enter your email to subscribe to our newsletter" />
+					</div>
+					<button type="submit" class="btn btn-default">Subscribe</button>
+				</form>
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown" role="button" aria-haspopup="true"
+						aria-expanded="false">About Us <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Contact Information</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="#">About Solaris</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="#">About Developer</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
 		</div>
+		<!-- /.container-fluid -->
 	</nav>
 </body>
 </html>
