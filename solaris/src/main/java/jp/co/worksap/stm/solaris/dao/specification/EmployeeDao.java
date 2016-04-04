@@ -7,7 +7,7 @@ import jp.co.worksap.stm.solaris.dto.EmployeeDto;
 
 public interface EmployeeDao {
 	
-	EmployeeDto getBy(int id) throws IOException;
+	EmployeeDto getByID(String id) throws IOException;
 
 	List<EmployeeDto> getBy(int startId, int size)
 			throws IOException;
@@ -20,6 +20,6 @@ public interface EmployeeDao {
 
 	void update(EmployeeDto account) throws IOException;
 
-	void deleteBy(int id) throws IOException;
+	void deleteBy(String id) throws IOException;
 
 }

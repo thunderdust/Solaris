@@ -9,8 +9,8 @@ public class CurrentUser extends User {
 	private EmployeeEntity user;
 
 	public CurrentUser(EmployeeEntity user) {
-		super(Integer.toString(user.getId()), user.getPassword(),
-				AuthorityUtils.createAuthorityList(user.getRole()));
+		super(user.getId(), user.getPassword(), AuthorityUtils
+				.createAuthorityList(user.getRole()));
 		this.user = user;
 	}
 
@@ -18,7 +18,7 @@ public class CurrentUser extends User {
 		return user;
 	}
 
-	public int getId() {
+	public String getId() {
 		return user.getId();
 	}
 

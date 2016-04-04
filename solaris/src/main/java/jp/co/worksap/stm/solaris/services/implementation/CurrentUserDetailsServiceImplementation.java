@@ -21,12 +21,12 @@ public class CurrentUserDetailsServiceImplementation implements
 	}
 
 	@Override
-	public CurrentUser loadUserByUsername(String id)
+	public CurrentUser loadUserByUsername(String accountName)
 			throws UsernameNotFoundException {
-		EmployeeEntity user = userService.getById(id);
+		EmployeeEntity user = userService.getById(accountName);
 		if (user == null) {
 			throw new UsernameNotFoundException(String.format(
-					"User with id=%s was not found", id));
+					"User with account name=%s was not found", accountName));
 		}
 
 		return new CurrentUser(user);

@@ -31,7 +31,8 @@ class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 		private AntPathRequestMatcher[] requestMatchers = {
 				new AntPathRequestMatcher("/login"),
-				new AntPathRequestMatcher("/logout") };
+				new AntPathRequestMatcher("/logout"),
+				new AntPathRequestMatcher("/employees/**") };
 
 		@Override
 		public boolean matches(HttpServletRequest request) {
@@ -54,7 +55,8 @@ class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http
 		// anyone can access /login url
 		// free access to resources files
-		.authorizeRequests().antMatchers("/resources/**", "/login/**")
+		.authorizeRequests()
+				.antMatchers("/resources/**", "/login/**", "/employees/**")
 				.permitAll().anyRequest().authenticated()
 				.and()
 				// specify login form url and url when login failed
@@ -70,21 +72,20 @@ class SecurityConfig extends WebSecurityConfigurerAdapter {
 				.and().csrf().requireCsrfProtectionMatcher(csrfRequestMatcher)
 				.and();
 	}
-    
-	/*
+
 	// authentication with hashed password
 	@Override
 	public void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(userDetailsService).passwordEncoder(
 				new PasswordHash());
 	}
-	*/
 
-	// for test purpose
-	@Autowired
-	public void configureGlobal(AuthenticationManagerBuilder auth)
-			throws Exception {
-		auth.inMemoryAuthentication().withUser("user").password("password")
-				.roles("TESTER");
-	}
+	/*
+	 * // for test purpose
+	 * 
+	 * @Autowired public void configureGlobal(AuthenticationManagerBuilder auth)
+	 * throws Exception {
+	 * auth.inMemoryAuthentication().withUser("user").password("user")
+	 * .roles("TESTER"); }
+	 */
 }

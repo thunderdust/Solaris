@@ -19,16 +19,15 @@ import lombok.NoArgsConstructor;
 @Data	
 public class EmployeeEntity implements Serializable {
 
-	// private static final long serialVersionUID = -7395917071437157624L;
+	private static final long serialVersionUID = -7395947091407157624L;
 
 	private String firstName;
 	private String lastName;
 	private String gender;
-	private int id;
+	private String id;
 	private String email;
 	private String number;
 	private String role;
-	private String accountName;
 	private String password;
 	private String timeJoined;
 
@@ -40,7 +39,6 @@ public class EmployeeEntity implements Serializable {
 		this.email = e.getEmail();
 		this.number = e.getNumber();
 		this.role = e.getRole();
-		this.accountName = e.getAccountName();
 		this.password = e.getPassword();
 		this.timeJoined = e.getTimeJoined();
 	}

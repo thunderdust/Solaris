@@ -13,7 +13,6 @@ public class EmployeeFetchEntity {
 	private String email;
 	private String number;
 	private String role;
-	private String accountName;
 	private String password;
 	private String timeJoined;
 	private String timeLeaved;

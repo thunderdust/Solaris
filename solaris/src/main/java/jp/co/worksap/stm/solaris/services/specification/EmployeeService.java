@@ -8,7 +8,7 @@ import jp.co.worksap.stm.solaris.exceptions.ServiceException;
 
 public interface EmployeeService {
 
-	EmployeeEntity getById(String id) throws ServiceException;
+	EmployeeEntity getById(String userId) throws ServiceException;
 
 	EmployeeListEntity getList(EmployeeFetchEntity e) throws ServiceException;
 
@@ -16,6 +16,12 @@ public interface EmployeeService {
 
 	void update(EmployeeCreationEntity e) throws ServiceException;
 
-	void deleteById(String id) throws ServiceException;
+	void deleteById(String userId) throws ServiceException;
+
+	String getUserRoleById(String userId) throws ServiceException;
+
+	void insertRole(String userId) throws ServiceException;
+
+	void removeRole(String userId) throws ServiceException;
 
 }

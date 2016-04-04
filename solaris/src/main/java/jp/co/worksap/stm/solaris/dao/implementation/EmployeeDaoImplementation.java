@@ -23,16 +23,16 @@ public class EmployeeDaoImplementation implements EmployeeDao {
 	private static final String COUNT_EMPLOYEE_BY_ROLE = "SELECT COUNT(*) FROM EMPLOYEES WHERE role= ?";
 	private static final String COUNT_EMPLOYEE = "SELECT COUNT(*) FROM EMPLOYEES";
 	private static final String INSERT_EMPLOYEE = "INSERT INTO EMPLOYEES "
-			+ " (firstname, lastname, gender, id, email, role, contact_number, account_name, password, time_joined)"
+			+ " (firstname, lastname, gender, id, email, contact_number, role, password, time_joined)"
 			+ " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 	private static final String DELETE_EMPLOYEE = "DELETE FROM EMPLOYEES WHERE id = ?";
 	private static final String UPDATE_EMPLOYEE_AND_PASSWORD = "UPDATE EMPLOYEES SET password = ?, "
-			+ "firstname = ?, lastname = ?, gender = ?, id = ?, email = ?, role = ?, contact_number = ?, account_name = ?, password = ?, time_joined = ?";
+			+ "firstname = ?, lastname = ?, gender = ?, id = ?, email = ?, contact_number = ?, role = ?, password = ?, time_joined = ?";
 	private static final String UPDATE_EMPLOYEE = "UPDATE EMPLOYEES SET "
-			+ "firstname = ?, lastname = ?, gender = ?, id = ?, email = ?, role = ?, contact_number = ?, account_name = ?, password = ?, time_joined = ?";
+			+ "firstname = ?, lastname = ?, gender = ?, id = ?, email = ?, contact_number = ?, role = ?, password = ?, time_joined = ?";
 
 	@Override
-	public EmployeeDto getBy(int id) throws IOException {
+	public EmployeeDto getByID(String id) throws IOException {
 
 		try {
 			return template.queryForObject(
@@ -40,10 +40,9 @@ public class EmployeeDaoImplementation implements EmployeeDao {
 					(rs, rownum) -> {
 						return new EmployeeDto(rs.getString("firstname"), rs
 								.getString("lastname"), rs.getString("gender"),
-								rs.getInt("id"), rs.getString("email"), rs
+								rs.getString("id"), rs.getString("email"), rs
 										.getString("role"), rs
 										.getString("contact_number"), rs
-										.getString("account_name"), rs
 										.getString("password"), rs
 										.getString("time_joined"));
 					}, id);
@@ -66,10 +65,9 @@ public class EmployeeDaoImplementation implements EmployeeDao {
 					(rs, rownum) -> {
 						return new EmployeeDto(rs.getString("firstname"), rs
 								.getString("lastname"), rs.getString("gender"),
-								rs.getInt("id"), rs.getString("email"), rs
+								rs.getString("id"), rs.getString("email"), rs
 										.getString("role"), rs
 										.getString("contact_number"), rs
-										.getString("account_name"), rs
 										.getString("password"), rs
 										.getString("time_joined"));
 
@@ -113,13 +111,12 @@ public class EmployeeDaoImplementation implements EmployeeDao {
 				ps.setString(1, ed.getFirstName());
 				ps.setString(2, ed.getLastName());
 				ps.setString(3, ed.getGender());
-				ps.setInt(4, ed.getId());
+				ps.setString(4, ed.getId());
 				ps.setString(5, ed.getEmail());
 				ps.setString(6, ed.getRole());
 				ps.setString(7, ed.getNumber());
-				ps.setString(8, ed.getAccountName());
-				ps.setString(9, ed.getPassword());
-				ps.setString(10, ed.getTimeJoined());
+				ps.setString(8, ed.getPassword());
+				ps.setString(9, ed.getTimeJoined());
 
 			});
 
@@ -138,24 +135,22 @@ public class EmployeeDaoImplementation implements EmployeeDao {
 					ps.setString(1, ed.getFirstName());
 					ps.setString(2, ed.getLastName());
 					ps.setString(3, ed.getGender());
-					ps.setInt(4, ed.getId());
+					ps.setString(4, ed.getId());
 					ps.setString(5, ed.getEmail());
 					ps.setString(6, ed.getRole());
 					ps.setString(7, ed.getNumber());
-					ps.setString(8, ed.getAccountName());
-					ps.setString(9, ed.getTimeJoined());
+					ps.setString(8, ed.getTimeJoined());
 				});
 			} else {
 				template.update(UPDATE_EMPLOYEE_AND_PASSWORD, (ps) -> {
 					ps.setString(1, ed.getFirstName());
 					ps.setString(2, ed.getLastName());
 					ps.setString(3, ed.getGender());
-					ps.setInt(4, ed.getId());
+					ps.setString(4, ed.getId());
 					ps.setString(5, ed.getEmail());
 					ps.setString(6, ed.getRole());
 					ps.setString(7, ed.getNumber());
-					ps.setString(8, ed.getAccountName());
-					ps.setString(9, ed.getPassword());
+					ps.setString(8, ed.getPassword());
 					ps.setString(10, ed.getTimeJoined());
 				});
 			}
@@ -166,10 +161,10 @@ public class EmployeeDaoImplementation implements EmployeeDao {
 	}
 
 	@Override
-	public void deleteBy(int id) throws IOException {
+	public void deleteBy(String id) throws IOException {
 		try {
 			template.update(DELETE_EMPLOYEE, (ps) -> {
-				ps.setInt(1, id);
+				ps.setString(1, id);
 			});
 
 		} catch (DataAccessException e) {

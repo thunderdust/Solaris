@@ -13,11 +13,10 @@ public class EmployeeCreationEntity {
 	private String firstName;
 	private String lastName;
 	private String gender;
-	private int id;
+	private String id;
 	private String email;
 	private String number;
 	private String role;
-	private String accountName;
 	private String password;
 	private String timeJoined;
 
@@ -30,7 +29,6 @@ public class EmployeeCreationEntity {
 		this.email = e.getEmail();
 		this.number = e.getNumber();
 		this.role = e.getRole();
-		this.accountName = e.getAccountName();
 		this.password = e.getPassword();
 		this.timeJoined = e.getTimeJoined();
 	}

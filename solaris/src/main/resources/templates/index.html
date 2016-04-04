@@ -12,10 +12,9 @@
 	<h2 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h2>
 	<h1>WELCOME TO SOLARIS</h1>
 	<form th:action="@{/logout}" method="post">
-		<input type="submit" value="Sign Out" />
+		<input type="submit" class="btn btn-warning" value="Sign Out" />
 	</form>
-
-	<script src="resources/lib/js/jquery-2.1.4.js" type="text/javascript"></script>
-	<script src="resources/lib/js/bootstrap.min.js" type="text/javascript"></script>
+	<!-- Common footer -->
+	<div th:replace="fragments/footer :: footer"></div>
 </body>
 </html>

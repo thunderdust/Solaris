@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<title>Solaris - Manage Employees</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="resources/lib/css/select2.min.css" />
+<link rel="stylesheet"
+	href="resources/lib/css/select2-bootstrap.min.css" />
+<ct th:replace="fragments/header :: commonhead"></ct>
+</head>
+<body>
+	<!-- Common header -->
+	<div th:replace="fragments/header :: header"></div>
+
+
+	<div class="col-lg-12 col-sm-12 table-buttons">
+		<!-- Buttons -->
+		<button type="button" class="btn btn-default btn-md"
+			data-toggle="modal" data-target="#employee-add-modal">Add</button>
+		<button id="employee-edit-modal-btn" type="button"
+			class="btn btn-default btn-md" data-toggle="modal"
+			data-target="#employee-add-modal" disabled="disabled">Edit</button>
+		<button id="employee-open-delete-modal-btn" type="button"
+			class="btn btn-default btn-md" data-toggle="modal"
+			data-target="#employee-delete-modal" disabled="disabled">
+			Delete</button>
+	</div>
+
+	<div class="modal fade" id="employee-add-modal" tabindex="-1"
+		role="dialog" aria-labelledby="myModalLabel" data-mode="add">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel">Add new employee</h4>
+				</div>
+				<div class="modal-body">
+					<form id="employee-form">
+
+						<div class="form-group">
+							<label for="first-name">First Name</label> <input
+								name="firstName" type="text" class="form-control"
+								id="first-name" placeholder="First Name" />
+						</div>
+
+						<div class="form-group">
+							<label for="first-name">Last Name</label> <input name="lastName"
+								type="text" class="form-control" id="last-name"
+								placeholder="Last Name" />
+						</div>
+
+						<div class="form-group">
+							<label for="gender">Gender</label> <select id="gender"
+								class="form-control" name="gender" multiple="multiple">
+								<option value="M">Male</option>
+								<option value="F">Female</option>
+							</select>
+						</div>
+
+						<div class="form-group">
+							<label for="id">Login ID</label> <input name="id" type="text"
+								class="form-control" id="id" placeholder="Login ID" />
+						</div>
+
+						<div class="form-group">
+							<label for="email">Password</label> <input name="password"
+								type="password" class="form-control" id="password"
+								placeholder="Password" />
+						</div>
+
+						<div class="form-group">
+							<label for="email">Email</label> <input name="email" type="text"
+								class="form-control" id="email" placeholder="Email" />
+						</div>
+
+						<div class="form-group">
+							<label for="number">Contact Number</label> <input name="number"
+								type="text" class="form-control" id="number"
+								placeholder="Contact Number" />
+						</div>
+
+						<div class="form-group">
+							<label for="roles">Role</label> <select id="roles"
+								class="form-control" name="roles" multiple="multiple">
+								<option value="ADMIN">Admin</option>
+								<option value="SALES MANAGER">Sales Manager</option>
+								<option value="SALES REPRESENTATIVE">Sales
+									Representative</option>
+								<option value="AFTER-SALES SERVICE AGENT">After-sales
+									Service Agent</option>
+								<option value="ACCOUNTANT">Accountant</option>
+							</select>
+						</div>
+
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+					<button id="employee-add-button" type="button"
+						class="btn btn-primary">Submit</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Common footer -->
+	<div th:replace="fragments/footer :: footer"></div>
+	<script src="resources/app/js/employee.js" type="text/javascript"></script>
+</body>
+</html>
