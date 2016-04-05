@@ -4,6 +4,8 @@
 <title>Home</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="resources/app/css/login.css" />
+<link rel="stylesheet" href="resources/app/css/shared.css" />
 <link rel="stylesheet" href="resources/lib/css/bootstrap.min.css" />
 </head>
 <body>
@@ -14,7 +16,9 @@
 	<form th:action="@{/logout}" method="post">
 		<input type="submit" class="btn btn-warning" value="Sign Out" />
 	</form>
-	<!-- Common footer -->
-	<div th:replace="fragments/footer :: footer"></div>
+	<div class="navbar navbar-fixed-bottom solaris-footer">
+		<!-- Common footer -->
+		<div th:replace="fragments/footer :: footer"></div>
+	</div>
 </body>
 </html>

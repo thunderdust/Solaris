@@ -5,32 +5,40 @@
 <head>
 <title>Solaris - Login</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="resources/app/css/login.css" />
+<link rel="stylesheet" href="resources/app/css/shared.css" />
 <link rel="stylesheet" href="resources/lib/css/bootstrap.min.css" />
 </head>
 <body>
-	<!-- Common header -->
-	<div th:replace="fragments/header :: header"></div>
-	<div class="header-img">
-		<img alt="logo" src="resources/app/img/logo.png" />
-	</div>
+	<div class="login-container">
+		<!-- Common header -->
+		<div th:replace="fragments/header :: header"></div>
+		<div class="solaris-caption">
+			<em>Sell laptops like no other.</em>
+		</div>
 
-	<div th:if="${param.logout}">You have been logged out.</div>
-	<div>
-		<form th:action="@{/login}" method="post">
-			<h2>Login</h2>
-			<div>
-				<input type="text" name="username" placeHolder="Username" />
+		<div th:if="${param.logout}">You have been logged out.</div>
+		<div>
+			<div class="solaris-login-form">
+				<form th:action="@{/login}" method="post">
+					<div>
+						<input type="text" name="username" placeHolder="Username" />
+					</div>
+					<div>
+						<input type="password" name="password" placeHolder="Password" />
+					</div>
+					<div class="solaris-error" th:if="${param.error}">Invalid
+						username or password.</div>
+					<div>
+						<input type="submit" class="btn btn-success" value="Sign In" />
+					</div>
+				</form>
 			</div>
-			<div>
-				<input type="password" name="password" placeHolder="Password" />
-			</div>
-			<div th:if="${param.error}">Invalid username or password.</div>
-			<div>
-				<input type="submit" class="btn btn-success" value="Sign In" />
-			</div>
-		</form>
+		</div>
 	</div>
-	<!-- Common footer -->
-	<div th:replace="fragments/footer :: footer"></div>
+	<div class="navbar navbar-fixed-bottom solaris-footer">
+		<!-- Common footer -->
+		<div th:replace="fragments/footer :: footer"></div>
+	</div>
 </body>
 </html>

@@ -1,0 +1,72 @@
+.login-container {
+	background-image: url("../img/bg.jpg");
+	height: 100%;
+	background-size: cover;
+}
+
+html, body {
+	height: 100%;
+}
+
+.solaris-caption {
+	font-size: 350%;
+	text-align: center;
+	vertical-align: center;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	color: #FFFFFF;
+	font-weight: bold;
+	font-style: italic;
+	background: rgba(0, 0, 0, 0.1);
+}
+
+.solaris-login-form {
+	width: 55%;
+	margin: 0 auto;
+	background: rgba(255, 255, 255, 0.2);
+	border-radius: 10px;
+	padding: 15px;
+	margin-top: 80px;
+	min-width: 250px;
+	max-width: 500px;
+}
+
+.solaris-login-form form div {
+	width: 80%;
+	margin: 0px auto;
+}
+
+.solaris-login-form form div input {
+	width: 100%;
+	margin: 5px;
+	border-radius: 3px;
+	border: 0px;
+	min-height: 30px;
+	text-align: center;
+}
+
+.solaris-login-form form .solaris-error {
+	width: 100%;
+	margin: 5px;
+	min-height: 30px;
+	text-align: center;
+	color: #d22908;
+	font-style: italic;
+}
+
+/* Multi-platform support */
+@media ( max-width : 768px) {
+	.solaris-caption {
+		font-size: 240%;
+		font-weight: normal;
+		padding: 10px 0 10px 0;
+	}
+}
+
+@media ( max-width : 450px) {
+	.solaris-caption {
+		font-size: 180%;
+		font-weight: normal;
+		padding: 10px 0 10px 0;
+	}
+}

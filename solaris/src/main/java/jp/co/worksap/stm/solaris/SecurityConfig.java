@@ -74,18 +74,19 @@ class SecurityConfig extends WebSecurityConfigurerAdapter {
 	}
 
 	// authentication with hashed password
-	@Override
-	public void configure(AuthenticationManagerBuilder auth) throws Exception {
-		auth.userDetailsService(userDetailsService).passwordEncoder(
-				new PasswordHash());
+	/*
+	 * @Override public void configure(AuthenticationManagerBuilder auth) throws
+	 * Exception { auth.userDetailsService(userDetailsService).passwordEncoder(
+	 * new PasswordHash()); }
+	 */
+
+	// for test purpose
+
+	@Autowired
+	public void configureGlobal(AuthenticationManagerBuilder auth)
+			throws Exception {
+		auth.inMemoryAuthentication().withUser("user").password("user")
+				.roles("TESTER");
 	}
 
-	/*
-	 * // for test purpose
-	 * 
-	 * @Autowired public void configureGlobal(AuthenticationManagerBuilder auth)
-	 * throws Exception {
-	 * auth.inMemoryAuthentication().withUser("user").password("user")
-	 * .roles("TESTER"); }
-	 */
 }
