@@ -1,5 +1,8 @@
 package jp.co.worksap.stm.solaris.dto;
 
+import java.sql.Timestamp;
+import java.util.Date;
+
 import jp.co.worksap.stm.solaris.entity.EmployeeCreationEntity;
 import jp.co.worksap.stm.solaris.utils.PasswordHash;
 import lombok.AllArgsConstructor;
@@ -16,7 +19,7 @@ public class EmployeeDto {
 	private String gender;
 	private String id;
 	private String email;
-	private String number;
+	private String contact_number;
 	private String role;
 	private String password;
 	private String timeJoined;
@@ -28,13 +31,15 @@ public class EmployeeDto {
 		gender = e.getGender();
 		id = e.getId();
 		email = e.getEmail();
-		number = e.getNumber();
+		contact_number = e.getContact_number();
 		role = e.getRole();
 		if (e.getPassword() != null) {
 			// hash password
 			PasswordHash hash = new PasswordHash();
 			password = hash.encode(e.getPassword());
 		}
-		timeJoined = e.getTimeJoined();
+		// set time joined as current time
+		Date date = new java.util.Date();
+		this.timeJoined = (new Timestamp(date.getTime())).toString();
 	}
 }

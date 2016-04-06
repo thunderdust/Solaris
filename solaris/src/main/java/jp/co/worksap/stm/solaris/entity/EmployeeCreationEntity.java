@@ -1,6 +1,7 @@
 package jp.co.worksap.stm.solaris.entity;
 
-import java.util.List;
+import java.sql.Timestamp;
+import java.util.Date;
 
 import jp.co.worksap.stm.solaris.dto.EmployeeDto;
 import lombok.Data;
@@ -15,7 +16,7 @@ public class EmployeeCreationEntity {
 	private String gender;
 	private String id;
 	private String email;
-	private String number;
+	private String contact_number;
 	private String role;
 	private String password;
 	private String timeJoined;
@@ -27,9 +28,10 @@ public class EmployeeCreationEntity {
 		this.gender = e.getGender();
 		this.id = e.getId();
 		this.email = e.getEmail();
-		this.number = e.getNumber();
+		this.contact_number = e.getContact_number();
 		this.role = e.getRole();
 		this.password = e.getPassword();
 		this.timeJoined = e.getTimeJoined();
+		
 	}
 }

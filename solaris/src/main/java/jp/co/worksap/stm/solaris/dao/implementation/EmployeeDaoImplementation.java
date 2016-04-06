@@ -114,7 +114,7 @@ public class EmployeeDaoImplementation implements EmployeeDao {
 				ps.setString(4, ed.getId());
 				ps.setString(5, ed.getEmail());
 				ps.setString(6, ed.getRole());
-				ps.setString(7, ed.getNumber());
+				ps.setString(7, ed.getContact_number());
 				ps.setString(8, ed.getPassword());
 				ps.setString(9, ed.getTimeJoined());
 
@@ -138,7 +138,7 @@ public class EmployeeDaoImplementation implements EmployeeDao {
 					ps.setString(4, ed.getId());
 					ps.setString(5, ed.getEmail());
 					ps.setString(6, ed.getRole());
-					ps.setString(7, ed.getNumber());
+					ps.setString(7, ed.getContact_number());
 					ps.setString(8, ed.getTimeJoined());
 				});
 			} else {
@@ -149,7 +149,7 @@ public class EmployeeDaoImplementation implements EmployeeDao {
 					ps.setString(4, ed.getId());
 					ps.setString(5, ed.getEmail());
 					ps.setString(6, ed.getRole());
-					ps.setString(7, ed.getNumber());
+					ps.setString(7, ed.getContact_number());
 					ps.setString(8, ed.getPassword());
 					ps.setString(10, ed.getTimeJoined());
 				});

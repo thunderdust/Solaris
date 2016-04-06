@@ -20,13 +20,9 @@ $(document).ready(function() {
 
 Solaris.addEmployee = function(evt) {
 	var formData = $('#employee-form').serializeObject();
-	// modify role object to become an object if only one is selected
-	if (typeof(formData.roles) === 'string') {
-		formData.roles = [formData.roles];
-	}
-	
 	var url = 'employees/' + $('#employee-add-modal #myModalLabel').data().mode + 'UserAccount';
 	console.log(url);
+	console.log(JSON.stringify(formData));
 
 	$.ajax({
 		url : url,
@@ -37,9 +33,8 @@ Solaris.addEmployee = function(evt) {
 	      withCredentials: true
 	   }
 	}).done(function() {
+		console.log('DONE');
 		$('#employee-add-modal').modal('hide');
 		//$('#employee-table').dataTable().fnReloadAjax();
-		console.log('DONE');
-		
 	});
 };

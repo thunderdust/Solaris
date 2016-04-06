@@ -26,7 +26,7 @@ public class EmployeeEntity implements Serializable {
 	private String gender;
 	private String id;
 	private String email;
-	private String number;
+	private String contact_number;
 	private String role;
 	private String password;
 	private String timeJoined;
@@ -37,7 +37,7 @@ public class EmployeeEntity implements Serializable {
 		this.gender = e.getGender();
 		this.id = e.getId();
 		this.email = e.getEmail();
-		this.number = e.getNumber();
+		this.contact_number = e.getContact_number();
 		this.role = e.getRole();
 		this.password = e.getPassword();
 		this.timeJoined = e.getTimeJoined();
