@@ -10,8 +10,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class EmployeeListEntity {
-
+    
+	private int draw;
 	private int recordsTotal;
 	private int recordsFiltered;
-	private List<EmployeeEntity> eList;
+	private List<EmployeeEntity> employeeEntities;
 }

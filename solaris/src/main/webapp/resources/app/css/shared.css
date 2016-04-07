@@ -14,15 +14,72 @@ html, body {
 	padding-top: 10px;
 }
 
+span.solaris-title {
+	font-size: 200%;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-style: normal;
+	padding-left: 10px;
+}
+
+.solaris-table-container {
+	background: #e7e7e7;
+	margin-top: 10px;
+	padding-top: 10px;
+	border-radius: 4px;
+}
+
+.solaris-table-container>div>table {
+	background: #FFFFFF;
+}
+
+.solaris-table-container table tr {
+	padding: 0px;
+}
+
+.solaris-table-container table th {
+	background: #337ab7;
+	color: #FFFFFF;
+	text-align: center;
+	font-weight: normal;
+	font-style: italic;
+}
+
+.solaris-table-container select {
+	width: 40%;
+	float: left;
+	margin-bottom: 10px;
+}
+
+.table-buttons {
+	background: #e7e7e7;
+	padding: 10px;
+}
+
+.table-buttons>button {
+	margin-right: 5px;
+}
+
 /* multiple platform adaption*/
 @media ( max-width : 600px) {
 	.solaris-footer {
 		font-size: 0.75em;
+	}
+	span.solaris-title {
+		font-size: 175%;
+	}
+}
+
+@media ( max-width : 450px) {
+	.solaris-button-text {
+		display: none;
 	}
 }
 
 @media ( max-width : 400px) {
 	.solaris-footer {
 		font-size: 0.7em;
+	}
+	span.solaris-title {
+		font-size: 150%;
 	}
 }

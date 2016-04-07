@@ -1,12 +1,13 @@
 package jp.co.worksap.stm.solaris.services.implementation;
 
 import java.io.IOException;
+import java.util.List;
 
 import jp.co.worksap.stm.solaris.dao.specification.EmployeeDao;
 import jp.co.worksap.stm.solaris.dto.EmployeeDto;
 import jp.co.worksap.stm.solaris.entity.EmployeeCreationEntity;
 import jp.co.worksap.stm.solaris.entity.EmployeeEntity;
-import jp.co.worksap.stm.solaris.entity.EmployeeFetchEntity;
+import jp.co.worksap.stm.solaris.entity.EmployeeFetchByRoleEntity;
 import jp.co.worksap.stm.solaris.entity.EmployeeListEntity;
 import jp.co.worksap.stm.solaris.exceptions.ServiceException;
 import jp.co.worksap.stm.solaris.services.specification.EmployeeService;
@@ -14,6 +15,8 @@ import jp.co.worksap.stm.solaris.services.specification.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import com.google.common.collect.Lists;
 
 @Service
 public class EmployeeServiceImplementation implements EmployeeService {
@@ -40,10 +43,31 @@ public class EmployeeServiceImplementation implements EmployeeService {
 	}
 
 	@Override
-	public EmployeeListEntity getList(EmployeeFetchEntity e)
+	public EmployeeListEntity getListByRole(EmployeeFetchByRoleEntity entity)
 			throws ServiceException {
-		// TODO Auto-generated method stub
-		return null;
+		List<EmployeeDto> dtoList = null;
+		int count = 0;
+		try {
+			dtoList = employeeDao.getByRole(entity.getRole(),
+					entity.getStart(), entity.getLength());
+			if (entity.getRole() == "ALL") {
+				count = employeeDao.getTotalCount();
+			} else {
+				count = employeeDao.getTotalCount(entity.getRole());
+			}
+
+		} catch (IOException e) {
+			throw new ServiceException("Could not find user for role: "
+					+ entity.getRole(), e);
+		}
+
+		List<EmployeeEntity> eList = Lists.newArrayList();
+		for (EmployeeDto dto : dtoList) {
+			EmployeeEntity newEntity = new EmployeeEntity(dto);
+			eList.add(newEntity);
+		}
+
+		return new EmployeeListEntity(entity.getDraw(), count, count, eList);
 	}
 
 	@Override

@@ -19,8 +19,9 @@ public class EmployeeDaoImplementation implements EmployeeDao {
 
 	// SQL manipulation queries
 	private static final String FETCH_BY_ID = "SELECT * FROM EMPLOYEES WHERE id = ?";
-	private static final String RANGE_FETCH = "SELECT * FROM EMPLOYEES LIMIT ? OFFSET ?";
-	private static final String COUNT_EMPLOYEE_BY_ROLE = "SELECT COUNT(*) FROM EMPLOYEES WHERE role= ?";
+	private static final String FETCH = "SELECT * FROM EMPLOYEES LIMIT ? OFFSET ?";
+	private static final String FETCH_BY_ROLE = "SELECT * FROM EMPLOYEES WHERE role = ? LIMIT ? OFFSET ?";
+	private static final String COUNT_EMPLOYEE_BY_ROLE = "SELECT COUNT(*) FROM EMPLOYEES WHERE role = ?";
 	private static final String COUNT_EMPLOYEE = "SELECT COUNT(*) FROM EMPLOYEES";
 	private static final String INSERT_EMPLOYEE = "INSERT INTO EMPLOYEES "
 			+ " (firstname, lastname, gender, id, email, contact_number, role, password, time_joined)"
@@ -53,25 +54,53 @@ public class EmployeeDaoImplementation implements EmployeeDao {
 	}
 
 	@Override
-	public List<EmployeeDto> getBy(int start, int size) throws IOException {
+	public List<EmployeeDto> getByRole(String role, int start, int size)
+			throws IOException {
 
 		try {
-			return template.query(
-					RANGE_FETCH,
-					ps -> {
-						ps.setInt(1, size);
-						ps.setInt(2, start);
-					},
-					(rs, rownum) -> {
-						return new EmployeeDto(rs.getString("firstname"), rs
-								.getString("lastname"), rs.getString("gender"),
-								rs.getString("id"), rs.getString("email"), rs
-										.getString("role"), rs
-										.getString("contact_number"), rs
-										.getString("password"), rs
-										.getString("time_joined"));
+			// No role selection
+			if (role == "ALL") {
+				return template.query(
+						FETCH,
+						ps -> {
+							ps.setInt(1, size);
+							ps.setInt(2, start);
+						},
+						(rs, rownum) -> {
+							return new EmployeeDto(rs.getString("firstname"),
+									rs.getString("lastname"), rs
+											.getString("gender"), rs
+											.getString("id"), rs
+											.getString("email"), rs
+											.getString("role"), rs
+											.getString("contact_number"), rs
+											.getString("password"), rs
+											.getString("time_joined"));
 
-					});
+						});
+			} else {
+				// select user by roles
+				return template.query(FETCH_BY_ROLE,
+						// set query parameters
+						ps -> {
+							ps.setString(1, role);
+							ps.setInt(2, size);
+							ps.setInt(3, start);
+						},
+						(rs, rownum) -> {
+							return new EmployeeDto(rs.getString("firstname"),
+									rs.getString("lastname"), rs
+											.getString("gender"), rs
+											.getString("id"), rs
+											.getString("email"), rs
+											.getString("role"), rs
+											.getString("contact_number"), rs
+											.getString("password"), rs
+											.getString("time_joined"));
+
+						});
+
+			}
 
 		} catch (DataAccessException e) {
 			throw new IOException(e);
@@ -79,7 +108,7 @@ public class EmployeeDaoImplementation implements EmployeeDao {
 	}
 
 	@Override
-	public int getTotalCount(int role) throws IOException {
+	public int getTotalCount(String role) throws IOException {
 
 		try {
 			return template.queryForObject(COUNT_EMPLOYEE_BY_ROLE,

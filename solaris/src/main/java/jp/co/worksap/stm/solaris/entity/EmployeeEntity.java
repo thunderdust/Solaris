@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 @Data	
 public class EmployeeEntity implements Serializable {
 
-	private static final long serialVersionUID = -7395947091407157624L;
+	private static final long serialVersionUID = -7395947091403157624L;
 
 	private String firstName;
 	private String lastName;

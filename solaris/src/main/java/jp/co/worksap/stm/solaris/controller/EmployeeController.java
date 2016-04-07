@@ -1,10 +1,12 @@
 package jp.co.worksap.stm.solaris.controller;
 
 import jp.co.worksap.stm.solaris.entity.EmployeeCreationEntity;
+import jp.co.worksap.stm.solaris.entity.EmployeeFetchByRoleEntity;
+import jp.co.worksap.stm.solaris.entity.EmployeeListEntity;
 import jp.co.worksap.stm.solaris.services.specification.EmployeeService;
 
-import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,7 +19,7 @@ public class EmployeeController {
 	@Autowired
 	private EmployeeService employeeService;
 
-	// @PreAuthorize("hasAuthority('ADMIN')")
+	//@PreAuthorize("hasRole('ROLE_ADMIN')")
 	@RequestMapping(value = "/employees")
 	public String employeeManagement() {
 		return "employees";
@@ -28,5 +30,13 @@ public class EmployeeController {
 	@ResponseBody
 	public void addUserAccount(@RequestBody EmployeeCreationEntity ece) {
 		employeeService.insert(ece);
+	}
+
+	// @PreAuthorize("hasAuthority('ADMIN')")
+	@RequestMapping(value = "/employees/findUserByRole", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+	@ResponseBody
+	public EmployeeListEntity findUserByRole(
+			@RequestBody EmployeeFetchByRoleEntity e) {
+		return employeeService.getListByRole(e);
 	}
 }

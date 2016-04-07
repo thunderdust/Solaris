@@ -42,6 +42,7 @@ class SecurityConfig extends WebSecurityConfigurerAdapter {
 					return false;
 				}
 			}
+			
 			if (request.getMethod().equals(allowedMethod)) {
 				return false;
 			}
@@ -56,7 +57,7 @@ class SecurityConfig extends WebSecurityConfigurerAdapter {
 		// anyone can access /login url
 		// free access to resources files
 		.authorizeRequests()
-				.antMatchers("/resources/**", "/login/**", "/employees/**")
+				.antMatchers("/resources/**", "/login/**")
 				.permitAll().anyRequest().authenticated()
 				.and()
 				// specify login form url and url when login failed

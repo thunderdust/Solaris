@@ -6,14 +6,14 @@ import java.util.List;
 import jp.co.worksap.stm.solaris.dto.EmployeeDto;
 
 public interface EmployeeDao {
-	
+
 	EmployeeDto getByID(String id) throws IOException;
 
-	List<EmployeeDto> getBy(int startId, int size)
+	List<EmployeeDto> getByRole(String role, int start, int size)
 			throws IOException;
 
-	int getTotalCount(int role) throws IOException;
-	
+	int getTotalCount(String role) throws IOException;
+
 	int getTotalCount() throws IOException;
 
 	void insert(EmployeeDto account) throws IOException;
