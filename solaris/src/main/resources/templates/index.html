@@ -11,13 +11,6 @@
 <body>
 	<!-- Common header -->
 	<div th:replace="fragments/header :: header"></div>
-	<!--  div th:replace="fragments/header_admin :: header"
-		th:if="${session.roles.contains('ADMIN')}"></div>
-	<div th:replace="fragments/header_sales_manager :: header"
-		th:if="${session.roles.contains('fdagfafdsafsafas')}"></div>
-	<div th:replace="fragments/header_sales_representative :: header"
-		th:if="${session.roles.contains('fdafdasfdas')}"></div -->
-
 	<h2 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h2>
 	<h1>WELCOME TO SOLARIS</h1>
 	<form th:action="@{/logout}" method="post">
