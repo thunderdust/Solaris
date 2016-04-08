@@ -19,20 +19,20 @@ public class EmployeeController {
 	@Autowired
 	private EmployeeService employeeService;
 
-	//@PreAuthorize("hasRole('ROLE_ADMIN')")
+	@PreAuthorize("hasAuthority('ADMIN')")
 	@RequestMapping(value = "/employees")
 	public String employeeManagement() {
 		return "employees";
 	}
 
-	// @PreAuthorize("hasAuthority('ADMIN')")
+	@PreAuthorize("hasAuthority('ADMIN')")
 	@RequestMapping(value = "/employees/addUserAccount", method = RequestMethod.POST)
 	@ResponseBody
 	public void addUserAccount(@RequestBody EmployeeCreationEntity ece) {
 		employeeService.insert(ece);
 	}
 
-	// @PreAuthorize("hasAuthority('ADMIN')")
+	@PreAuthorize("hasAuthority('ADMIN')")
 	@RequestMapping(value = "/employees/findUserByRole", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
 	public EmployeeListEntity findUserByRole(
