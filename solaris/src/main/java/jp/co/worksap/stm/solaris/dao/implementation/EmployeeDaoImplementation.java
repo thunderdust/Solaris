@@ -42,7 +42,6 @@ public class EmployeeDaoImplementation implements EmployeeDao {
 						return new EmployeeDto(rs.getString("firstname"), rs
 								.getString("lastname"), rs.getString("gender"),
 								rs.getString("id"), rs.getString("email"), rs
-										.getString("role"), rs
 										.getString("contact_number"), rs
 										.getString("password"), rs
 										.getString("time_joined"));
@@ -72,7 +71,6 @@ public class EmployeeDaoImplementation implements EmployeeDao {
 											.getString("gender"), rs
 											.getString("id"), rs
 											.getString("email"), rs
-											.getString("role"), rs
 											.getString("contact_number"), rs
 											.getString("password"), rs
 											.getString("time_joined"));
@@ -93,7 +91,6 @@ public class EmployeeDaoImplementation implements EmployeeDao {
 											.getString("gender"), rs
 											.getString("id"), rs
 											.getString("email"), rs
-											.getString("role"), rs
 											.getString("contact_number"), rs
 											.getString("password"), rs
 											.getString("time_joined"));
@@ -142,10 +139,9 @@ public class EmployeeDaoImplementation implements EmployeeDao {
 				ps.setString(3, ed.getGender());
 				ps.setString(4, ed.getId());
 				ps.setString(5, ed.getEmail());
-				ps.setString(6, ed.getRole());
-				ps.setString(7, ed.getContact_number());
-				ps.setString(8, ed.getPassword());
-				ps.setString(9, ed.getTimeJoined());
+				ps.setString(6, ed.getContact_number());
+				ps.setString(7, ed.getPassword());
+				ps.setString(8, ed.getTimeJoined());
 
 			});
 
@@ -166,9 +162,8 @@ public class EmployeeDaoImplementation implements EmployeeDao {
 					ps.setString(3, ed.getGender());
 					ps.setString(4, ed.getId());
 					ps.setString(5, ed.getEmail());
-					ps.setString(6, ed.getRole());
-					ps.setString(7, ed.getContact_number());
-					ps.setString(8, ed.getTimeJoined());
+					ps.setString(6, ed.getContact_number());
+					ps.setString(7, ed.getTimeJoined());
 				});
 			} else {
 				template.update(UPDATE_EMPLOYEE_AND_PASSWORD, (ps) -> {
@@ -177,10 +172,9 @@ public class EmployeeDaoImplementation implements EmployeeDao {
 					ps.setString(3, ed.getGender());
 					ps.setString(4, ed.getId());
 					ps.setString(5, ed.getEmail());
-					ps.setString(6, ed.getRole());
-					ps.setString(7, ed.getContact_number());
-					ps.setString(8, ed.getPassword());
-					ps.setString(10, ed.getTimeJoined());
+					ps.setString(6, ed.getContact_number());
+					ps.setString(7, ed.getPassword());
+					ps.setString(8, ed.getTimeJoined());
 				});
 			}
 

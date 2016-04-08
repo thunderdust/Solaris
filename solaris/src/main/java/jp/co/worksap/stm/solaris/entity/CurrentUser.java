@@ -1,5 +1,7 @@
 package jp.co.worksap.stm.solaris.entity;
 
+import java.util.List;
+
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.User;
 
@@ -10,7 +12,8 @@ public class CurrentUser extends User {
 
 	public CurrentUser(EmployeeEntity user) {
 		super(user.getId(), user.getPassword(), AuthorityUtils
-				.createAuthorityList(user.getRole()));
+				.createAuthorityList(user.getRoles().toArray(
+						new String[user.getRoles().size()])));
 		this.user = user;
 	}
 
@@ -22,7 +25,7 @@ public class CurrentUser extends User {
 		return user.getId();
 	}
 
-	public String getRole() {
-		return user.getRole();
+	public List<String> getRole() {
+		return user.getRoles();
 	}
 }

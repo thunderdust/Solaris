@@ -1,6 +1,7 @@
 package jp.co.worksap.stm.solaris.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
 import jp.co.worksap.stm.solaris.dto.EmployeeDto;
 import lombok.Data;
@@ -16,7 +17,7 @@ import lombok.NoArgsConstructor;
  * */
 
 @NoArgsConstructor
-@Data	
+@Data
 public class EmployeeEntity implements Serializable {
 
 	private static final long serialVersionUID = -7395947091403157624L;
@@ -27,18 +28,18 @@ public class EmployeeEntity implements Serializable {
 	private String id;
 	private String email;
 	private String contact_number;
-	private String role;
+	private List<String> roles;
 	private String password;
 	private String timeJoined;
 
-	public EmployeeEntity(EmployeeDto e) {
+	public EmployeeEntity(EmployeeDto e, List<String> roles) {
 		this.firstName = e.getFirstName();
 		this.lastName = e.getLastName();
 		this.gender = e.getGender();
 		this.id = e.getId();
 		this.email = e.getEmail();
 		this.contact_number = e.getContact_number();
-		this.role = e.getRole();
+		this.roles = roles;
 		this.password = e.getPassword();
 		this.timeJoined = e.getTimeJoined();
 	}

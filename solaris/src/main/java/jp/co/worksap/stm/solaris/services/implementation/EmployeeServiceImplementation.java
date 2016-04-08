@@ -11,6 +11,7 @@ import jp.co.worksap.stm.solaris.entity.EmployeeFetchByRoleEntity;
 import jp.co.worksap.stm.solaris.entity.EmployeeListEntity;
 import jp.co.worksap.stm.solaris.exceptions.ServiceException;
 import jp.co.worksap.stm.solaris.services.specification.EmployeeService;
+import jp.co.worksap.stm.solaris.services.specification.RoleService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,6 +25,9 @@ public class EmployeeServiceImplementation implements EmployeeService {
 	@Autowired
 	private EmployeeDao employeeDao;
 
+	@Autowired
+	private RoleService roleService;
+
 	@Override
 	public EmployeeEntity getById(String id) throws ServiceException {
 		EmployeeDto dto = null;
@@ -33,11 +37,11 @@ public class EmployeeServiceImplementation implements EmployeeService {
 			throw new ServiceException("Cannot find user for id: " + id, e);
 		}
 		EmployeeEntity entity = null;
+		List<String> roles = null;
 		if (dto != null) {
-			entity = new EmployeeEntity(dto);
+			roles = roleService.getRolesByUserId(id);
+			entity = new EmployeeEntity(dto, roles);
 
-		} else {
-			// null
 		}
 		return entity;
 	}
@@ -48,12 +52,12 @@ public class EmployeeServiceImplementation implements EmployeeService {
 		List<EmployeeDto> dtoList = null;
 		int count = 0;
 		try {
-			dtoList = employeeDao.getByRole(entity.getRole(),
+			dtoList = employeeDao.getByRole(entity.getRole().get(0),
 					entity.getStart(), entity.getLength());
-			if (entity.getRole() == "ALL") {
+			if (entity.getRole().contains("ALL")) {
 				count = employeeDao.getTotalCount();
 			} else {
-				count = employeeDao.getTotalCount(entity.getRole());
+				count = employeeDao.getTotalCount(entity.getRole().get(0));
 			}
 
 		} catch (IOException e) {
@@ -61,13 +65,14 @@ public class EmployeeServiceImplementation implements EmployeeService {
 					+ entity.getRole(), e);
 		}
 
-		List<EmployeeEntity> eList = Lists.newArrayList();
+		List<EmployeeEntity> entities = Lists.newArrayList();
 		for (EmployeeDto dto : dtoList) {
-			EmployeeEntity newEntity = new EmployeeEntity(dto);
-			eList.add(newEntity);
+			List<String> roles = roleService.getRolesByUserId(dto.getId());
+			EmployeeEntity newEntity = new EmployeeEntity(dto, roles);
+			entities.add(newEntity);
 		}
 
-		return new EmployeeListEntity(entity.getDraw(), count, count, eList);
+		return new EmployeeListEntity(entity.getDraw(), count, count, entities);
 	}
 
 	@Override
@@ -91,24 +96,6 @@ public class EmployeeServiceImplementation implements EmployeeService {
 
 	@Override
 	public void deleteById(String id) throws ServiceException {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public String getUserRoleById(String userId) throws ServiceException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void insertRole(String userId) throws ServiceException {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void removeRole(String userId) throws ServiceException {
 		// TODO Auto-generated method stub
 
 	}

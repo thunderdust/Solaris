@@ -10,18 +10,12 @@ public interface EmployeeService {
 
 	EmployeeEntity getById(String userId) throws ServiceException;
 
-	EmployeeListEntity getListByRole(EmployeeFetchByRoleEntity e) throws ServiceException;
+	EmployeeListEntity getListByRole(EmployeeFetchByRoleEntity e)
+			throws ServiceException;
 
 	void insert(EmployeeCreationEntity e) throws ServiceException;
 
 	void update(EmployeeCreationEntity e) throws ServiceException;
 
 	void deleteById(String userId) throws ServiceException;
-
-	String getUserRoleById(String userId) throws ServiceException;
-
-	void insertRole(String userId) throws ServiceException;
-
-	void removeRole(String userId) throws ServiceException;
-
 }

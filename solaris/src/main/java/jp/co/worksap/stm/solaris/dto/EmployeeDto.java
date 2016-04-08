@@ -2,6 +2,7 @@ package jp.co.worksap.stm.solaris.dto;
 
 import java.sql.Timestamp;
 import java.util.Date;
+import java.util.List;
 
 import jp.co.worksap.stm.solaris.entity.EmployeeCreationEntity;
 import jp.co.worksap.stm.solaris.utils.PasswordHash;
@@ -20,7 +21,7 @@ public class EmployeeDto {
 	private String id;
 	private String email;
 	private String contact_number;
-	private String role;
+	//private List<String> roles;
 	private String password;
 	private String timeJoined;
 
@@ -32,7 +33,7 @@ public class EmployeeDto {
 		id = e.getId();
 		email = e.getEmail();
 		contact_number = e.getContact_number();
-		role = e.getRole();
+		//roles = e.getRoles();
 		if (e.getPassword() != null) {
 			// hash password
 			PasswordHash hash = new PasswordHash();
