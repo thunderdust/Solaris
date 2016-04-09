@@ -71,6 +71,10 @@ $(document).ready(function() {
 
 Solaris.addEmployee = function(evt) {
 	var formData = $('#employee-form').serializeObject();
+	// convert single role string to an object 
+	if (typeof(formData.roles === 'string')){
+		formData.roles = [formData.roles];
+	}
 	var url = 'employees/' + $('#employee-add-modal #myModalLabel').data().mode + 'UserAccount';
 	console.log(url);
 	console.log(JSON.stringify(formData));

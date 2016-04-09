@@ -24,13 +24,13 @@ public class EmployeeDaoImplementation implements EmployeeDao {
 	private static final String COUNT_EMPLOYEE_BY_ROLE = "SELECT COUNT(*) FROM EMPLOYEES WHERE role = ?";
 	private static final String COUNT_EMPLOYEE = "SELECT COUNT(*) FROM EMPLOYEES";
 	private static final String INSERT_EMPLOYEE = "INSERT INTO EMPLOYEES "
-			+ " (firstname, lastname, gender, id, email, contact_number, role, password, time_joined)"
-			+ " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+			+ " (firstname, lastname, gender, id, email, contact_number, password, time_joined)"
+			+ " VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 	private static final String DELETE_EMPLOYEE = "DELETE FROM EMPLOYEES WHERE id = ?";
 	private static final String UPDATE_EMPLOYEE_AND_PASSWORD = "UPDATE EMPLOYEES SET password = ?, "
-			+ "firstname = ?, lastname = ?, gender = ?, id = ?, email = ?, contact_number = ?, role = ?, password = ?, time_joined = ?";
+			+ "firstname = ?, lastname = ?, gender = ?, id = ?, email = ?, contact_number = ?, password = ?, time_joined = ?";
 	private static final String UPDATE_EMPLOYEE = "UPDATE EMPLOYEES SET "
-			+ "firstname = ?, lastname = ?, gender = ?, id = ?, email = ?, contact_number = ?, role = ?, password = ?, time_joined = ?";
+			+ "firstname = ?, lastname = ?, gender = ?, id = ?, email = ?, contact_number = ?, password = ?, time_joined = ?";
 
 	@Override
 	public EmployeeDto getByID(String id) throws IOException {

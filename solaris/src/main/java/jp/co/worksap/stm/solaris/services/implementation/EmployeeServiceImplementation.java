@@ -86,6 +86,10 @@ public class EmployeeServiceImplementation implements EmployeeService {
 			throw new ServiceException("Cannot add user account for userId: "
 					+ userId, e);
 		}
+
+		// Delete & insert roles
+		roleService.deleteRoles(userId);
+		roleService.insertRoles(userId, ce.getRoles());
 	}
 
 	@Override

@@ -31,7 +31,7 @@ public class RoleServiceImplementation implements RoleService {
 
 		List<String> roles = new ArrayList<String>();
 		for (RoleDto rd : roleList) {
-			roles.add(rd.getRoleName());
+			roles.add(rd.getName());
 		}
 		return roles;
 	}
@@ -42,7 +42,7 @@ public class RoleServiceImplementation implements RoleService {
 		List<RoleDto> roles = new ArrayList<RoleDto>();
 		for (String role : roleList) {
 			RoleDto rd = new RoleDto();
-			rd.setRoleName(role);
+			rd.setName(role);
 			roles.add(rd);
 		}
 		try {
@@ -50,7 +50,7 @@ public class RoleServiceImplementation implements RoleService {
 
 		} catch (IOException e) {
 			throw new ServiceException("Cannot add roles for user id: "
-					+ userId, e);
+					+ userId + " roleList size: " + roleList.size(), e);
 		}
 	}
 

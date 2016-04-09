@@ -48,7 +48,7 @@ public class RoleDaoImplementation implements RoleDao {
 				public void setValues(PreparedStatement ps, int i)
 						throws SQLException {
 					ps.setString(1, userId);
-					ps.setString(2, roleList.get(i).getRoleName());
+					ps.setString(2, roleList.get(i).getName());
 				}
 
 				@Override
@@ -58,7 +58,9 @@ public class RoleDaoImplementation implements RoleDao {
 			});
 
 		} catch (DataAccessException e) {
-			throw new IOException(e);
+			throw new IOException("Fail to insert roles with name: "
+					+ roleList.get(0).getName() + "| list size: "
+					+ roleList.size(), e);
 		}
 
 	}
