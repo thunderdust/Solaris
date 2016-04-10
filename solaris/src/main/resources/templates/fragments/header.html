@@ -24,9 +24,7 @@
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li><a href="/solaris/dashboard">Dashboard <span
-							class="sr-only">(current)</span>
-					</a></li>
+
 					<!-- ADMIN Menu -->
 					<li class="active" th:if="${session.roles.contains('ADMIN')}"><a
 						href="/solaris/employees">Employees <span class="sr-only">(current)</span></a></li>
@@ -35,29 +33,29 @@
 
 					<!-- SALES MANAGER  Menu -->
 					<li class="active"
-						th:if="${session.roles.contains('SALES_MANAGER')}"><a
+						th:if="${session.roles.contains('SALES MANAGER')}"><a
 						href="/solaris/reports">Reports <span class="sr-only">(current)</span></a></li>
-					<li th:if="${session.roles.contains('SALES_MANAGER')}"><a
+					<li th:if="${session.roles.contains('SALES MANAGER')}"><a
 						href="/solaris/products">Products <span class="sr-only">(current)</span></a></li>
-					<li th:if="${session.roles.contains('SALES_MANAGER')}"><a
+					<li th:if="${session.roles.contains('SALES MANAGER')}"><a
 						href="/solaris/customers">Customers <span class="sr-only">(current)</span></a></li>
-					<li th:if="${session.roles.contains('SALES_MANAGER')}"><a
+					<li th:if="${session.roles.contains('SALES MANAGER')}"><a
 						href="/solaris/training">Training <span class="sr-only">(current)</span></a></li>
 
 					<!-- SALES REPRESENTATIVE Menu -->
 					<li class="active"
-						th:if="${session.roles.contains('SALES_MANAGER')}"><a
+						th:if="${session.roles.contains('SALES REPRESENTATIVE')}"><a
 						href="/solaris/products">Products <span class="sr-only">(current)</span></a></li>
-					<li th:if="${session.roles.contains('SALES_MANAGER')}"><a
+					<li th:if="${session.roles.contains('SALES REPRESENTATIVE')}"><a
 						href="/solaris/customers">Customers <span class="sr-only">(current)</span></a></li>
-					<li th:if="${session.roles.contains('SALES_MANAGER')}"><a
+					<li th:if="${session.roles.contains('SALES REPRESENTATIVE')}"><a
 						href="/solaris/orders">Orders <span class="sr-only">(current)</span></a></li>
-					<li th:if="${session.roles.contains('SALES_MANAGER')}"><a
+					<li th:if="${session.roles.contains('SALES REPRESENTATIVE')}"><a
 						href="/solaris/training">Training <span class="sr-only">(current)</span></a></li>
 
 					<!-- AFTER_SALES_SERVICE_AGENT Menu -->
 					<li class="active"
-						th:if="${session.roles.contains('AFTER_SALES_SERVICE_AGENT')}"><a
+						th:if="${session.roles.contains('AFTER SALES SERVICE AGENT')}"><a
 						href="/solaris/after-sales-requests">After-sales Requests <span
 							class="sr-only">(current)</span></a></li>
 

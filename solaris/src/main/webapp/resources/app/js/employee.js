@@ -14,7 +14,7 @@ $(document).ready(function() {
         			delete(d.columns);
 					delete(d.order);
 					delete(d.search);
-					d.role = $('#employee-role-filter').val();
+					d.roles = $('#employee-role-filter').val();
 					console.log(JSON.stringify(d));
 					return JSON.stringify(d);
         		},
