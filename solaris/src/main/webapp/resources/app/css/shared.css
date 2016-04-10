@@ -59,11 +59,12 @@ span.solaris-title {
 	margin-right: 5px;
 }
 
-div.unauthorized>h2 {
+div.unauthorized>p {
 	text-align: center;
 	color: #ff4444;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	margin: 30px 0 50px 0;
+	margin: auto;
+	font-size: 250%;
 }
 
 div.unauthorized #img-unauthorized img {
@@ -72,6 +73,15 @@ div.unauthorized #img-unauthorized img {
 	display: block;
 	margin: auto;
 	width: 344px;
+}
+
+.unauthorized>a.btn {
+	color: #FFFFFF;
+	display: block;
+	text-align: center;
+	margin: auto;
+	width: 45%;
+	margin-top: 100px;
 }
 
 /***********************************************************/
