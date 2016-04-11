@@ -44,10 +44,10 @@
 		</div>
 		<!-- Employee table -->
 		<div class="row solaris-table-container">
-			<div class="col-lg-12 col-sm-12">
-				<select id="employee-role-filter" class="form-control" name="role">
-					<option selected="selected" data-display="Administrators"
-						value="ADMIN">View Administrators</option>
+			<div>
+				<select id="employee-role-filter" class="form-control" name="roles">
+					<option data-display="Administrators" value="ADMIN">View
+						Administrators</option>
 					<option data-display="Sales Managers" value="SALES MANAGER">View
 						Sales Managers</option>
 					<option data-display="Sales Representatives"
@@ -57,19 +57,19 @@
 						Service Agents</option>
 					<option data-display="Accountants" value="ACCOUNTANT">View
 						Accountants</option>
-					<option data-display="All" value="ALL">View All</option>
+					<option selected="selected" data-display="All" value="ALL">View
+						All</option>
 				</select>
 			</div>
-			<div class="col-lg-12 col-sm-12">
+			<div>
 				<table id="employee-table"
 					class="table table-striped table-bordered">
 					<thead>
-						<tr class="col-lg-12 col-sm-12">
-							<th class="col-lg-3 col-sm-3">First Name</th>
-							<th class="col-lg-3 col-sm-3">Last Name</th>
-							<th class="col-lg-1 col-sm-1">Gender</th>
-							<th class="col-lg-2 col-sm-2">Role</th>
-							<th class="col-lg-3 col-sm-3">Time Joined</th>
+						<tr>
+							<th>User Id</th>
+							<th>First Name</th>
+							<th>Last Name</th>
+							<th>Gender</th>
 						</tr>
 					</thead>
 				</table>

@@ -6,7 +6,7 @@ $(document).ready(function() {
         Solaris.dataTable = $('#employee-table').DataTable({
         	'serverSide' : true,
         	'ajax' : {
-        		url : 'employees/findUserByRole',
+        		url : 'employees/findAllUsers',
         		type : 'POST',
         		contentType : 'application/json',
         		data : function(d){
@@ -25,11 +25,10 @@ $(document).ready(function() {
 				   }
         	},
         	columns : [
+        	  { data: 'id'},
         	  { data: 'firstName'},
         	  { data: 'lastName'},
-        	  { data: 'gender'},
-        	  { data: 'role'},
-        	  { data: 'timeJoined'}
+        	  { data: 'gender'}
         	],
         	select: "single"
         });

@@ -1,7 +1,7 @@
 package jp.co.worksap.stm.solaris.controller;
 
 import jp.co.worksap.stm.solaris.entity.EmployeeCreationEntity;
-import jp.co.worksap.stm.solaris.entity.EmployeeFetchByRoleEntity;
+import jp.co.worksap.stm.solaris.entity.EmployeeFetchAllEntity;
 import jp.co.worksap.stm.solaris.entity.EmployeeListEntity;
 import jp.co.worksap.stm.solaris.services.specification.EmployeeService;
 
@@ -33,10 +33,9 @@ public class EmployeeController {
 	}
 
 	@PreAuthorize("hasAuthority('ADMIN')")
-	@RequestMapping(value = "/employees/findUserByRole", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/employees/findAllUsers", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
-	public EmployeeListEntity findUserByRole(
-			@RequestBody EmployeeFetchByRoleEntity e) {
-		return employeeService.getListByRole(e);
+	public EmployeeListEntity findAllUsers(@RequestBody EmployeeFetchAllEntity e) {
+		return employeeService.getAll(e);
 	}
 }

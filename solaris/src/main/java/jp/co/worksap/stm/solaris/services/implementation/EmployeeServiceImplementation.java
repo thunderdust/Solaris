@@ -7,6 +7,7 @@ import jp.co.worksap.stm.solaris.dao.specification.EmployeeDao;
 import jp.co.worksap.stm.solaris.dto.EmployeeDto;
 import jp.co.worksap.stm.solaris.entity.EmployeeCreationEntity;
 import jp.co.worksap.stm.solaris.entity.EmployeeEntity;
+import jp.co.worksap.stm.solaris.entity.EmployeeFetchAllEntity;
 import jp.co.worksap.stm.solaris.entity.EmployeeFetchByRoleEntity;
 import jp.co.worksap.stm.solaris.entity.EmployeeListEntity;
 import jp.co.worksap.stm.solaris.exceptions.ServiceException;
@@ -52,17 +53,41 @@ public class EmployeeServiceImplementation implements EmployeeService {
 		List<EmployeeDto> dtoList = null;
 		int count = 0;
 		try {
-			dtoList = employeeDao.getByRole(entity.getRole().get(0),
+			dtoList = employeeDao.getByRole(entity.getRoles().toString(),
 					entity.getStart(), entity.getLength());
-			if (entity.getRole().contains("ALL")) {
+			if (entity.getRoles().toString().contains("ALL")) {
 				count = employeeDao.getTotalCount();
 			} else {
-				count = employeeDao.getTotalCount(entity.getRole().get(0));
+				count = employeeDao.getTotalCount(entity.getRoles().toString());
 			}
 
 		} catch (IOException e) {
 			throw new ServiceException("Could not find user for role: "
-					+ entity.getRole(), e);
+					+ entity.getRoles(), e);
+		}
+
+		List<EmployeeEntity> entities = Lists.newArrayList();
+		for (EmployeeDto dto : dtoList) {
+			List<String> roles = roleService.getRolesByUserId(dto.getId());
+			EmployeeEntity newEntity = new EmployeeEntity(dto, roles);
+			entities.add(newEntity);
+		}
+
+		return new EmployeeListEntity(entity.getDraw(), count, count, entities);
+	}
+
+	@Override
+	public EmployeeListEntity getAll(EmployeeFetchAllEntity entity)
+			throws ServiceException {
+
+		List<EmployeeDto> dtoList = null;
+		int count = 0;
+		try {
+			dtoList = employeeDao.getAll();
+			count = employeeDao.getTotalCount();
+
+		} catch (IOException e) {
+			throw new ServiceException("Error get all employees", e);
 		}
 
 		List<EmployeeEntity> entities = Lists.newArrayList();

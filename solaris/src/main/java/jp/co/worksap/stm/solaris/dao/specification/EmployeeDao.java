@@ -12,6 +12,8 @@ public interface EmployeeDao {
 	List<EmployeeDto> getByRole(String role, int start, int size)
 			throws IOException;
 
+	List<EmployeeDto> getAll() throws IOException;
+
 	int getTotalCount(String role) throws IOException;
 
 	int getTotalCount() throws IOException;
