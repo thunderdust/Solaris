@@ -14,6 +14,23 @@ html, body {
 	padding-top: 10px;
 }
 
+/* specifically customized style for logout form inside the dropdown menu */
+input[type=submit].solaris-logout {
+	-webkit-appearance: listitem;
+	-moz-appearance: menuitem;
+	display: block;
+	background-color: #f0ad4e;
+	color: #FFFFFF;
+	width: 100%;
+	text-align: left;
+	padding: 3px 18px;
+	width: 100%;
+}
+
+li.solaris-logout {
+	background-color: #f0ad4e
+}
+
 span.solaris-title {
 	font-size: 200%;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;

@@ -42,7 +42,7 @@ class SecurityConfig extends WebSecurityConfigurerAdapter {
 					return false;
 				}
 			}
-			
+
 			if (request.getMethod().equals(allowedMethod)) {
 				return false;
 			}
@@ -58,17 +58,24 @@ class SecurityConfig extends WebSecurityConfigurerAdapter {
 		// free access to resources files
 		.authorizeRequests()
 				.antMatchers("/resources/**", "/login/**")
-				.permitAll().anyRequest().authenticated()
+				.permitAll()
+				.anyRequest()
+				.authenticated()
 				.and()
 				// specify login form url and url when login failed
-				.formLogin().loginPage("/login")
+				.formLogin()
+				.loginPage("/login")
 				.failureUrl("/login?error")
 				// specify login parameters
-				.passwordParameter("password").permitAll()
+				.passwordParameter("password")
+				.permitAll()
 				.and()
 				// specify logout settings
-				.logout().logoutUrl("/logout").logoutSuccessUrl("/login")
-				.permitAll()
+				.logout()
+				.logoutUrl("/logout")
+				.logoutRequestMatcher(
+						new AntPathRequestMatcher("/logout", "POST"))
+				.logoutSuccessUrl("/login").permitAll()
 				// Apply customized csrf request mathcer
 				.and().csrf().requireCsrfProtectionMatcher(csrfRequestMatcher)
 				.and();
