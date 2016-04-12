@@ -30,11 +30,6 @@ $(document).ready(function() {
         	],
         	select: "single"
         });
-        
-
-        $('#employee-add-button').click(Solaris.addEmployee);
-        $('#employee-delete-button').click(Solaris.deleteEmployee);
-		//$('#employee-office-filter').change(function() { $('#employee-table').dataTable().fnReloadAjax(); });
 
         // disable delete button if nothing selected
 		Solaris.dataTable.on('select', function () {
@@ -51,16 +46,48 @@ $(document).ready(function() {
 			$('#employee-open-delete-modal-btn').prop('disabled', true);
 			$('#employee-edit-modal-btn').prop('disabled', true);
 		});
-
-		// reset data when modal hides
+        
+        /****************** Account add setups ***************************/
+        $('#employee-add-button').click(Solaris.addEmployee);
+        // reset data when modal hides
         $('#employee-add-modal').on('hidden.bs.modal', function() {
         	$('#id').prop('readonly',false);
             $('#employee-add-modal #myModalLabel').data().mode = 'add';
             $('#employee-add-modal #myModalLabel').html('Add new employee');
             $('#employee-form')[0].reset();
         });
+        // set default add model 
+		$('#employee-add-modal #myModalLabel').data().mode = 'add';
+        /****************** Account add setups ***************************/
+        
 
-		 $('#employee-add-modal #myModalLabel').data().mode = 'add';
+
+        /****************** Account Edition setups **********************/
+        $('#employee-edit-modal-btn').on('click', function(){
+			var selectedData = Solaris.dataTable.row('.selected').data();
+		 	$('#id').prop('readonly',true)
+            $('#employee-add-modal #myModalLabel').data().mode = 'update';
+            $('#employee-add-modal #myModalLabel').html('Edit employee');
+            $('#id').val(selectedData.id);
+            $('#first-name').val(selectedData.firstName);
+            $('#last-name').val(selectedData.lastName);
+            $('#email').val(selectedData.email);
+            $('#contact_number').val(selectedData.contact_number);
+            $('#roles').val(selectedData.roles);
+            //$('#office option[data-display='+selectedData.officeName+']').attr('selected', 'selected');
+            //$('#password').val(selectedData.password);
+		 });
+        /****************** Account Edition setups **********************/
+
+
+        /****************** Account Deletion setups **********************/
+        $('#employee-delete-button').click(Solaris.deleteEmployee);
+		/****************** Account Deletion setups **********************/
+
+
+		//$('#employee-office-filter').change(function() { $('#employee-table').dataTable().fnReloadAjax(); });
+
+		
         
         /* After certain short time of window resize, reload page to let the table adjust itself. */
         var resizeTask;

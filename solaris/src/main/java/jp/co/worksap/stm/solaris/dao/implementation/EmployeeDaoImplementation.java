@@ -29,9 +29,9 @@ public class EmployeeDaoImplementation implements EmployeeDao {
 			+ " VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 	private static final String DELETE_EMPLOYEE = "DELETE FROM EMPLOYEES WHERE id = ?";
 	private static final String UPDATE_EMPLOYEE_AND_PASSWORD = "UPDATE EMPLOYEES SET password = ?, "
-			+ "firstname = ?, lastname = ?, gender = ?, id = ?, email = ?, contact_number = ?, password = ?, time_joined = ?";
+			+ "firstname = ?, lastname = ?, gender = ?, email = ?, contact_number = ?, time_joined = ? WHERE id = ?";
 	private static final String UPDATE_EMPLOYEE = "UPDATE EMPLOYEES SET "
-			+ "firstname = ?, lastname = ?, gender = ?, id = ?, email = ?, contact_number = ?, password = ?, time_joined = ?";
+			+ "firstname = ?, lastname = ?, gender = ?, email = ?, contact_number = ?, time_joined = ? WHERE id = ?";
 
 	@Override
 	public EmployeeDto getByID(String id) throws IOException {
@@ -181,21 +181,21 @@ public class EmployeeDaoImplementation implements EmployeeDao {
 					ps.setString(1, ed.getFirstName());
 					ps.setString(2, ed.getLastName());
 					ps.setString(3, ed.getGender());
-					ps.setString(4, ed.getId());
-					ps.setString(5, ed.getEmail());
-					ps.setString(6, ed.getContact_number());
-					ps.setString(7, ed.getTimeJoined());
+					ps.setString(4, ed.getEmail());
+					ps.setString(5, ed.getContact_number());
+					ps.setString(6, ed.getTimeJoined());
+					ps.setString(7, ed.getId());
 				});
 			} else {
 				template.update(UPDATE_EMPLOYEE_AND_PASSWORD, (ps) -> {
-					ps.setString(1, ed.getFirstName());
-					ps.setString(2, ed.getLastName());
-					ps.setString(3, ed.getGender());
-					ps.setString(4, ed.getId());
+					ps.setString(1, ed.getPassword());
+					ps.setString(2, ed.getFirstName());
+					ps.setString(3, ed.getLastName());
+					ps.setString(4, ed.getGender());
 					ps.setString(5, ed.getEmail());
 					ps.setString(6, ed.getContact_number());
-					ps.setString(7, ed.getPassword());
-					ps.setString(8, ed.getTimeJoined());
+					ps.setString(7, ed.getTimeJoined());
+					ps.setString(8, ed.getId());
 				});
 			}
 

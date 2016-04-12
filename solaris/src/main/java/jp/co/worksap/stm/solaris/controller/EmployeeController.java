@@ -34,6 +34,13 @@ public class EmployeeController {
 	}
 
 	@PreAuthorize("hasAuthority('ADMIN')")
+	@RequestMapping(value = "/employees/updateUserAccount", method = RequestMethod.POST)
+	@ResponseBody
+	public void updateUserAccount(@RequestBody EmployeeCreationEntity ece) {
+		employeeService.update(ece);
+	}
+
+	@PreAuthorize("hasAuthority('ADMIN')")
 	@RequestMapping(value = "/employees/findAllUsers", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
 	public EmployeeListEntity findAllUsers(@RequestBody EmployeeFetchAllEntity e) {

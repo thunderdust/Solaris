@@ -119,8 +119,15 @@ public class EmployeeServiceImplementation implements EmployeeService {
 
 	@Override
 	public void update(EmployeeCreationEntity e) throws ServiceException {
-		// TODO Auto-generated method stub
+		String id = e.getId();
+		EmployeeDto dto = new EmployeeDto(e);
+		try {
+			employeeDao.update(dto);
 
+		} catch (IOException error) {
+			throw new ServiceException(
+					"Failed to update employee account with id: " + id, error);
+		}
 	}
 
 	@Override
