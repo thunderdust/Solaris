@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
@@ -37,5 +38,12 @@ public class EmployeeController {
 	@ResponseBody
 	public EmployeeListEntity findAllUsers(@RequestBody EmployeeFetchAllEntity e) {
 		return employeeService.getAll(e);
+	}
+
+	@PreAuthorize("hasAuthority('ADMIN')")
+	@RequestMapping(value = "/employees/deleteUser", method = RequestMethod.DELETE)
+	@ResponseBody
+	public void deleteUser(@RequestParam String userID) {
+		employeeService.deleteById(userID);
 	}
 }

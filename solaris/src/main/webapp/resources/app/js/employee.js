@@ -1,8 +1,6 @@
 $(document).ready(function() {
 	var initPage = function() {
 
-		
-
         Solaris.dataTable = $('#employee-table').DataTable({
         	'serverSide' : true,
         	'ajax' : {
@@ -35,8 +33,8 @@ $(document).ready(function() {
         
 
         $('#employee-add-button').click(Solaris.addEmployee);
-        //$('#employee-delete-button').click(BookStore.deleteEmployee);
-		$('#employee-office-filter').change(function() { $('#employee-table').dataTable().fnReloadAjax(); });
+        $('#employee-delete-button').click(Solaris.deleteEmployee);
+		//$('#employee-office-filter').change(function() { $('#employee-table').dataTable().fnReloadAjax(); });
 
         // disable delete button if nothing selected
 		Solaris.dataTable.on('select', function () {
@@ -63,6 +61,20 @@ $(document).ready(function() {
         });
 
 		 $('#employee-add-modal #myModalLabel').data().mode = 'add';
+        
+        /* After certain short time of window resize, reload page to let the table adjust itself. */
+        var resizeTask;
+        var timeoutThreshold = 30;
+		window.onresize = function(event){
+			console.log("Window resized");
+			clearTimeout(resizeTask);
+			resizeTask = setTimeout(reloadPage, timeoutThreshold);
+		}
+
+		function reloadPage(){
+			// Reload from cache
+			location.reload(false);
+		}
 	};
 
 	initPage();
@@ -92,3 +104,18 @@ Solaris.addEmployee = function(evt) {
 		$('#employee-table').dataTable().fnReloadAjax();
 	});
 };
+
+Solaris.deleteEmployee = function(event){
+	var selectedEmployeeID = Solaris.dataTable.data()[Solaris.dataTable.row('.selected')[0]].id;
+	$.ajax({
+		url: "employees/deleteUser?userID=" + selectedEmployeeID,
+		type : 'DELETE',
+		xhrFields: {
+	      withCredentials: true
+	   }
+	}).done(function(){
+		// Once deletion is done, hide confrim prompt and refresh data
+		$('#employee-delete-modal').modal('hide');
+		$('#employee-table').dataTable().fnReloadAjax();
+	});
+}

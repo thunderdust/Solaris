@@ -125,7 +125,13 @@ public class EmployeeServiceImplementation implements EmployeeService {
 
 	@Override
 	public void deleteById(String id) throws ServiceException {
-		// TODO Auto-generated method stub
+		try {
+			employeeDao.deleteBy(id);
+			roleService.deleteRoles(id);
 
+		} catch (IOException e) {
+			throw new ServiceException(
+					"Failed to delete employee account with id: " + id, e);
+		}
 	}
 }

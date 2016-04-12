@@ -40,10 +40,8 @@ span.solaris-title {
 
 .solaris-table-container {
 	background: #e7e7e7;
-	margin-top: 10px;
-	padding-top: 10px;
+	padding: 10px;
 	border-radius: 4px;
-	display: block;
 }
 
 .solaris-table-container>div>table {
