@@ -9,18 +9,18 @@ import lombok.Data;
 
 @Data
 public class LaptopPresentationEntity {
-	private int id;
+
 	private String name;
 	private String brand;
 	private Date publishDate;
 	private BigDecimal price;
 	private List<String> tags;
-	private int width;
-	private int height;
-	private int length;
-	private int weight;
+	private int laptop_width;
+	private int laptop_height;
+	private int laptop_length;
+	private int laptop_weight;
 	private float screenSize;
-	private String installedOS;
+	private String os;
 	private String cpu;
 	private String ramType;
 	private String ramSlot;
@@ -48,13 +48,17 @@ public class LaptopPresentationEntity {
 	private boolean hasVGAPort;
 	private boolean hasHDMIPort;
 	private List<String> usbPortType;
-	private List<String> cardReaders;
+	private int usb_2_slot;
+	private int usb_3_slot;
+	private List<String> cardReaderTypes;
 	private String bluetooth;
 	private String wifiModel;
 	private boolean hasOfficeSuite;
+	private String officeSuiteVersion;
 	private String antivirusSoftware;
 	private boolean hasBag;
 	private int warranty;
+	private List<String> imagePath;
 
 	public LaptopPresentationEntity() {
 
@@ -69,7 +73,7 @@ public class LaptopPresentationEntity {
 		this.bluetooth = ld.getBluetooth();
 		this.brand = ld.getBrand();
 		this.cameraPixel = ld.getCameraPixel();
-		this.cardReaders = ld.getCardReaders();
+		this.cardReaderTypes = ld.getCardReaderTypes();
 		this.cpu = ld.getCpu();
 		this.gpu = ld.getGpu();
 		this.graphicMemory = ld.getGraphicMemory();
@@ -83,12 +87,11 @@ public class LaptopPresentationEntity {
 		this.hddModel = ld.getHddModel();
 		this.hddSize = ld.getHddSize();
 		this.hddSpinSpeed = ld.getHddSpinSpeed();
-		this.height = ld.getHeight();
-		this.id = ld.getId();
-		this.installedOS = ld.getInstalledOS();
+		this.laptop_height = ld.getLaptop_height();
+		this.os = ld.getOs();
 		this.isTouchScreen = ld.isTouchScreen();
 		this.keyboardType = ld.getKeyboardType();
-		this.length = ld.getLength();
+		this.laptop_length = ld.getLaptop_length();
 		this.name = ld.getName();
 		this.opticalDrive = ld.getOpticalDrive();
 		this.opticalDriveSpeed = ld.getOpticalDriveSpeed();
@@ -105,9 +108,13 @@ public class LaptopPresentationEntity {
 		this.usbPortCount = ld.getUsbPortCount();
 		this.usbPortType = ld.getUsbPortType();
 		this.warranty = ld.getWarranty();
-		this.weight = ld.getWeight();
-		this.width = ld.getWidth();
+		this.laptop_weight = ld.getLaptop_weight();
+		this.laptop_width = ld.getLaptop_width();
 		this.wifiModel = ld.getWifiModel();
+		this.officeSuiteVersion = ld.getOfficeSuiteVersion();
+		this.usb_2_slot = ld.getUsb_2_slot();
+		this.usb_3_slot = ld.getUsb_3_slot();
+		this.imagePath = ld.getImagePath();
 
 	}
 

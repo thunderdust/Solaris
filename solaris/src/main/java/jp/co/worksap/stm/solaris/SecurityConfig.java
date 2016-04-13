@@ -32,7 +32,10 @@ class SecurityConfig extends WebSecurityConfigurerAdapter {
 		private AntPathRequestMatcher[] requestMatchers = {
 				new AntPathRequestMatcher("/login"),
 				new AntPathRequestMatcher("/logout"),
-				new AntPathRequestMatcher("/employees/**") };
+				new AntPathRequestMatcher("/employees/**"),
+				new AntPathRequestMatcher("/products/**"),
+				new AntPathRequestMatcher("/products-add"),
+				new AntPathRequestMatcher("/products-edit") };
 
 		@Override
 		public boolean matches(HttpServletRequest request) {

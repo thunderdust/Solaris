@@ -31,11 +31,21 @@ li.solaris-logout {
 	background-color: #f0ad4e
 }
 
-span.solaris-title {
+div.solaris-title>p {
 	font-size: 200%;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-style: normal;
 	padding-left: 10px;
+	color: #337ab7;
+	font-weight: bold;
+	text-align: center;
+}
+
+div.solaris-title>p>img {
+	display: inline-block;
+	width: 66px;
+	height: 66px;
+	margin-left: 10px;
 }
 
 .solaris-table-container {
@@ -75,6 +85,14 @@ span.solaris-title {
 	margin-right: 5px;
 }
 
+div.form-container {
+	float: none;
+	margin: 0 auto;
+	background-color: #f4f2e7;
+	padding-top: 10px;
+	border-radius: 5px;
+}
+
 div.unauthorized>p {
 	text-align: center;
 	color: #ff4444;
@@ -98,6 +116,26 @@ div.unauthorized #img-unauthorized img {
 	margin: auto;
 	width: 45%;
 	margin-top: 100px;
+}
+
+h4.form-subtitle {
+	text-decoration: underline;
+	font-style: italic;
+	color: #8d8a8a;
+}
+
+/* used for compulsory fields in form inputs */
+div.form-compulsory>label>span {
+	color: #ff0103;
+	font-weight: bold;
+}
+
+span.tip {
+	color: #ff0103;
+	font-size: 12px;
+	display: block;
+	text-align: left;
+	margin: -5px 0 20px 5px;
 }
 
 /***********************************************************/

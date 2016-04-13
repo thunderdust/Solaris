@@ -13,18 +13,17 @@ import lombok.NoArgsConstructor;
 @Data	
 public class LaptopEntity {
 
-	private int id;
 	private String name;
 	private String brand;
 	private Date publishDate;
 	private BigDecimal price;
 	private List<String> tags;
-	private int width;
-	private int height;
-	private int length;
-	private int weight;
+	private int laptop_width;
+	private int laptop_height;
+	private int laptop_length;
+	private int laptop_weight;
 	private float screenSize;
-	private String installedOS;
+	private String os;
 	private String cpu;
 	private String ramType;
 	private String ramSlot;
@@ -52,12 +51,16 @@ public class LaptopEntity {
 	private boolean hasVGAPort;
 	private boolean hasHDMIPort;
 	private List<String> usbPortType;
-	private List<String> cardReaders;
+	private int usb_2_slot;
+	private int usb_3_slot;
+	private List<String> cardReaderTypes;
 	private String bluetooth;
 	private String wifiModel;
 	private boolean hasOfficeSuite;
+	private String officeSuiteVersion;
 	private String antivirusSoftware;
 	private boolean hasBag;
 	private int warranty;
+	private List<String> imagePath;
 
 }

@@ -1,0 +1,397 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Solaris - Add New Product</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="resources/lib/css/select2.min.css" />
+<link rel="stylesheet" href="resources/app/css/shared.css" />
+<link rel="stylesheet"
+	href="resources/lib/css/select2-bootstrap.min.css" />
+<link rel="stylesheet" href="resources/lib/css/datatables.min.css" />
+<ct th:replace="fragments/header :: commonhead"></ct>
+</head>
+<body>
+
+	<!-- Common header -->
+	<div th:replace="fragments/header :: header"></div>
+	<div class="container" id="layout">
+		<div class="row">
+			<div class="solaris-title">
+				<p>
+					Add a new laptop <img src="resources/app/img/laptop.png" />
+				</p>
+			</div>
+			<hr></hr>
+			<div class="col-lg-12 col-sm-12">
+
+
+				<div class="form-container col-lg-8 col-sm-8">
+					<form id="product-add-form">
+						<span class="tip"><b> * </b>marks the compulsory fields.</span>
+						<h4 class="form-subtitle">
+							<b>Basic Information</b>
+						</h4>
+						<hr />
+						<div class="form-group form-compulsory">
+							<label for="name">Laptop Name<span> *</span></label> <input
+								name="name" type="text" class="form-control" id="name"
+								placeholder="Laptop name" required="required" />
+						</div>
+
+						<div class="form-group form-compulsory">
+							<label for="brand">Brand<span> *</span></label> <select
+								id="brand" class="form-control" name="brand" required="required">
+								<option selected="selected" value="acer">Acer</option>
+								<option value="apple">Apple</option>
+								<option value="asus">Asus</option>
+								<option value="alienware">Alienware</option>
+								<option value="dell">Dell</option>
+								<option value="sony">Sony</option>
+								<option value="toshiba">Toshiba</option>
+								<option value="lenovo">Lenovo</option>
+								<option value="fujitsu">Fujitsu</option>
+								<option value="hp">HP</option>
+								<option value="lg">LG</option>
+								<option value="samsung">Samsung</option>
+								<option value="compaq">Compaq</option>
+								<option value="benq">Benq</option>
+								<option value="sharp">Sharp</option>
+								<option value="nec">NEC</option>
+							</select>
+						</div>
+
+						<div class="form-group form-compulsory">
+							<label for="publish-date">Publish Date<span> *</span></label> <input
+								name="publish-date" type="month" class="form-control"
+								id="publish-date" placeholder="Publish Date" required="required" />
+						</div>
+
+						<div class="form-group form-compulsory">
+							<label for="price">Default Price<span> *</span></label> <input
+								name="pric" type="text" class="form-control" id="pric"
+								placeholder="Default Price" required="required" />
+						</div>
+						<hr />
+						<!-- ******************************************************************** -->
+						<h4 class="form-subtitle">
+							<b>Measurements</b>
+						</h4>
+						<hr />
+
+						<div class="form-group form-compulsory">
+							<label for="laptop-width">Width (mm)<span> *</span></label> <input
+								name="laptop-width" type="number" class="form-control"
+								id="laptop-width" min="150"
+								placeholder="Laptop width in unit of millimeter"
+								required="required" />
+						</div>
+
+						<div class="form-group form-compulsory">
+							<label for="laptop-length">Length (mm)<span> *</span></label> <input
+								name="laptop-length" type="number" class="form-control"
+								min="200" id="laptop-length"
+								placeholder="Laptop length in unit of millimeter"
+								required="required" />
+						</div>
+
+						<div class="form-group form-compulsory">
+							<label for="laptop-height">Height (mm)<span> *</span></label> <input
+								name="laptop-height" type="number" class="form-control" min="5"
+								id="laptop-height"
+								placeholder="Laptop height in unit of millimeter"
+								required="required" />
+						</div>
+
+						<div class="form-group form-compulsory">
+							<label for="laptop-weight">Weight (g)<span> *</span></label> <input
+								name="laptop-weight" type="number" class="form-control"
+								id="laptop-weight" placeholder="Laptop weight in unit of gram"
+								required="required" />
+						</div>
+
+						<div class="form-group form-compulsory">
+							<label for="screen-size">Screen Size<span> *</span></label> <input
+								name="screen-size" type="text" class="form-control"
+								id="screen-size" placeholder="Screen size in unit of inch"
+								required="required" />
+						</div>
+						<hr />
+						<!-- ******************************************************************** -->
+
+						<h4 class="form-subtitle">
+							<b>Software</b>
+						</h4>
+
+						<hr />
+
+						<div class="form-group form-compulsory">
+							<label for="os">Installed Operating System<span> *</span></label>
+							<input name="os" type="text" class="form-control" id="os"
+								placeholder="Installed OS" required="required" />
+						</div>
+
+						<div class="form-group">
+							<label for="office-suite-version">Office Suite Version</label> <select
+								id="office-suite-version" class="form-control"
+								name="office-suite-version">
+								<option value="NULL">No Office Suite included</option>
+								<option value="2000">MS Office 2000</option>
+								<option value="XP">MS Office XP</option>
+								<option value="2003">MS Office 2003</option>
+								<option value="2007">MS Office 2007</option>
+								<option value="2010">MS Office 2010</option>
+								<option value="2013 RT">MS Office 2013 RT</option>
+								<option value="2013">MS Office 2013</option>
+								<option value="2016">MS Office 2016</option>
+							</select>
+						</div>
+
+						<div class="form-group">
+							<label for="antivirus">Antivirus Software</label> <input
+								name="antivirus" type="text" class="form-control" id="antivirus"
+								placeholder="Pre-installed anti-virus software" />
+						</div>
+						<hr />
+
+						<!-- ******************************************************************** -->
+
+						<h4 class="form-subtitle">
+							<b>Hardware Specifications</b>
+						</h4>
+						<hr />
+
+						<div class="form-group form-compulsory">
+							<label for="cpu">CPU<span> *</span></label> <input name="cpu"
+								type="text" class="form-control" id="cpu" placeholder="CPU"
+								required="required" />
+						</div>
+
+						<div class="form-group form-compulsory">
+							<label for="ram-type">RAM Type<span> *</span></label> <input
+								name="ram-type" type="text" class="form-control" id="ram-type"
+								placeholder="RAM Type" required="required" />
+						</div>
+
+						<div class="form-group form-compulsory">
+							<label for="ram-size">RAM Size (GB)<span> *</span></label> <input
+								name="ram-size" type="number" class="form-control" id="ram-size"
+								placeholder="RAM size in unit of gigabyte" required="required"
+								min="1" max="24" />
+						</div>
+
+						<div class="form-group form-compulsory">
+							<label for="ram-slot">RAM Slots<span> *</span></label> <input
+								name="ram-slot" type="number" class="form-control" id="ram-slot"
+								placeholder="Number of RAM slots" required="required" min="1"
+								max="8" />
+						</div>
+
+						<div class="form-group form-compulsory">
+							<label for="hdd-model">Hard Disk Model<span> *</span></label> <input
+								name="hdd-model" type="text" class="form-control" id="hdd-model"
+								placeholder="Hard disk model" required="required" />
+						</div>
+
+						<div class="form-group form-compulsory">
+							<label for="hdd-size">Hard Disk Size (GB)<span> *</span></label>
+							<input name="hdd-size" type="number" class="form-control"
+								id="hdd-size" placeholder="Hard disk size in unit of gigabyte"
+								max="10000" min="64" required="required" />
+						</div>
+
+						<div class="form-group">
+							<label for="resolution-horizontal">Resolution -
+								horizontal (pixel)</label> <input name="resolution-horizontal"
+								type="number" class="form-control" id="resolution-horizontal"
+								placeholder="Maximum number of pixels on screen horizontally"
+								max="10000" min="500" />
+						</div>
+
+						<div class="form-group">
+							<label for="resolution-vertical">Resolution - vertical
+								(pixel)</label> <input name="resolution-vertical" type="number"
+								class="form-control" id="resolution-vertical"
+								placeholder="Maximum number of pixels on screen vertically"
+								max="10000" min="500" />
+						</div>
+
+						<div class="form-group form-compulsory">
+							<label for="touch-screen">Touch Screen<span> *</span></label> <input
+								name="touch-screen" type="checkbox" value="touch-screen"
+								id="touch-screen" required="required" />
+						</div>
+
+						<div class="form-group form-compulsory">
+							<label for="gpu">GPU<span> *</span></label> <input name="gpu"
+								type="text" placeholder="GPU model" class="form-control"
+								id="gpu" required="required" />
+						</div>
+
+						<div class="form-group form-compulsory">
+							<label for="graphics-card-type">Graphics Card Type<span>
+									*</span></label> <select id="graphics-card-type" class="form-control"
+								name="graphics-card-type" required="required">
+								<option selected="selected" value="integrated">Integrated</option>
+								<option value="dedicated">Dedicated</option>
+								<option value="both">Both</option>
+							</select>
+						</div>
+
+						<!-- Applicable ONLY if has dedicated graphics card -->
+						<div class="form-group">
+							<label for="graphic-memory">Graphic Memory (MB)</label> <input
+								name="graphic-memory" type="number" class="form-control"
+								placeholder="Graphic card memory in unit of megabyte"
+								id="graphic-memory" min="256" max="10240" />
+						</div>
+
+						<div class="form-group">
+							<label for="battery-volume">Battery Volume (mAh)</label> <input
+								name="battery-volume" type="number" class="form-control"
+								placeholder="Battery volume in unit of mAh" id="battery-volume"
+								min="1000" max="80000" />
+						</div>
+
+						<div class="form-group form-compulsory">
+							<label for="battery-cell">Battery Cells<span> *</span></label> <input
+								name="battery-cell" type="number" class="form-control"
+								placeholder="Number of battery cells" id="battery-cell" min="1"
+								max="12" required="required" />
+						</div>
+						<hr />
+
+						<!-- ******************************************************************** -->
+
+						<h4 class="form-subtitle">
+							<b>I/O Devices </b>
+						</h4>
+						<hr />
+
+						<div class="form-group">
+							<label for="optical-drive">Optical Drive</label> <input
+								name="optical-drive" type="text" class="form-control"
+								placeholder="Optical driver model" id="optical-drive" />
+						</div>
+
+						<div class="form-group">
+							<label for="optical-drive">Optical Drive Speed</label> <input
+								name="optical-drive" type="text" class="form-control"
+								placeholder="Optical driver model" id="optical-drive" />
+						</div>
+
+						<div class="form-group form-compulsory">
+							<label for="track-point">Track Point<span> *</span></label> <input
+								name="track-point" type="checkbox" value="track-point"
+								id="track-point" required="required" />
+						</div>
+
+						<div class="form-group form-compulsory">
+							<label for="track-point">Front Camera<span> *</span></label> <input
+								name="has_camera" type="checkbox" value="has_camera"
+								id="has_camera" required="required" />
+						</div>
+
+						<div class="form-group">
+							<label for="camera_pixel">Front Camera Pixel (Megapixel)</label>
+							<input name="camera_pixel" type="number" class="form-control"
+								min="10"
+								placeholder="Number of maximum pixels of front camera in unit of megapixel"
+								id="camera_pixel" />
+						</div>
+
+						<div class="form-group form-compulsory">
+							<label for="usb-port-type">USB Port Type<span> *</span></label> <select
+								id="usb-port-type" class="form-control" name="usb-port-type"
+								required="required">
+								<option selected="selected" value="2.0">USB 2.0</option>
+								<option value="3.0">USB 3.0</option>
+								<option value="both">Both</option>
+							</select>
+						</div>
+
+						<div class="form-group">
+							<label for="usb-2-port">USB 2.0 Ports</label> <input
+								name="usb-2-port" type="number" class="form-control" min="0"
+								max="5" placeholder="Number of USB 2.0 ports" id="usb-2-port" />
+						</div>
+
+						<div class="form-group">
+							<label for="usb-3-port">USB 3.0 Ports</label> <input
+								name="usb-3-port" type="number" class="form-control" min="0"
+								max="5" placeholder="Number of USB 3.0 ports" id="usb-3-port" />
+						</div>
+
+						<div class="form-group form-compulsory">
+							<label for="vga">VGA Port<span> *</span></label> <input
+								name="vga" type="checkbox" id="vga" value="vga"
+								required="required" />
+						</div>
+
+						<div class="form-group form-compulsory">
+							<label for="hdmi">HDMI Port<span> *</span></label> <input
+								name="hdmi" type="checkbox" id="hdmi" value="hdmi"
+								required="required" />
+						</div>
+
+						<div class="form-group form-compulsory">
+							<label for="card-reader-type">Supported Card Reader Types
+								(Multiple allowed)<span> *</span>
+							</label> <select id="card-reader-type" class="form-control"
+								name="card-reader-type" required="required" multiple="multiple">
+								<option value="CF-I">CF-I Card</option>
+								<option value="CF-II">CF-II Card</option>
+								<option value="SD">SD Card</option>
+								<option value="MicroSD">MicroSD Card</option>
+								<option value="MiniSD">MiniSD Card</option>
+								<option value="RS-MMC">Reduced Size Multimedia Card</option>
+								<option value="MMC">Multimedia Card</option>
+							</select>
+						</div>
+
+						<div class="form-group">
+							<label for="bluetooth">Bluetooth Mode</label> <input
+								name="bluetooth" type="text" class="form-control" id="bluetooth" />
+						</div>
+						<hr />
+						<!-- ******************************************************************** -->
+
+						<h4 class="form-subtitle">
+							<b>Accessories and attachments</b>
+						</h4>
+						<hr />
+
+						<div class="form-group form-compulsory">
+							<label for="bag">Laptop Bag<span> *</span></label> <input
+								name="bag" type="checkbox" value="bag" id="bag"
+								required="required" />
+						</div>
+
+						<div class="form-group">
+							<label for="image">Laptop Pictures (Maximum 5 images
+								allowed)</label> <input type="file" name="image" id="image"
+								accept="image/x-png, image/gif, image/jpeg" multiple="multiple" />
+						</div>
+						<hr />
+						<!-- ******************************************************************** -->
+
+						<hr />
+						<div>
+							<button id="product-add-button" type="button"
+								class="btn btn-primary">
+								<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+								Add New Product
+							</button>
+						</div>
+					</form>
+				</div>
+				<br /> <br /> <br /> <br />
+			</div>
+		</div>
+	</div>
+
+	<div class="navbar navbar-fixed-bottom solaris-footer">
+		<!-- Common footer -->
+		<div th:replace="fragments/footer :: footer"></div>
+	</div>
+</body>
+</html>
