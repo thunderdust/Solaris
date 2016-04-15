@@ -23,7 +23,7 @@ public class LaptopCreationEntity {
 	private int laptop_length;
 	private int laptop_weight;
 	private float screenSize;
-	private String os;
+	private String operating_system;
 	private String cpu;
 	private String ramType;
 	private int ramSlot;

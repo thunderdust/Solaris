@@ -35,14 +35,15 @@
 						<hr />
 						<div class="form-group form-compulsory">
 							<label for="name">Laptop Name<span> *</span></label> <input
-								name="name" type="text" class="form-control" id="name"
-								placeholder="Laptop name" required="required" />
+								name="name" type="text" class="form-control compulsory-input"
+								id="name" placeholder="Laptop name" required="required" />
 						</div>
 
 						<div class="form-group form-compulsory">
 							<label for="brand">Brand<span> *</span></label> <select
-								id="brand" class="form-control" name="brand" required="required">
-								<option selected="selected" value="acer">Acer</option>
+								id="brand" class="form-control compulsory-input" name="brand"
+								required="required">
+								<option value="acer">Acer</option>
 								<option value="apple">Apple</option>
 								<option value="asus">Asus</option>
 								<option value="alienware">Alienware</option>
@@ -63,14 +64,15 @@
 
 						<div class="form-group form-compulsory">
 							<label for="publish_date">Publish Date<span> *</span></label> <input
-								name="publishDate" type="date" class="form-control"
-								id="publish_date" placeholder="Publish Date" required="required" />
+								name="publishDate" type="date"
+								class="form-control compulsory-input" id="publish_date"
+								placeholder="Publish Date" required="required" />
 						</div>
 
 						<div class="form-group form-compulsory">
 							<label for="price">Default Price (SGD)<span> *</span></label> <input
-								name="price" type="text" class="form-control" id="pric"
-								placeholder="Default Price" required="required" />
+								name="price" type="text" class="form-control compulsory-input"
+								id="pric" placeholder="Default Price" required="required" />
 						</div>
 						<hr />
 						<!-- ******************************************************************** -->
@@ -81,40 +83,41 @@
 
 						<div class="form-group form-compulsory">
 							<label for="laptop_width">Width (mm)<span> *</span></label> <input
-								name="laptop_width" type="number" class="form-control"
-								id="laptop_width" min="150"
-								placeholder="Laptop width in unit of millimeter"
+								name="laptop_width" type="number"
+								class="form-control compulsory-input" id="laptop_width"
+								min="150" placeholder="Laptop width in unit of millimeter"
 								required="required" />
 						</div>
 
 						<div class="form-group form-compulsory">
 							<label for="laptop_length">Length (mm)<span> *</span></label> <input
-								name="laptop_length" type="number" class="form-control"
-								min="200" id="laptop_length"
+								name="laptop_length" type="number"
+								class="form-control compulsory-input" min="200"
+								id="laptop_length"
 								placeholder="Laptop length in unit of millimeter"
 								required="required" />
 						</div>
 
 						<div class="form-group form-compulsory">
 							<label for="laptop_height">Height (mm)<span> *</span></label> <input
-								name="laptop_height" type="number" class="form-control" min="5"
-								id="laptop_height"
+								name="laptop_height" type="number"
+								class="form-control compulsory-input" min="5" id="laptop_height"
 								placeholder="Laptop height in unit of millimeter"
 								required="required" />
 						</div>
 
 						<div class="form-group form-compulsory">
 							<label for="laptop_weight">Weight (g)<span> *</span></label> <input
-								name="laptop_weight" type="number" class="form-control"
-								id="laptop_weight" placeholder="Laptop weight in unit of gram"
-								required="required" />
+								name="laptop_weight" type="number"
+								class="form-control compulsory-input" id="laptop_weight"
+								placeholder="Laptop weight in unit of gram" required="required" />
 						</div>
 
 						<div class="form-group form-compulsory">
 							<label for="screen_size">Screen Size<span> *</span></label> <input
-								name="screenSize" type="text" class="form-control"
-								id="screen_size" placeholder="Screen size in unit of inch"
-								required="required" />
+								name="screenSize" type="text"
+								class="form-control compulsory-input" id="screen_size"
+								placeholder="Screen size in unit of inch" required="required" />
 						</div>
 						<hr />
 						<!-- ******************************************************************** -->
@@ -126,8 +129,9 @@
 						<hr />
 
 						<div class="form-group form-compulsory">
-							<label for="os">Installed Operating System<span> *</span></label>
-							<input name="os" type="text" class="form-control" id="os"
+							<label for="operating_system">Installed Operating System<span>
+									*</span></label> <input name="operating_system" type="text"
+								class="form-control compulsory-input" id="operating_system"
 								placeholder="Installed OS" required="required" />
 						</div>
 
@@ -163,47 +167,51 @@
 
 						<div class="form-group form-compulsory">
 							<label for="cpu">CPU<span> *</span></label> <input name="cpu"
-								type="text" class="form-control" id="cpu" placeholder="CPU"
-								required="required" />
+								type="text" class="form-control compulsory-input" id="cpu"
+								placeholder="CPU" required="required" />
 						</div>
 
 						<div class="form-group form-compulsory">
 							<label for="ram_type">RAM Type<span> *</span></label> <input
-								name="ramType" type="text" class="form-control" id="ram_type"
-								placeholder="RAM Type" required="required" />
+								name="ramType" type="text" class="form-control compulsory-input"
+								id="ram_type" placeholder="RAM Type" required="required" />
 						</div>
 
 						<div class="form-group form-compulsory">
 							<label for="ram_size">RAM Size (GB)<span> *</span></label> <input
-								name="ramSize" type="number" class="form-control" id="ram_size"
+								name="ramSize" type="number"
+								class="form-control compulsory-input" id="ram_size"
 								placeholder="RAM size in unit of gigabyte" required="required"
 								min="1" max="24" />
 						</div>
 
 						<div class="form-group form-compulsory">
 							<label for="ram_slot">RAM Slots<span> *</span></label> <input
-								name="ramSlot" type="number" class="form-control" id="ram_slot"
+								name="ramSlot" type="number"
+								class="form-control compulsory-input" id="ram_slot"
 								placeholder="Number of RAM slots" required="required" min="1"
 								max="8" />
 						</div>
 
 						<div class="form-group form-compulsory">
 							<label for="hdd_model">Hard Disk Model<span> *</span></label> <input
-								name="hddModel" type="text" class="form-control" id="hdd_model"
+								name="hddModel" type="text"
+								class="form-control compulsory-input" id="hdd_model"
 								placeholder="Hard disk model" required="required" />
 						</div>
 
 						<div class="form-group form-compulsory">
 							<label for="hdd_size">Hard Disk Size (GB)<span> *</span></label>
-							<input name="hddSize" type="number" class="form-control"
-								id="hdd_size" placeholder="Hard disk size in unit of gigabyte"
-								max="10000" min="64" required="required" />
+							<input name="hddSize" type="number"
+								class="form-control compulsory-input" id="hdd_size"
+								placeholder="Hard disk size in unit of gigabyte" max="10000"
+								min="64" required="required" />
 						</div>
 
 						<div class="form-group form-compulsory">
 							<label for="hdd_spin_speed">Hard Disk Spin Speed(rpm)<span>
-									*</span></label> <input name="hddSpinSpeed" type="number" class="form-control"
-								id="hdd_spin_speed"
+									*</span></label> <input name="hddSpinSpeed" type="number"
+								class="form-control compulsory-input" id="hdd_spin_speed"
 								placeholder="Hard disk spin speed in unit of rpm" max="20000"
 								min="1000" required="required" />
 						</div>
@@ -232,15 +240,17 @@
 
 						<div class="form-group form-compulsory">
 							<label for="gpu">GPU<span> *</span></label> <input name="gpu"
-								type="text" placeholder="GPU model" class="form-control"
-								id="gpu" required="required" />
+								type="text" placeholder="GPU model"
+								class="form-control compulsory-input" id="gpu"
+								required="required" />
 						</div>
 
 						<div class="form-group form-compulsory">
 							<label for="graphics_card_type">Graphics Card Type<span>
-									*</span></label> <select id="graphics_card_type" class="form-control"
-								name="graphicsCardType" required="required">
-								<option selected="selected" value="integrated">Integrated</option>
+									*</span></label> <select id="graphics_card_type"
+								class="form-control compulsory-input" name="graphicsCardType"
+								required="required">
+								<option value="integrated">Integrated</option>
 								<option value="dedicated">Dedicated</option>
 								<option value="both">Both</option>
 							</select>
@@ -263,7 +273,8 @@
 
 						<div class="form-group form-compulsory">
 							<label for="battery_cell">Battery Cells<span> *</span></label> <input
-								name="batteryCell" type="number" class="form-control"
+								name="batteryCell" type="number"
+								class="form-control compulsory-input"
 								placeholder="Number of battery cells" id="battery_cell" min="1"
 								max="12" required="required" />
 						</div>
@@ -324,9 +335,9 @@
 
 						<div class="form-group form-compulsory">
 							<label for="usb_port_type">USB Port Type<span> *</span></label> <select
-								id="usb_port_type" class="form-control" name="usbPortType"
-								required="required">
-								<option selected="selected" value="2.0">USB 2.0</option>
+								id="usb_port_type" class="form-control compulsory-input"
+								name="usbPortType" required="required">
+								<option value="2.0">USB 2.0</option>
 								<option value="3.0">USB 3.0</option>
 								<option value="both">Both</option>
 							</select>
@@ -389,8 +400,9 @@
 
 						<div class="form-group">
 							<label for="imagePath">Laptop Pictures</label> <input
-								class="btn btn-success solaris-file-input" type="file" name="imagePath"
-								id="imagePath" accept="image/x-png, image/gif, image/jpeg" />
+								class="btn btn-success solaris-file-input" type="file"
+								name="imagePath" id="imagePath"
+								accept="image/x-png, image/gif, image/jpeg" />
 						</div>
 						<hr />
 						<!-- ******************************************************************** -->
@@ -402,7 +414,8 @@
 
 						<div class="form-group form-compulsory">
 							<label for="warranty">Warranty<span> *</span></label> <input
-								name="warranty" type="number" class="form-control" id="warranty"
+								name="warranty" type="number"
+								class="form-control compulsory-input" id="warranty"
 								placeholder="Number of months under warranty" min="1" max="99" />
 						</div>
 						<hr />

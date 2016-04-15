@@ -72,7 +72,7 @@ public class LaptopServiceImplementation implements LaptopService {
 			lto.setOfficeSuiteVersion(le.getOfficeSuiteVersion());
 			lto.setOpticalDrive(le.getOpticalDrive());
 			lto.setOpticalDriveSpeed(le.getOpticalDriveSpeed());
-			lto.setOs(le.getOs());
+			lto.setOs(le.getOperating_system());
 			lto.setPrice(le.getPrice());
 			lto.setPublishDate(le.getPublishDate());
 			lto.setRamSize(le.getRamSize());

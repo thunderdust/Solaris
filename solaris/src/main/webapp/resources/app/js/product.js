@@ -1,7 +1,34 @@
 $(document).ready(function() {
 	//switchActiveTab('nav-product');
-	$('#product-add-button').click(Solaris.addProduct);
+	//$('#product-add-button').click(Solaris.addProduct);
+	$('#product-add-button').click(validateAddProductForm);
 });
+
+function validateAddProductForm(){
+
+	var compulsory_inputs = document.getElementsByClassName('compulsory-input');
+	var empty_count = 0;
+	for (var key in compulsory_inputs){
+		// Exlude the index keys objects 
+		// && key.length >2 && key!="item" && key!="length" && key!="namedItem"
+		if (compulsory_inputs.hasOwnProperty(key) && key.length >2){
+			// Check for empty fields 
+			if (!(compulsory_inputs[key]).value){
+				console.log(key);
+				//console.log((compulsory_inputs[key]).type);
+				var missing_input = compulsory_inputs[key];
+				missing_input.style.borderColor = "red";
+				empty_count++;
+			}
+		}
+	}
+	if (empty_count>0){
+		alert("One or more required input fields are not filled, please check again.");
+	}
+	else {
+		Solaris.addProduct();
+	}
+}
 
 Solaris.addProduct = function(evt){
 	var formData = $('#product-add-form').serializeObject();
