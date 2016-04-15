@@ -63,7 +63,7 @@
 
 						<div class="form-group form-compulsory">
 							<label for="publish_date">Publish Date<span> *</span></label> <input
-								name="publishDate" type="month" class="form-control"
+								name="publishDate" type="date" class="form-control"
 								id="publish_date" placeholder="Publish Date" required="required" />
 						</div>
 
@@ -358,7 +358,7 @@
 							<label for="card_reader_type">Supported Card Reader Types
 								(Multiple allowed) </label> <select id="card_reader_type"
 								class="form-control" name="cardReaderTypes" required="required"
-								multiple="multiple">
+								multiple="multiple" size="7">
 								<option value="CF-I">CF-I Card</option>
 								<option value="CF-II">CF-II Card</option>
 								<option value="SD">SD Card</option>
@@ -389,7 +389,7 @@
 
 						<div class="form-group">
 							<label for="imagePath">Laptop Pictures</label> <input
-								class="btn btn-success" type="file" name="imagePath"
+								class="btn btn-success solaris-file-input" type="file" name="imagePath"
 								id="imagePath" accept="image/x-png, image/gif, image/jpeg" />
 						</div>
 						<hr />

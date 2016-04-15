@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `laptops` (
   `name` varchar(256) NOT NULL,
   `brand` varchar(128) NOT NULL,
   `publish_date` datetime NOT NULL,
-  `defautl_price` float(5) NOT NULL,
+  `default_price` float(5) NOT NULL,
   `width` int(5) NOT NULL,
   `height` int(5) NOT NULL,
   `length` int(5) NOT NULL,
