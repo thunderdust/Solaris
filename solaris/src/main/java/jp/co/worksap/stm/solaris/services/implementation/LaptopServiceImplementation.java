@@ -87,7 +87,7 @@ public class LaptopServiceImplementation implements LaptopService {
 			lto.setUsb_3_slot(le.getUsb_3_slot());
 			lto.setUsbPortType(le.getUsbPortType());
 			lto.setWarranty(le.getWarranty());
-			lto.setWifiModel(le.getWifiModel());
+			lto.setWifiModel(le.getWifiMode());
 			ld.insert(lto);
 
 		} catch (IOException e) {

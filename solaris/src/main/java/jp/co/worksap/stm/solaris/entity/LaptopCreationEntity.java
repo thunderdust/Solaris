@@ -53,7 +53,7 @@ public class LaptopCreationEntity {
 	private int usb_3_slot;
 	private List<String> cardReaderTypes;
 	private String bluetooth;
-	private String wifiModel;
+	private String wifiMode;
 	private String officeSuiteVersion;
 	private String antivirusSoftware;
 	private boolean hasBag;
