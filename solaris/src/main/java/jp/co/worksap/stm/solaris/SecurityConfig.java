@@ -34,7 +34,7 @@ class SecurityConfig extends WebSecurityConfigurerAdapter {
 				new AntPathRequestMatcher("/logout"),
 				new AntPathRequestMatcher("/employees/**"),
 				new AntPathRequestMatcher("/products/**"),
-				new AntPathRequestMatcher("/products-add"),
+				new AntPathRequestMatcher("/products-add/**"),
 				new AntPathRequestMatcher("/products-edit") };
 
 		@Override

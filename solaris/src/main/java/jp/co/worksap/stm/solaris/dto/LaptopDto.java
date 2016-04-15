@@ -1,7 +1,7 @@
 package jp.co.worksap.stm.solaris.dto;
 
 import java.math.BigDecimal;
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 import lombok.AllArgsConstructor;
@@ -26,13 +26,14 @@ public class LaptopDto {
 	private String os;
 	private String cpu;
 	private String ramType;
-	private String ramSlot;
+	private int ramSlot;
 	private int ramSize;
 	private int hddSize;
 	private String hddModel;
 	private int hddSpinSpeed;
 	private int ssdSize;
-	private String resolution;
+	private int resolutionHorizontal;
+	private int resolutionVertical;
 	private boolean isTouchScreen;
 	private String gpu;
 	private String graphicsCardType;
@@ -41,16 +42,13 @@ public class LaptopDto {
 	private float batteryLife;
 	private int batteryCells;
 	private String opticalDrive;
-	private String opticalDriveSpeed;
-	private String touchpadSize;
-	private String keyboardType;
+	private int opticalDriveSpeed;
 	private boolean hasTrackPoint;
 	private boolean hasFrontCamera;
 	private float cameraPixel;
-	private int usbPortCount;
 	private boolean hasVGAPort;
 	private boolean hasHDMIPort;
-	private List<String> usbPortType;
+	private String usbPortType;
 	private int usb_2_slot;
 	private int usb_3_slot;
 	private List<String> cardReaderTypes;

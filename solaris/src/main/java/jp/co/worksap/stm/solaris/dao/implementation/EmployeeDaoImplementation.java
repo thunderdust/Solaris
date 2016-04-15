@@ -95,7 +95,6 @@ public class EmployeeDaoImplementation implements EmployeeDao {
 											.getString("contact_number"), rs
 											.getString("password"), rs
 											.getString("time_joined"));
-
 						});
 			} else {
 				// select user by roles
