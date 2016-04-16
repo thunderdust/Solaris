@@ -20,6 +20,9 @@ function validateAddProductForm(){
 				missing_input.style.borderColor = "red";
 				empty_count++;
 			}
+			else {
+				compulsory_inputs[key].style.borderColor = "#ccc";
+			}
 		}
 	}
 	if (empty_count>0){
