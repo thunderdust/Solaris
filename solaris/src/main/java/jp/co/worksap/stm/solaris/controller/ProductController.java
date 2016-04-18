@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
@@ -38,6 +39,13 @@ public class ProductController {
 	@RequestMapping(value = "/products/addLaptop", method = RequestMethod.POST)
 	public void addLaptop(@RequestBody LaptopCreationEntity pce) {
 		laptopService.insert(pce);
+	}
+	
+	@PreAuthorize("hasAuthority('ADMIN')||hasAuthority('SALES MANAGER')")
+	@RequestMapping(value = "/products/deleteLaptop", method = RequestMethod.DELETE)
+	@ResponseBody
+	public void deleteLaptop(@RequestParam String name){
+		laptopService.deleteByName(name);
 	}
 
 }

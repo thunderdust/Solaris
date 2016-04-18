@@ -50,8 +50,12 @@ public class LaptopServiceImplementation implements LaptopService {
 
 	@Override
 	public void deleteByName(String name) throws ServiceException {
-		// TODO Auto-generated method stub
-
+		try {
+			ld.deleteByName(name);
+		} catch (IOException e) {
+			throw new ServiceException(
+					"Unable to delete the laptop with name: ", e);
+		}
 	}
 
 	@Override

@@ -20,6 +20,7 @@ public class LaptopDaoImplementation implements LaptopDao {
 			+ "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 	private static final String FETCH_ALL = "SELECT * FROM LAPTOPS";
 	private static final String COUNT_LAPTOP = "SELECT COUNT(*) FROM LAPTOPS";
+	private static final String DELETE_LAPTOP = "DELETE FROM LAPTOPS WHERE name = ?";
 
 	@Autowired
 	JdbcTemplate template;
@@ -88,13 +89,17 @@ public class LaptopDaoImplementation implements LaptopDao {
 
 	@Override
 	public void update(LaptopDto ld) throws IOException {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public void deleteById(String id) throws IOException {
-		// TODO Auto-generated method stub
+	public void deleteByName(String name) throws IOException {
+		try {
+			template.update(DELETE_LAPTOP, ps -> ps.setString(1, name));
+
+		} catch (DataAccessException e) {
+			throw new IOException(e);
+		}
 
 	}
 
@@ -119,54 +124,51 @@ public class LaptopDaoImplementation implements LaptopDao {
 	@Override
 	public List<LaptopDto> getAll() throws IOException {
 		try {
-			return template.query(FETCH_ALL, (rs, rownum)-> {
-				return new LaptopDto(
-						rs.getString("name"),
-						rs.getString("brand"),
-						rs.getDate("publish_date"),
-						rs.getBigDecimal("default_price"),
-						rs.getInt("width"),
-						rs.getInt("height"),
-						rs.getInt("length"),
-						rs.getInt("weight"),
-						rs.getFloat("screen_size"),
-						rs.getString("os"),
-						rs.getString("cpu"),
-						rs.getString("ram_type"),
-						rs.getInt("ram_slot"),
-						rs.getInt("ram_size"),
-						rs.getString("hard_drive_model"),
-						rs.getInt("hard_drive_speed"),
-						rs.getInt("hard_drive_size"),
-						rs.getInt("ssd_size"),
-						rs.getInt("resolution_horizontal"),
-						rs.getInt("resolution_vertical"),
-						rs.getBoolean("touch_screen"),
-						rs.getString("gpu"),
-						rs.getString("graphics_card_type"),
-						rs.getInt("graphics_memory"),
-						rs.getInt("battery_volume"),
-						rs.getFloat("battery_life"),
-						rs.getInt("battery_cell"),
-						rs.getString("optical_drive"),
-						rs.getInt("optical_drive_speed"),
-						rs.getBoolean("track_point"),
-						rs.getBoolean("front_camera"),
-						rs.getFloat("camera_pixel"),
-						rs.getInt("usb_port_2"),
-						rs.getInt("usb_port_3"),
-						rs.getString("usb_port_type"),
-						rs.getBoolean("vga_port"),
-						rs.getBoolean("hdmi_port"),
-						rs.getString("card_reader_type"),
-						rs.getString("bluetooth"),
-						rs.getString("wifi_mode"),
-						rs.getString("office_suite_version"),
-						rs.getString("antivirus_software"),
-						rs.getBoolean("laptop_bag"),
-						rs.getInt("warranty"),
-						rs.getString("images"));
-			});
+			return template.query(
+					FETCH_ALL,
+					(rs, rownum) -> {
+						return new LaptopDto(rs.getString("name"), rs
+								.getString("brand"),
+								rs.getDate("publish_date"), rs
+										.getBigDecimal("default_price"), rs
+										.getInt("width"), rs.getInt("height"),
+								rs.getInt("length"), rs.getInt("weight"), rs
+										.getFloat("screen_size"), rs
+										.getString("os"), rs.getString("cpu"),
+								rs.getString("ram_type"),
+								rs.getInt("ram_slot"), rs.getInt("ram_size"),
+								rs.getString("hard_drive_model"), rs
+										.getInt("hard_drive_speed"), rs
+										.getInt("hard_drive_size"), rs
+										.getInt("ssd_size"), rs
+										.getInt("resolution_horizontal"), rs
+										.getInt("resolution_vertical"), rs
+										.getBoolean("touch_screen"), rs
+										.getString("gpu"), rs
+										.getString("graphics_card_type"), rs
+										.getInt("graphics_memory"), rs
+										.getInt("battery_volume"), rs
+										.getFloat("battery_life"), rs
+										.getInt("battery_cell"), rs
+										.getString("optical_drive"), rs
+										.getInt("optical_drive_speed"), rs
+										.getBoolean("track_point"), rs
+										.getBoolean("front_camera"), rs
+										.getFloat("camera_pixel"), rs
+										.getInt("usb_port_2"), rs
+										.getInt("usb_port_3"), rs
+										.getString("usb_port_type"), rs
+										.getBoolean("vga_port"), rs
+										.getBoolean("hdmi_port"), rs
+										.getString("card_reader_type"), rs
+										.getString("bluetooth"), rs
+										.getString("wifi_mode"), rs
+										.getString("office_suite_version"), rs
+										.getString("antivirus_software"), rs
+										.getBoolean("laptop_bag"), rs
+										.getInt("warranty"), rs
+										.getString("images"));
+					});
 
 		} catch (DataAccessException e) {
 			throw new IOException(e);

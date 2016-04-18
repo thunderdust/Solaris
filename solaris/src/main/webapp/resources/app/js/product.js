@@ -93,7 +93,7 @@ var initPage = function() {
 
 	// disable delete button if nothing selected
 	Solaris.dataTable.on('select', function() {
-		$('#product-open-delete-modal-btn').prop('disabled', false);
+		$('#product-delete-modal-btn').prop('disabled', false);
 		$('#product-edit-modal-btn').prop('disabled', false);
 	});
 
@@ -136,7 +136,7 @@ var initPage = function() {
 	});
 	// default method for the add model is add (instead of edit)
 	//$('#product-add-modal #myModalLabel').data().mode = 'add';
-}
+};
 
 Solaris.addProduct = function(evt) {
 	var formData = $('#product-add-form').serializeObject();
@@ -207,7 +207,22 @@ Solaris.addProduct = function(evt) {
 		console.log("add new product successfully");
 		// notify message
 	});
-}
+};
+
+Solaris.deleteProduct = function(evt) {
+
+	var selectedName = Solaris.dataTable.data()[Solaris.dataTable.row('.selected')[0]].name;
+	$.ajax({
+		url : "products/deleteLaptop?name=" + selectedName,
+		type: 'DELETE',
+		xhrFields: {
+	      withCredentials: true
+	    }
+	}).done(function(){
+		$('#product-delete-modal').modal('hide');
+		$('#product-table').dataTable().fnReloadAjax();
+	});
+};	
 
 // JS is only used to add the <div>s
 var switches = document.querySelectorAll('input[type="checkbox"].ios-switch');

@@ -15,7 +15,7 @@ public interface LaptopDao {
 
 	void update(LaptopDto ld) throws IOException;
 
-	void deleteById(String id) throws IOException;
+	void deleteByName(String name) throws IOException;
 
 	int getTotalCount() throws IOException;
 
