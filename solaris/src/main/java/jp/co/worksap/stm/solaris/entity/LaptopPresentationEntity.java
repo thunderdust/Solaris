@@ -14,7 +14,7 @@ public class LaptopPresentationEntity {
 	private String brand;
 	private Date publishDate;
 	private BigDecimal price;
-	private List<String> tags;
+	//private List<String> tags;
 	private int laptop_width;
 	private int laptop_height;
 	private int laptop_length;
@@ -51,7 +51,6 @@ public class LaptopPresentationEntity {
 	private List<String> cardReaderTypes;
 	private String bluetooth;
 	private String wifiModel;
-	private boolean hasOfficeSuite;
 	private String officeSuiteVersion;
 	private String antivirusSoftware;
 	private boolean hasBag;
@@ -61,7 +60,8 @@ public class LaptopPresentationEntity {
 	public LaptopPresentationEntity() {
 
 	}
-
+    
+	/*
 	public LaptopPresentationEntity(LaptopDto ld) {
 
 		this.antivirusSoftware = ld.getAntivirusSoftware();
@@ -101,7 +101,6 @@ public class LaptopPresentationEntity {
 		this.resolutionVertical = ld.getResolutionVertical();
 		this.screenSize = ld.getScreenSize();
 		this.ssdSize = ld.getSsdSize();
-		this.tags = ld.getTags();
 		this.usbPortType = ld.getUsbPortType();
 		this.warranty = ld.getWarranty();
 		this.laptop_weight = ld.getLaptop_weight();
@@ -111,7 +110,7 @@ public class LaptopPresentationEntity {
 		this.usb_2_slot = ld.getUsb_2_slot();
 		this.usb_3_slot = ld.getUsb_3_slot();
 		this.imagePath = ld.getImagePath();
-
 	}
+	*/
 
 }

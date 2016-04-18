@@ -1,9 +1,12 @@
 package jp.co.worksap.stm.solaris.controller;
 
 import jp.co.worksap.stm.solaris.entity.LaptopCreationEntity;
+import jp.co.worksap.stm.solaris.entity.LaptopFetchEntity;
+import jp.co.worksap.stm.solaris.entity.LaptopListEntity;
 import jp.co.worksap.stm.solaris.services.specification.LaptopService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,15 +26,16 @@ public class ProductController {
 		return "products";
 	}
 
-	@PreAuthorize("hasAuthority('ADMIN')||hasAuthority('SALES MANAGER')")
-	@RequestMapping(value = "/products-add")
-	public String productAdd() {
-		return "products-add";
+	@PreAuthorize("hasAuthority('ADMIN')")
+	@RequestMapping(value = "/products/getAllLaptops", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+	@ResponseBody
+	public LaptopListEntity getAllLaptops(@RequestBody LaptopFetchEntity e) {
+		return laptopService.getAll(e);
 	}
 
 	@PreAuthorize("hasAuthority('ADMIN')||hasAuthority('SALES MANAGER')")
 	@ResponseBody
-	@RequestMapping(value = "/products-add/addLaptop", method = RequestMethod.POST)
+	@RequestMapping(value = "/products/addLaptop", method = RequestMethod.POST)
 	public void addLaptop(@RequestBody LaptopCreationEntity pce) {
 		laptopService.insert(pce);
 	}

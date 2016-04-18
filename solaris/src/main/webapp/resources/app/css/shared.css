@@ -78,15 +78,13 @@ div.solaris-title>p>img {
 	font-style: italic;
 }
 
-.solaris-table-container select {
-	width: 40%;
-	float: left;
-	margin-bottom: 10px;
-}
+
 
 .table-buttons {
-	background: #e7e7e7;
+	background: #d0d0d0;
 	padding: 10px;
+	margin-bottom: 10px;
+	border-radius: 3px;
 }
 
 .table-buttons>button {
@@ -148,6 +146,26 @@ span.tip {
 	display: block;
 	text-align: left;
 	margin: -5px 0 20px 5px;
+}
+
+div.solaris-filter-container {
+	background: #e7e7e7;
+	margin-bottom: 2px;
+	padding: 10px;
+}
+
+div.solaris-filter-container>select {
+	display: inline-block;
+	width: 220px;
+}
+
+div.dataTables_length {
+	float: left;
+	display: inline-block;
+}
+
+div.dataTables_length > select {
+	margin-right: 5px;
 }
 
 /***********************************************************/

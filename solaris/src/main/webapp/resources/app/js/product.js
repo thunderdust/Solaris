@@ -1,10 +1,24 @@
 $(document).ready(function() {
 	//switchActiveTab('nav-product');
 	//$('#product-add-button').click(Solaris.addProduct);
-	$('#product-add-button').click(validateAddProductForm);
 
 	initPage();
+
+
+	/* After certain short time of window resize, reload page to let the table adjust itself. */
+	var resizeTask;
+	var timeoutThreshold = 30;
+	window.onresize = function(event) {
+		console.log("Window resized");
+		clearTimeout(resizeTask);
+		resizeTask = setTimeout(reloadPage, timeoutThreshold);
+	}
 });
+
+function reloadPage() {
+		// Reload from cache
+		location.reload(false);
+}
 
 function validateAddProductForm() {
 
@@ -35,18 +49,60 @@ function validateAddProductForm() {
 
 var initPage = function() {
 
+	Solaris.dataTable = $('#product-table').DataTable({
+		'serverSide' : true,
+		'ajax' : {
+			url : 'products/getAllLaptops',
+			type : 'POST',
+			contentType : "application/json",
+			data : function(d) {
+				// send only data required by backend API
+				delete (d.columns);
+				delete (d.order);
+				delete (d.search);
+				d.brand = $('#product-brand-filter').val();
+				return JSON.stringify(d);
+			},
+			// list of LaptopEntity defined in LaptopListEntity class
+			dataSrc : "laptopEntities",
+			xhrFields : {
+				withCredentials : true
+			}
+		},
+		columns : [ {
+			data : 'name'
+		}, {
+			data : 'brand'
+		}, {
+			data : 'cpu'
+		}, {
+			data : 'gpu'
+		}, {
+			data : 'hddSize'
+		}, {
+			data : 'price'
+		} ],
+		select : "single"
+	});
+
+	$('#product-add-button').click(validateAddProductForm);
+	$('#product-delete-button').click(Solaris.deleteProduct);
+	$('#product-brand-filter').change(function() {
+		$('#product-table').dataTable().fnReloadAjax();
+	});
+
 	// disable delete button if nothing selected
-	BookStore.dataTable.on('select', function() {
+	Solaris.dataTable.on('select', function() {
 		$('#product-open-delete-modal-btn').prop('disabled', false);
 		$('#product-edit-modal-btn').prop('disabled', false);
 	});
 
-	BookStore.dataTable.on('deselect', function() {
+	Solaris.dataTable.on('deselect', function() {
 		$('#product-delete-modal-btn').prop('disabled', true);
 		$('#product-edit-modal-btn').prop('disabled', true);
 	});
 
-	BookStore.dataTable.on('draw', function() {
+	Solaris.dataTable.on('draw', function() {
 		$('#product-delete-modal-btn').prop('disabled', true);
 		$('#product-edit-modal-btn').prop('disabled', true);
 	});
@@ -55,7 +111,7 @@ var initPage = function() {
 	$('#product-edit-modal-btn').on(
 			'click',
 			function() {
-				var selectedData = BookStore.dataTable.row('.selected').data();
+				var selectedData = Solaris.dataTable.row('.selected').data();
 				$('#id').prop('readonly', true)
 				$('#product-add-modal #myModalLabel').data().mode = 'update';
 				$('#product-add-modal #myModalLabel').html('Edit Product');
@@ -79,7 +135,7 @@ var initPage = function() {
 		$('#product-form')[0].reset();
 	});
 	// default method for the add model is add (instead of edit)
-	$('#product-add-modal #myModalLabel').data().mode = 'add';
+	//$('#product-add-modal #myModalLabel').data().mode = 'add';
 }
 
 Solaris.addProduct = function(evt) {
@@ -134,8 +190,9 @@ Solaris.addProduct = function(evt) {
 	}
 
 	formData.imagePath = [ $('#imagePath').val() ];
+	var url = 'products/' + $('#product-add-modal #myModalLabel').data().mode
+			+ 'Laptop';
 
-	var url = 'products-add/addLaptop';
 	console.log(JSON.stringify(formData));
 
 	$.ajax({

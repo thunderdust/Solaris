@@ -1,10 +1,15 @@
 package jp.co.worksap.stm.solaris.services.implementation;
 
 import java.io.IOException;
+import java.util.List;
 
 import jp.co.worksap.stm.solaris.dao.specification.LaptopDao;
+import jp.co.worksap.stm.solaris.dto.EmployeeDto;
 import jp.co.worksap.stm.solaris.dto.LaptopDto;
+import jp.co.worksap.stm.solaris.entity.EmployeeEntity;
+import jp.co.worksap.stm.solaris.entity.EmployeeListEntity;
 import jp.co.worksap.stm.solaris.entity.LaptopCreationEntity;
+import jp.co.worksap.stm.solaris.entity.LaptopEntity;
 import jp.co.worksap.stm.solaris.entity.LaptopFetchEntity;
 import jp.co.worksap.stm.solaris.entity.LaptopListEntity;
 import jp.co.worksap.stm.solaris.exceptions.ServiceException;
@@ -14,6 +19,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.google.common.collect.Lists;
+
 @Service
 public class LaptopServiceImplementation implements LaptopService {
 
@@ -22,8 +29,23 @@ public class LaptopServiceImplementation implements LaptopService {
 
 	@Override
 	public LaptopListEntity getAll(LaptopFetchEntity e) throws ServiceException {
-		// TODO Auto-generated method stub
-		return null;
+		List<LaptopDto> dtoList = null;
+		int count = 0;
+		try {
+			dtoList = ld.getAll();
+			count = ld.getTotalCount();
+
+		} catch (IOException ie) {
+			throw new ServiceException("Error get all laptops", ie);
+		}
+
+		List<LaptopEntity> entities = Lists.newArrayList();
+		for (LaptopDto dto : dtoList) {
+			LaptopEntity newEntity = new LaptopEntity(dto);
+			entities.add(newEntity);
+		}
+
+		return new LaptopListEntity(e.getDraw(), count, count, entities);
 	}
 
 	@Override
@@ -50,7 +72,15 @@ public class LaptopServiceImplementation implements LaptopService {
 			lto.setBluetooth(le.getBluetooth());
 			lto.setBrand(le.getBrand());
 			lto.setCameraPixel(le.getCameraPixel());
-			lto.setCardReaderTypes(le.getCardReaderTypes());
+
+			List<String> cardReaderTypes = le.getCardReaderTypes();
+			String cardReaderTypeString = null;
+			for (String type : cardReaderTypes) {
+				cardReaderTypeString += type;
+				cardReaderTypeString += ",";
+			}
+			lto.setCardReaderTypes(cardReaderTypeString);
+
 			lto.setCpu(le.getCpu());
 			lto.setGpu(le.getGpu());
 			lto.setGraphicMemory(le.getGraphicMemory());
@@ -63,7 +93,15 @@ public class LaptopServiceImplementation implements LaptopService {
 			lto.setHddModel(le.getHddModel());
 			lto.setHddSize(le.getHddSize());
 			lto.setHddSpinSpeed(le.getHddSpinSpeed());
-			lto.setImagePath(le.getImagePath());
+
+			List<String> imagePaths = le.getImagePath();
+			String imagePathString = null;
+			for (String path : imagePaths) {
+				imagePathString += path;
+				imagePathString += ",";
+			}
+			lto.setImagePath(imagePathString);
+
 			lto.setLaptop_height(le.getLaptop_height());
 			lto.setLaptop_length(le.getLaptop_length());
 			lto.setLaptop_weight(le.getLaptop_weight());

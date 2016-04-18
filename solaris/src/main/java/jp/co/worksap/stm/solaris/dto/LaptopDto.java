@@ -17,7 +17,7 @@ public class LaptopDto {
 	private String brand;
 	private Date publishDate;
 	private BigDecimal price;
-	private List<String> tags;
+	// private List<String> tags;
 	private int laptop_width;
 	private int laptop_height;
 	private int laptop_length;
@@ -28,9 +28,9 @@ public class LaptopDto {
 	private String ramType;
 	private int ramSlot;
 	private int ramSize;
-	private int hddSize;
 	private String hddModel;
 	private int hddSpinSpeed;
+	private int hddSize;
 	private int ssdSize;
 	private int resolutionHorizontal;
 	private int resolutionVertical;
@@ -46,19 +46,17 @@ public class LaptopDto {
 	private boolean hasTrackPoint;
 	private boolean hasFrontCamera;
 	private float cameraPixel;
-	private boolean hasVGAPort;
-	private boolean hasHDMIPort;
-	private String usbPortType;
 	private int usb_2_slot;
 	private int usb_3_slot;
-	private List<String> cardReaderTypes;
+	private String usbPortType;
+	private boolean hasVGAPort;
+	private boolean hasHDMIPort;
+	private String cardReaderTypes;
 	private String bluetooth;
 	private String wifiModel;
-	private boolean hasOfficeSuite;
 	private String officeSuiteVersion;
 	private String antivirusSoftware;
 	private boolean hasBag;
 	private int warranty;
-	private List<String> imagePath;
-
+	private String imagePath;
 }

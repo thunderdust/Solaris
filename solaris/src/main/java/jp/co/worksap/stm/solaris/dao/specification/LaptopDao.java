@@ -8,8 +8,8 @@ import jp.co.worksap.stm.solaris.dto.LaptopDto;
 public interface LaptopDao {
 
 	LaptopDto getById(String id) throws IOException;
-
-	List<LaptopDto> getAll(int start, int size) throws IOException;
+	
+	List<LaptopDto> getAll() throws IOException;
 
 	void insert(LaptopDto ld) throws IOException;
 
