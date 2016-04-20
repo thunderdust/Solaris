@@ -84,7 +84,7 @@
     
     <!-- Product Addition Modal -->
 	<div class="modal free" id="product-add-modal" tabindex="-1"
-		role="dialog" aria-labelledby="product" data-mode="add">
+		role="dialog" aria-labelledby="myModalLabel" data-mode="add">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -92,6 +92,7 @@
 						aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
+					<h4 class="modal-title" id="myModalLabel"></h4>
 					<div class="solaris-title">
 						<p>
 							Add a new laptop <img src="resources/app/img/laptop.png" />
@@ -99,7 +100,7 @@
 					</div>
 				</div>
 				<div class="modal-body">
-					<form id="add-product-form">
+					<form id="product-form">
 						<span class="tip"><b> * </b>marks the compulsory fields.</span>
 						<h4 class="form-subtitle">
 							<b>Basic Information</b>
@@ -455,7 +456,7 @@
 
 
 	<div class="modal fade" id="product-delete-modal" tabindex="-1"
-		role="dialog" aria-labelledby="product">
+		role="dialog" aria-labelledby="myModalLabel">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -463,7 +464,7 @@
 						aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
-					<h4 class="modal-title" id="product">Confirm delete
+					<h4 class="modal-title" id="myModalLabel">Confirm delete
 						product</h4>
 				</div>
 				<div class="modal-body">Are you sure you want to delete the

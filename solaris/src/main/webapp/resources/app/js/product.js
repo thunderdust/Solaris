@@ -65,16 +65,6 @@ $(document).ready(function() {
 
 		/****************** Product [Add] modal setups ***************************/
 		$('#product-add-button').click(validateAddProductForm);
-      // reset data when modal hides
-		$('#product-add-modal').on(
-			'hidden.bs.modal', function() {
-				$('#name').prop('readonly', false);
-				$('#product-add-modal').data().mode = 'add';
-				$('#product-add-modal').html('Add new product');
-				//$('#add-product-form')[0].reset();
-		});
-		// set default add model 
-		$('#product-add-modal').data().mode = 'add';
 		
 		/************************* Product Edition setups ************************/
 
@@ -82,10 +72,9 @@ $(document).ready(function() {
 		$('#product-edit-modal-btn').on('click', function() {
 			var selectedData = Solaris.dataTable.row('.selected').data();
 			console.log(selectedData);
-			$('#name').prop('readonly', true);
-			$('#product-add-modal').data().mode = 'update';
-			$('#product-add-modal').html('Edit Product');
 			$('#name').val(selectedData.name);
+			//$('#name').prop('readonly', true);
+			$('#product-add-modal #myModalLabel').data().mode = 'update';
 			$('#brand option[data-display=' + selectedData.brand + ']').attr('selected', 'selected');
 			$('#publish_date').val(selectedData.publishDate);
 			$('#price').val(selectedData.price);
@@ -161,6 +150,16 @@ $(document).ready(function() {
 			$('#warranty').val(selectedData.warranty);
 		});
 
+		 // reset data when modal hides
+		$('#product-add-modal').on(
+			'hidden.bs.modal', function() {
+				$('#product-add-modal #myModalLabel').data().mode = 'add';
+				$('#product-form')[0].reset();
+		});
+		// set default add model 
+		$('#product-add-modal #myModalLabel').data().mode = 'add';
+		currentDataMode = 'add';
+
 	   $('#product-delete-button').click(Solaris.deleteProduct);
 	   $('#product-brand-filter').change(function() {
 	   	$('#product-table').dataTable().fnReloadAjax();
@@ -195,7 +194,7 @@ function validateAddProductForm() {
 };
 
 Solaris.addProduct = function(evt) {
-	var formData = $('#add-product-form').serializeObject();
+	var formData = $('#product-form').serializeObject();
 	if (typeof (formData.card_reader_type) == 'string') {
 		formData.card_reader_type = [ formData.card_reader_type ];
 	}
@@ -250,8 +249,8 @@ Solaris.addProduct = function(evt) {
        	 formData.imagePath = null;
    }
 		 
-	//var url = 'products/' + $('#add-product-form').data().mode + 'Laptop';
-	var url = 'products/' + 'addLaptop';
+	var url = 'products/' + $('#product-form #myModalLabel').data().mode + 'Laptop';
+	//var url = 'products/' + 'addLaptop';
 
 	console.log(JSON.stringify(formData));
 	$.ajax({
