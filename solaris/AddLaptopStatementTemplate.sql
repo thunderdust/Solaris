@@ -1,3 +1,45 @@
-INSERT INTO LAPTOPS (name, brand, publish_date, default_price, width, height, length, weight, screen_size, os, cpu, ram_type, ram_slot, ram_size, hard_drive_model, hard_drive_speed, hard_drive_size, ssd_size, resolution_horizontal, resolution_vertical, touch_screen, gpu, graphics_card_type, graphics_memory, battery_volume, battery_life, battery_cell, optical_drive, optical_drive_speed, track_point, front_camera, camera_pixel, usb_port_2, usb_port_3, usb_port_type, vga_port, hdmi_port, card_reader_type, bluetooth, wifi_mode, office_suite_version, antivirus_software, laptop_bag, warranty, images)
+INSERT INTO `s215`.`laptops`
+(`name`,
+`brand`,
+`publish_date`,
+`default_price`,
+`width`,
+`height`,
+`length`,
+`weight`,
+`screen_size`,
+`os`,
+`cpu`,
+`ram_size`,
+`hard_drive_model`,
+`hard_drive_size`,
+`resolution_horizontal`,
+`resolution_vertical`,
+`touch_screen`,
+`gpu`,
+`graphics_card_type`,
+`graphics_memory`,
+`battery_life`,
+`battery_cell`,
+`optical_drive`,
+`optical_drive_speed`,
+`track_point`,
+`front_camera`,
+`camera_pixel`,
+`usb_port_2`,
+`usb_port_3`,
+`usb_port_type`,
+`vga_port`,
+`hdmi_port`,
+`card_reader_type`,
+`bluetooth`,
+`antivirus_software`,
+`laptop_bag`,
+`warranty`,
+`images`)
 
-VALUES ("Alienware X51","alienware","2016-04","2000","1300","4000","200","1500","14.2","windows 7","Intel core i7","good RAM","6","4","good model","1200","512","120","800","600",TRUE,"GeForce TX7100","dedicated","2000","5000","6","8","good optical drive","4",FALSE,TRUE,"30","4","2","both",TRUE,TRUE,"CF-I","good bluetooth mode","wifi mode","MS Office 2000","Norton 4",TRUE, "12", NULL);
+# name, brand, publish_date, default_price, width, height, length, weight, screen_size, os, cpu, ram_size, hard_drive_model, hard_drive_size, resolution_horizontal, resolution_vertical, touch_screen, gpu, graphics_card_type, graphics_memory, battery_life, battery_cell, optical_drive, optical_drive_speed, track_point, front_camera, camera_pixel, usb_port_2, usb_port_3, usb_port_type, vga_port, hdmi_port, card_reader_type, bluetooth, antivirus_software, laptop_bag, warranty, images
+
+VALUES ('Alienware X51', 'Alienware', '2016-04-12', '2000', '1300', '4000', '200', '1500', '14.2', 'windows 7', 'Intel core i7', '4', 'good model', '512', '800', '600', '1', 'GeForce TX7100', 'dedicated', '2000', '6', '8', 'good optical drive', '4', '0', '1', '30', '4', '2', 'both', '1', '1', 'CF-I, SD', 'good bluetooth mode', 'Norton 4', '1', '12', NULL);
+VALUES ('Asus GT2000', 'Asus', '2015-10-01', '1200', '2000', '200', '300', '1200', '14.2', 'Windows 10', 'Intel Core Duo i5', '8', 'Good HDD', '512', '1200', '960', '0', 'GeForce N920', 'dedicated', '1024', '6', '0', 'drive', '8', '0', '1', '45', '2', '4', 'both', '1', '1', 'SD,MicroSD,MiniSD,', 'Bluetooth 2.0', 'Kaspersky Anti-Virus', '1', '6', '');
+VALUES ('HP Spectre x360 -13t Touch Laptop', 'HP', '2015-03-01', '899', '430', '350', '80', '950', '13.3', 'Windows 10 Home 64', 'Intel(R) Core(TM) i7-6500U Processor Dual-Core', '8', 'Flash SSD', '512', '1920', '1080', '1', 'Intel(R) Iris(TM) Graphics 540', 'integrated', NULL, '12', '3', NULL, NULL, '0', '1', '30', '0', '3', '3.0', '0', '1', 'SD', 'Bluetooth(R) [2x2]', 'McAfee LiveSafe', '1', '12', NULL);

@@ -1,14 +1,14 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>Solaris - Products</title>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="stylesheet" href="resources/lib/css/select2.min.css" />
-<link rel="stylesheet" href="resources/app/css/shared.css" />
-<link rel="stylesheet"
-	href="resources/lib/css/select2-bootstrap.min.css" />
-<link rel="stylesheet" href="resources/lib/css/datatables.min.css" />
-<ct th:replace="fragments/header :: commonhead"></ct>
+  <title>Solaris - Products</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="resources/lib/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="resources/lib/css/datatables.min.css" />
+  <link rel="stylesheet" href="resources/lib/css/select2.min.css" />
+  <link rel="stylesheet" href="resources/lib/css/select2-bootstrap.min.css" />
+  <link rel="stylesheet" href="resources/app/css/shared.css" />
+  <ct th:replace="fragments/header :: commonhead"></ct>
 </head>
 <body>
 
@@ -72,17 +72,18 @@
 							<th id="laptop_brand">Brand</th>
 							<th id="laptop_cpu">CPU</th>
 							<th id="laptop_gpu">GPU</th>
-							<th id="laptop_hdd_size">HDD Size</th>
-							<th id="laptop_price">Price</th>
+							<th id="laptop_hdd_size">HDD Size (GB)</th>
+							<th id="laptop_price">Price (SGD)</th>
 						</tr>
 					</thead>
 				</table>
 			</div>
 		</div>
 	</div>
-
+    
+    <!-- Product Addition Modal -->
 	<div class="modal free" id="product-add-modal" tabindex="-1"
-		role="dialog" aria-labelledby="myModalLabel" data-mode="add">
+		role="dialog" aria-labelledby="product" data-mode="add">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -97,7 +98,7 @@
 					</div>
 				</div>
 				<div class="modal-body">
-					<form id="product-form">
+					<form id="add-product-form">
 						<span class="tip"><b> * </b>marks the compulsory fields.</span>
 						<h4 class="form-subtitle">
 							<b>Basic Information</b>
@@ -113,22 +114,22 @@
 							<label for="brand">Brand<span> *</span></label> <select
 								id="brand" class="form-control compulsory-input" name="brand"
 								required="required">
-								<option value="acer">Acer</option>
-								<option value="apple">Apple</option>
-								<option value="asus">Asus</option>
-								<option value="alienware">Alienware</option>
-								<option value="dell">Dell</option>
-								<option value="sony">Sony</option>
-								<option value="toshiba">Toshiba</option>
-								<option value="lenovo">Lenovo</option>
-								<option value="fujitsu">Fujitsu</option>
-								<option value="hp">HP</option>
-								<option value="lg">LG</option>
-								<option value="samsung">Samsung</option>
-								<option value="compaq">Compaq</option>
-								<option value="benq">Benq</option>
-								<option value="sharp">Sharp</option>
-								<option value="nec">NEC</option>
+								<option data-display="Acer" value="Acer">Acer</option>
+								<option data-display="Apple" value="Apple">Apple</option>
+								<option data-display="Asus" value="Asus">Asus</option>
+								<option data-display="Alienware" value="Alienware">Alienware</option>
+								<option data-display="Dell" value="Dell">Dell</option>
+								<option data-display="Sony" value="Sony">Sony</option>
+								<option data-display="Toshiba" value="Toshiba">Toshiba</option>
+								<option data-display="Lenovo" value="Lenovo">Lenovo</option>
+								<option data-display="Fujitsu" value="Fujitsu">Fujitsu</option>
+								<option data-display="HP" value="HP">HP</option>
+								<option data-display="LG" value="LG">LG</option>
+								<option data-display="Samsung" value="Samsung">Samsung</option>
+								<option data-display="Compaq" value="Compaq">Compaq</option>
+								<option data-display="Benq" value="Benq">Benq</option>
+								<option data-display="Sharp" value="Sharp">Sharp</option>
+								<option data-display="NEC" value="NEC">NEC</option>
 							</select>
 						</div>
 
@@ -142,7 +143,7 @@
 						<div class="form-group form-compulsory">
 							<label for="price">Default Price (SGD)<span> *</span></label> <input
 								name="price" type="text" class="form-control compulsory-input"
-								id="pric" placeholder="Default Price" required="required" />
+								id="price" placeholder="Default Price" required="required" />
 						</div>
 						<hr />
 						<!-- ******************************************************************** -->
@@ -206,22 +207,6 @@
 						</div>
 
 						<div class="form-group">
-							<label for="office_suite_version">Office Suite Version</label> <select
-								id="office_suite_version" class="form-control"
-								name="officeSuiteVersion">
-								<option value="NULL">No Office Suite included</option>
-								<option value="2000">MS Office 2000</option>
-								<option value="XP">MS Office XP</option>
-								<option value="2003">MS Office 2003</option>
-								<option value="2007">MS Office 2007</option>
-								<option value="2010">MS Office 2010</option>
-								<option value="2013 RT">MS Office 2013 RT</option>
-								<option value="2013">MS Office 2013</option>
-								<option value="2016">MS Office 2016</option>
-							</select>
-						</div>
-
-						<div class="form-group">
 							<label for="antivirus">Antivirus Software</label> <input
 								name="antivirusSoftware" type="text" class="form-control"
 								id="antivirus" placeholder="Pre-installed anti-virus software" />
@@ -242,25 +227,11 @@
 						</div>
 
 						<div class="form-group form-compulsory">
-							<label for="ram_type">RAM Type<span> *</span></label> <input
-								name="ramType" type="text" class="form-control compulsory-input"
-								id="ram_type" placeholder="RAM Type" required="required" />
-						</div>
-
-						<div class="form-group form-compulsory">
 							<label for="ram_size">RAM Size (GB)<span> *</span></label> <input
 								name="ramSize" type="number"
 								class="form-control compulsory-input" id="ram_size"
 								placeholder="RAM size in unit of gigabyte" required="required"
 								min="1" max="24" />
-						</div>
-
-						<div class="form-group form-compulsory">
-							<label for="ram_slot">RAM Slots<span> *</span></label> <input
-								name="ramSlot" type="number"
-								class="form-control compulsory-input" id="ram_slot"
-								placeholder="Number of RAM slots" required="required" min="1"
-								max="8" />
 						</div>
 
 						<div class="form-group form-compulsory">
@@ -276,14 +247,6 @@
 								class="form-control compulsory-input" id="hdd_size"
 								placeholder="Hard disk size in unit of gigabyte" max="10000"
 								min="64" required="required" />
-						</div>
-
-						<div class="form-group form-compulsory">
-							<label for="hdd_spin_speed">Hard Disk Spin Speed(rpm)<span>
-									*</span></label> <input name="hddSpinSpeed" type="number"
-								class="form-control compulsory-input" id="hdd_spin_speed"
-								placeholder="Hard disk spin speed in unit of rpm" max="20000"
-								min="1000" required="required" />
 						</div>
 
 						<div class="form-group">
@@ -304,7 +267,7 @@
 
 						<div class="form-group">
 							<label for="touch_screen">Touch Screen </label> <input
-								name="isTouchScreen" type="checkbox" value="touch_screen"
+								name="touchScreen" type="checkbox" value="touch_screen"
 								id="touch_screen" required="required" />
 						</div>
 
@@ -320,9 +283,9 @@
 									*</span></label> <select id="graphics_card_type"
 								class="form-control compulsory-input" name="graphicsCardType"
 								required="required">
-								<option value="integrated">Integrated</option>
-								<option value="dedicated">Dedicated</option>
-								<option value="both">Both</option>
+								<option data-display="integrated" value="integrated">Integrated</option>
+								<option data-display="dedicated" value="dedicated">Dedicated</option>
+								<option data-display="both" value="both">Both</option>
 							</select>
 						</div>
 
@@ -332,13 +295,6 @@
 								name="graphicMemory" type="number" class="form-control"
 								placeholder="Graphic card memory in unit of megabyte"
 								id="graphic_memory" min="256" max="10240" />
-						</div>
-
-						<div class="form-group">
-							<label for="battery_volume">Battery Volume (mAh)</label> <input
-								name="batteryVolume" type="number" class="form-control"
-								placeholder="Battery volume in unit of mAh" id="battery_volume"
-								min="1000" max="80000" />
 						</div>
 
 						<div class="form-group form-compulsory">
@@ -355,12 +311,7 @@
 								placeholder="Battery life in unit of hours" id="battery_life"
 								min="1" max="24" />
 						</div>
-
-						<div class="form-group">
-							<label for="wifi">Wifi Mode</label> <input name="wifiMode"
-								type="text" class="form-control" id="wifi"
-								placeholder="Wifi Mode" />
-						</div>
+						
 						<hr />
 
 						<!-- ******************************************************************** -->
@@ -407,22 +358,22 @@
 							<label for="usb_port_type">USB Port Type<span> *</span></label> <select
 								id="usb_port_type" class="form-control compulsory-input"
 								name="usbPortType" required="required">
-								<option value="2.0">USB 2.0</option>
-								<option value="3.0">USB 3.0</option>
-								<option value="both">Both</option>
+								<option data-display="2.0" value="2.0">USB 2.0</option>
+								<option data-display="3.0" value="3.0">USB 3.0</option>
+								<option data-display="both" value="both">Both</option>
 							</select>
 						</div>
 
 						<div class="form-group">
-							<label for="usb_2_port">USB 2.0 Ports</label> <input
+							<label for="usb_2_slot">USB 2.0 Ports</label> <input
 								name="usb_2_slot" type="number" class="form-control" min="0"
-								max="5" placeholder="Number of USB 2.0 ports" id="usb_2_port" />
+								max="5" placeholder="Number of USB 2.0 ports" id="usb_2_slot" />
 						</div>
 
 						<div class="form-group">
-							<label for="usb_3_port">USB 3.0 Ports</label> <input
+							<label for="usb_3_slot">USB 3.0 Ports</label> <input
 								name="usb_3_slot" type="number" class="form-control" min="0"
-								max="5" placeholder="Number of USB 3.0 ports" id="usb_3_port" />
+								max="5" placeholder="Number of USB 3.0 ports" id="usb_3_slot" />
 						</div>
 
 						<div class="form-group">
@@ -440,13 +391,13 @@
 								(Multiple allowed) </label> <select id="card_reader_type"
 								class="form-control" name="cardReaderTypes" required="required"
 								multiple="multiple" size="7">
-								<option value="CF-I">CF-I Card</option>
-								<option value="CF-II">CF-II Card</option>
-								<option value="SD">SD Card</option>
-								<option value="MicroSD">MicroSD Card</option>
-								<option value="MiniSD">MiniSD Card</option>
-								<option value="RS-MMC">Reduced Size Multimedia Card</option>
-								<option value="MMC">Multimedia Card</option>
+								<option data-display="CF-I" value="CF-I">CF-I Card</option>
+								<option data-display="CF-II" value="CF-II">CF-II Card</option>
+								<option data-display="SD" value="SD">SD Card</option>
+								<option data-display="MicroSD" value="MicroSD">MicroSD Card</option>
+								<option data-display="MiniSD" value="MiniSD">MiniSD Card</option>
+								<option data-display="RS-MMC" value="RS-MMC">Reduced Size Multimedia Card</option>
+								<option data-display="MMC" value="MMC">Multimedia Card</option>
 							</select>
 						</div>
 
@@ -483,29 +434,27 @@
 						<hr />
 
 						<div class="form-group form-compulsory">
-							<label for="warranty">Warranty<span> *</span></label> <input
+							<label for="warranty">Warranty (Months)<span> *</span></label> <input
 								name="warranty" type="number"
 								class="form-control compulsory-input" id="warranty"
 								placeholder="Number of months under warranty" min="1" max="99" />
 						</div>
 						<hr />
-						<!-- ******************************************************************** -->
-
-						<div>
-							<button id="product-add-button" type="button"
-								class="btn btn-primary">
-								<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-								Add New Product
-							</button>
-						</div>
 					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+					<button id="product-add-button" type="button" class="btn btn-primary">
+					        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Add New Product
+					</button>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<div class="modal fade" id="product-delete-modal" tabindex="-1" role="dialog"
-		aria-labelledby="myModalLabel">
+
+	<div class="modal fade" id="product-delete-modal" tabindex="-1"
+		role="dialog" aria-labelledby="product">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -513,14 +462,15 @@
 						aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
-					<h4 class="modal-title" id="myModalLabel">Confirm delete product</h4>
+					<h4 class="modal-title" id="product">Confirm delete
+						product</h4>
 				</div>
-				<div class="modal-body">
-					Are you sure you want to delete the selected product?
-				</div>
+				<div class="modal-body">Are you sure you want to delete the
+					selected product?</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-					<button id="product-delete-button" type="button" class="btn btn-primary">Delete</button>
+					<button id="product-delete-button" type="button"
+						class="btn btn-primary">Delete</button>
 				</div>
 			</div>
 		</div>

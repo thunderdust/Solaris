@@ -1,146 +1,201 @@
-$(document).ready(function() {
-	//switchActiveTab('nav-product');
-	//$('#product-add-button').click(Solaris.addProduct);
-
-	initPage();
-
-
-	/* After certain short time of window resize, reload page to let the table adjust itself. */
-	var resizeTask;
-	var timeoutThreshold = 30;
-	window.onresize = function(event) {
-		console.log("Window resized");
-		clearTimeout(resizeTask);
-		resizeTask = setTimeout(reloadPage, timeoutThreshold);
-	}
-});
-
-function reloadPage() {
-		// Reload from cache
-		location.reload(false);
+var resizeTask;
+var timeoutThreshold = 30;
+window.onresize = function(event) {
+	console.log("Window resized");
+	clearTimeout(resizeTask);
+	resizeTask = setTimeout(reloadPage, timeoutThreshold);
 }
 
-function validateAddProductForm() {
+function reloadPage() {
+	// Reload from cache
+	location.reload(false);
+}
 
+$(document).ready(function() {
+    // switchActiveTab('nav-product');
+	 // $('#product-add-button').click(Solaris.addProduct);
+
+	 var initPage = function() {
+	 	Solaris.dataTable = $('#product-table').DataTable({
+	 		'serverSide' : true,
+			'ajax' : {
+				url : 'products/getAllLaptops',
+				type : 'POST',
+				contentType : 'application/json',
+				data : function(d) {
+					// send only data required by backend API
+					delete (d.columns);
+					delete (d.order);
+					delete (d.search);
+					d.brand = $('#product-brand-filter').val();
+					return JSON.stringify(d);
+				},
+				// list of LaptopEntity defined in LaptopListEntity class
+				dataSrc : "laptopEntities",
+				xhrFields : {
+					withCredentials : true
+				}
+			},
+			columns : [
+			  { data : 'name'}, 
+			  { data : 'brand'}, 
+			  { data : 'cpu'}, 
+			  { data : 'gpu'}, 
+			  { data : 'hddSize'}, 
+			  { data : 'price'} 
+			],
+			select : "single"
+	   });
+
+		// disable delete button if nothing selected
+		Solaris.dataTable.on('select', function() {
+			$('#product-delete-modal-btn').prop('disabled', false);
+			$('#product-edit-modal-btn').prop('disabled', false);
+		});
+
+		Solaris.dataTable.on('deselect', function() {
+			$('#product-delete-modal-btn').prop('disabled', true);
+			$('#product-edit-modal-btn').prop('disabled', true);
+		});
+
+		Solaris.dataTable.on('draw', function() {
+			$('#product-delete-modal-btn').prop('disabled', true);
+			$('#product-edit-modal-btn').prop('disabled', true);
+		});
+
+		/****************** Product [Add] modal setups ***************************/
+		$('#product-add-button').click(validateAddProductForm);
+      // reset data when modal hides
+		$('#product-add-modal').on(
+			'hidden.bs.modal', function() {
+				$('#name').prop('readonly', false);
+				$('#product-add-modal').data().mode = 'add';
+				$('#product-add-modal').html('Add new product');
+				//$('#add-product-form')[0].reset();
+		});
+		// set default add model 
+		$('#product-add-modal').data().mode = 'add';
+		
+		/************************* Product Edition setups ************************/
+
+		// When edit button is clicked initialize the dialog
+		$('#product-edit-modal-btn').on('click', function() {
+			var selectedData = Solaris.dataTable.row('.selected').data();
+			console.log(selectedData);
+			$('#name').prop('readonly', true);
+			$('#product-add-modal').data().mode = 'update';
+			$('#product-add-modal').html('Edit Product');
+			$('#name').val(selectedData.name);
+			$('#brand option[data-display=' + selectedData.brand + ']').attr('selected', 'selected');
+			$('#publish_date').val(selectedData.publishDate);
+			$('#price').val(selectedData.price);
+			$('#laptop_width').val(selectedData.laptop_width);
+			$('#laptop_length').val(selectedData.laptop_length);
+			$('#laptop_height').val(selectedData.laptop_height);
+			$('#laptop_weight').val(selectedData.laptop_weight);
+			$('#screen_size').val(selectedData.screenSize);
+			$('#operating_system').val(selectedData.os);
+         $('#antivirus').val(selectedData.antivirusSoftware);
+			$('#cpu').val(selectedData.cpu);
+			$('#ram_size').val(selectedData.ramSize);
+			$('#hdd_model').val(selectedData.hddModel);
+			$('#hdd_size').val(selectedData.hddSize);
+			$('#resolution_horizontal').val(selectedData.resolutionHorizontal);
+			$('#resolution_vertical').val(selectedData.resolutionVertical);
+			if (selectedData.touchScreen) {
+				$('#touch_screen').prop('checked', true);
+			} else {
+				$('#touch_screen').prop('checked', false);
+			}
+			$('#gpu').val(selectedData.gpu);
+			$('#graphics_card_type option[data-display=' + selectedData.graphicsCardType + ']').attr('selected', 'selected');
+			$('#graphic_memory').val(selectedData.graphicMemory);
+			$('#battery_cell').val(selectedData.batteryCells);
+			$('#battery_life').val(selectedData.batteryLife);
+			$('#optical_drive').val(selectedData.opticalDrive);
+			$('#optical_drive_speed').val(selectedData.opticalDriveSpeed);
+			if (selectedData.hasTrackPoint) {
+				$('#track_point').prop('checked', true);
+			} else {
+				$('#track_point').prop('checked', false);
+			}
+
+			if (selectedData.hasFrontCamera) {
+				$('#has_camera').prop('checked', true);
+			} else {
+				$('#has_camera').prop('checked', false);
+			}
+			$('#camera_pixel').val(selectedData.cameraPixel);
+			$('#gpu').val(selectedData.gpu);
+			$('#usb_port_type option[data-display=' + selectedData.usbPortType + ']').attr('selected', 'selected');
+			$('#usb_2_slot').val(selectedData.usb_2_slot);
+			$('#usb_3_slot').val(selectedData.usb_3_slot);
+			
+			if (selectedData.hasVGAPort) {
+				$('#vga').prop('checked', true);
+			} else {
+				$('#vga').prop('checked', false);
+			}
+
+			if (selectedData.hasHDMIPort) {
+				$('#hdmi').prop('checked', true);
+			} else {
+				$('#hdmi').prop('checked', false);
+			}
+
+			// card reader types with multiple selections
+			var card_reader_type_array = selectedData.cardReaderTypes;
+			for (var i = 0; i < card_reader_type_array.length; i++) {
+				$('#card_reader_type option[data-display=' + card_reader_type_array[i] + ']').attr('selected', 'selected');
+			}
+
+			$('#bluetooth').val(selectedData.bluetooth);
+
+			if (selectedData.hasBag) {
+				$('#bag').prop('checked', true);
+			} else {
+				$('#bag').prop('checked', false);
+			}
+
+			// Image !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+			$('#warranty').val(selectedData.warranty);
+		});
+
+	   $('#product-delete-button').click(Solaris.deleteProduct);
+	   $('#product-brand-filter').change(function() {
+	   	$('#product-table').dataTable().fnReloadAjax();
+	   });
+	};
+
+	initPage();
+});
+
+function validateAddProductForm() {
 	var compulsory_inputs = document.getElementsByClassName('compulsory-input');
 	var empty_count = 0;
 	for ( var key in compulsory_inputs) {
-		// Exlude the index keys objects 
-		// && key.length >2 && key!="item" && key!="length" && key!="namedItem"
 		if (compulsory_inputs.hasOwnProperty(key) && key.length > 2) {
-			// Check for empty fields 
+         // Check for empty fields
 			if (!(compulsory_inputs[key]).value) {
 				console.log(key);
-				//console.log((compulsory_inputs[key]).type);
-				var missing_input = compulsory_inputs[key];
-				missing_input.style.borderColor = "red";
-				empty_count++;
-			} else {
-				compulsory_inputs[key].style.borderColor = "#ccc";
-			}
-		}
-	}
+			   // console.log((compulsory_inputs[key]).type);
+			   var missing_input = compulsory_inputs[key];
+			   missing_input.style.borderColor = "red";
+			   empty_count++;
+		   } else {
+		   	compulsory_inputs[key].style.borderColor = "#ccc";
+		   }
+	   }
+   }
 	if (empty_count > 0) {
 		alert("One or more required input fields are not filled, please check again.");
 	} else {
 		Solaris.addProduct();
 	}
-}
-
-var initPage = function() {
-
-	Solaris.dataTable = $('#product-table').DataTable({
-		'serverSide' : true,
-		'ajax' : {
-			url : 'products/getAllLaptops',
-			type : 'POST',
-			contentType : "application/json",
-			data : function(d) {
-				// send only data required by backend API
-				delete (d.columns);
-				delete (d.order);
-				delete (d.search);
-				d.brand = $('#product-brand-filter').val();
-				return JSON.stringify(d);
-			},
-			// list of LaptopEntity defined in LaptopListEntity class
-			dataSrc : "laptopEntities",
-			xhrFields : {
-				withCredentials : true
-			}
-		},
-		columns : [ {
-			data : 'name'
-		}, {
-			data : 'brand'
-		}, {
-			data : 'cpu'
-		}, {
-			data : 'gpu'
-		}, {
-			data : 'hddSize'
-		}, {
-			data : 'price'
-		} ],
-		select : "single"
-	});
-
-	$('#product-add-button').click(validateAddProductForm);
-	$('#product-delete-button').click(Solaris.deleteProduct);
-	$('#product-brand-filter').change(function() {
-		$('#product-table').dataTable().fnReloadAjax();
-	});
-
-	// disable delete button if nothing selected
-	Solaris.dataTable.on('select', function() {
-		$('#product-delete-modal-btn').prop('disabled', false);
-		$('#product-edit-modal-btn').prop('disabled', false);
-	});
-
-	Solaris.dataTable.on('deselect', function() {
-		$('#product-delete-modal-btn').prop('disabled', true);
-		$('#product-edit-modal-btn').prop('disabled', true);
-	});
-
-	Solaris.dataTable.on('draw', function() {
-		$('#product-delete-modal-btn').prop('disabled', true);
-		$('#product-edit-modal-btn').prop('disabled', true);
-	});
-
-	// When edit button is clicked initialize the dialog
-	$('#product-edit-modal-btn').on(
-			'click',
-			function() {
-				var selectedData = Solaris.dataTable.row('.selected').data();
-				$('#id').prop('readonly', true)
-				$('#product-add-modal #myModalLabel').data().mode = 'update';
-				$('#product-add-modal #myModalLabel').html('Edit Product');
-				$('#id').val(selectedData.id);
-				$('#first-name').val(selectedData.firstName);
-				$('#last-name').val(selectedData.lastName);
-				$('#email').val(selectedData.email);
-				$('#roles').val(selectedData.roles);
-				$(
-						'#office option[data-display='
-								+ selectedData.officeName + ']').attr(
-						'selected', 'selected');
-				// $('#password').val(selectedData.password);
-			});
-
-	// reset data when modal hides
-	$('#product-add-modal').on('hidden.bs.modal', function() {
-		$('#id').prop('readonly', false);
-		$('#product-add-modal #myModalLabel').data().mode = 'add';
-		$('#product-add-modal #myModalLabel').html('Add new product');
-		$('#product-form')[0].reset();
-	});
-	// default method for the add model is add (instead of edit)
-	//$('#product-add-modal #myModalLabel').data().mode = 'add';
 };
 
 Solaris.addProduct = function(evt) {
-	var formData = $('#product-add-form').serializeObject();
-	/* for multiple selection data field, modify single selection to an array with 1 object inside*/
+	var formData = $('#add-product-form').serializeObject();
 	if (typeof (formData.card_reader_type) == 'string') {
 		formData.card_reader_type = [ formData.card_reader_type ];
 	}
@@ -153,82 +208,76 @@ Solaris.addProduct = function(evt) {
 	} else {
 		formData.isTouchScreen = false;
 	}
-
 	if (formData.hasTrackPoint != null) {
 		formData.hasTrackPoint = true;
 	} else {
 		formData.hasTrackPoint = false;
 	}
+   if (formData.hasFrontCamera != null) {
+   	formData.hasFrontCamera = true;
+   } else {
+   	formData.hasFrontCamera = false;
+   }
+   if (formData.hasVGAPort != null) {
+   	formData.hasVGAPort = true;
+   } else {
+   	formData.hasVGAPort = false;
+   }
 
-	if (formData.hasFrontCamera != null) {
-		formData.hasFrontCamera = true;
-	} else {
-		formData.hasFrontCamera = false;
+		 if (formData.hasHDMIPort != null) {
+		 	formData.hasHDMIPort = true;
+		 } else {
+		 	formData.hasHDMIPort = false;
+		 }
+
+		 if (formData.hasBag != null) {
+		 	formData.hasBag = true;
+		 } else {
+		 	formData.hasBag = false;
+		 }
+
+		 formData.imagePath = [ $('#imagePath').val() ];
+		 //var url = 'products/' + $('#add-product-form').data().mode + 'Laptop';
+		 var url = 'products/' + 'addLaptop';
+
+		 console.log(JSON.stringify(formData));
+
+		 $.ajax({
+		 	url : url,
+		 	data : JSON.stringify(formData),
+		 	type : 'POST',
+		 	contentType : "application/json",
+		 	xhrFields : {
+		 		withCredentials : true
+		 	}
+		 }).done(function() {
+		 	console.log("add new product successfully");
+			$('#product-add-modal').modal('hide');
+		   $('#product-table').dataTable().fnReloadAjax();
+		});
+		};
+
+		Solaris.deleteProduct = function(evt) {
+
+			var selectedName = Solaris.dataTable.data()[Solaris.dataTable
+			.row('.selected')[0]].name;
+			$.ajax({
+				url : "products/deleteLaptop?name=" + selectedName,
+				type : 'DELETE',
+				xhrFields : {
+					withCredentials : true
+				}
+			}).done(function() {
+				$('#product-delete-modal').modal('hide');
+				$('#product-table').dataTable().fnReloadAjax();
+			});
+		};
+
+	// JS is only used to add the <div>s
+	var switches = document.querySelectorAll('input[type="checkbox"].ios-switch');
+
+	for (var i = 0, sw; sw = switches[i++];) {
+		var div = document.createElement('div');
+		div.className = 'switch';
+		sw.parentNode.insertBefore(div, sw.nextSibling);
 	}
-
-	if (formData.hasVGAPort != null) {
-		formData.hasVGAPort = true;
-	} else {
-		formData.hasVGAPort = false;
-	}
-
-	if (formData.hasHDMIPort != null) {
-		formData.hasHDMIPort = true;
-	} else {
-		formData.hasHDMIPort = false;
-	}
-
-	if (formData.hasBag != null) {
-		formData.hasBag = true;
-	} else {
-		formData.hasBag = false;
-	}
-
-	if (formData.officeSuiteVersion != null
-			&& formData.officeSuiteVersion == 'NULL') {
-		formData.officeSuiteVersion = null;
-	}
-
-	formData.imagePath = [ $('#imagePath').val() ];
-	var url = 'products/' + $('#product-add-modal #myModalLabel').data().mode
-			+ 'Laptop';
-
-	console.log(JSON.stringify(formData));
-
-	$.ajax({
-		url : url,
-		data : JSON.stringify(formData),
-		type : 'POST',
-		contentType : "application/json",
-		xhrFields : {
-			withCredentials : true
-		}
-	}).done(function() {
-		console.log("add new product successfully");
-		// notify message
-	});
-};
-
-Solaris.deleteProduct = function(evt) {
-
-	var selectedName = Solaris.dataTable.data()[Solaris.dataTable.row('.selected')[0]].name;
-	$.ajax({
-		url : "products/deleteLaptop?name=" + selectedName,
-		type: 'DELETE',
-		xhrFields: {
-	      withCredentials: true
-	    }
-	}).done(function(){
-		$('#product-delete-modal').modal('hide');
-		$('#product-table').dataTable().fnReloadAjax();
-	});
-};	
-
-// JS is only used to add the <div>s
-var switches = document.querySelectorAll('input[type="checkbox"].ios-switch');
-
-for (var i = 0, sw; sw = switches[i++];) {
-	var div = document.createElement('div');
-	div.className = 'switch';
-	sw.parentNode.insertBefore(div, sw.nextSibling);
-}

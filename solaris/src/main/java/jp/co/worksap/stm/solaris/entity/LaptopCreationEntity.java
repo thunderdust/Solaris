@@ -17,7 +17,7 @@ public class LaptopCreationEntity {
 	private String brand;
 	private Date publishDate;
 	private BigDecimal price;
-	//private List<String> tags;
+	// private List<String> tags;
 	private int laptop_width;
 	private int laptop_height;
 	private int laptop_length;
@@ -25,20 +25,15 @@ public class LaptopCreationEntity {
 	private float screenSize;
 	private String operating_system;
 	private String cpu;
-	private String ramType;
-	private int ramSlot;
 	private int ramSize;
 	private int hddSize;
 	private String hddModel;
-	private int hddSpinSpeed;
-	private int ssdSize;
 	private int resolutionHorizontal;
 	private int resolutionVertical;
 	private boolean isTouchScreen;
 	private String gpu;
 	private String graphicsCardType;
 	private int graphicMemory;
-	private int batteryVolume;
 	private float batteryLife;
 	private int batteryCells;
 	private String opticalDrive;
@@ -53,8 +48,6 @@ public class LaptopCreationEntity {
 	private int usb_3_slot;
 	private List<String> cardReaderTypes;
 	private String bluetooth;
-	private String wifiMode;
-	private String officeSuiteVersion;
 	private String antivirusSoftware;
 	private boolean hasBag;
 	private int warranty;

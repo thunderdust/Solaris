@@ -72,7 +72,6 @@ public class LaptopServiceImplementation implements LaptopService {
 			lto.setAntivirusSoftware(le.getAntivirusSoftware());
 			lto.setBatteryCells(le.getBatteryCells());
 			lto.setBatteryLife(le.getBatteryLife());
-			lto.setBatteryVolume(le.getBatteryVolume());
 			lto.setBluetooth(le.getBluetooth());
 			lto.setBrand(le.getBrand());
 			lto.setCameraPixel(le.getCameraPixel());
@@ -96,7 +95,6 @@ public class LaptopServiceImplementation implements LaptopService {
 			lto.setHasVGAPort(le.isHasVGAPort());
 			lto.setHddModel(le.getHddModel());
 			lto.setHddSize(le.getHddSize());
-			lto.setHddSpinSpeed(le.getHddSpinSpeed());
 
 			List<String> imagePaths = le.getImagePath();
 			String imagePathString = null;
@@ -105,31 +103,25 @@ public class LaptopServiceImplementation implements LaptopService {
 				imagePathString += ",";
 			}
 			lto.setImagePath(imagePathString);
-
 			lto.setLaptop_height(le.getLaptop_height());
 			lto.setLaptop_length(le.getLaptop_length());
 			lto.setLaptop_weight(le.getLaptop_weight());
 			lto.setLaptop_width(le.getLaptop_width());
 			lto.setName(le.getName());
-			lto.setOfficeSuiteVersion(le.getOfficeSuiteVersion());
 			lto.setOpticalDrive(le.getOpticalDrive());
 			lto.setOpticalDriveSpeed(le.getOpticalDriveSpeed());
 			lto.setOs(le.getOperating_system());
 			lto.setPrice(le.getPrice());
 			lto.setPublishDate(le.getPublishDate());
 			lto.setRamSize(le.getRamSize());
-			lto.setRamSlot(le.getRamSlot());
-			lto.setRamType(le.getRamType());
 			lto.setResolutionHorizontal(le.getResolutionHorizontal());
 			lto.setResolutionVertical(le.getResolutionVertical());
 			lto.setScreenSize(le.getScreenSize());
-			lto.setSsdSize(le.getSsdSize());
 			lto.setTouchScreen(le.isTouchScreen());
 			lto.setUsb_2_slot(le.getUsb_2_slot());
 			lto.setUsb_3_slot(le.getUsb_3_slot());
 			lto.setUsbPortType(le.getUsbPortType());
 			lto.setWarranty(le.getWarranty());
-			lto.setWifiModel(le.getWifiMode());
 			ld.insert(lto);
 
 		} catch (IOException e) {

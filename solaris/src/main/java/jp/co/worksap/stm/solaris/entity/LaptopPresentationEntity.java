@@ -22,40 +22,33 @@ public class LaptopPresentationEntity {
 	private float screenSize;
 	private String os;
 	private String cpu;
-	private String ramType;
-	private int ramSlot;
 	private int ramSize;
-	private int hddSize;
 	private String hddModel;
-	private int hddSpinSpeed;
-	private int ssdSize;
+	private int hddSize;
 	private int resolutionHorizontal;
 	private int resolutionVertical;
 	private boolean isTouchScreen;
 	private String gpu;
 	private String graphicsCardType;
 	private int graphicMemory;
-	private int batteryVolume;
 	private float batteryLife;
 	private int batteryCells;
 	private String opticalDrive;
-	private float opticalDriveSpeed;
+	private int opticalDriveSpeed;
 	private boolean hasTrackPoint;
 	private boolean hasFrontCamera;
 	private float cameraPixel;
-	private boolean hasVGAPort;
-	private boolean hasHDMIPort;
-	private String usbPortType;
 	private int usb_2_slot;
 	private int usb_3_slot;
-	private List<String> cardReaderTypes;
+	private String usbPortType;
+	private boolean hasVGAPort;
+	private boolean hasHDMIPort;
+	private String cardReaderTypes;
 	private String bluetooth;
-	private String wifiModel;
-	private String officeSuiteVersion;
 	private String antivirusSoftware;
 	private boolean hasBag;
 	private int warranty;
-	private List<String> imagePath;
+	private String imagePath;
 
 	public LaptopPresentationEntity() {
 
@@ -106,7 +99,6 @@ public class LaptopPresentationEntity {
 		this.laptop_weight = ld.getLaptop_weight();
 		this.laptop_width = ld.getLaptop_width();
 		this.wifiModel = ld.getWifiModel();
-		this.officeSuiteVersion = ld.getOfficeSuiteVersion();
 		this.usb_2_slot = ld.getUsb_2_slot();
 		this.usb_3_slot = ld.getUsb_3_slot();
 		this.imagePath = ld.getImagePath();

@@ -27,20 +27,15 @@ public class LaptopEntity {
 	private float screenSize;
 	private String os;
 	private String cpu;
-	private String ramType;
-	private int ramSlot;
 	private int ramSize;
 	private int hddSize;
 	private String hddModel;
-	private int hddSpinSpeed;
-	private int ssdSize;
 	private int resolutionHorizontal;
 	private int resolutionVertical;
 	private boolean isTouchScreen;
 	private String gpu;
 	private String graphicsCardType;
 	private int graphicMemory;
-	private int batteryVolume;
 	private float batteryLife;
 	private int batteryCells;
 	private String opticalDrive;
@@ -55,8 +50,6 @@ public class LaptopEntity {
 	private int usb_3_slot;
 	private List<String> cardReaderTypes;
 	private String bluetooth;
-	private String wifiModel;
-	private String officeSuiteVersion;
 	private String antivirusSoftware;
 	private boolean hasBag;
 	private int warranty;
@@ -67,7 +60,6 @@ public class LaptopEntity {
 		this.antivirusSoftware = ld.getAntivirusSoftware();
 		this.batteryCells = ld.getBatteryCells();
 		this.batteryLife = ld.getBatteryLife();
-		this.batteryVolume = ld.getBatteryVolume();
 		this.bluetooth = ld.getBluetooth();
 		this.brand = ld.getBrand();
 		this.cameraPixel = ld.getCameraPixel();
@@ -93,7 +85,6 @@ public class LaptopEntity {
 		this.hasVGAPort = ld.isHasVGAPort();
 		this.hddModel = ld.getHddModel();
 		this.hddSize = ld.getHddSize();
-		this.hddSpinSpeed = ld.getHddSpinSpeed();
 
 		String imagePathString = ld.getImagePath();
 		if (imagePathString != null) {
@@ -115,24 +106,19 @@ public class LaptopEntity {
 		this.laptop_weight = ld.getLaptop_weight();
 		this.laptop_width = ld.getLaptop_width();
 		this.name = ld.getName();
-		this.officeSuiteVersion = ld.getOfficeSuiteVersion();
 		this.opticalDrive = ld.getOpticalDrive();
 		this.opticalDriveSpeed = ld.getOpticalDriveSpeed();
 		this.os = ld.getOs();
 		this.price = ld.getPrice();
 		this.publishDate = ld.getPublishDate();
 		this.ramSize = ld.getRamSize();
-		this.ramSlot = ld.getRamSlot();
-		this.ramType = ld.getRamType();
 		this.resolutionHorizontal = ld.getResolutionHorizontal();
 		this.resolutionVertical = ld.getResolutionVertical();
 		this.screenSize = ld.getScreenSize();
-		this.ssdSize = ld.getSsdSize();
 		this.usb_2_slot = ld.getUsb_2_slot();
 		this.usb_3_slot = ld.getUsb_3_slot();
 		this.usbPortType = ld.getUsbPortType();
 		this.warranty = ld.getWarranty();
-		this.wifiModel = ld.getWifiModel();
 	}
 
 }
