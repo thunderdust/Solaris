@@ -77,10 +77,13 @@ public class LaptopServiceImplementation implements LaptopService {
 			lto.setCameraPixel(le.getCameraPixel());
 
 			List<String> cardReaderTypes = le.getCardReaderTypes();
-			String cardReaderTypeString = null;
-			for (String type : cardReaderTypes) {
-				cardReaderTypeString += type;
-				cardReaderTypeString += ",";
+			String cardReaderTypeString = "";
+			for (int i = 0; i < cardReaderTypes.size(); i++) {
+				cardReaderTypeString += cardReaderTypes.get(i);
+				// add spliter when it is not the last element
+				if (i < cardReaderTypes.size() - 1) {
+					cardReaderTypeString += ",";
+				}
 			}
 			lto.setCardReaderTypes(cardReaderTypeString);
 
@@ -97,10 +100,13 @@ public class LaptopServiceImplementation implements LaptopService {
 			lto.setHddSize(le.getHddSize());
 
 			List<String> imagePaths = le.getImagePath();
-			String imagePathString = null;
-			for (String path : imagePaths) {
-				imagePathString += path;
-				imagePathString += ",";
+			String imagePathString = "";
+			for (int i = 0; i < imagePaths.size(); i++) {
+				imagePathString += imagePaths.get(i);
+				// add spliter when it is not the last element
+				if (i < imagePaths.size() - 1) {
+					imagePathString += ",";
+				}
 			}
 			lto.setImagePath(imagePathString);
 			lto.setLaptop_height(le.getLaptop_height());

@@ -224,60 +224,69 @@ Solaris.addProduct = function(evt) {
    	formData.hasVGAPort = false;
    }
 
-		 if (formData.hasHDMIPort != null) {
-		 	formData.hasHDMIPort = true;
-		 } else {
-		 	formData.hasHDMIPort = false;
-		 }
-
-		 if (formData.hasBag != null) {
-		 	formData.hasBag = true;
-		 } else {
-		 	formData.hasBag = false;
-		 }
-
-		 formData.imagePath = [ $('#imagePath').val() ];
-		 //var url = 'products/' + $('#add-product-form').data().mode + 'Laptop';
-		 var url = 'products/' + 'addLaptop';
-
-		 console.log(JSON.stringify(formData));
-
-		 $.ajax({
-		 	url : url,
-		 	data : JSON.stringify(formData),
-		 	type : 'POST',
-		 	contentType : "application/json",
-		 	xhrFields : {
-		 		withCredentials : true
-		 	}
-		 }).done(function() {
-		 	console.log("add new product successfully");
-			$('#product-add-modal').modal('hide');
-		   $('#product-table').dataTable().fnReloadAjax();
-		});
-		};
-
-		Solaris.deleteProduct = function(evt) {
-
-			var selectedName = Solaris.dataTable.data()[Solaris.dataTable
-			.row('.selected')[0]].name;
-			$.ajax({
-				url : "products/deleteLaptop?name=" + selectedName,
-				type : 'DELETE',
-				xhrFields : {
-					withCredentials : true
-				}
-			}).done(function() {
-				$('#product-delete-modal').modal('hide');
-				$('#product-table').dataTable().fnReloadAjax();
-			});
-		};
-
-	// JS is only used to add the <div>s
-	var switches = document.querySelectorAll('input[type="checkbox"].ios-switch');
-
-	for (var i = 0, sw; sw = switches[i++];) {
-		var div = document.createElement('div');
-		div.className = 'switch';
-		sw.parentNode.insertBefore(div, sw.nextSibling);
+	if (formData.hasHDMIPort != null) {
+		formData.hasHDMIPort = true;
+	} else {
+		formData.hasHDMIPort = false;
 	}
+
+	if (formData.hasBag != null) {
+		formData.hasBag = true;
+	} else {
+		formData.hasBag = false;
+	}
+       
+   var imageFiles = document.getElementById('imagePath').files;
+   if (imageFiles.length>0){
+   	var imageFilePathArr = [];
+   	for (var i=0; i<imageFiles.length; i++){
+   		// Only get image name from the fake file path
+   		var parts = imageFiles[i].name.split("\\");
+   		imageFilePathArr[i] = parts[parts.length-1];
+       }
+       formData.imagePath = imageFilePathArr;
+   }
+   else {
+       	 formData.imagePath = null;
+   }
+		 
+	//var url = 'products/' + $('#add-product-form').data().mode + 'Laptop';
+	var url = 'products/' + 'addLaptop';
+
+	console.log(JSON.stringify(formData));
+	$.ajax({
+		url : url,
+		data : JSON.stringify(formData),
+		type : 'POST',
+		contentType : "application/json",
+		xhrFields : {
+			withCredentials : true
+		}
+	}).done(function() {
+		console.log("add new product successfully");
+		$('#product-add-modal').modal('hide');
+		$('#product-table').dataTable().fnReloadAjax();
+	   });
+};
+
+Solaris.deleteProduct = function(evt) {
+	var selectedName = Solaris.dataTable.data()[Solaris.dataTable.row('.selected')[0]].name;
+	$.ajax({
+		url : "products/deleteLaptop?name=" + selectedName,
+		type : 'DELETE',
+		xhrFields : {
+			withCredentials : true
+		}
+	}).done(function() {
+		$('#product-delete-modal').modal('hide');
+		$('#product-table').dataTable().fnReloadAjax();
+	});
+};
+
+// JS is only used to add the <div>s
+var switches = document.querySelectorAll('input[type="checkbox"].ios-switch');
+for (var i = 0, sw; sw = switches[i++];) {
+	var div = document.createElement('div');
+	div.className = 'switch';
+	sw.parentNode.insertBefore(div, sw.nextSibling);
+}
