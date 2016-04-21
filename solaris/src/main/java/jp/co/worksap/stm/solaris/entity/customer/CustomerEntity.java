@@ -26,11 +26,12 @@ public class CustomerEntity {
 
 	public CustomerEntity(CustomerDto cd) {
 
+		this.name = cd.getName();
+		this.gender = cd.getGender();
 		this.address = cd.getAddress();
 		this.birthday = cd.getBirthday();
 		this.contactNumber = cd.getContactNumber();
 		this.email = cd.getEmail();
-		this.contactNumber = cd.getContactNumber();
 		this.occupation = cd.getOccupation();
 		this.orderCount = cd.getOrderCount();
 		this.referralCount = cd.getReferralCount();

@@ -84,9 +84,8 @@ CREATE TABLE IF NOT EXISTS `customers` (
   `order_count` int(11) NOT NULL DEFAULT '0',
   `referral_count` int(11) NOT NULL DEFAULT '0',
   `address` varchar(256) DEFAULT NULL,
-  `occupation` varchar(256) NOT NULL,
+  `occupation` varchar(256) DEFAULT NULL,
   `salary` int(11) DEFAULT NULL,
-  `register_date` date NOT NULL,
+  `register_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-

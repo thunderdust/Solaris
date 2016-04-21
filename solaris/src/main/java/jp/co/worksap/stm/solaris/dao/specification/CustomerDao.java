@@ -7,7 +7,7 @@ import jp.co.worksap.stm.solaris.dto.CustomerDto;
 
 public interface CustomerDao {
 
-	CustomerDto getById(String id) throws IOException;
+	CustomerDto getByEmail(String id) throws IOException;
 
 	List<CustomerDto> getAll() throws IOException;
 
