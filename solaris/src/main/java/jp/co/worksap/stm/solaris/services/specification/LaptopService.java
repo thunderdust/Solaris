@@ -1,8 +1,9 @@
 package jp.co.worksap.stm.solaris.services.specification;
 
-import jp.co.worksap.stm.solaris.entity.LaptopCreationEntity;
-import jp.co.worksap.stm.solaris.entity.LaptopFetchEntity;
-import jp.co.worksap.stm.solaris.entity.LaptopListEntity;
+
+import jp.co.worksap.stm.solaris.entity.laptop.LaptopCreationEntity;
+import jp.co.worksap.stm.solaris.entity.laptop.LaptopFetchEntity;
+import jp.co.worksap.stm.solaris.entity.laptop.LaptopListEntity;
 import jp.co.worksap.stm.solaris.exceptions.ServiceException;
 
 public interface LaptopService {

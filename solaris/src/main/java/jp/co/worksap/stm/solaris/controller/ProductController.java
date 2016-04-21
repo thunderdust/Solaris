@@ -1,8 +1,9 @@
 package jp.co.worksap.stm.solaris.controller;
 
-import jp.co.worksap.stm.solaris.entity.LaptopCreationEntity;
-import jp.co.worksap.stm.solaris.entity.LaptopFetchEntity;
-import jp.co.worksap.stm.solaris.entity.LaptopListEntity;
+
+import jp.co.worksap.stm.solaris.entity.laptop.LaptopCreationEntity;
+import jp.co.worksap.stm.solaris.entity.laptop.LaptopFetchEntity;
+import jp.co.worksap.stm.solaris.entity.laptop.LaptopListEntity;
 import jp.co.worksap.stm.solaris.services.specification.LaptopService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +28,7 @@ public class ProductController {
 		return "products";
 	}
 
-	@PreAuthorize("hasAuthority('ADMIN')")
+	@PreAuthorize("hasAuthority('ADMIN')||hasAuthority('SALES MANAGER')||hasAuthority('SALES REPRESENTATIVE')")
 	@RequestMapping(value = "/products/getAllLaptops", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
 	public LaptopListEntity getAllLaptops(@RequestBody LaptopFetchEntity e) {

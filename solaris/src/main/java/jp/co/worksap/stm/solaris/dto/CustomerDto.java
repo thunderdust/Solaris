@@ -1,10 +1,8 @@
 package jp.co.worksap.stm.solaris.dto;
 
 import java.util.Date;
-import java.util.List;
 
 import jp.co.worksap.stm.solaris.entity.CustomerCreationEntity;
-import jp.co.worksap.stm.solaris.entity.EmployeeCreationEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

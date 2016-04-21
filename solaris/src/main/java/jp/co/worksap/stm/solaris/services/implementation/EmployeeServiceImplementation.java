@@ -5,11 +5,11 @@ import java.util.List;
 
 import jp.co.worksap.stm.solaris.dao.specification.EmployeeDao;
 import jp.co.worksap.stm.solaris.dto.EmployeeDto;
-import jp.co.worksap.stm.solaris.entity.EmployeeCreationEntity;
-import jp.co.worksap.stm.solaris.entity.EmployeeEntity;
-import jp.co.worksap.stm.solaris.entity.EmployeeFetchAllEntity;
-import jp.co.worksap.stm.solaris.entity.EmployeeFetchByRoleEntity;
-import jp.co.worksap.stm.solaris.entity.EmployeeListEntity;
+import jp.co.worksap.stm.solaris.entity.employee.EmployeeCreationEntity;
+import jp.co.worksap.stm.solaris.entity.employee.EmployeeEntity;
+import jp.co.worksap.stm.solaris.entity.employee.EmployeeFetchAllEntity;
+import jp.co.worksap.stm.solaris.entity.employee.EmployeeFetchByRoleEntity;
+import jp.co.worksap.stm.solaris.entity.employee.EmployeeListEntity;
 import jp.co.worksap.stm.solaris.exceptions.ServiceException;
 import jp.co.worksap.stm.solaris.services.specification.EmployeeService;
 import jp.co.worksap.stm.solaris.services.specification.RoleService;

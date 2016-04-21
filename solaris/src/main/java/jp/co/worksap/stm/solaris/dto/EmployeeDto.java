@@ -2,9 +2,8 @@ package jp.co.worksap.stm.solaris.dto;
 
 import java.sql.Timestamp;
 import java.util.Date;
-import java.util.List;
 
-import jp.co.worksap.stm.solaris.entity.EmployeeCreationEntity;
+import jp.co.worksap.stm.solaris.entity.employee.EmployeeCreationEntity;
 import jp.co.worksap.stm.solaris.utils.PasswordHash;
 import lombok.AllArgsConstructor;
 import lombok.Data;

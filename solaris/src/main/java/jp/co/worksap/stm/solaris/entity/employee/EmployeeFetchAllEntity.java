@@ -1,4 +1,4 @@
-package jp.co.worksap.stm.solaris.entity;
+package jp.co.worksap.stm.solaris.entity.employee;
 
 
 import lombok.Data;

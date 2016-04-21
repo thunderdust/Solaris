@@ -4,14 +4,11 @@ import java.io.IOException;
 import java.util.List;
 
 import jp.co.worksap.stm.solaris.dao.specification.LaptopDao;
-import jp.co.worksap.stm.solaris.dto.EmployeeDto;
 import jp.co.worksap.stm.solaris.dto.LaptopDto;
-import jp.co.worksap.stm.solaris.entity.EmployeeEntity;
-import jp.co.worksap.stm.solaris.entity.EmployeeListEntity;
-import jp.co.worksap.stm.solaris.entity.LaptopCreationEntity;
-import jp.co.worksap.stm.solaris.entity.LaptopEntity;
-import jp.co.worksap.stm.solaris.entity.LaptopFetchEntity;
-import jp.co.worksap.stm.solaris.entity.LaptopListEntity;
+import jp.co.worksap.stm.solaris.entity.laptop.LaptopCreationEntity;
+import jp.co.worksap.stm.solaris.entity.laptop.LaptopEntity;
+import jp.co.worksap.stm.solaris.entity.laptop.LaptopFetchEntity;
+import jp.co.worksap.stm.solaris.entity.laptop.LaptopListEntity;
 import jp.co.worksap.stm.solaris.exceptions.ServiceException;
 import jp.co.worksap.stm.solaris.services.specification.LaptopService;
 

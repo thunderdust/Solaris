@@ -1,7 +1,7 @@
 package jp.co.worksap.stm.solaris.services.implementation;
 
 import jp.co.worksap.stm.solaris.entity.CurrentUser;
-import jp.co.worksap.stm.solaris.entity.EmployeeEntity;
+import jp.co.worksap.stm.solaris.entity.employee.EmployeeEntity;
 import jp.co.worksap.stm.solaris.services.specification.CurrentUserDetailsService;
 import jp.co.worksap.stm.solaris.services.specification.EmployeeService;
 

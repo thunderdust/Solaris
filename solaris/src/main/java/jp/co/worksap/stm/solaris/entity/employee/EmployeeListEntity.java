@@ -1,4 +1,4 @@
-package jp.co.worksap.stm.solaris.entity;
+package jp.co.worksap.stm.solaris.entity.employee;
 
 import java.util.List;
 
@@ -9,9 +9,10 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class LaptopListEntity {
+public class EmployeeListEntity {
+    
 	private int draw;
 	private int recordsTotal;
 	private int recordsFiltered;
-	private List<LaptopEntity> laptopEntities;	
+	private List<EmployeeEntity> employeeEntities;
 }

@@ -2,6 +2,8 @@ package jp.co.worksap.stm.solaris.entity;
 
 import java.util.List;
 
+import jp.co.worksap.stm.solaris.entity.employee.EmployeeEntity;
+
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.User;
 

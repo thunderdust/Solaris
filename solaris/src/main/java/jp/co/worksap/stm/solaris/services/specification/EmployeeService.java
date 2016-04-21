@@ -1,10 +1,12 @@
 package jp.co.worksap.stm.solaris.services.specification;
 
-import jp.co.worksap.stm.solaris.entity.EmployeeCreationEntity;
-import jp.co.worksap.stm.solaris.entity.EmployeeEntity;
-import jp.co.worksap.stm.solaris.entity.EmployeeFetchAllEntity;
-import jp.co.worksap.stm.solaris.entity.EmployeeFetchByRoleEntity;
-import jp.co.worksap.stm.solaris.entity.EmployeeListEntity;
+
+
+import jp.co.worksap.stm.solaris.entity.employee.EmployeeCreationEntity;
+import jp.co.worksap.stm.solaris.entity.employee.EmployeeEntity;
+import jp.co.worksap.stm.solaris.entity.employee.EmployeeFetchAllEntity;
+import jp.co.worksap.stm.solaris.entity.employee.EmployeeFetchByRoleEntity;
+import jp.co.worksap.stm.solaris.entity.employee.EmployeeListEntity;
 import jp.co.worksap.stm.solaris.exceptions.ServiceException;
 
 public interface EmployeeService {

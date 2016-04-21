@@ -1,24 +1,31 @@
 package jp.co.worksap.stm.solaris.entity;
 
-import java.io.Serializable;
-import java.util.Date;
 
-public class CustomerEntity implements Serializable {
-	
+import java.sql.Date;
+
+import jp.co.worksap.stm.solaris.dto.CustomerDto;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+public class CustomerEntity {
+
 	private String name;
 	private String gender;
-	private int birthYear;
+	private Date birthday;
 	private String email;
-	private int id;
-	private String number;
+	private String contactNumber;
 	private int orderCount;
 	private int referralCount;
 	private String address;
-	private String companyName;
 	private String occupation;
 	private int salary;
-	private String introducedBy;
 	private Date registerDate;
 	
-	//private static final long serialVersionUID = -7395917071437157624L;
+	public CustomerEntity(CustomerDto cd){
+		
+	}
 }

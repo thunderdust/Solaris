@@ -1,5 +1,4 @@
-package jp.co.worksap.stm.solaris.entity;
-
+package jp.co.worksap.stm.solaris.entity.employee;
 import java.io.Serializable;
 import java.util.List;
 
