@@ -74,3 +74,19 @@ CREATE TABLE IF NOT EXISTS `laptops` (
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+
+CREATE TABLE IF NOT EXISTS `customers` (
+  `name` varchar(256) NOT NULL,
+  `gender` varchar(16) NOT NULL,
+  `birthday` date DEFAULT NULL,
+  `email` varchar(256) NOT NULL,
+  `contact_number` varchar(128) NOT NULL,
+  `order_count` int(11) NOT NULL DEFAULT '0',
+  `referral_count` int(11) NOT NULL DEFAULT '0',
+  `address` varchar(256) DEFAULT NULL,
+  `occupation` varchar(256) NOT NULL,
+  `salary` int(11) DEFAULT NULL,
+  `register_date` date NOT NULL,
+  PRIMARY KEY (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
