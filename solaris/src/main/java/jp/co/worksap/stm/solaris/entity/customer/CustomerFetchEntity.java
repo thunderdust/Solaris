@@ -1,29 +1,29 @@
-package jp.co.worksap.stm.solaris.entity;
+package jp.co.worksap.stm.solaris.entity.customer;
 
 import java.util.Date;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
-@AllArgsConstructor
 @NoArgsConstructor
-public class CustomerListEntity {
+@Data
+public class CustomerFetchEntity {
 
 	private String name;
 	private String gender;
-	private int birthYear;
+	private Date birthday;
 	private String email;
-	private int id;
-	private String number;
+	private String contactNumber;
 	private int orderCount;
 	private int referralCount;
 	private String address;
-	private String companyName;
 	private String occupation;
 	private int salary;
-	private String introducedBy;
 	private Date registerDate;
+	
+	private String searchParam;
+	private int draw;
+	private int start;
+	private int length;
 
 }

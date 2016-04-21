@@ -1,8 +1,9 @@
 package jp.co.worksap.stm.solaris.controller;
 
-import jp.co.worksap.stm.solaris.entity.EmployeeCreationEntity;
-import jp.co.worksap.stm.solaris.entity.EmployeeFetchAllEntity;
-import jp.co.worksap.stm.solaris.entity.EmployeeListEntity;
+
+import jp.co.worksap.stm.solaris.entity.employee.EmployeeCreationEntity;
+import jp.co.worksap.stm.solaris.entity.employee.EmployeeFetchAllEntity;
+import jp.co.worksap.stm.solaris.entity.employee.EmployeeListEntity;
 import jp.co.worksap.stm.solaris.services.specification.EmployeeService;
 
 import org.springframework.beans.factory.annotation.Autowired;

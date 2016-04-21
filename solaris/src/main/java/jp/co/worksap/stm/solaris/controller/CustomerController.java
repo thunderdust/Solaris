@@ -1,8 +1,9 @@
 package jp.co.worksap.stm.solaris.controller;
 
-import jp.co.worksap.stm.solaris.entity.CustomerCreationEntity;
-import jp.co.worksap.stm.solaris.entity.CustomerFetchEntity;
-import jp.co.worksap.stm.solaris.entity.CustomerListEntity;
+import jp.co.worksap.stm.solaris.entity.customer.CustomerCreationEntity;
+import jp.co.worksap.stm.solaris.entity.customer.CustomerFetchEntity;
+import jp.co.worksap.stm.solaris.entity.customer.CustomerListEntity;
+import jp.co.worksap.stm.solaris.services.specification.CustomerService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -13,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-
 
 @Controller
 public class CustomerController {
@@ -52,7 +52,7 @@ public class CustomerController {
 	@RequestMapping(value = "/customers/deleteCustomer", method = RequestMethod.DELETE)
 	@ResponseBody
 	public void deleteCustomer(@RequestParam String email) {
-		cs.deleteByName(email);
+		cs.deleteByEmail(email);
 	}
 
 }
