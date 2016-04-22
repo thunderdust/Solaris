@@ -24,6 +24,7 @@ public class CustomerDaoImplementation implements CustomerDao {
 	private static final String INSERT_CUSTOMER = "INSERT INTO CUSTOMERS "
 			+ "(name, gender, birthday, email, contact_number, order_count, referral_count, address, occupation, salary, register_date)"
 			+ " VALUES (?,?,?,?,?,?,?,?,?,?,?);";
+	private static final String DELETE_CUSTOMER = "DELETE FROM CUSTOMERS WHERE email = ?";
 
 	@Override
 	public CustomerDto getByEmail(String id) throws IOException {
@@ -86,8 +87,14 @@ public class CustomerDaoImplementation implements CustomerDao {
 	}
 
 	@Override
-	public void deleteByName(String name) throws IOException {
-
+	public void deleteByEmail(String email) throws IOException {
+		try {
+			template.update(DELETE_CUSTOMER, (ps) -> {
+				ps.setString(1, email);
+			});
+		} catch (DataAccessException e) {
+			throw new IOException(e);
+		}
 	}
 
 	@Override

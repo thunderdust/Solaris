@@ -71,8 +71,13 @@ public class CustomerServiceImplementation implements CustomerService {
 
 	@Override
 	public void deleteByEmail(String email) throws ServiceException {
-		// TODO Auto-generated method stub
+		try {
 
+			cd.deleteByEmail(email);
+
+		} catch (IOException er) {
+			throw new ServiceException("Error adding new customer", er);
+		}
 	}
 
 }

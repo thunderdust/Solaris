@@ -15,7 +15,7 @@ public interface CustomerDao {
 
 	void update(CustomerDto ld) throws IOException;
 
-	void deleteByName(String name) throws IOException;
+	void deleteByEmail(String email) throws IOException;
 
 	int getTotalCount() throws IOException;
 

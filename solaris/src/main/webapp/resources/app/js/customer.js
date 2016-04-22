@@ -153,5 +153,6 @@ Solaris.deleteCustomer = function(evt) {
 	}).done(function() {
 		$('#customer-delete-modal').modal('hide');
 		$('#customer-table').dataTable().fnReloadAjax();
+		console.log('customer deletion completed');
 	});
 };
