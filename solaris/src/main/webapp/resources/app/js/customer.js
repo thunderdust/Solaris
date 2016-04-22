@@ -5,6 +5,7 @@ window.onresize = function(event) {
 	clearTimeout(resizeTask);
 	resizeTask = setTimeout(reloadPage, timeoutThreshold);
 }
+var currentDataMode;
 
 function reloadPage() {
 	// Reload from cache
@@ -70,17 +71,19 @@ $(document).ready(function() {
 			var selectedData = Solaris.dataTable.row('.selected').data();
 			console.log(selectedData);
 			$('#name').val(selectedData.name);
-			$('#customer-add-modal #myModalLabel').data().mode = 'update';
+			//$('#customer-add-modal #myModalLabel').data().mode = 'update';
+			currentDataMode = 'update';
 		});
 
 		 // reset data when modal hides
 		$('#customer-add-modal').on(
 			'hidden.bs.modal', function() {
-				$('#customer-add-modal #myModalLabel').data().mode = 'add';
+				//$('#customer-add-modal #myModalLabel').data().mode = 'add';
+				currentDataMode = 'add';
 				$('#customer-form')[0].reset();
 		});
 		// set default add model 
-		$('#customer-add-modal #myModalLabel').data().mode = 'add';
+		//$('#customer-add-modal #myModalLabel').data().mode = 'add';
 		currentDataMode = 'add';
 
 	   $('#customer-delete-button').click(Solaris.deleteCustomer);
@@ -118,35 +121,10 @@ function validateAddCustomerForm() {
 
 Solaris.addCustomer = function(evt) {
 	var formData = $('#customer-form').serializeObject();
-	if (typeof (formData.card_reader_type) == 'string') {
-		formData.card_reader_type = [ formData.card_reader_type ];
-	}
-	if (typeof (formData.image) == 'string') {
-		formData.image = [ formData.image ];
-	}
-	/* Convert checkbox value to boolean value */
-	if (formData.isTouchScreen != null) {
-		formData.isTouchScreen = true;
-	} else {
-		formData.isTouchScreen = false;
-	}
-	if (formData.hasTrackPoint != null) {
-		formData.hasTrackPoint = true;
-	} else {
-		formData.hasTrackPoint = false;
-	}
-   if (formData.hasFrontCamera != null) {
-   	formData.hasFrontCamera = true;
-   } else {
-   	formData.hasFrontCamera = false;
-   }
-   if (formData.hasVGAPort != null) {
-   	formData.hasVGAPort = true;
-   } else {
-   	formData.hasVGAPort = false;
-   }
+	console.log(formData);
 		 
-	var url = 'customers/' + $('#customer-form #myModalLabel').data().mode + 'Customer';
+	var url = 'customers/' + currentDataMode + 'Customer';
+	console.log(url);
 
 	console.log(JSON.stringify(formData));
 	$.ajax({

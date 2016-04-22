@@ -1,6 +1,7 @@
 package jp.co.worksap.stm.solaris.dao.implementation;
 
 import java.io.IOException;
+import java.sql.Date;
 import java.util.List;
 
 import jp.co.worksap.stm.solaris.dao.specification.CustomerDao;
@@ -20,6 +21,9 @@ public class CustomerDaoImplementation implements CustomerDao {
 	private static final String GET_TOTAL_COUNT = "SELECT COUNT(*) FROM CUSTOMERS";
 	private static final String FETCH_ALL = "SELECT * FROM CUSTOMERS";
 	private static final String FETCH_BY_EMAIL = "SELECT * FROM CUSTOMERS WHERE email = ?";
+	private static final String INSERT_CUSTOMER = "INSERT INTO CUSTOMERS "
+			+ "(name, gender, birthday, email, contact_number, order_count, referral_count, address, occupation, salary, register_date)"
+			+ " VALUES (?,?,?,?,?,?,?,?,?,?,?);";
 
 	@Override
 	public CustomerDto getByEmail(String id) throws IOException {
@@ -49,7 +53,30 @@ public class CustomerDaoImplementation implements CustomerDao {
 	}
 
 	@Override
-	public void insert(CustomerDto ld) throws IOException {
+	public void insert(CustomerDto cd) throws IOException {
+
+		// Date format conversion
+		Date sqlBirthday = new java.sql.Date(cd.getBirthday().getTime());
+		Date sqlRegisterDate = new java.sql.Date(cd.getRegisterDate().getTime());
+
+		try {
+			template.update(INSERT_CUSTOMER, (ps) -> {
+				ps.setString(1, cd.getName());
+				ps.setString(2, cd.getGender());
+				ps.setDate(3, sqlBirthday);
+				ps.setString(4, cd.getEmail());
+				ps.setString(5, cd.getContactNumber());
+				ps.setInt(6, cd.getOrderCount());
+				ps.setInt(7, cd.getReferralCount());
+				ps.setString(8, cd.getAddress());
+				ps.setString(9, cd.getOccupation());
+				ps.setInt(10, cd.getSalary());
+				ps.setDate(11, sqlRegisterDate);
+			});
+
+		} catch (DataAccessException e) {
+			throw new IOException(e);
+		}
 
 	}
 
