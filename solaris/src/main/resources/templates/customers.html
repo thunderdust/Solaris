@@ -84,8 +84,8 @@
 							<label for="gender">Gender<span> *</span></label> <select
 								id="gender" class="form-control compulsory-input" name="gender"
 								required="required">
-								<option value="M">Male</option>
-								<option value="F">Female</option>
+								<option data-display="M" value="M">Male</option>
+								<option data-display="F" value="F">Female</option>
 							</select>
 						</div>
 
@@ -142,6 +142,12 @@
 							<label for="salary">Salary (SGD/Month)</label> <input
 								name="salary" type="number" class="form-control" min="100"
 								id="salary" placeholder="Basic month salary in SGD" />
+						</div>
+
+						<div class="form-group">
+							<label for="register_date">Register Date</label> <input name="registerDate"
+								type="date" class="form-control" id="register_date"
+								placeholder="Birthday" required="required" />
 						</div>
 
 					</form>

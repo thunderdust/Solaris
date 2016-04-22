@@ -1,6 +1,5 @@
 package jp.co.worksap.stm.solaris.dto;
 
-
 import java.util.Date;
 
 import jp.co.worksap.stm.solaris.entity.customer.CustomerCreationEntity;
@@ -37,8 +36,12 @@ public class CustomerDto {
 		address = c.getAddress();
 		occupation = c.getOccupation();
 		salary = c.getSalary();
-		// set register date as current time
-		Date d = new Date();
-		registerDate = d;
+		if (c.getRegisterDate() != null) {
+			registerDate = c.getRegisterDate();
+		} else {
+			// set register date as current time
+			Date d = new Date();
+			registerDate = d;
+		}
 	}
 }

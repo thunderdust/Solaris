@@ -70,9 +70,21 @@ $(document).ready(function() {
 		$('#customer-edit-modal-btn').on('click', function() {
 			var selectedData = Solaris.dataTable.row('.selected').data();
 			console.log(selectedData);
-			$('#name').val(selectedData.name);
 			//$('#customer-add-modal #myModalLabel').data().mode = 'update';
 			currentDataMode = 'update';
+			$('#name').val(selectedData.name);
+			$('#gender option[data-display=' + selectedData.gender + ']').attr('selected', 'selected');
+			$('#birthday').val(selectedData.birthday);
+			// email cannot be changed since its primary key in database
+			$('#email').val(selectedData.email);
+			$('#email').prop('readonly',true)
+			$('#contact_number').val(selectedData.contactNumber);
+			$('#order_count').val(selectedData.orderCount);
+			$('#referral_count').val(selectedData.referralCount);
+			$('#address').val(selectedData.address);
+			$('#occupation').val(selectedData.occupation);
+			$('#salary').val(selectedData.salary);
+			$('#register_date').val(selectedData.registerDate);
 		});
 
 		 // reset data when modal hides
@@ -146,7 +158,7 @@ Solaris.addCustomer = function(evt) {
 			withCredentials : true
 		}
 	}).done(function() {
-		console.log("add new customer successfully");
+		console.log(currentDataMode + " customer successfully");
 		$('#customer-add-modal').modal('hide');
 		$('#customer-table').dataTable().fnReloadAjax();
 	   });

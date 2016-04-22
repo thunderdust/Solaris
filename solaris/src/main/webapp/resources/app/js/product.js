@@ -84,7 +84,7 @@ $(document).ready(function() {
 			$('#laptop_weight').val(selectedData.laptop_weight);
 			$('#screen_size').val(selectedData.screenSize);
 			$('#operating_system').val(selectedData.os);
-         $('#antivirus').val(selectedData.antivirusSoftware);
+            $('#antivirus').val(selectedData.antivirusSoftware);
 			$('#cpu').val(selectedData.cpu);
 			$('#ram_size').val(selectedData.ramSize);
 			$('#hdd_model').val(selectedData.hddModel);

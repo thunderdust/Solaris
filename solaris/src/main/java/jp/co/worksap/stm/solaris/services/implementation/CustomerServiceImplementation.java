@@ -65,8 +65,13 @@ public class CustomerServiceImplementation implements CustomerService {
 
 	@Override
 	public void update(CustomerCreationEntity e) throws ServiceException {
-		// TODO Auto-generated method stub
+		try {
+			CustomerDto cdto = new CustomerDto(e);
+			cd.update(cdto);
 
+		} catch (IOException er) {
+			throw new ServiceException("Error adding new customer", er);
+		}
 	}
 
 	@Override
