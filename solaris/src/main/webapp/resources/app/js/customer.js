@@ -81,6 +81,8 @@ $(document).ready(function() {
 				//$('#customer-add-modal #myModalLabel').data().mode = 'add';
 				currentDataMode = 'add';
 				$('#customer-form')[0].reset();
+				//Remove error input class, reset compulsory input border color
+				resetCompulsoryInputStyle();
 		});
 		// set default add model 
 		//$('#customer-add-modal #myModalLabel').data().mode = 'add';
@@ -95,6 +97,15 @@ $(document).ready(function() {
 	initPage();
 });
 
+function resetCompulsoryInputStyle(){
+	var compulsory_inputs = document.getElementsByClassName('compulsory-input');
+	for ( var key in compulsory_inputs) {
+		if (compulsory_inputs.hasOwnProperty(key) && key.length > 2) {
+			compulsory_inputs[key].classList.remove("error-border");
+	   }
+   }
+}
+
 function validateAddCustomerForm() {
 	var compulsory_inputs = document.getElementsByClassName('compulsory-input');
 	var empty_count = 0;
@@ -105,10 +116,9 @@ function validateAddCustomerForm() {
 				console.log(key);
 			   // console.log((compulsory_inputs[key]).type);
 			   var missing_input = compulsory_inputs[key];
-			   missing_input.style.borderColor = "red";
+			   compulsory_inputs[key].classList.add("error-border");
 			   empty_count++;
 		   } else {
-		   	compulsory_inputs[key].style.borderColor = "#ccc";
 		   }
 	   }
    }

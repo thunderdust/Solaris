@@ -48,13 +48,15 @@ $(document).ready(function() {
 		});
         
         /****************** Account add setups ***************************/
-        $('#employee-add-button').click(Solaris.addEmployee);
+        $('#employee-add-button').click(validateAddEmployeeForm);
         // reset data when modal hides
         $('#employee-add-modal').on('hidden.bs.modal', function() {
-        	$('#id').prop('readonly',false);
+        	$('#login_id').prop('readonly',false);
             $('#employee-add-modal #myModalLabel').data().mode = 'add';
             $('#employee-add-modal #myModalLabel').html('Add new employee');
             $('#employee-form')[0].reset();
+            //Remove error input class, reset compulsory input border color
+            resetCompulsoryInputStyle();
         });
         // set default add model 
 		$('#employee-add-modal #myModalLabel').data().mode = 'add';
@@ -65,10 +67,10 @@ $(document).ready(function() {
         /****************** Account Edition setups **********************/
         $('#employee-edit-modal-btn').on('click', function(){
 			var selectedData = Solaris.dataTable.row('.selected').data();
-		 	$('#id').prop('readonly',true)
+		 	$('#login_id').prop('readonly',true)
             $('#employee-add-modal #myModalLabel').data().mode = 'update';
             $('#employee-add-modal #myModalLabel').html('Edit employee');
-            $('#id').val(selectedData.id);
+            $('#login_id').val(selectedData.id);
             $('#first-name').val(selectedData.firstName);
             $('#last-name').val(selectedData.lastName);
             $('#email').val(selectedData.email);
@@ -106,6 +108,38 @@ $(document).ready(function() {
 
 	initPage();
 });
+
+function resetCompulsoryInputStyle(){
+	var compulsory_inputs = document.getElementsByClassName('compulsory-input');
+	for ( var key in compulsory_inputs) {
+		if (compulsory_inputs.hasOwnProperty(key) && key.length > 2) {
+			compulsory_inputs[key].classList.remove("error-border");
+	   }
+   }
+}
+
+function validateAddEmployeeForm() {
+	var compulsory_inputs = document.getElementsByClassName('compulsory-input');
+	var empty_count = 0;
+	for ( var key in compulsory_inputs) {
+		if (compulsory_inputs.hasOwnProperty(key) && key.length > 2) {
+         // Check for empty fields
+			if (!(compulsory_inputs[key]).value) {
+				console.log(key);
+			   // console.log((compulsory_inputs[key]).type);
+			   var missing_input = compulsory_inputs[key];
+			   compulsory_inputs[key].classList.add("error-border");
+			   empty_count++;
+		   } else {
+		   }
+	   }
+   }
+	if (empty_count > 0) {
+		alert("One or more required input fields are not filled, please check again.");
+	} else {
+		Solaris.addEmployee();
+	}
+};
 
 Solaris.addEmployee = function(evt) {
 	var formData = $('#employee-form').serializeObject();
