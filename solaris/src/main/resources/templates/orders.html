@@ -1,0 +1,158 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<title>Solaris - Manage Orders</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="resources/lib/css/select2.min.css" />
+<link rel="stylesheet" href="resources/app/css/shared.css" />
+<link rel="stylesheet"
+	href="resources/lib/css/select2-bootstrap.min.css" />
+<link rel="stylesheet" href="resources/lib/css/datatables.min.css" />
+<link rel="stylesheet" href="resources/lib/css/responsive.dataTables.min.css" />
+<ct th:replace="fragments/header :: commonhead"></ct>
+</head>
+<body>
+	<!-- Common header -->
+	<div th:replace="fragments/header :: header"></div>
+	<div class="container" id="layout">
+		<div class="row">
+			<span class="solaris-title">Order Management</span>
+			<hr></hr>
+			<div class="col-lg-12 col-sm-12 table-buttons">
+				<!-- Buttons -->
+				<button type="button" class="btn btn-primary" data-toggle="modal"
+					data-target="#order-add-modal">
+					<span class="glyphicon glyphicon-plus-sign" aria-hidden="true">
+					</span> <span class="solaris-button-text">Add New Order</span>
+				</button>
+				<button id="order-edit-modal-btn" type="button"
+					class="btn btn-primary" data-toggle="modal"
+					data-target="#order-add-modal" disabled="disabled">
+					<span class="glyphicon glyphicon-pencil" aria-hidden="true">
+					</span> <span class="solaris-button-text">Edit Order Information</span>
+				</button>
+				<button id="order-delete-modal-btn" type="button"
+					class="btn btn-primary" data-toggle="modal"
+					data-target="#order-delete-modal" disabled="disabled">
+					<span class="glyphicon glyphicon-trash" aria-hidden="true">
+					</span> <span class="solaris-button-text">Delete Order Record</span>
+				</button>
+			</div>
+
+			<!-- order table -->
+			<div class="col-lg-12 col-sm-12 solaris-table-container">
+
+				<table id="order-table"
+					class="display responsive nowrap table table-striped table-bordered" cellspacing="0" width="100%">
+					<thead>
+						<tr>
+							<th>Client Name</th>
+							<th>Product</th>
+							<th>Number of Purchases</th>
+							<th>Price (SGD)</th>
+							<th>Delivery Deadline</th>
+							<th>Order Date</th>
+						</tr>
+					</thead>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<!-- Add order modal -->
+	<div class="modal fade" id="order-add-modal" tabindex="-1"
+		role="dialog" aria-labelledby="myModalLabel" data-mode="add">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel">Add new order</h4>
+				</div>
+				<div class="modal-body">
+					<form id="order-form">
+
+						<div class="form-group form-compulsory">
+							<label for="client_name">Customer Name<span> *</span></label> <input name="clientName"
+								type="text" class="form-control compulsory-input" id="client_name"
+								placeholder="Customer Full Name" required="required" />
+						</div>
+
+						<div class="form-group form-compulsory">
+							<label for="laptop_name">Product<span> *</span></label> <input
+								id="laptop_name" class="form-control compulsory-input" name="laptopName" type="text" 
+								placeholder="Name of the laptop" required="required">
+							</input>
+						</div>
+
+						<div class="form-group form-compulsory">
+							<label for="quantity">Number of Purchase<span> *</span></label> <input
+								id="quantity" class="form-control compulsory-input" name="quantity" type="number" min="1"
+								max="999" placeholder="Order quantity" required="required">
+							</input>
+						</div>
+
+						<div class="form-group form-compulsory">
+							<label for="price">Unit Price<span> *</span></label> <input
+								id="price" class="form-control compulsory-input" name="price" type="text" 
+								placeholder="Price for one single product" required="required">
+							</input>
+						</div>
+
+						<div class="form-group">
+							<label for="deliver_deadline">Deliver Deadline</label> <input name="deliverDeadline"
+								type="date" class="form-control" id="deliver_deadline"
+								placeholder="Deadline to complete product delivery"/>
+						</div>
+
+						<div class="form-group form-compulsory">
+							<label for="created_date">Order Date<span> *</span></label> <input
+								name="createdDate" type="date" class="form-control compulsory-input"
+								id="created_date" placeholder="Date when make this order" required="required" />
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+					<button id="order-add-button" type="button"
+						class="btn btn-primary">Add</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Delete confirmation dialog -->
+	<div class="modal fade" id="order-delete-modal" tabindex="-1"
+		role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel">Confirm delete
+						order</h4>
+				</div>
+				<div class="modal-body">Are you sure you want to delete the
+					selected order?</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+					<button id="order-delete-button" type="button"
+						class="btn btn-primary">Delete</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="navbar navbar-fixed-bottom solaris-footer">
+		<!-- Common footer -->
+		<div th:replace="fragments/footer :: footer"></div>
+	</div>
+	<script src="resources/app/js/order.js" type="text/javascript"></script>
+</body>
+</html>

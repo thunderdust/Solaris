@@ -89,3 +89,27 @@ CREATE TABLE IF NOT EXISTS `customers` (
   `register_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+CREATE TABLE IF NOT EXISTS `orders` (
+  `id` int(12) NOT NULL AUTO_INCREMENT, 
+  `client_email` varchar(256) NOT NULL,
+  `client_name` varchar(256) NOT NULL,
+  `laptop_name` varchar(256) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `price` float NOT NULL,
+  `seller_id` varchar(256) NOT NULL,
+  `delivery_deadline` date DEFAULT NULL,
+  `created_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `last_modified` datetime DEFAULT CURRENT_TIMESTAMP,
+  
+  PRIMARY KEY (`id`),
+  KEY `client_email_idx` (`client_email`),
+  KEY `client_name_idx` (`client_name`),
+  KEY `laptop_name_idx` (`laptop_name`),
+  KEY `seller_id_idx` (`seller_id`),
+  CONSTRAINT `client_email` FOREIGN KEY (`client_email`) REFERENCES `customers` (`email`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  CONSTRAINT `client_name` FOREIGN KEY (`client_name`) REFERENCES `customers` (`email`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  CONSTRAINT `laptop_name` FOREIGN KEY (`laptop_name`) REFERENCES `laptops` (`name`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  CONSTRAINT `seller_id` FOREIGN KEY (`seller_id`) REFERENCES `employees` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
