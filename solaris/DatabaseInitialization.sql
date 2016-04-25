@@ -105,11 +105,9 @@ CREATE TABLE IF NOT EXISTS `orders` (
   
   PRIMARY KEY (`id`),
   KEY `client_email_idx` (`client_email`),
-  KEY `client_name_idx` (`client_name`),
   KEY `laptop_name_idx` (`laptop_name`),
   KEY `seller_id_idx` (`seller_id`),
-  CONSTRAINT `client_email` FOREIGN KEY (`client_email`) REFERENCES `customers` (`email`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  CONSTRAINT `client_name` FOREIGN KEY (`client_name`) REFERENCES `customers` (`email`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  CONSTRAINT `laptop_name` FOREIGN KEY (`laptop_name`) REFERENCES `laptops` (`name`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  CONSTRAINT `seller_id` FOREIGN KEY (`seller_id`) REFERENCES `employees` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE
+  CONSTRAINT `client_email` FOREIGN KEY (`client_email`) REFERENCES `customers` (`email`),
+  CONSTRAINT `laptop_name` FOREIGN KEY (`laptop_name`) REFERENCES `laptops` (`name`),
+  CONSTRAINT `seller_id` FOREIGN KEY (`seller_id`) REFERENCES `employees` (`id`) 
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;

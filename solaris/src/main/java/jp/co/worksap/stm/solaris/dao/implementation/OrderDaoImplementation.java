@@ -1,6 +1,10 @@
 package jp.co.worksap.stm.solaris.dao.implementation;
 
 import java.io.IOException;
+import java.sql.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,7 +42,7 @@ public class OrderDaoImplementation implements OrderDao {
 								.getString("laptop_name"), rs
 								.getInt("quantity"), rs.getFloat("price"), rs
 								.getString("seller_id"), rs
-								.getDate("delivery_date"), rs
+								.getDate("delivery_deadline"), rs
 								.getDate("created_date"), rs
 								.getDate("last_modified"));
 					}, id);
@@ -61,7 +65,7 @@ public class OrderDaoImplementation implements OrderDao {
 								.getString("laptop_name"), rs
 								.getInt("quantity"), rs.getFloat("price"), rs
 								.getString("seller_id"), rs
-								.getDate("delivery_date"), rs
+								.getDate("delivery_deadline"), rs
 								.getDate("created_date"), rs
 								.getDate("last_modified"));
 					});
@@ -73,6 +77,9 @@ public class OrderDaoImplementation implements OrderDao {
 
 	@Override
 	public void insert(OrderDto od) throws IOException {
+
+		Date sqlLastModified = new java.sql.Date(Calendar.getInstance()
+				.getTimeInMillis());
 		try {
 			template.update(INSERT_ORDER, (ps) -> {
 				ps.setInt(1, od.getId());
@@ -84,7 +91,7 @@ public class OrderDaoImplementation implements OrderDao {
 				ps.setString(7, od.getSellerId());
 				ps.setDate(8, od.getDeliveryDeadline());
 				ps.setDate(9, od.getCreatedDate());
-				ps.setDate(10, od.getLastModified());
+				ps.setDate(10, sqlLastModified);
 			});
 
 		} catch (DataAccessException e) {
@@ -94,6 +101,8 @@ public class OrderDaoImplementation implements OrderDao {
 
 	@Override
 	public void update(OrderDto od) throws IOException {
+		Date sqlLastModified = new java.sql.Date(Calendar.getInstance()
+				.getTimeInMillis());
 		try {
 			template.update(UPDATE_ORDER, (ps) -> {
 
@@ -105,7 +114,7 @@ public class OrderDaoImplementation implements OrderDao {
 				ps.setString(6, od.getSellerId());
 				ps.setDate(7, od.getDeliveryDeadline());
 				ps.setDate(8, od.getCreatedDate());
-				ps.setDate(9, od.getLastModified());
+				ps.setDate(9, sqlLastModified);
 				ps.setInt(10, od.getId());
 			});
 

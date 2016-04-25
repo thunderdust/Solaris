@@ -83,6 +83,12 @@
 						</div>
 
 						<div class="form-group form-compulsory">
+							<label for="client_email">Customer Email<span> *</span></label> <input name="clientEmail"
+								type="text" class="form-control compulsory-input" id="client_email"
+								placeholder="Customer Email Address" required="required" />
+						</div>
+
+						<div class="form-group form-compulsory">
 							<label for="laptop_name">Product<span> *</span></label> <input
 								id="laptop_name" class="form-control compulsory-input" name="laptopName" type="text" 
 								placeholder="Name of the laptop" required="required">
@@ -104,8 +110,8 @@
 						</div>
 
 						<div class="form-group">
-							<label for="deliver_deadline">Deliver Deadline</label> <input name="deliverDeadline"
-								type="date" class="form-control" id="deliver_deadline"
+							<label for="delivery_deadline">Deliver Deadline</label> <input name="deliveryDeadline"
+								type="date" class="form-control" id="delivery_deadline"
 								placeholder="Deadline to complete product delivery"/>
 						</div>
 
@@ -114,6 +120,14 @@
 								name="createdDate" type="date" class="form-control compulsory-input"
 								id="created_date" placeholder="Date when make this order" required="required" />
 						</div>
+
+						<div class="form-group form-compulsory">
+							<label for="seller_id">Seller<span> *</span></label> <input
+								id="seller_id" class="form-control compulsory-input" name="sellerId" type="text" 
+								placeholder="Account name of the sales representative who is in charge of this order" required="required">
+							</input>
+						</div>
+
 					</form>
 				</div>
 				<div class="modal-footer">

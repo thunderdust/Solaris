@@ -145,7 +145,7 @@ Solaris.addOrder = function(evt) {
 		 
 	//var url = 'orders/' + $('#order-form #myModalLabel').data().mode + 'Order';
 	var url = 'orders/' + currentDataMode + 'Order';
-
+    console.log(url);
 	console.log(JSON.stringify(formData));
 	$.ajax({
 		url : url,

@@ -85,6 +85,7 @@ public class OrderServiceImplementation implements OrderService {
 		dto.setPrice(oe.getPrice());
 		dto.setQuantity(oe.getQuantity());
 		dto.setSellerId(oe.getSellerId());
+		
 
 		try {
 			od.insert(dto);
