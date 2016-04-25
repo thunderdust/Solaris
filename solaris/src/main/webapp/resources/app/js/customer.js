@@ -1,3 +1,4 @@
+/*
 var resizeTask;
 var timeoutThreshold = 30;
 window.onresize = function(event) {
@@ -11,6 +12,7 @@ function reloadPage() {
 	// Reload from cache
 	location.reload(false);
 }
+*/
 
 $(document).ready(function() {
     // switchActiveTab('nav-customer');

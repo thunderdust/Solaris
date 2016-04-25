@@ -2,6 +2,7 @@ $(document).ready(function() {
 	var initPage = function() {
 
         Solaris.dataTable = $('#employee-table').DataTable({
+        	responsive : true,
         	'serverSide' : true,
         	'ajax' : {
         		url : 'employees/findAllUsers',
@@ -26,7 +27,8 @@ $(document).ready(function() {
         	  { data: 'id'},
         	  { data: 'firstName'},
         	  { data: 'lastName'},
-        	  { data: 'gender'}
+        	  { data: 'gender'},
+        	  { data: 'contact_number'}
         	],
         	select: "single"
         });
@@ -91,7 +93,7 @@ $(document).ready(function() {
 
 		
         
-        /* After certain short time of window resize, reload page to let the table adjust itself. */
+        /* After certain short time of window resize, reload page to let the table adjust itself. 
         var resizeTask;
         var timeoutThreshold = 30;
 		window.onresize = function(event){
@@ -104,6 +106,7 @@ $(document).ready(function() {
 			// Reload from cache
 			location.reload(false);
 		}
+		*/
 	};
 
 	initPage();

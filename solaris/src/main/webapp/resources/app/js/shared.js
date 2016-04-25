@@ -28,7 +28,7 @@ jQuery.fn.serializeObject = function() {
 	return objectData;
 };
 
-$.extend( $.fn.dataTable.defaults, {
+$.extend( $.fn.dataTable.Responsive, {
     searching: false,
     ordering:  false
 } );
