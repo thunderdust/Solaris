@@ -24,9 +24,7 @@ public class CustomerDaoImplementation implements CustomerDao {
 	private static final String INSERT_CUSTOMER = "INSERT INTO CUSTOMERS "
 			+ "(name, gender, birthday, email, contact_number, order_count, referral_count, address, occupation, salary, register_date)"
 			+ " VALUES (?,?,?,?,?,?,?,?,?,?,?);";
-	private static final String UPDATE_CUSTOMER = "UPDATE CUSTOMERS SET "
-			+ "name = ?, gender = ?, birthday = ?, contact_number = ?, order_count = ?, referral_count = ?, address = ?, occupation = ?, salary = ?, register_date = ? "
-			+ "WHERE email = ?";
+	private static final String UPDATE_CUSTOMER = "UPDATE CUSTOMERS SET name = ?, gender = ?, birthday = ?, email = ?, contact_number = ?, order_count = ?, referral_count = ?, address = ?, occupation = ?, salary = ?, register_date = ? WHERE email = ?";
 	private static final String DELETE_CUSTOMER = "DELETE FROM CUSTOMERS WHERE email = ?";
 
 	@Override
@@ -96,14 +94,15 @@ public class CustomerDaoImplementation implements CustomerDao {
 				ps.setString(1, cd.getName());
 				ps.setString(2, cd.getGender());
 				ps.setDate(3, sqlBirthday);
-				ps.setString(4, cd.getContactNumber());
-				ps.setInt(5, cd.getOrderCount());
-				ps.setInt(6, cd.getReferralCount());
-				ps.setString(7, cd.getAddress());
-				ps.setString(8, cd.getOccupation());
-				ps.setInt(9, cd.getSalary());
-				ps.setDate(10, sqlRegisterDate);
-				ps.setString(11, cd.getEmail());
+				ps.setString(4, cd.getEmail());
+				ps.setString(5, cd.getContactNumber());
+				ps.setInt(6, cd.getOrderCount());
+				ps.setInt(7, cd.getReferralCount());
+				ps.setString(8, cd.getAddress());
+				ps.setString(9, cd.getOccupation());
+				ps.setInt(10, cd.getSalary());
+				ps.setDate(11, sqlRegisterDate);
+				ps.setString(12, cd.getEmail());
 			});
 		} catch (DataAccessException e) {
 			throw new IOException(e);

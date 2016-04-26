@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<title>Solaris - Find New Customers</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="resources/app/css/shared.css" />
+<link rel="stylesheet" href="resources/app/css/new_customer.css" />
+<ct th:replace="fragments/header :: commonhead"></ct>
+</head>
+<body>
+	<!-- Common header -->
+	<div th:replace="fragments/header :: header"></div>
+	<div class="container" id="layout">
+		<div class="row">
+			<span class="solaris-title">Find New Customers</span>
+
+			<hr></hr>
+
+			<div class="col-lg-12 col-sm-12 table-buttons">
+				<!-- Buttons -->
+				<button id="find_enterprise_exhibitions" type="button" class="btn btn-primary" data-toggle="modal"
+					data-target="#customer-add-modal">
+					<span class="glyphicon glyphicon-briefcase" aria-hidden="true">
+					</span> <span class="solaris-button-text">Enterprise and Exhibitions</span>
+				</button>
+				<button id="find_campus" type="button"
+					class="btn btn-primary" data-toggle="modal"
+					data-target="#customer-add-modal">
+					<span class="glyphicon glyphicon-fire" aria-hidden="true">
+					</span> <span class="solaris-button-text">Campus Promotions</span>
+				</button>
+				<button id="find_referral" type="button"
+					class="btn btn-primary" data-toggle="modal"
+					data-target="#customer-delete-modal">
+					<span class="glyphicon glyphicon-send" aria-hidden="true">
+					</span> <span class="solaris-button-text">Customer Referrals</span>
+				</button>
+			</div>
+
+			<div class="col-lg-12 col-sm-12">
+			    <div class="new_enterprise_exhibition">
+			    	<ul class="new_enterprise_exhibition">
+			    		<li class="new_enterprise">
+			    		   <a href="http://www.garena.sg/" target="_blank">
+			    		      <span class="glyphicon glyphicon-flag" aria-hidden="true">
+					          </span> Newly launched eCommerce company Garena</a>
+			    		</li>
+			    		<li class="new_enterprise">
+			    		   <a href="http://techgrid.co/" target="_blank">
+			    		      <span class="glyphicon glyphicon-flag" aria-hidden="true">
+					          </span> IT start-up company TechGrid</a>
+			    		</li>
+			    		<li class="new_exhibition">
+			    		   <a href="http://www.itshow.com.sg/" target="_blank">
+			    		      <span class="glyphicon glyphicon-flag" aria-hidden="true">
+					          </span> Upcoming IT show @ Suntec City</a>
+					    </li>
+					    <li class="new_enterprise">
+			    		   <a href="http://contact.carousell.com/" target="_blank">
+			    		      <span class="glyphicon glyphicon-flag" aria-hidden="true">
+					          </span> E-commerce company Carousell</a>
+			    		</li>
+			    		<li class="new_retailer">
+			    		   <a href="http://www.challenger.com.sg/store_locator" target="_blank">
+			    		      <span class="glyphicon glyphicon-flag" aria-hidden="true">
+					          </span> Newly opened Challenger outlets @ Vivo City</a>
+			    		</li>
+			    		<li class="new_enterprise">
+			    		   <a href="http://techgrid.co/" target="_blank">
+			    		      <span class="glyphicon glyphicon-flag" aria-hidden="true">
+					          </span> IT start-up company TechGrid</a>
+			    		</li>
+			    	</ul>
+			    </div>			
+			</div>
+
+		</div>
+	</div>
+
+	<div class="navbar navbar-fixed-bottom solaris-footer">
+		<!-- Common footer -->
+		<div th:replace="fragments/footer :: footer"></div>
+	</div>
+</body>
+</html>

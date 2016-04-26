@@ -145,8 +145,6 @@ function validateAddCustomerForm() {
 
 Solaris.addCustomer = function(evt) {
 	var formData = $('#customer-form').serializeObject();
-	console.log(formData);
-		 
 	var url = 'customers/' + currentDataMode + 'Customer';
 	console.log(url);
 

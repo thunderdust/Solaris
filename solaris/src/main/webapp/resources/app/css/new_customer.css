@@ -1,0 +1,35 @@
+div.new_enterprise_exhibition {
+	margin-top: 10px;
+}
+
+ul.new_enterprise_exhibition{
+	list-style-type: none;
+}
+
+ul.new_enterprise_exhibition li {
+    padding: 5px;
+	margin: 8px 5px 8px 0px;
+}
+
+ul.new_enterprise_exhibition li a {
+	
+	border-radius: 3px;
+	padding: 7px;
+    color: #ffffff;
+    font-size: 1em;
+}
+
+ul.new_enterprise_exhibition li.new_enterprise a {
+	background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+
+ul.new_enterprise_exhibition li.new_exhibition a {
+	background-color: #428bca;
+    border-color: #428bca;
+}
+
+ul.new_enterprise_exhibition li.new_retailer a {
+	background-color: #563d7c;
+    border-color: #563d7c;
+}

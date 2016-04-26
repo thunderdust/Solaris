@@ -70,7 +70,7 @@ public class CustomerServiceImplementation implements CustomerService {
 			cd.update(cdto);
 
 		} catch (IOException er) {
-			throw new ServiceException("Error adding new customer", er);
+			throw new ServiceException("Error updating customer", er);
 		}
 	}
 
