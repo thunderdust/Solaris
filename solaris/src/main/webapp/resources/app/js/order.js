@@ -75,15 +75,20 @@ $(document).ready(function() {
 		// When edit button is clicked initialize the dialog
 		$('#order-edit-modal-btn').on('click', function() {
 			var selectedData = Solaris.dataTable.row('.selected').data();
-			console.log(selectedData);
+			console.log('selected: ' + JSON.stringify(selectedData));
 			//$('#order-add-modal #myModalLabel').data().mode = 'update';
 			currentDataMode = 'update';
+			$('#order_id').val(selectedData.id);
+			$('#order_id').prop('readonly', true);
+			$('#order_id_div').show();
 			$('#client_name').val(selectedData.clientName);
+			$('#client_email').val(selectedData.clientEmail);
 			$('#laptop_name').val(selectedData.laptopName);
 			$('#quantity').val(selectedData.quantity);
 			$('#price').val(selectedData.price);
-			$('#deliver_deadline').val(selectedData.deliverDeadline);
+			$('#delivery_deadline').val(selectedData.deliveryDeadline);
 			$('#created_date').val(selectedData.createdDate);
+			$('#seller_id').val(selectedData.sellerId);
 		});
 
 		 // reset data when modal hides
@@ -103,6 +108,9 @@ $(document).ready(function() {
 	   $('#order-brand-filter').change(function() {
 	   	$('#order-table').dataTable().fnReloadAjax();
 	   });
+
+	   //Hide order id input
+	   $('#order_id_div').hide();
 	};
 
 	initPage();
@@ -146,7 +154,7 @@ Solaris.addOrder = function(evt) {
 	//var url = 'orders/' + $('#order-form #myModalLabel').data().mode + 'Order';
 	var url = 'orders/' + currentDataMode + 'Order';
     console.log(url);
-	console.log(JSON.stringify(formData));
+	console.log('Form data: ' + JSON.stringify(formData));
 	$.ajax({
 		url : url,
 		data : JSON.stringify(formData),
@@ -156,30 +164,24 @@ Solaris.addOrder = function(evt) {
 			withCredentials : true
 		}
 	}).done(function() {
-		console.log("add new order successfully");
+		console.log(currentDataMode + " order successfully");
 		$('#order-add-modal').modal('hide');
-		$('#order-table').dataTable().fnReloadAjax();
+		//$('#order-table').dataTable().fnReloadAjax();
+		location.reload(false);
 	   });
 };
 
 Solaris.deleteOrder = function(evt) {
-	var selectedName = Solaris.dataTable.data()[Solaris.dataTable.row('.selected')[0]].name;
+	var selectedId = Solaris.dataTable.data()[Solaris.dataTable.row('.selected')[0]].id;
 	$.ajax({
-		url : "orders/deleteOrder?name=" + selectedName,
+		url : "orders/deleteOrder?id=" + selectedId,
 		type : 'DELETE',
 		xhrFields : {
 			withCredentials : true
 		}
 	}).done(function() {
 		$('#order-delete-modal').modal('hide');
-		$('#order-table').dataTable().fnReloadAjax();
+		//$('#order-table').dataTable().fnReloadAjax();
+		location.reload(false);
 	});
 };
-
-// JS is only used to add the <div>s
-var switches = document.querySelectorAll('input[type="checkbox"].ios-switch');
-for (var i = 0, sw; sw = switches[i++];) {
-	var div = document.createElement('div');
-	div.className = 'switch';
-	sw.parentNode.insertBefore(div, sw.nextSibling);
-}

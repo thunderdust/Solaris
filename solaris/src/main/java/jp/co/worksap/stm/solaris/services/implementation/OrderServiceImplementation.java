@@ -96,15 +96,36 @@ public class OrderServiceImplementation implements OrderService {
 	}
 
 	@Override
-	public void update(OrderCreationEntity e) throws ServiceException {
-		// TODO Auto-generated method stub
+	public void update(OrderCreationEntity oe) throws ServiceException {
+		
+		OrderDto dto = new OrderDto();
+		dto.setClientEmail(oe.getClientEmail());
+		dto.setClientName(oe.getClientName());
+		dto.setCreatedDate(oe.getCreatedDate());
+		dto.setDeliveryDeadline(oe.getDeliveryDeadline());
+		dto.setId(oe.getId());
+		dto.setLaptopName(oe.getLaptopName());
+		dto.setLastModified(oe.getLastModified());
+		dto.setPrice(oe.getPrice());
+		dto.setQuantity(oe.getQuantity());
+		dto.setSellerId(oe.getSellerId());
 
+		try {
+			od.update(dto);
+		} catch (IOException e) {
+			throw new ServiceException("Cannot update order with id: "
+					+ oe.getId(), e);
+		}
 	}
 
 	@Override
 	public void deleteById(int id) throws ServiceException {
-		// TODO Auto-generated method stub
-
+		
+		try {
+			od.deleteById(id);
+		} catch (IOException e) {
+			throw new ServiceException("Cannot delete order with id: "
+					+ id, e);
+		}
 	}
-
 }
