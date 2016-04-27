@@ -1,3 +1,5 @@
+var currentTab;
+
 function onReady(callback) {
     var intervalID = window.setInterval(checkReady, 3500);
     function checkReady() {
@@ -9,10 +11,23 @@ function onReady(callback) {
 }
 
 function show() {
-    document.getElementsByClassName('find_new_tab')[0].style.display = 'block';
+    document.getElementsByClassName('find_new_tab')[currentTab].style.display = 'block';
     document.getElementById('loading').style.display = 'none';
 }
 
 onReady(function () {
+    currentTab = 0;
     show();
+    showTab(currentTab);
 });
+
+function showTab(index){
+    currentTab = index;
+    var tabs = document.getElementsByClassName('find_new_tab');
+    for (var i=0; i< tabs.length; i++){
+        if (i!=index){
+            tabs[i].style.display = 'none';
+        }
+    }
+    $('.find_new_tab').eq(index).slideDown();
+}
