@@ -1,5 +1,13 @@
 var currentTab;
 
+$(document).ready(function() {
+    var initPage = function() {
+        $('#send_campus_promotion_btn').click(Solaris.senndPromotionEmail);
+    }
+
+    initPage();
+});
+
 function onReady(callback) {
     var intervalID = window.setInterval(checkReady, 3500);
     function checkReady() {
@@ -30,4 +38,19 @@ function showTab(index){
         }
     }
     $('.find_new_tab').eq(index).slideDown();
+}
+
+Solaris.senndPromotionEmail = function (evt){
+
+    $.ajax({
+        url: "sendEmail?email=" + 'thunderdust2011@gmail.com',
+        type : 'POST',
+        xhrFields: {
+          withCredentials: true
+       }
+    }).done(function(){
+        console.log('Email sending is done');
+    });
+
+
 }
