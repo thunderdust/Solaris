@@ -15,7 +15,9 @@ function onReady(callback) {
             window.clearInterval(intervalID);
             callback.call(this);
             // Enable buttons
-            $('#find_enterprise_exhibitions').prop('disabled', false);
+            $('#find_enterprise').prop('disabled', false);
+            $('#find_exhibition').prop('disabled', false);
+            $('#find_retailer').prop('disabled', false);
             $('#find_campus').prop('disabled', false);
             $('#find_referral').prop('disabled', false);
         }
