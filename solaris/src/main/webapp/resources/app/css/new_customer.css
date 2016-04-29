@@ -56,6 +56,17 @@ div.find_new_container {
      background-color: rgba(153,153,153,0.2);
 }
 
+div.tab-title {
+	
+    margin: 10px 0 15px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+div.tab-title h4 {
+	font-weight: bold;
+	padding-left: 5px;
+}
+
 
 
 
