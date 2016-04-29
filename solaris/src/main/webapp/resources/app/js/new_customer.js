@@ -14,6 +14,10 @@ function onReady(callback) {
         if (document.getElementsByTagName('body')[0] !== undefined) {
             window.clearInterval(intervalID);
             callback.call(this);
+            // Enable buttons
+            $('#find_enterprise_exhibitions').prop('disabled', false);
+            $('#find_campus').prop('disabled', false);
+            $('#find_referral').prop('disabled', false);
         }
     }
 }
