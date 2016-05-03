@@ -111,3 +111,13 @@ CREATE TABLE IF NOT EXISTS `orders` (
   CONSTRAINT `laptop_name` FOREIGN KEY (`laptop_name`) REFERENCES `laptops` (`name`),
   CONSTRAINT `seller_id` FOREIGN KEY (`seller_id`) REFERENCES `employees` (`id`) 
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE IF NOT EXISTS `training_scores` (
+  `employee_name` varchar(256) NOT NULL,
+  `employee_id` varchar(256) NOT NULL,
+  `test_id` int(11) NOT NULL,
+  `test_type` varchar(128) NOT NULL,
+  `score` int(11) NOT NULL,
+  `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+

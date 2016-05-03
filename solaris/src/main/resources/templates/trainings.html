@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<title>Solaris - Trainings</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="resources/lib/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="resources/app/css/shared.css" />
+<ct th:replace="fragments/header :: commonhead"></ct>
+</head>
+<body>
+    
+	<!-- Common header -->
+	<div th:replace="fragments/header :: header"></div>
+	<div class="container" id="layout">
+		<div class="row">
+			<span class="solaris-title">Training System</span>
+
+			<hr></hr>
+
+			<div class="col-lg-12 col-sm-12 table-buttons">
+				<!-- Buttons -->
+
+				<button id="find_exhibition" type="button" data-toggle="modal" data-target="#training-options-modal" class="btn btn-primary">
+					<span class="glyphicon glyphicon-plus" aria-hidden="true">
+					</span> <span class="solaris-button-text"> New Training</span>
+				</button>
+				<button id="find_referral" type="button" class="btn btn-primary">
+					<span class="glyphicon glyphicon-pencil" aria-hidden="true">
+					</span> <span class="solaris-button-text"> New Assessment</span>
+				</button>
+				<button id="find_enterprise" type="button" class="btn btn-primary active">
+					<span class="glyphicon glyphicon-tasks" aria-hidden="true">
+					</span> <span class="solaris-button-text"> Assessment Records</span>
+				</button>
+			</div>
+			<div class="col-lg-12 col-sm-12">	
+			</div>
+
+		</div>
+	</div>
+
+	<!-- Training options modal -->
+    <div class="modal fade" id="training-options-modal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel">Start New Training</h4>
+				</div>
+				<div class="modal-body">
+					<div>Please choose which type of training you wish to receive:</div>
+					<hr/>
+					<a href="/solaris/trainings/sales" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-hand-right" aria-hidden="true">
+					</span> General Sales Training</a>
+
+					<a href="/solaris/trainings/it" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-hand-right" aria-hidden="true">
+					</span> IT Knowledge Training</a>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="navbar navbar-fixed-bottom solaris-footer">
+		<!-- Common footer -->
+		<div th:replace="fragments/footer :: footer"></div>
+	</div>
+</body>
+</html>
