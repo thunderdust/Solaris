@@ -21,7 +21,7 @@ public class ScoreDaoImplementation implements ScoreDao {
 	private static final String COUNT_ALL = "SELECT COUNT(*) FROM TRAINING_SCORES";
 	private static final String COUNT_BY_EMPLOYEE_ID = "SELECT COUNT(*) FROM TRAINING_SCORES WHERE employee_id = ?";
 	private static final String FETCH_ALL = "SELECT * FROM TRAINING_SCORES";
-	private static final String FETCH_BY_EMPLOYEE_ID = "SELECT COUNT(*) FROM TRAINING_SCORES WHERE employee_id = ?";
+	private static final String FETCH_BY_EMPLOYEE_ID = "SELECT * FROM TRAINING_SCORES WHERE employee_id = ?";
 
 	@Override
 	public List<ScoreDto> getAllScores() throws IOException {
@@ -48,7 +48,7 @@ public class ScoreDaoImplementation implements ScoreDao {
 					FETCH_BY_EMPLOYEE_ID,
 					(rs, rownum) -> {
 						return new ScoreDto(rs.getString("employee_name"),
-								rs.getString("employee_id"), rs
+								            rs.getString("employee_id"), rs
 										.getInt("test_id"), rs
 										.getString("test_type"), rs
 										.getInt("score"), rs.getDate("date"));

@@ -5,16 +5,16 @@ $(document).ready(function() {
         	responsive : true,
         	'serverSide' : true,
         	'ajax' : {
-        		url : 'trainings/findAllScores',
+        		url : 'trainings/findScores',
         		type : 'POST',
         		contentType : 'application/json',
         		data : function(d){
         			// send only data required by backend API
         			delete(d.columns);
-					delete(d.order);
-					delete(d.search);
-					console.log(JSON.stringify(d));
-					return JSON.stringify(d);
+				delete(d.order);
+				delete(d.search);
+				console.log(JSON.stringify(d));
+				return JSON.stringify(d);
         		},
         		// list of EmployeeEntity defined in EmployeeListEntity class
         		dataSrc : "scoreEntities",
