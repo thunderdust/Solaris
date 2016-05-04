@@ -45,4 +45,16 @@ public class TrainingController {
 			return ss.findByEmployeeId(helper.getUsername());
 		}
 	}
+
+	@PreAuthorize("hasAuthority('ADMIN')||hasAuthority('SALES MANAGER')||hasAuthority('SALES REPRESENTATIVE')")
+	@RequestMapping(value = "/trainings/sales-training")
+	public String salesTraining() {
+		return "sales-training";
+	}
+
+	@PreAuthorize("hasAuthority('ADMIN')||hasAuthority('SALES MANAGER')||hasAuthority('SALES REPRESENTATIVE')")
+	@RequestMapping(value = "/trainings/it-training")
+	public String ITTraining() {
+		return "it-training";
+	}
 }
