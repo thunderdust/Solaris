@@ -60,6 +60,7 @@ span.solaris-title {
 	font-size: 180%;
 	font-weight: bold;
 	font-style: italic;
+	margin-left: 15px;
 }
 
 .solaris-table-container {
@@ -199,6 +200,58 @@ div.page-navigation > span {
 	margin: 0 18px;
 }
 
+div.training-option {
+	width: 47%;
+	height: 100%;
+	display: inline-block;
+	padding: 2px;
+	text-align: center;
+	min-width: 245px;
+}
+
+div.training-option-left {
+	border-right: solid 1px #ccc;
+}
+
+div.training-option > img {
+	height: 140px;
+	width: 140px;
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
+
+div.training-option > p{
+	margin-top: 10px;
+	padding: 2px;
+	text-align: center;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    min-height: 50px;
+}
+
+div.solaris-row {
+	min-width: 285px;
+}
+
+img.iconic {
+	width: 30px;
+	height: 30px;
+	margin: 5px;
+}
+
+button.iconic {
+	width: 180px;
+	margin-bottom: 10px;
+	text-align: left;
+}
+
+div.iconic {
+	text-align: center;
+	width: 100%;
+	margin: 5px;
+}
+
 
 /***********************************************************/
 
@@ -210,6 +263,18 @@ div.page-navigation > span {
 	span.solaris-title {
 		font-size: 175%;
 	}
+}
+
+@media ( max-width : 550px) {
+	div.training-option {
+		display: block;
+		margin-bottom: 20px;
+	}
+	
+	div.training-option-left {
+		border: 0px;
+		margin-right: 0px;
+    }
 }
 
 @media ( max-width : 450px) {

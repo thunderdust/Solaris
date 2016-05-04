@@ -15,7 +15,7 @@
 	<!-- Common header -->
 	<div th:replace="fragments/header :: header"></div>
 	<div class="container" id="layout">
-		<div class="row">
+		<div class="row solaris-row">
 			<span class="solaris-title">Training System</span>
 
 			<hr></hr>
@@ -75,11 +75,21 @@
 				<div class="modal-body">
 					<div>Please choose which type of training you wish to receive:</div>
 					<hr/>
-					<a href="/solaris/trainings/sales-training" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-hand-right" aria-hidden="true">
-					</span> General Sales Training</a>
+					<div class="training-options">
+						<div class="training-option training-option-left">
+						    <img src="/solaris/resources/app/img/sales-training.jpg" />
+							<a href="/solaris/trainings/sales-training" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-hand-right" aria-hidden="true">
+							</span> General Sales Training</a>
+							<p>Apply to all forms of sales activities. Including sales skills and strategies.</p>
+						</div>
 
-					<a href="/solaris/trainings/it-training" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-hand-right" aria-hidden="true">
-					</span> IT Knowledge Training</a>
+						<div class="training-option training-option-right">
+						    <img src="/solaris/resources/app/img/it-training.png" />
+							<a href="/solaris/trainings/it-training" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-hand-right" aria-hidden="true">
+							</span> IT Knowledge Training</a>
+							<p>Specifically designed for laptop sales.</p>
+						</div>
+					</div>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>

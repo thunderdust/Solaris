@@ -1,5 +1,4 @@
 var currentPageIndex;
-var totalPage = 6;
 var paragraphList;
 
 $(document).ready(function() {
@@ -41,11 +40,11 @@ function goPrevPage() {
 
 function goNextPage() {
 	console.log(currentPageIndex);
-	if (currentPageIndex + 1 < totalPage){
+	if (currentPageIndex + 1 < paragraphList.length){
 		show(currentPageIndex + 1);
 	}
 }
 
 function hideMenu(){
-	$('#sales-chapter-modal').modal('hide');
+	$('#chapter-modal').modal('hide');
 }
