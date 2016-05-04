@@ -181,6 +181,14 @@ div.form-group > .error-border {
 	border: 1px solid #ff0103;
 }
 
+div.solaris-article {
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	font-size: 1.1em;
+	margin-top: 10px;
+	border-top: 1px solid #ccc;
+	padding-top: 10px;
+}
+
 /***********************************************************/
 
 /* multiple platform adaption*/
