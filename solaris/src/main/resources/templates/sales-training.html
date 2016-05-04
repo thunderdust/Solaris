@@ -33,7 +33,7 @@
 
 			<div class="col-lg-12 col-sm-12">
 				<div class="solaris-article">
-				    <div class="solaris-paragraph">
+				    <div class="solaris-paragraph" id="sales-1">
 						<p>
 							<em><b>It's</b></em> good to know some sales techniques, even if you don't work in a formal sales role. 
 							Whether you're trying to convince a new person to join your organization, or describing 
@@ -44,10 +44,20 @@
 							say, and how to handle questions and objections so that your next "sale" will be a 
 							success.
 						</p>
+						<div class="page-navigation">
+							<button type="button" class="btn btn-primary" onclick="goPrevPage();" disabled="disabled">
+									<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> 
+									Prev
+							</button>
+							<span> 1/6 </span>
+							<button type="button" class="btn btn-primary" onclick="goNextPage();">
+									<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span> 
+									Next
+							</button>
+						</div>
 					</div>
 
-					<br/>
-					<div class="solaris-paragraph">
+					<div class="solaris-paragraph" id="sales-2">
 						<h4>Consultative Selling</h4>
 						<p>
 						    In consultative selling you act as a consultant: you help identify the needs of your 
@@ -62,10 +72,20 @@
 						    yourself to make a "sale"), it's more natural and intuitive. So it's easier to use if you're 
 						    not a natural salesperson.
 						</p>
+						<div class="page-navigation">
+							<button type="button" class="btn btn-primary" onclick="goPrevPage();">
+									<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> 
+									Prev
+							</button>
+							<span> 2/6 </span>
+							<button type="button" class="btn btn-primary" onclick="goNextPage();">
+									<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span> 
+									Next
+							</button>
+						</div>
 					</div>
 
-					<br/>
-					<div class="solaris-paragraph">
+					<div class="solaris-paragraph" id="sales-3">
 						<h4>Preparation</h4>
 						<p>
 						    Whether you're selling an idea, a project, a product, or even a job in your organization, 
@@ -121,10 +141,20 @@
 						    	</li>
 						    </ul>
 						</p>
+						<div class="page-navigation">
+							<button type="button" class="btn btn-primary" onclick="goPrevPage();">
+									<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> 
+									Prev
+							</button>
+							<span> 3/6 </span>
+							<button type="button" class="btn btn-primary" onclick="goNextPage();">
+									<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span> 
+									Next
+							</button>
+						</div>
 					</div>
 
-					<br/>
-					<div class="solaris-paragraph">
+					<div class="solaris-paragraph" id="sales-4">
 						<h4>During the "Pitch"</h4>
 						<p>
 							Here are a few guidelines to follow during your pitch:<br/>
@@ -153,10 +183,20 @@
 								</li>
 							</ul>
 						</p>
+						<div class="page-navigation">
+							<button type="button" class="btn btn-primary" onclick="goPrevPage();">
+									<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> 
+									Prev
+							</button>
+							<span> 4/6 </span>
+							<button type="button" class="btn btn-primary" onclick="goNextPage();">
+									<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span> 
+									Next
+							</button>
+						</div>
 					</div>
 
-					<br/>
-					<div class="solaris-paragraph">
+					<div class="solaris-paragraph" id="sales-5">
 						<h4>Dealing with Objections</h4>
 						<p>
 							No matter what you're pitching, your audience will probably have some objections or reservations. 
@@ -186,10 +226,20 @@
 							shows your client or audience that you are aware of their concerns, and that you want to work with 
 							them to find a solution.
 						</p>
+						<div class="page-navigation">
+							<button type="button" class="btn btn-primary" onclick="goPrevPage();">
+									<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> 
+									Prev
+							</button>
+							<span> 5/6 </span>
+							<button type="button" class="btn btn-primary" onclick="goNextPage();">
+									<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span> 
+									Next
+							</button>
+						</div>
 					</div>
 
-					<br/>
-					<div class="solaris-paragraph">
+					<div class="solaris-paragraph" id="sales-6">
 						<h4>Closing the Sale</h4>
 						<p>
 							If you don't get a decision on the day, give your audience time to think about things. But don't leave 
@@ -202,6 +252,17 @@
 							gracefully. People rarely do this, so it may be a pleasant surprise to your audience, and they'll likely 
 							be more receptive the next time you speak to them. 
 						</p>
+						<div class="page-navigation">
+							<button type="button" class="btn btn-primary" onclick="goPrevPage();">
+									<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> 
+									Prev
+							</button>
+							<span> 6/6 </span>
+							<button type="button" class="btn btn-primary" onclick="goNextPage();" disabled="disabled">
+									<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span> 
+									Next
+							</button>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -222,42 +283,42 @@
 					</div>
 					<div class="modal-body">
 						<div>
-							<button type="button" class="btn btn-primary">
+							<button type="button" class="btn btn-primary" onclick="show(0);hideMenu();">
 								<span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> 
 								Start Words
 							</button>
 						</div><br/>
 						
 						<div>
-							<button type="button" class="btn btn-primary">
+							<button type="button" class="btn btn-primary" onclick="show(1);hideMenu();">
 								<span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> 
 								Consultative Selling
 							</button>
 						</div><br/>
 
 						<div>
-							<button type="button" class="btn btn-primary">
+							<button type="button" class="btn btn-primary" onclick="show(2);hideMenu();">
 								<span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> 
 								Preparation
 							</button>
 						</div><br/>
 
 						<div>
-							<button type="button" class="btn btn-primary">
+							<button type="button" class="btn btn-primary" onclick="show(3);hideMenu();">
 								<span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> 
 								During the "Pitch"
 							</button>
 						</div><br/>
 
 						<div>
-							<button type="button" class="btn btn-primary">
+							<button type="button" class="btn btn-primary" onclick="show(4);hideMenu();">
 								<span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> 
 								Dealing with Objections
 							</button>
 						</div><br/>
 
 						<div>
-							<button type="button" class="btn btn-primary">
+							<button type="button" class="btn btn-primary" onclick="show(5);hideMenu();">
 								<span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> 
 								Closing the Sale
 							</button>
@@ -277,5 +338,6 @@
 		<!-- Common footer -->
 		<div th:replace="fragments/footer-without-datatable :: footer"></div>
 	</div>
+	<script src="/solaris/resources/app/js/sales-training.js" type="text/javascript"></script>
 </body>
 </html>
