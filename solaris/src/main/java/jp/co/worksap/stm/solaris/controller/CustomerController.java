@@ -21,40 +21,40 @@ public class CustomerController {
 	@Autowired
 	private CustomerService cs;
 
-	@PreAuthorize("hasAuthority('SALES MANAGER')||hasAuthority('SALES REPRESENTATIVE')||hasAuthority('AFTER-SALES SERVICE AGENT')")
+	@PreAuthorize("hasAuthority('ADMIN')||hasAuthority('SALES MANAGER')||hasAuthority('SALES REPRESENTATIVE')||hasAuthority('AFTER-SALES SERVICE AGENT')")
 	@RequestMapping(value = "/customers")
 	public String customerManagement() {
 		return "customers";
 	}
 	
-	@PreAuthorize("hasAuthority('SALES MANAGER')||hasAuthority('SALES REPRESENTATIVE')")
+	@PreAuthorize("hasAuthority('ADMIN')||hasAuthority('SALES MANAGER')||hasAuthority('SALES REPRESENTATIVE')")
 	@RequestMapping(value = "/new_customer")
 	public String findNewCustomer() {
 		return "find_new_customers";
 	}
 
-	@PreAuthorize("hasAuthority('SALES MANAGER')||hasAuthority('SALES REPRESENTATIVE')||hasAuthority('AFTER-SALES SERVICE AGENT')")
+	@PreAuthorize("hasAuthority('ADMIN')||hasAuthority('SALES MANAGER')||hasAuthority('SALES REPRESENTATIVE')||hasAuthority('AFTER-SALES SERVICE AGENT')")
 	@RequestMapping(value = "/customers/getAllCustomers", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
 	public CustomerListEntity getAllCustomers(@RequestBody CustomerFetchEntity e) {
 		return cs.getAll(e);
 	}
 
-	@PreAuthorize("hasAuthority('SALES MANAGER')||hasAuthority('SALES REPRESENTATIVE')")
+	@PreAuthorize("hasAuthority('ADMIN')||hasAuthority('SALES MANAGER')||hasAuthority('SALES REPRESENTATIVE')")
 	@ResponseBody
 	@RequestMapping(value = "/customers/addCustomer", method = RequestMethod.POST)
 	public void addCustomer(@RequestBody CustomerCreationEntity cce) {
 		cs.insert(cce);
 	}
 
-	@PreAuthorize("hasAuthority('SALES MANAGER')||hasAuthority('SALES REPRESENTATIVE')")
+	@PreAuthorize("hasAuthority('ADMIN')||hasAuthority('SALES MANAGER')||hasAuthority('SALES REPRESENTATIVE')")
 	@RequestMapping(value = "/customers/updateCustomer", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
 	public void updateCustomer(@RequestParam CustomerCreationEntity cce) {
 		cs.update(cce);
 	}
 
-	@PreAuthorize("hasAuthority('SALES MANAGER')||hasAuthority('SALES REPRESENTATIVE')")
+	@PreAuthorize("hasAuthority('ADMIN')||hasAuthority('SALES MANAGER')||hasAuthority('SALES REPRESENTATIVE')")
 	@RequestMapping(value = "/customers/deleteCustomer", method = RequestMethod.DELETE)
 	@ResponseBody
 	public void deleteCustomer(@RequestParam String email) {

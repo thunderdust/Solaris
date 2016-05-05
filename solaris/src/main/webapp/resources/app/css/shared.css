@@ -1,3 +1,11 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300);
+
+body {
+	color: #333;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+}
+
 html, body {
 	height: 100%;
 	min-height: 450px;
@@ -56,9 +64,25 @@ div.solaris-title>p>img {
 	margin-left: 10px;
 }
 
+img.solaris-title{
+	-webkit-filter: blur(0);
+	filter: blur(0);
+	-webkit-transition: .2s ease-in-out;
+	transition: .2s ease-in-out;
+	width: 140px;
+	height: 140px;
+}
+
+/* Blur */
+img.solaris-title:hover{
+	-webkit-filter: blur(2px);
+	filter: blur(2px);
+}
+
 span.solaris-title {
 	font-size: 180%;
 	font-weight: bold;
+	font-family: 'Open Sans', sans-serif;
 	font-style: italic;
 	margin-left: 15px;
 }
@@ -221,6 +245,7 @@ div.training-option > img {
 	margin-bottom: 20px;
 }
 
+
 div.training-option > p{
 	margin-top: 10px;
 	padding: 2px;
@@ -244,6 +269,12 @@ button.iconic {
 	width: 180px;
 	margin-bottom: 10px;
 	text-align: left;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+button.iconic:hover{
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	font-weight: bold;
 }
 
 div.iconic {
