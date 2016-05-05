@@ -12,14 +12,20 @@ html, body {
 	min-width: 310px;
 }
 
+div.container {
+	padding-bottom: 80px;
+}
+
+
 .solaris-footer {
-	color: #aeaeae;
-	background: rgba(0, 0, 0, 0.1);
+	color: #ffffff;
+	background-color: #337ab7;
 	text-align: center;
 	font-size: 0.85em;
 	font-style: italic;
 	text-decoration: underline;
 	padding-top: 10px;
+	margin-top: 10px;
 }
 
 /* specifically customized style for logout form inside the dropdown menu */
@@ -108,8 +114,6 @@ span.solaris-title {
 	font-weight: normal;
 	font-style: italic;
 }
-
-
 
 .table-buttons {
 	background: #d0d0d0;
@@ -297,6 +301,29 @@ div.iconic {
 	text-align: center;
 	width: 100%;
 	margin: 5px;
+}
+
+p.tutorial {
+	text-align: center;
+}
+
+img.tutorial {
+	width: 80%;
+	height: auto;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	margin: auto;
+	display: block;
+	padding: 5px;
+	margin-top: 25px;
+}
+
+span.tutorial {
+	margin-top: 20px;
+	margin-bottom: 15px;
+	display: block;
+	font-size: 0.9em;
+	font-family: "Times New Roman", Times, serif;
+	font-weight: bold;
 }
 
 
