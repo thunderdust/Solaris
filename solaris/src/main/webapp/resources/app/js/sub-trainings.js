@@ -33,6 +33,7 @@ function show(index) {
             $('.solaris-paragraph').eq(i).hide();
         }
     }
+    window.scrollTo(0, 0);
     $('.solaris-paragraph').eq(index).fadeIn();
     currentPageIndex = index;
     //console.log('Showing '+ index);
