@@ -24,21 +24,17 @@
 			<div class="col-lg-12 col-sm-12 table-buttons">
 				<!-- Buttons -->
 
-				<button id="find_exhibition" type="button" data-toggle="modal" data-target="#training-options-modal" class="btn btn-primary">
+				<button id="new_training_button" type="button" data-toggle="modal" data-target="#training-options-modal" class="btn btn-primary">
 					<span class="glyphicon glyphicon-plus" aria-hidden="true">
 					</span> <span class="solaris-button-text"> New Training</span>
 				</button>
-				<button id="find_referral" type="button" class="btn btn-primary">
+				<button id="new_assessment_btn" type="button" data-toggle="modal" data-target="#assessment-options-modal" class="btn btn-primary" >
 					<span class="glyphicon glyphicon-pencil" aria-hidden="true">
 					</span> <span class="solaris-button-text"> New Assessment</span>
 				</button>
-				<button id="find_enterprise" type="button" class="btn btn-primary active">
-					<span class="glyphicon glyphicon-tasks" aria-hidden="true">
-					</span> <span class="solaris-button-text"> Assessment Records</span>
-				</button>
 			</div>
 
-			<!-- Employee table -->
+			<!-- Assessment records table -->
 			<div class="col-lg-12 col-sm-12 solaris-table-container">
                 <h4> Assessment Records</h4>
 				<table id="score-table"
@@ -89,6 +85,44 @@
 							<a href="/solaris/trainings/it-training" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-hand-right" aria-hidden="true">
 							</span> IT Knowledge Training</a>
 							<p>Specifically designed for laptop sales.</p>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Assessment options modal -->
+    <div class="modal fade" id="assessment-options-modal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel">Start New Assessment</h4>
+				</div>
+				<div class="modal-body">
+					<div>Please choose which type of assessment you wish to take:</div>
+					<hr/>
+					<div class="training-options">
+						<div class="training-option training-option-left">
+						    <img class="solaris-title" src="/solaris/resources/app/img/sales-training.jpg" />
+							<a href="/solaris//trainings/assessments/sales" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-hand-right" aria-hidden="true">
+							</span> Sales Training Assessment</a>
+							<p>Test what you have learned from sales training.</p>
+						</div>
+
+						<div class="training-option training-option-right">
+						    <img class="solaris-title" src="/solaris/resources/app/img/it-training.png" />
+							<a href="/solaris//trainings/assessments/it" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-hand-right" aria-hidden="true">
+							</span> IT Knowledge Training Assessment</a>
+							<p>Test your IT knowledge.</p>
 						</div>
 					</div>
 				</div>

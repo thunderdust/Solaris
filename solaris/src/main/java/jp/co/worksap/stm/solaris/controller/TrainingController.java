@@ -57,4 +57,16 @@ public class TrainingController {
 	public String ITTraining() {
 		return "it-training";
 	}
+	
+	@PreAuthorize("hasAuthority('ADMIN')||hasAuthority('SALES MANAGER')||hasAuthority('SALES REPRESENTATIVE')")
+	@RequestMapping(value = "/trainings/assessments/sales")
+	public String salesAssessment() {
+		return "sales-assessment";
+	}
+	
+	@PreAuthorize("hasAuthority('ADMIN')||hasAuthority('SALES MANAGER')||hasAuthority('SALES REPRESENTATIVE')")
+	@RequestMapping(value = "/trainings/assessments/it")
+	public String itAssessment() {
+		return "it-assessment";
+	}
 }
