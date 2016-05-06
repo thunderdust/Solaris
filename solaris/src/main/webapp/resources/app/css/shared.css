@@ -362,7 +362,13 @@ div.training-notification > a {
 	
 	div.training-option-left {
 		border: 0px;
-		margin-right: 0px;
+		margin: 0 auto;
+		margin-bottom: 20px;
+		border-bottom: solid 2px #ccc;
+    }
+    
+    div.training-option-right {
+    	margin: 0 auto;
     }
 }
 
