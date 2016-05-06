@@ -326,6 +326,22 @@ span.tutorial {
 	font-weight: bold;
 }
 
+div.training-notification {
+	font-size: 1.2em;
+	color: #5cb85c;
+	font-weight: bold;
+	text-align: center;
+	margin: 15px;
+	border: 1px solid #5cb85c;
+	border-radius: 5px;
+	padding: 15px 5px;
+}
+
+div.training-notification > a {
+	margin-top: 15px;
+}
+
+
 
 /***********************************************************/
 
