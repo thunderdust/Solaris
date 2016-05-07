@@ -14,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
@@ -25,7 +26,7 @@ public class TrainingController {
 	@PreAuthorize("hasAuthority('ADMIN')||hasAuthority('SALES MANAGER')||hasAuthority('SALES REPRESENTATIVE')")
 	@RequestMapping(value = "/trainings")
 	public String trainingManagement() {
-		return "trainings";
+		return "training/trainings";
 	}
 
 	/*
@@ -49,24 +50,42 @@ public class TrainingController {
 	@PreAuthorize("hasAuthority('ADMIN')||hasAuthority('SALES MANAGER')||hasAuthority('SALES REPRESENTATIVE')")
 	@RequestMapping(value = "/trainings/sales-training")
 	public String salesTraining() {
-		return "sales-training";
+		return "training/sales-training";
 	}
 
 	@PreAuthorize("hasAuthority('ADMIN')||hasAuthority('SALES MANAGER')||hasAuthority('SALES REPRESENTATIVE')")
 	@RequestMapping(value = "/trainings/it-training")
 	public String ITTraining() {
-		return "it-training";
+		return "training/it-training";
 	}
 	
 	@PreAuthorize("hasAuthority('ADMIN')||hasAuthority('SALES MANAGER')||hasAuthority('SALES REPRESENTATIVE')")
 	@RequestMapping(value = "/trainings/assessments/sales")
-	public String salesAssessment() {
-		return "sales-assessment";
+	public String salesAssessment(@RequestParam String index) {
+		
+		switch(index){
+		case "1":
+			return "training/sales_test_01";
+		case "2":
+			return "training/sales_test_02";
+		default:
+			return "error/not_found";
+		}
+		
 	}
 	
 	@PreAuthorize("hasAuthority('ADMIN')||hasAuthority('SALES MANAGER')||hasAuthority('SALES REPRESENTATIVE')")
 	@RequestMapping(value = "/trainings/assessments/it")
-	public String itAssessment() {
-		return "it-assessment";
+	public String itAssessment(@RequestParam String index) {
+		
+		switch(index){
+		case "1":
+			return "training/it_test_01";
+		case "2":
+			return "training/it_test_02";
+		default:
+			return "error/not_found";
+		}
 	}
+	
 }
