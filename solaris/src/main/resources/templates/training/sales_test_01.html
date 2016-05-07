@@ -21,13 +21,130 @@
 			<hr></hr>
 
 			<div class="col-lg-12 col-sm-12 table-buttons">
-				<button id="new_it_assessment_btn" type="button" data-toggle="modal" data-target="#it-assessment-choose-modal" class="btn btn-primary">
+				<button id="redo_btn" type="button" class="btn btn-warining" onclick="resetForm();">
 					<span class="glyphicon glyphicon-repeat" aria-hidden="true">
 					</span> <span class="solaris-button-text"> Redo</span>
 				</button>
 			</div>
 
 			<div class="col-lg-12 col-sm-12">
+				<form name="salesTest1" id="sales_test_1" class="test-form" action="" method="post" onsubmit="return validateTest()">
+					<div class="qEven">
+						<div class="quiz_head">Question 1:</div><br />
+						<div class="quiz_ques"><strong>1)&nbsp;The first rule of qualification for incoming calls is whether the contact or caller will:</strong></div><br />
+						<div class="quiz_radio">
+							<div><input type="radio" name="quiz[10]" id="quiz10" value="A">Listen to your services presentation</input></div>									  
+							<div><input type="radio" name="quiz[10]" id="quiz10" value="B">Give you direct access to the decision maker</input></div>								
+							<div><input type="radio" name="quiz[10]" id="quiz10" value="C">Discuss pricing with you</input></div>												  
+							<div><input type="radio" name="quiz[10]" id="quiz10" value="D">Discuss the potential business issues in the prospect</input></div>					
+							<div><input type="radio" name="quiz[10]" id="quiz10" value="E">All of the above</input></div>													
+					    </div>
+					</div><br />
+
+					<div class="qOdd">
+						<div class="quiz_head">Question 2:</div><br />
+						<div class="quiz_ques"><strong>2)&nbsp;An early barrier to securing a sale is:</strong></div><br />
+						<div class="quiz_radio">
+							<div><input type="radio" name="quiz[8]" id="quiz8" value="A">Price</input></div>															
+							<div><input type="radio" name="quiz[8]" id="quiz8" value="B">No budget allocated</input></div>														  
+							<div><input type="radio" name="quiz[8]" id="quiz8" value="C">They have no buying process in place</input></div>										
+							<div><input type="radio" name="quiz[8]" id="quiz8" value="D">The proposal process</input></div>														  
+							<div><input type="radio" name="quiz[8]" id="quiz8" value="E">None of the above</input></div>													
+						</div>
+					</div><br />
+					
+					<div class="qEven">
+						<div class="quiz_head">Question 3:</div><br />
+						<div class="quiz_ques"><strong>3)&nbsp;The best time to talk about pricing with the prospect is:</strong></div><br />
+						<div class="quiz_radio">
+							<div><input type="radio" name="quiz[9]" id="quiz9" value="A">In early conversations to qualify them</input></div>										  
+							<div><input type="radio" name="quiz[9]" id="quiz9" value="B">In the proposal</input></div>															   
+							<div><input type="radio" name="quiz[9]" id="quiz9" value="C">During the first pitch to the decision makers</input></div>								  
+							<div><input type="radio" name="quiz[9]" id="quiz9" value="D">Any of the above</input></div>															    
+							<div><input type="radio" name="quiz[9]" id="quiz9" value="E">None of the above</input></div>													         
+						</div>
+					</div><br />
+
+					<div class="qOdd">
+						<div class="quiz_head">Question 4:</div><br />
+						<div class="quiz_ques"><strong>4)&nbsp;The first scheduled conversation should always include:</strong></div><br />
+						<div class="quiz_radio">
+							<div><input type="radio" name="quiz[7]" id="quiz7" value="A">A discussion of your services</input></div>											 
+							<div><input type="radio" name="quiz[7]" id="quiz7" value="B">The use of an industry expert</input></div>											  
+							<div><input type="radio" name="quiz[7]" id="quiz7" value="C">The involvement of a partner</input></div>											   
+							<div><input type="radio" name="quiz[7]" id="quiz7" value="D">A conversation about their business issues</input></div>								
+							<div><input type="radio" name="quiz[7]" id="quiz7" value="E">A discussion about your product pricing</input></div>									 
+							<div><input type="radio" name="quiz[7]" id="quiz7" value="F">None of the above</input></div>						
+						</div>
+					</div><br />
+					
+					<div class="qEven">
+						<div class="quiz_head">Question 5:</div><br />
+						<div class="quiz_ques"><strong>5)&nbsp;When the prospect calls you (an incoming lead) the most important sales behaviour of those listed below is to:</strong></div><br />
+						<div class="quiz_radio">
+							<div><input type="radio" name="quiz[5]" id="quiz5" value="A">Find out if they are the decision maker</input></div>
+							<div><input type="radio" name="quiz[5]" id="quiz5" value="B">Find out if they have the budget</input></div>						  
+							<div><input type="radio" name="quiz[5]" id="quiz5" value="C">Find out where they are in the sales process</input></div>
+							<div><input type="radio" name="quiz[5]" id="quiz5" value="D">Determine if they want a proposal from you</input></div>										 	
+						</div>
+					</div><br />
+					
+					<div class="qOdd">
+						<div class="quiz_head">Question 6:</div><br />
+						<div class="quiz_ques"><strong>6)&nbsp;When contacting prospects or relationships about a new opportunity by phone, the first objective is to create:</strong></div><br />
+							<div class="quiz_radio">
+								<div><input type="radio" name="quiz[5]" id="quiz5" value="A">A desire in the prospect to buy your services</input></div>
+								<div><input type="radio" name="quiz[5]" id="quiz5" value="B">A high level of trust in the mind of the prospect</input></div>						  
+								<div><input type="radio" name="quiz[5]" id="quiz5" value="C">Create curiosity to listen further</input></div>
+								<div><input type="radio" name="quiz[5]" id="quiz5" value="D">A need to schedule an appointment</input></div>										 
+								<div><input type="radio" name="quiz[5]" id="quiz5" value="E">None of the above</input></div>													
+						    </div>
+					</div><br />
+
+					<div class="qEven">
+						<div class="quiz_head">Question 7:</div><br />
+						<div class="quiz_ques"><strong>7)&nbsp;Which of the following groups does not typically need to be engaged during the sales cycle of large complex deals?</strong></div><br />
+						<div class="quiz_radio">
+							<div><input type="radio" name="quiz[4]" id="quiz4" value="A">Senior level executives</input></div>													 
+							<div><input type="radio" name="quiz[4]" id="quiz4" value="B">Middle tier line of service managers</input></div>									  
+							<div><input type="radio" name="quiz[4]" id="quiz4" value="C">Lower level staff whom you would work with during implementation</input></div>		
+							<div><input type="radio" name="quiz[4]" id="quiz4" value="D">None of the above</input></div>																				
+						</div>
+					</div><br />
+					
+					<div class="qOdd">
+						<div class="quiz_head">Question 8:</div><br />
+						<div class="quiz_ques"><strong>8)&nbsp;Generally, finding out who has a budget for your services should take place:</strong></div><br />
+						<div class="quiz_radio">
+							<div><input type="radio" name="quiz[3]" id="quiz3" value="A">Early in the sales cycle</input></div>															
+							<div><input type="radio" name="quiz[3]" id="quiz3" value="B">Midway through the sales cycle</input></div>															
+							<div><input type="radio" name="quiz[3]" id="quiz3" value="C">At the end of the sales cycle</input></div>															
+							<div><input type="radio" name="quiz[3]" id="quiz3" value="D">Any of the above</input></div>															
+							<div><input type="radio" name="quiz[3]" id="quiz3" value="E">None of the above</input></div>													
+						</div>
+					</div><br />
+					
+					<div class="qEven">
+						<div class="quiz_head">Question 9:</div><br />
+						<div class="quiz_ques"><strong>9)&nbsp;The most important sales behavior early in the sales cycle is to:</strong></div><br />
+						<div class="quiz_radio">
+							<div><input type="radio" name="quiz[2]" id="quiz2" value="A">Identify a solution for the prospect</input></div>														
+							<div><input type="radio" name="quiz[2]" id="quiz2" value="B">Prove your service capabilities</input></div>															
+							<div><input type="radio" name="quiz[2]" id="quiz2" value="C">Mitigate any perceived risk of doing business with your company</input></div>							   <div><input type="radio" name="quiz[2]" id="quiz2" value="D">Identify potential business issues you may be able to help with</input></div>							  <div><input type="radio" name="quiz[2]" id="quiz2" value="E">Let the prospect know that your services have value</input></div>
+					</div><br />
+					
+					<div class="qOdd">
+						<div class="quiz_head">Question 10:</div><br/>
+						<div class="quiz_ques"><strong>10)&nbsp;The best accounts to bring proactive thought leadership offerings to are:</strong></div><br/>
+						<div class="quiz_radio">
+							<div><input type="radio" name="quiz[1]" id="quiz1" value="A">New Accounts</input></div>	
+							<div><input type="radio" name="quiz[1]" id="quiz1" value="B">Accounts in a specific sector or industry</input></div>												   <div><input type="radio" name="quiz[1]" id="quiz1" value="C">Existing difficult accounts</input></div>															
+							<div><input type="radio" name="quiz[1]" id="quiz1" value="D">Existing accounts</input></div>
+						</div>
+					</div><br/>
+		
+					<div class="quiz_btn"><input type="submit" name="submit" value="Submit"></input></div>
+				</form>
 			</div>
 		</div>
 	</div>
@@ -36,6 +153,6 @@
 		<!-- Common footer -->
 		<div th:replace="fragments/footer-without-datatable :: footer"></div>
 	</div>
-	<!--script src="/solaris/resources/app/js/sub-trainings.js" type="text/javascript"></script-->
+	<script src="/solaris/resources/app/js/assess.js" type="text/javascript"></script>
 </body>
 </html>
