@@ -41,10 +41,21 @@ $(document).ready(function() {
 			columns : [
 			  { data : 'name'}, 
 			  { data : 'brand'}, 
-			  { data : 'cpu'}, 
-			  { data : 'gpu'}, 
-			  { data : 'hddSize'}, 
-			  { data : 'price'} 
+			  { data : 'publishDate'},
+			  { data : 'price'},
+			  { data : 'laptop_width'},
+			  { data : 'laptop_height'},
+			  { data : 'laptop_length'},
+			  { data : 'laptop_weight'},
+			  { data : 'screenSize'},
+			  { data : 'os'},
+			  { data : 'cpu'},
+			  { data : 'ramSize'},
+			  { data : 'gpu'},
+			  { data : 'hddSize'},
+			  { data : 'batteryLife'},
+			  { data : 'cardReaderTypes'},
+			  { data : 'antivirusSoftware'}
 			],
 			select : "single"
 	   });
