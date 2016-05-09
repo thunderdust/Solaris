@@ -5,6 +5,7 @@ import java.util.List;
 
 import jp.co.worksap.stm.solaris.dao.specification.ScoreDao;
 import jp.co.worksap.stm.solaris.dto.ScoreDto;
+import jp.co.worksap.stm.solaris.entity.score.ScoreCreationEntity;
 import jp.co.worksap.stm.solaris.entity.score.ScoreEntity;
 import jp.co.worksap.stm.solaris.entity.score.ScoreFetchEntity;
 import jp.co.worksap.stm.solaris.entity.score.ScoreListEntity;
@@ -55,7 +56,7 @@ public class ScoreServiceImplementation implements ScoreService {
 
 		} catch (IOException e) {
 			throw new ServiceException(
-					"Error getting all the scores of employee id: " + id, e);
+					"Error getting all the scores of employee: " + id, e);
 		}
 
 		List<ScoreEntity> entities = Lists.newArrayList();
@@ -66,4 +67,16 @@ public class ScoreServiceImplementation implements ScoreService {
 		return new ScoreListEntity(0, count, count, entities);
 	}
 
+	@Override
+	public void insertScore(ScoreCreationEntity s) throws ServiceException {
+		
+		ScoreDto sdto = new ScoreDto(s);
+		
+		try {
+			sd.insertScore(sdto);
+		}catch (IOException e) {
+			throw new ServiceException(
+					"Error insert score for: " + s.getEmployeeId(), e);
+		}
+	}
 }

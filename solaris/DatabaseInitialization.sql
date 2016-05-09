@@ -113,7 +113,6 @@ CREATE TABLE IF NOT EXISTS `orders` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE IF NOT EXISTS `training_scores` (
-  `employee_name` varchar(256) NOT NULL,
   `employee_id` varchar(256) NOT NULL,
   `test_id` int(11) NOT NULL,
   `test_type` varchar(128) NOT NULL,

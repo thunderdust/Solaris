@@ -12,16 +12,15 @@ import lombok.NoArgsConstructor;
 @Data
 public class ScoreCreationEntity {
 
-	private String employeeName;
-	private String employId;
+	private String employeeId;
 	private int testId;
 	private String testType;
 	private int score;
 	private Date date;
 
 	public ScoreCreationEntity(ScoreDto s) {
-		this.employeeName = s.getEmployeeName();
-		this.employId = s.getEmployId();
+		
+		this.employeeId = s.getEmployeeId();
 		this.testId = s.getTestId();
 		this.testType = s.getTestType();
 		this.score = s.getScore();

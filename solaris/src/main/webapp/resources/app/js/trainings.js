@@ -23,7 +23,7 @@ $(document).ready(function() {
 				   }
         	},
         	columns : [
-        	  { data: 'employeeName'},
+        	  { data: 'employeeId'},
         	  { data: 'testType'},
         	  { data: 'testId'},
         	  { data: 'score'},

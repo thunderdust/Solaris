@@ -13,8 +13,7 @@ import lombok.NoArgsConstructor;
 @Data
 public class ScoreDto {
 
-	private String employeeName;
-	private String employId;
+	private String employeeId;
 	private int testId;
 	private String testType;
 	private int score;
@@ -22,8 +21,7 @@ public class ScoreDto {
 
 	public ScoreDto(ScoreCreationEntity s) {
 
-		this.employeeName = s.getEmployeeName();
-		this.employId = s.getEmployId();
+		this.employeeId = s.getEmployeeId();
 		this.testId = s.getTestId();
 		this.testType = s.getTestType();
 		this.score = s.getScore();

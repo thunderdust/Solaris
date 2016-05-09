@@ -16,7 +16,7 @@
 	<div th:replace="fragments/header :: header"></div>
 	<div class="container" id="layout">
 		<div class="row">
-            <img class="solaris-title" src="/solaris/resources/app/img/it-training.png" />
+            <img class="solaris-title" src="/solaris/resources/app/img/sales-training.jpg" />
             <span class="solaris-title">Sales Assessment 02</span>
 			<hr></hr>
 
@@ -28,7 +28,9 @@
 			</div>
 
 			<div class="col-lg-12 col-sm-12">
-				<form name="salesTest1" id="sales_test_2" class="test-form" method="post">
+				<form name="salesTest1" id="sales_test_2" class="test-form" method="post" onsubmit="validateTest();">
+				    <input name="testType" value="sales" hidden="hidden"></input>
+				    <input name="testId" value="2" hidden="hidden"></input>
 					<div class="qEven">
 						<div class="quiz_head">Question 1:</div><br />
 						<div class="quiz_ques"><strong>1)&nbsp;The first rule of qualification for incoming calls is whether the contact or caller will:</strong></div><br />
@@ -148,6 +150,37 @@
 				</form>
 			</div>
 		</div>
+
+		<!-- Assessment result modal -->
+	    <div class="modal fade" id="assessment-result-modal" tabindex="-1" role="dialog"
+			aria-labelledby="myModalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h4 class="modal-title" id="myModalLabel">Assessment Completed</h4>
+					</div>
+					<div class="modal-body">
+						<div class="modal-body-notification">
+					    	<img class="solaris-title" src="/solaris/resources/app/img/ruby.png" />
+					    	<span>Congratulations! You have finished <em>Sales Training Assessment No.2</em></span>
+					    	<p>You score: </p>
+							<span id="test_score">0</span>
+						</div>
+						
+						
+						<hr/>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
 	</div>
 
 	<div class="navbar navbar-fixed-bottom solaris-footer">

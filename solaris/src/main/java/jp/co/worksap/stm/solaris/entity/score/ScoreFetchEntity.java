@@ -9,7 +9,6 @@ import lombok.NoArgsConstructor;
 @Data
 public class ScoreFetchEntity {
 
-	private String employeeName;
 	private String employId;
 	private int testId;
 	private String testType;

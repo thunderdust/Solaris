@@ -14,5 +14,7 @@ public interface ScoreDao {
 	int getTotalCount() throws IOException;
 
 	int getTotalCountOfEmployee(String id) throws IOException;
+	
+	void insertScore(ScoreDto s) throws IOException;
 
 }

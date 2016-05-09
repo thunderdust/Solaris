@@ -1,5 +1,15 @@
+$(document).ready(function() {
+    // Go back to assessment page when test result modal dismissed
+	$('#assessment-result-modal').on(
+		'hidden.bs.modal', function() {
+			$(location).attr('href', '/solaris/trainings');
+	});
+});
+
+
 function resetForm() {
 	$('.test-form')[0].reset();
+	//$('#assessment-result-modal').modal('show');
 }
 
 function validateTest(){
@@ -91,14 +101,16 @@ function validateTest(){
 	 	alert(unanswered_questions + "are not answered !");
 	 }
 	 else {
-	 	assessAnswers(answers);
+	 	var test_type = $('input[name=testType]').val();
+	 	var test_id = $('input[name=testId]').val();
+	 	assessAnswers(answers, test_type, test_id);
+	 	console.log("test type: " + test_type);
+	    console.log("test id: " + test_id);
 	 }
-
-	 console.log(answers);
 }
 
 
-function assessAnswers(answers){
+function assessAnswers(answers, test_type, test_id){
 
 	total_count = answers.length;
 	console.log("total: " + total_count);
@@ -117,4 +129,32 @@ function assessAnswers(answers){
 	}
 
 	console.log(Math.round( correct_count * 100.0 / total_count)+ " %");
+	var data = {};
+	//data["employeeId"] = employee_id;
+	data["testId"] = test_id;
+	data["testType"] = test_type;
+	data["score"] = correct_count*10/total_count;
+	data["date"] = "";
+	insertScoreRecord(data);
+	console.log("data: " + JSON.stringify(data));
+
+}
+
+function insertScoreRecord(data){
+	var url = "/solaris/trainings/assessments/addscore";
+	console.log(JSON.stringify(data));
+	$.ajax({
+		url : url,
+		data : JSON.stringify(data),
+		type : 'POST',
+		contentType : "application/json",
+		xhrFields : {
+			withCredentials : true
+		}
+	}).done(function() {
+		console.log("successful");
+		$('#test_score').text(data["score"]);
+		$('#assessment-result-modal').modal('show');
+	   });
+
 }

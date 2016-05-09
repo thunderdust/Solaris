@@ -2,6 +2,7 @@ package jp.co.worksap.stm.solaris.controller;
 
 import java.security.Principal;
 
+import jp.co.worksap.stm.solaris.entity.score.ScoreCreationEntity;
 import jp.co.worksap.stm.solaris.entity.score.ScoreFetchEntity;
 import jp.co.worksap.stm.solaris.entity.score.ScoreListEntity;
 import jp.co.worksap.stm.solaris.services.specification.ScoreService;
@@ -88,4 +89,13 @@ public class TrainingController {
 		}
 	}
 	
+	@PreAuthorize("hasAuthority('ADMIN')||hasAuthority('SALES MANAGER')||hasAuthority('SALES REPRESENTATIVE')")
+	@ResponseBody
+	@RequestMapping(value = "/trainings/assessments/addscore", method = RequestMethod.POST)
+	public void addScoreRecord(@RequestBody ScoreCreationEntity sce, Principal p) {
+		AuthorityHelper helper = new AuthorityHelper(p);
+		String id = helper.getUsername();
+		sce.setEmployeeId(id);
+		ss.insertScore(sce);
+	}
 }
