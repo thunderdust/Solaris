@@ -381,6 +381,10 @@ div.modal-body-notification > p{
     font-size: 1em;
 }
 
+form#campus-form > div.form-group > label {
+	margin-left: 5px;
+}
+
 
 /***********************************************************/
 

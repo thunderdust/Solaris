@@ -14,35 +14,24 @@
 <ct th:replace="fragments/header :: commonhead"></ct>
 </head>
 <body>
-    
 	<!-- Common header -->
 	<div th:replace="fragments/header :: header"></div>
 	<div class="container" id="layout">
 		<div class="row">
+		    <img class="solaris-title" src="/solaris/resources/app/img/customer.png" />
 			<span class="solaris-title">Find New Customers</span>
-
 			<hr></hr>
-
 			<div class="col-lg-12 col-sm-12 table-buttons">
 				<!-- Buttons -->
-
 				<button id="find_enterprise" type="button" class="btn btn-primary" disabled="disabled" onclick="showTab(0)">
 					<span class="glyphicon glyphicon-briefcase" aria-hidden="true">
-					</span> <span class="solaris-button-text">New Enterprises</span>
+					</span> <span class="solaris-button-text">New Openers</span>
 				</button>
-				<button id="find_exhibition" type="button" class="btn btn-primary" disabled="disabled" onclick="showTab(1)">
-					<span class="glyphicon glyphicon-briefcase" aria-hidden="true">
-					</span> <span class="solaris-button-text">Exhibitions</span>
-				</button>
-				<button id="find_retailer" type="button" class="btn btn-primary" disabled="disabled" onclick="showTab(2)">
-					<span class="glyphicon glyphicon-briefcase" aria-hidden="true">
-					</span> <span class="solaris-button-text">Electronic Retailers</span>
-				</button>
-				<button id="find_campus" type="button" class="btn btn-primary" disabled="disabled" onclick="showTab(3)">
+				<button id="find_campus" type="button" class="btn btn-primary" disabled="disabled" onclick="showTab(1)">
 					<span class="glyphicon glyphicon-fire" aria-hidden="true">
 					</span> <span class="solaris-button-text">Campus Promotions</span>
 				</button>
-				<button id="find_referral" type="button" class="btn btn-primary" disabled="disabled" onclick="showTab(4)">
+				<button id="find_referral" type="button" class="btn btn-primary" disabled="disabled" onclick="showTab(2)">
 					<span class="glyphicon glyphicon-send" aria-hidden="true">
 					</span> <span class="solaris-button-text">Customer Referrals</span>
 				</button>
@@ -51,162 +40,233 @@
 			    <div id="loading"></div>
 			    <div id="new_enterprise" class="find_new_tab new_enterprise">
 			        <div class="tab-title" id="tab-referral">
-			    		<h4>Opportunities from new enterprises</h4>
+			    		<span>Opportunities from new openers</span>
 			    	</div>
-			    	<ul class="new_enterprise_exhibition">
-			    		<li class="new_enterprise">
+			    	<div class="col-lg-4 col-sm-4 find_new_sub_container">
+			    	    <span>New Enterprises</span>
+			    		<div class="new_enterprise_exhibition">
+			    		   <div class="new_enterprise">
 			    		   <a href="http://www.garena.sg/" target="_blank">
 			    		      <span class="glyphicon glyphicon-flag" aria-hidden="true">
 					          </span> Newly launched eCommerce company Garena</a>
-			    		</li>
-			    		<li class="new_enterprise">
-			    		   <a href="http://techgrid.co/" target="_blank">
-			    		      <span class="glyphicon glyphicon-flag" aria-hidden="true">
-					          </span> IT start-up company TechGrid</a>
-			    		</li>
-			    		<li class="new_exhibition">
-			    		   <a href="http://www.itshow.com.sg/" target="_blank">
-			    		      <span class="glyphicon glyphicon-flag" aria-hidden="true">
-					          </span> Upcoming IT show @ Suntec City</a>
-					    </li>
-					    <li class="new_enterprise">
-			    		   <a href="http://contact.carousell.com/" target="_blank">
-			    		      <span class="glyphicon glyphicon-flag" aria-hidden="true">
-					          </span> E-commerce company Carousell</a>
-			    		</li>
-			    		<li class="new_retailer">
-			    		   <a href="http://www.challenger.com.sg/store_locator" target="_blank">
-			    		      <span class="glyphicon glyphicon-flag" aria-hidden="true">
-					          </span> Newly opened Challenger outlets @ Vivo City</a>
-			    		</li>
-			    		<li class="new_enterprise">
-			    		   <a href="http://techgrid.co/" target="_blank">
-			    		      <span class="glyphicon glyphicon-flag" aria-hidden="true">
-					          </span> IT start-up company TechGrid</a>
-			    		</li>
-			    		<li class="new_retailer">
-			    		   <a href="https://go.bestdenki.com.sg/store-locator" target="_blank">
-			    		      <span class="glyphicon glyphicon-flag" aria-hidden="true">
-					          </span> Newly opened BEST electronics @ The Clementi Mall</a>
-			    		</li>
-			    		<li class="new_exhibition">
-			    		   <a href="http://www.thepcshow.com.sg/" target="_blank">
-			    		      <span class="glyphicon glyphicon-flag" aria-hidden="true">
-					          </span> PC SHOW 2016 @ Expo</a>
-					    </li>
-			    	</ul>
+				    		</div>
+				    		<div class="new_enterprise">
+				    		   <a href="http://techgrid.co/" target="_blank">
+				    		      <span class="glyphicon glyphicon-flag" aria-hidden="true">
+						          </span> IT start-up company TechGrid</a>
+				    		</div>
+				    		<div class="new_enterprise">
+				    		   <a href="http://contact.carousell.com/" target="_blank">
+				    		      <span class="glyphicon glyphicon-flag" aria-hidden="true">
+						          </span> E-commerce company Carousell</a>
+				    		</div>
+				    		<div class="new_enterprise">
+				    		   <a href="http://techgrid.co/" target="_blank">
+				    		      <span class="glyphicon glyphicon-flag" aria-hidden="true">
+						          </span> IT start-up company TechGrid</a>
+				    		</div>
+			    		</div>
+			    	</div>
+			    	
+			    	<div class="col-lg-4 col-sm-4 find_new_sub_container">
+			    		<span>IT Exhibitions</span>
+			    		<div class="new_enterprise_exhibition">
+			    			<div class="new_exhibition">
+				    		   <a href="http://www.itshow.com.sg/" target="_blank">
+				    		      <span class="glyphicon glyphicon-flag" aria-hidden="true">
+						          </span> Upcoming IT show @ Suntec City</a>
+						    </div>
+						    <div class="new_exhibition">
+				    		   <a href="http://www.thepcshow.com.sg/" target="_blank">
+				    		      <span class="glyphicon glyphicon-flag" aria-hidden="true">
+						          </span> PC SHOW 2016 @ Expo</a>
+						    </div>
+			    		</div>
+			    	</div>
+			    	
+			    	<div class="col-lg-4 col-sm-4 find_new_sub_container">
+			    	    <span>Electronic Retailers</span>
+			    		<div class="new_enterprise_exhibition">
+				    		<div class="new_retailer">
+				    		   <a href="http://www.challenger.com.sg/store_locator" target="_blank">
+				    		      <span class="glyphicon glyphicon-flag" aria-hidden="true">
+						          </span> Newly opened Challenger outlets @ Vivo City</a>
+				    		</div>
+				    		
+				    		<div class="new_retailer">
+				    		   <a href="https://go.bestdenki.com.sg/store-locator" target="_blank">
+				    		      <span class="glyphicon glyphicon-flag" aria-hidden="true">
+						          </span> Newly opened BEST electronics @ The Clementi Mall</a>
+				    		</div>
+			    		</div>
+			    	</div>
 			    </div>	
-
-			    <div id="new_exhibition" class="find_new_tab new_exhibition"></div>
-
-			    <div id="new_retailer" class="find_new_tab new_retailer"></div>
 
 			    <div id="new_campus_promotions" class="find_new_tab new_campus_promotions">
 			        <div class="tab-title" id="tab-referral">
-			    		<h4>Campus Promotion Emails</h4>
+			    		<span>Campus Promotion Emails</span>
 			    	</div>
-			    	<div class="form-container">
-			    		<form id="campus-form">
-							<h4 class="form-subtitle">
-								<b>Choose the mailing list to send promotion to</b>
-							</h4>
-							<span class="tip"><b> * </b>You can choose multiple mailing list.</span>
-						    <hr />
-
-						    <div class="form-group">
-								<label for="nus"><img src="resources/app/img/nus.png"/>
-									NUS Fresh Student Mail List
-								</label> 
-								<input name="nus" type="checkbox" value="nus" id="nus"/>
-						    </div>
-
-						    <div class="form-group">
-								<label for="ntu"><img src="resources/app/img/ntu.png"/>
-									NTU Fresh Student Mail List
-								</label> 
-								<input name="ntu" type="checkbox" value="ntu" id="ntu"/>
-						    </div>
-
-						    <div class="form-group">
-								<label for="smu"><img src="resources/app/img/smu.jpg"/>
-									SMU Fresh Student Mail List
-								</label> 
-								<input name="smu" type="checkbox" value="smu" id="smu"/>
-						    </div>
-
-						    <div class="form-group">
-								<label for="sutd"><img src="resources/app/img/sutd.jpg"/>
-									SUTD Fresh Student Mail List
-								</label> 
-								<input name="sutd" type="checkbox" value="sutd" id="sutd"/>
-						    </div>
-
-						    <div class="form-group">
-								<label for="sit"><img src="resources/app/img/sit.jpg"/>
-									SIT Fresh Student Mail List
-								</label> 
-								<input name="sit" type="checkbox" value="sit" id="sit"/>
-						    </div>
-
-						    <div class="form-group">
-								<label for="sim"><img src="resources/app/img/sim.jpg"/>
-									SIM Fresh Student Mail List
-								</label> 
-								<input name="sim" type="checkbox" value="sim" id="sim"/>
-						    </div>
-
-						    <div class="form-group">
-								<label for="sp"><img src="resources/app/img/sp.png"/>
-									Singapore Polytechnic Fresh Student Mail List
-								</label> 
-								<input name="sp" type="checkbox" value="sp" id="sp"/>
-						    </div>
-
-						    <div class="form-group">
-								<label for="np"><img src="resources/app/img/np.png"/>
-									Ngee Ann Polytechnic Fresh Student Mail List
-								</label> 
-								<input name="np" type="checkbox" value="np" id="np"/>
-						    </div>
-
-						    <div class="form-group">
-								<label for="tp"><img src="resources/app/img/tp.png"/>
-									Temasek Polytechnic Fresh Student Mail List
-								</label> 
-								<input name="tp" type="checkbox" value="tp" id="tp"/>
-						    </div>
-
-						    <div class="form-group">
-								<label for="nyp"><img src="resources/app/img/nyp.jpg"/>
-									Nanyang Polytechnic Fresh Student Mail List
-								</label> 
-								<input name="nyp" type="checkbox" value="nyp" id="nyp"/>
-						    </div>
-
-						    <div class="form-group">
-								<label for="rp"><img src="resources/app/img/rp.png"/>
-									Republic Polytechnic Fresh Student Mail List
-								</label> 
-								<input name="rp" type="checkbox" value="rp" id="rp"/>
-						    </div>
-
+			    	<div>
+			    		<button id="mailing-list-btn" type="button" class="btn btn-primary" data-toggle="modal" data-target="#find-new-customer-mailing-list-modal">
+							<span class="glyphicon glyphicon-chevron-down" aria-hidden="true">
+							</span> <span class="solaris-button-text">Choose Mailing List</span>
+						</button>
+			    	</div><br/>
+			    	<div class="editor">
+			    		<form method="post">
+							<textarea  id="emailEditor"></textarea>
 						</form>
 			    	</div>
-			        
-			    	<button id="send_campus_promotion_btn" type="button" class="btn btn-primary">
-			    		<span class="glyphicon glyphicon-envelope" aria-hidden="true">
+			    	
+			    	<button id="send_campus_promotion_btn" type="button" class="btn btn-success" data-toggle="modal"
+					data-target="#email-sending-modal" data-backdrop="static" data-keyboard="false">
+			    		<span class="glyphicon glyphicon-send" aria-hidden="true">
 					    </span> <span class="solaris-button-text"> Send Promotion Email</span>
 				    </button>
 			    </div>
 
 			    <div id="new_customer_referrals" class="find_new_tab new_customer_referrals">
 			    	<div class="tab-title" id="tab-referral">
-			    		<h4>Customer Referrals</h4>
+			    		<span>Customer Referrals</span>
 			    	</div>
 			    </div>		
 			</div>
-
 		</div>
+		
+		<div class="modal fade" id="email-sending-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title" id="myModalLabel">Sending...</h4>
+					</div>
+					<div class="modal-body">
+						<div class="modal-body-notification">
+							<img src="/solaris/resources/app/img/sending.gif" />
+							<p>Please wait until emails are sent successfully.</p>
+						</div>
+					</div>
+					<div class="modal-footer">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="find-new-customer-mailing-list-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h4 class="modal-title" id="myModalLabel">Choose Mailing List</h4>
+					</div>
+					<div class="modal-body">
+					    <div class="modal-body-notification">
+						    <img class="solaris-title" src="/solaris/resources/app/img/mail.png" />
+						   	<span>Promotion emails will be sent to chosen mailing lists.</span>
+						   	<span class="tip">You can choose multiple mailing list.</span>
+						</div>
+						<div class="form-container">
+				    		<form id="campus-form">
+							    <div class="form-group">
+							        <input name="nus" type="checkbox" value="nus" id="nus"/>
+									<label for="nus"><img src="resources/app/img/nus.png"/>
+										NUS Fresh Student Mail List
+									</label> 
+									
+							    </div>
+	
+							    <div class="form-group">
+							        <input name="ntu" type="checkbox" value="ntu" id="ntu"/>
+									<label for="ntu"><img src="resources/app/img/ntu.png"/>
+										NTU Fresh Student Mail List
+									</label> 
+									
+							    </div>
+	
+							    <div class="form-group">
+							        <input name="smu" type="checkbox" value="smu" id="smu"/>
+									<label for="smu"><img src="resources/app/img/smu.jpg"/>
+										SMU Fresh Student Mail List
+									</label> 
+									
+							    </div>
+	
+							    <div class="form-group">
+							    	<input name="sutd" type="checkbox" value="sutd" id="sutd"/>
+									<label for="sutd"><img src="resources/app/img/sutd.jpg"/>
+										SUTD Fresh Student Mail List
+									</label> 
+									
+							    </div>
+	
+							    <div class="form-group">
+							    	<input name="sit" type="checkbox" value="sit" id="sit"/>
+									<label for="sit"><img src="resources/app/img/sit.jpg"/>
+										SIT Fresh Student Mail List
+									</label> 
+									
+							    </div>
+	
+							    <div class="form-group">
+							    	<input name="sim" type="checkbox" value="sim" id="sim"/>
+									<label for="sim"><img src="resources/app/img/sim.jpg"/>
+										SIM Fresh Student Mail List
+									</label> 
+									
+							    </div>
+	
+							    <div class="form-group">
+							    	<input name="sp" type="checkbox" value="sp" id="sp"/>
+									<label for="sp"><img src="resources/app/img/sp.png"/>
+										Singapore Polytechnic Fresh Student Mail List
+									</label> 
+									
+							    </div>
+	
+							    <div class="form-group">
+							    	<input name="np" type="checkbox" value="np" id="np"/>
+									<label for="np"><img src="resources/app/img/np.png"/>
+										Ngee Ann Polytechnic Fresh Student Mail List
+									</label> 
+									
+							    </div>
+	
+							    <div class="form-group">
+							    	<input name="tp" type="checkbox" value="tp" id="tp"/>
+									<label for="tp"><img src="resources/app/img/tp.png"/>
+										Temasek Polytechnic Fresh Student Mail List
+									</label> 
+									
+							    </div>
+	
+							    <div class="form-group">
+							    	<input name="nyp" type="checkbox" value="nyp" id="nyp"/>
+									<label for="nyp"><img src="resources/app/img/nyp.jpg"/>
+										Nanyang Polytechnic Fresh Student Mail List
+									</label> 
+									
+							    </div>
+	
+							    <div class="form-group">
+							    	<input name="rp" type="checkbox" value="rp" id="rp"/>
+									<label for="rp"><img src="resources/app/img/rp.png"/>
+										Republic Polytechnic Fresh Student Mail List
+									</label> 
+							    </div>
+							</form>
+				    	</div>
+					</div>
+	
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
 	</div>
 
 	<div class="navbar navbar-fixed-bottom solaris-footer">
@@ -217,5 +277,6 @@
 	<script src="resources/lib/js/highlight.js" type="text/javascript"></script>
 	<script src="resources/lib/js/bootstrap-switch.js" type="text/javascript"></script>
 	<script src="resources/lib/js/switch-main.js" type="text/javascript"></script>
+	<script src="resources/lib/js/tinymce.min.js" type="text/javascript"></script>
 </body>
 </html>

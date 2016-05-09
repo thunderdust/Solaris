@@ -2,7 +2,19 @@ var currentTab;
 
 $(document).ready(function() {
     var initPage = function() {
-        $('#send_campus_promotion_btn').click(Solaris.senndPromotionEmail);
+        //$('#send_campus_promotion_btn').click(Solaris.senndPromotionEmail);
+        tinymce.init({
+            selector: '#emailEditor'
+        });
+
+        // dismiss email sending dialog after 3 seconds of its show
+        $('#email-sending-modal').on('shown.bs.modal', function (e) {
+            setTimeout(function(){
+                $('#email-sending-modal').modal('hide');
+                alert("Promotion email has been sent to specified recipients.");
+                showTab(0);
+            },3000);
+        });
     }
 
     initPage();
@@ -16,8 +28,6 @@ function onReady(callback) {
             callback.call(this);
             // Enable buttons
             $('#find_enterprise').prop('disabled', false);
-            $('#find_exhibition').prop('disabled', false);
-            $('#find_retailer').prop('disabled', false);
             $('#find_campus').prop('disabled', false);
             $('#find_referral').prop('disabled', false);
         }
@@ -28,6 +38,7 @@ function show() {
     document.getElementsByClassName('find_new_tab')[currentTab].style.display = 'block';
     document.getElementById('loading').style.display = 'none';
 }
+
 
 onReady(function () {
     currentTab = 0;
@@ -57,6 +68,4 @@ Solaris.senndPromotionEmail = function (evt){
     }).done(function(){
         console.log('Email sending is done');
     });
-
-
 }

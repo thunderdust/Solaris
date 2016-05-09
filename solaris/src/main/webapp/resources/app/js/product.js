@@ -1,18 +1,3 @@
-/*
-var resizeTask;
-var timeoutThreshold = 30;
-window.onresize = function(event) {
-	console.log("Window resized");
-	clearTimeout(resizeTask);
-	resizeTask = setTimeout(reloadPage, timeoutThreshold);
-}
-
-function reloadPage() {
-	// Reload from cache
-	location.reload(false);
-}
-*/
-
 $(document).ready(function() {
     // switchActiveTab('nav-product');
 	 // $('#product-add-button').click(Solaris.addProduct);
@@ -54,7 +39,6 @@ $(document).ready(function() {
 			  { data : 'gpu'},
 			  { data : 'hddSize'},
 			  { data : 'batteryLife'},
-			  { data : 'cardReaderTypes'},
 			  { data : 'antivirusSoftware'}
 			],
 			select : "single"

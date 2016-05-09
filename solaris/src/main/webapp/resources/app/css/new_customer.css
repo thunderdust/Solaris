@@ -1,35 +1,37 @@
-div.new_enterprise_exhibition {
-	margin-top: 10px;
+div.new_enterprise_exhibition div {
+	display: block;
+	margin-bottom: 15px;
+	border-radius: 4px;
+	padding: 5px;
+	text-align: center;
+	vertical-align: center;
+	box-shadow: 2px 2px 1px #888888;
+	line-height: 1.2em;
+	height: 3.6em;
+	overflow: hidden;
 }
 
-ul.new_enterprise_exhibition{
-	list-style-type: none;
+div.new_enterprise_exhibition div:hover{
+	box-shadow: 5px 5px 2px #888888;
+	font-weight: bold;
 }
 
-ul.new_enterprise_exhibition li {
-    padding: 5px;
-	margin: 8px 5px 8px 0px;
+div.new_enterprise_exhibition > div > a {
+	line-height: 1.2em;
+	color: #FFFFFF;
 }
 
-ul.new_enterprise_exhibition li a {
-	
-	border-radius: 3px;
-	padding: 7px;
-    color: #ffffff;
-    font-size: 1em;
-}
-
-ul.new_enterprise_exhibition li.new_enterprise a {
+div.new_enterprise_exhibition div.new_enterprise  {
 	background-color: #5cb85c;
     border-color: #4cae4c;
 }
 
-ul.new_enterprise_exhibition li.new_exhibition a {
+div.new_enterprise_exhibition div.new_exhibition  {
 	background-color: #428bca;
     border-color: #428bca;
 }
 
-ul.new_enterprise_exhibition li.new_retailer a {
+div.new_enterprise_exhibition div.new_retailer  {
 	background-color: #563d7c;
     border-color: #563d7c;
 }
@@ -56,22 +58,50 @@ div.find_new_container {
      background-color: rgba(153,153,153,0.2);
 }
 
-div.tab-title {
-	
-    margin: 10px 0 15px 0;
+div.find_new_sub_container {
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+div.find_new_sub_container > span {
+	display: block;
+	font-size: 1.2em;
+	padding: 5px;
+	border-bottom: 2px solid #ccc;
+	margin-bottom: 10px;
+}
+
+div.find_new_sub_container > img {
+	height: 60px;
+	width: 60px;
+	margin: 0px auto;
+}
+
+div.tab-title  {
+	font-weight: bold;
+	padding: 5px;
+	text-align:center;
+	margin: 0 0 15px 0;
     border-bottom: 1px solid #ccc;
 }
 
-div.tab-title h4 {
-	font-weight: bold;
-	padding-left: 5px;
+div.tab-title > span {
+	font-size: 1.4em;
+	font-family: 'Open Sans', sans-serif;
+	padding: 15px 0 10px 0;
 }
 
+div.editor {
+	margin: 10px;
+}
 
+button#mailing-list-btn {
+	margin: 5px 0 5px 15px;
+}
 
-
-
-
+button#send_campus_promotion_btn{
+	margin: 5px 5px 35px 15px;
+}
 
 
 
