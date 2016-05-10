@@ -37,7 +37,7 @@ public class CustomerServiceImplementation implements CustomerService {
 		List<CustomerDto> dtoList = null;
 		int count = 0;
 		try {
-			dtoList = cd.getAll();
+			dtoList = cd.getAll(entity.getStart(), entity.getLength());
 			count = cd.getTotalCount();
 
 		} catch (IOException e) {

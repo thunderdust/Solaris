@@ -7,9 +7,7 @@ import jp.co.worksap.stm.solaris.dto.CustomerDto;
 
 public interface CustomerDao {
 
-	CustomerDto getByEmail(String id) throws IOException;
-
-	List<CustomerDto> getAll() throws IOException;
+	List<CustomerDto> getAll(int start, int size) throws IOException;
 
 	void insert(CustomerDto ld) throws IOException;
 
@@ -22,7 +20,5 @@ public interface CustomerDao {
 	List<CustomerDto> filter(String searchParam, int start, int size) throws IOException;
 
 	int getFilteredCount(String searchParam) throws IOException;
-	
-	
 
 }

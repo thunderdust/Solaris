@@ -19,8 +19,7 @@ public class CustomerDaoImplementation implements CustomerDao {
 	private JdbcTemplate template;
 
 	private static final String GET_TOTAL_COUNT = "SELECT COUNT(*) FROM CUSTOMERS";
-	private static final String FETCH_ALL = "SELECT * FROM CUSTOMERS";
-	private static final String FETCH_BY_EMAIL = "SELECT * FROM CUSTOMERS WHERE email = ?";
+	private static final String FETCH_ALL = "SELECT * FROM CUSTOMERS LIMIT ? OFFSET ?";
 	private static final String INSERT_CUSTOMER = "INSERT INTO CUSTOMERS "
 			+ "(name, gender, birthday, email, contact_number, order_count, referral_count, address, occupation, salary, register_date)"
 			+ " VALUES (?,?,?,?,?,?,?,?,?,?,?);";
@@ -28,19 +27,18 @@ public class CustomerDaoImplementation implements CustomerDao {
 	private static final String DELETE_CUSTOMER = "DELETE FROM CUSTOMERS WHERE email = ?";
 	private static final String FILTER_BY_SEARCH = "SELECT * FROM CUSTOMERS WHERE name LIKE ? OR gender LIKE ? OR birthday LIKE ? OR email LIKE ? OR contact_number LIKE ? OR address LIKE ? OR occupation LIKE ? OR salary LIKE ? OR register_date LIKE ?"
 			+ "LIMIT ? OFFSET ?";
-
 	private static final String FILTER_COUNT = "SELECT COUNT(*) FROM CUSTOMERS WHERE name LIKE ? OR gender LIKE ? OR birthday LIKE ? OR email LIKE ? OR contact_number LIKE ? OR address LIKE ? OR occupation LIKE ? OR salary LIKE ? OR register_date LIKE ?";
 
-	@Override
-	public CustomerDto getByEmail(String id) throws IOException {
-		return null;
-	}
 
 	@Override
-	public List<CustomerDto> getAll() throws IOException {
+	public List<CustomerDto> getAll(int start, int size) throws IOException {
 		try {
 			return template.query(
 					FETCH_ALL,
+					ps -> {
+						ps.setInt(1, size);
+						ps.setInt(2, start);
+					}, 
 					(rs, rownum) -> {
 						return new CustomerDto(rs.getString("name"), rs
 								.getString("gender"), rs.getDate("birthday"),
