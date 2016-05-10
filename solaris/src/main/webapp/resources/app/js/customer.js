@@ -1,19 +1,3 @@
-/*
-var resizeTask;
-var timeoutThreshold = 30;
-window.onresize = function(event) {
-	console.log("Window resized");
-	clearTimeout(resizeTask);
-	resizeTask = setTimeout(reloadPage, timeoutThreshold);
-}
-var currentDataMode;
-
-function reloadPage() {
-	// Reload from cache
-	location.reload(false);
-}
-*/
-
 $(document).ready(function() {
     // switchActiveTab('nav-customer');
 
@@ -21,30 +5,36 @@ $(document).ready(function() {
 	 	Solaris.dataTable = $('#customer-table').DataTable({
 	 		'serverSide' : true,
 			'ajax' : {
-				url : 'customers/getAllCustomers',
+				url : 'customers/show',
 				type : 'POST',
 				contentType : 'application/json',
 				data : function(d) {
 					// send only data required by backend API
+					d.searchParam = d.search.value;
 					delete (d.columns);
 					delete (d.order);
 					delete (d.search);
+					console.log(JSON.stringify(d));
 					return JSON.stringify(d);
 				},
 				// list of CustomerEntity defined in CustomerListEntity class
-				dataSrc : "customerEntities",
-				xhrFields : {
-					withCredentials : true
-				}
+				dataSrc : "customerEntities"
 			},
 			columns : [
 			  { data : 'name'}, 
 			  { data : 'gender'}, 
 			  { data : 'birthday'}, 
+			  { data : 'email'}, 
+			  { data : 'contactNumber'}, 
 			  { data : 'orderCount'}, 
-			  { data : 'referralCount'}
+			  { data : 'referralCount'},
+			  { data : 'address'},
+			  { data : 'occupation'},
+			  { data : 'salary'},
+			  { data : 'registerDate'}
 			],
-			select : "single"
+			select : "single",
+			filter: true
 	   });
 
 		// disable delete button if nothing selected

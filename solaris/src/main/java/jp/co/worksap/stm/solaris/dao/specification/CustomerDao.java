@@ -18,7 +18,11 @@ public interface CustomerDao {
 	void deleteByEmail(String email) throws IOException;
 
 	int getTotalCount() throws IOException;
+	
+	List<CustomerDto> filter(String searchParam, int start, int size) throws IOException;
 
 	int getFilteredCount(String searchParam) throws IOException;
+	
+	
 
 }

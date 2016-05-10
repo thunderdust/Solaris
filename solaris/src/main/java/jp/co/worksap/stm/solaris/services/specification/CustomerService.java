@@ -18,5 +18,7 @@ public interface CustomerService {
 	void update(CustomerCreationEntity e) throws ServiceException;
 
 	void deleteByEmail(String email) throws ServiceException;
+	
+	CustomerListEntity filter(CustomerFetchEntity cfe) throws ServiceException;
 
 }

@@ -1,6 +1,7 @@
 package jp.co.worksap.stm.solaris.services.implementation;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import jp.co.worksap.stm.solaris.dao.specification.CustomerDao;
@@ -85,4 +86,22 @@ public class CustomerServiceImplementation implements CustomerService {
 		}
 	}
 
+	@Override
+	public CustomerListEntity filter(CustomerFetchEntity cfe)
+			throws ServiceException {
+		List<CustomerDto> customerList = null;
+		int count = 0;
+		try {
+			customerList = cd.filter(cfe.getSearchParam().toLowerCase(), cfe.getStart(), cfe.getLength());
+			count = cd.getFilteredCount(cfe.getSearchParam().toLowerCase());
+			
+		}catch (IOException e) {
+			throw new ServiceException("Error occured in filtering", e);
+		}
+		List<CustomerEntity> entityList = new ArrayList<CustomerEntity>();
+		for (CustomerDto dto: customerList){
+			entityList.add(new CustomerEntity(dto));
+		}
+		return new CustomerListEntity(cfe.getDraw(), count, count, entityList);
+	}
 }

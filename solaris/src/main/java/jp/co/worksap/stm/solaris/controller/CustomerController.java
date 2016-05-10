@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.google.common.base.Strings;
+
 @Controller
 public class CustomerController {
 
@@ -32,12 +34,26 @@ public class CustomerController {
 	public String findNewCustomer() {
 		return "find_new_customers";
 	}
+	
+	@PreAuthorize("hasAuthority('ADMIN')||hasAuthority('SALES MANAGER')||hasAuthority('SALES REPRESENTATIVE')")
+	@RequestMapping (value="/customers/filter", method=RequestMethod.GET)
+	@ResponseBody
+	public CustomerListEntity filterCustomers(@RequestBody CustomerFetchEntity entity) {
+		return cs.filter(entity);
+	}
 
 	@PreAuthorize("hasAuthority('ADMIN')||hasAuthority('SALES MANAGER')||hasAuthority('SALES REPRESENTATIVE')||hasAuthority('AFTER-SALES SERVICE AGENT')")
-	@RequestMapping(value = "/customers/getAllCustomers", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/customers/show", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
-	public CustomerListEntity getAllCustomers(@RequestBody CustomerFetchEntity e) {
-		return cs.getAll(e);
+	public CustomerListEntity show(@RequestBody CustomerFetchEntity e) {
+		
+		// Show all if no search filter
+		if (Strings.isNullOrEmpty(e.getSearchParam())){
+			return cs.getAll(e);
+		}
+		else {
+			return cs.filter(e);
+		}
 	}
 
 	@PreAuthorize("hasAuthority('ADMIN')||hasAuthority('SALES MANAGER')||hasAuthority('SALES REPRESENTATIVE')")

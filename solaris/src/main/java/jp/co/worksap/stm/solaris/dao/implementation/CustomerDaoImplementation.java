@@ -26,6 +26,10 @@ public class CustomerDaoImplementation implements CustomerDao {
 			+ " VALUES (?,?,?,?,?,?,?,?,?,?,?);";
 	private static final String UPDATE_CUSTOMER = "UPDATE CUSTOMERS SET name = ?, gender = ?, birthday = ?, email = ?, contact_number = ?, order_count = ?, referral_count = ?, address = ?, occupation = ?, salary = ?, register_date = ? WHERE email = ?";
 	private static final String DELETE_CUSTOMER = "DELETE FROM CUSTOMERS WHERE email = ?";
+	private static final String FILTER_BY_SEARCH = "SELECT * FROM CUSTOMERS WHERE name LIKE ? OR gender LIKE ? OR birthday LIKE ? OR email LIKE ? OR contact_number LIKE ? OR address LIKE ? OR occupation LIKE ? OR salary LIKE ? OR register_date LIKE ?"
+			+ "LIMIT ? OFFSET ?";
+
+	private static final String FILTER_COUNT = "SELECT COUNT(*) FROM CUSTOMERS WHERE name LIKE ? OR gender LIKE ? OR birthday LIKE ? OR email LIKE ? OR contact_number LIKE ? OR address LIKE ? OR occupation LIKE ? OR salary LIKE ? OR register_date LIKE ?";
 
 	@Override
 	public CustomerDto getByEmail(String id) throws IOException {
@@ -133,7 +137,53 @@ public class CustomerDaoImplementation implements CustomerDao {
 
 	@Override
 	public int getFilteredCount(String searchParam) throws IOException {
-		return 0;
+		try {
+			return template.queryForObject(FILTER_COUNT, (rs, column) -> {
+				return rs.getInt(1);
+			}, "%" + searchParam + "%", "%" + searchParam + "%", "%"
+					+ searchParam + "%", "%" + searchParam + "%", "%"
+					+ searchParam + "%", "%" + searchParam + "%", "%"
+					+ searchParam + "%", "%" + searchParam + "%", "%"
+					+ searchParam + "%");
+		} catch (DataAccessException e) {
+			throw new IOException(e);
+		}
 	}
 
+	@Override
+	public List<CustomerDto> filter(String searchParam, int start, int size)
+			throws IOException {
+
+		try {
+			return template.query(
+					FILTER_BY_SEARCH,
+					(ps) -> {
+						ps.setString(1, "%" + searchParam + "%");
+						ps.setString(2, "%" + searchParam + "%");
+						ps.setString(3, "%" + searchParam + "%");
+						ps.setString(4, "%" + searchParam + "%");
+						ps.setString(5, "%" + searchParam + "%");
+						ps.setString(6, "%" + searchParam + "%");
+						ps.setString(7, "%" + searchParam + "%");
+						ps.setString(8, "%" + searchParam + "%");
+						ps.setString(9, "%" + searchParam + "%");
+						ps.setInt(10, size);
+						ps.setInt(11, start);
+					},
+					(rs, rownum) -> {
+						return new CustomerDto(rs.getString("name"), rs
+								.getString("gender"), rs.getDate("birthday"),
+								rs.getString("email"), rs
+										.getString("contact_number"), rs
+										.getInt("order_count"), rs
+										.getInt("referral_count"), rs
+										.getString("address"), rs
+										.getString("occupation"), rs
+										.getInt("salary"), rs
+										.getDate("register_date"));
+					});
+		} catch (DataAccessException e) {
+			throw new IOException(e);
+		}
+	}
 }
