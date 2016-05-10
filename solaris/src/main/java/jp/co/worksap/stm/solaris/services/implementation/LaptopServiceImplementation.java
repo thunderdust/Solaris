@@ -1,6 +1,7 @@
 package jp.co.worksap.stm.solaris.services.implementation;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import jp.co.worksap.stm.solaris.dao.specification.LaptopDao;
@@ -29,7 +30,7 @@ public class LaptopServiceImplementation implements LaptopService {
 		List<LaptopDto> dtoList = null;
 		int count = 0;
 		try {
-			dtoList = ld.getAll();
+			dtoList = ld.getAll(e.getStart(), e.getLength());
 			count = ld.getTotalCount();
 
 		} catch (IOException ie) {
@@ -131,6 +132,24 @@ public class LaptopServiceImplementation implements LaptopService {
 			throw new ServiceException("Unable to add new laptop", e);
 		}
 
+	}
+
+	@Override
+	public LaptopListEntity filter(LaptopFetchEntity lfe) throws ServiceException {
+		List<LaptopDto> laptopList = null;
+		int count = 0;
+		try {
+			laptopList = ld.filter(lfe.getSearchParam().toLowerCase(), lfe.getStart(), lfe.getLength());
+			count = ld.getFilteredCount(lfe.getSearchParam().toLowerCase());
+			
+		}catch (IOException e) {
+			throw new ServiceException("Error occured in filtering", e);
+		}
+		List<LaptopEntity> entityList = new ArrayList<LaptopEntity>();
+		for (LaptopDto dto: laptopList){
+			entityList.add(new LaptopEntity(dto));
+		}
+		return new LaptopListEntity(lfe.getDraw(), count, count, entityList);
 	}
 
 }

@@ -9,7 +9,7 @@ public interface LaptopDao {
 
 	LaptopDto getById(String id) throws IOException;
 	
-	List<LaptopDto> getAll() throws IOException;
+	List<LaptopDto> getAll(int start, int length) throws IOException;
 
 	void insert(LaptopDto ld) throws IOException;
 
@@ -20,5 +20,7 @@ public interface LaptopDao {
 	int getTotalCount() throws IOException;
 
 	int getFilteredCount(String searchParam) throws IOException;
+	
+	List<LaptopDto> filter(String searchParam, int start, int size) throws IOException;
 
 }

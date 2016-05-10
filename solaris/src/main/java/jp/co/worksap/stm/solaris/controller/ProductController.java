@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.google.common.base.Strings;
+
 @Controller
 public class ProductController {
 
@@ -29,10 +31,17 @@ public class ProductController {
 	}
 
 	@PreAuthorize("hasAuthority('ADMIN')||hasAuthority('SALES MANAGER')||hasAuthority('SALES REPRESENTATIVE')")
-	@RequestMapping(value = "/products/getAllLaptops", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/products/show", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
 	public LaptopListEntity getAllLaptops(@RequestBody LaptopFetchEntity e) {
-		return laptopService.getAll(e);
+		
+		if (Strings.isNullOrEmpty(e.getSearchParam())){
+			return laptopService.getAll(e);
+		}
+		else {
+			return laptopService.filter(e);
+		}
+		
 	}
 
 	@PreAuthorize("hasAuthority('ADMIN')||hasAuthority('SALES MANAGER')")

@@ -6,22 +6,19 @@ $(document).ready(function() {
 	 	Solaris.dataTable = $('#product-table').DataTable({
 	 		'serverSide' : true,
 			'ajax' : {
-				url : 'products/getAllLaptops',
+				url : 'products/show',
 				type : 'POST',
 				contentType : 'application/json',
 				data : function(d) {
 					// send only data required by backend API
+					d.searchParam = d.search.value;
 					delete (d.columns);
 					delete (d.order);
 					delete (d.search);
-					d.brand = $('#product-brand-filter').val();
 					return JSON.stringify(d);
 				},
 				// list of LaptopEntity defined in LaptopListEntity class
-				dataSrc : "laptopEntities",
-				xhrFields : {
-					withCredentials : true
-				}
+				dataSrc : "laptopEntities"
 			},
 			columns : [
 			  { data : 'name'}, 
@@ -41,7 +38,8 @@ $(document).ready(function() {
 			  { data : 'batteryLife'},
 			  { data : 'antivirusSoftware'}
 			],
-			select : "single"
+			select : "single",
+			filter: true
 	   });
 
 		// disable delete button if nothing selected

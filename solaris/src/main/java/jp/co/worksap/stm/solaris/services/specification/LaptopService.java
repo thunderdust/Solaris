@@ -15,5 +15,7 @@ public interface LaptopService {
 	void deleteByName(String name) throws ServiceException;
 
 	void update(String name) throws ServiceException;
+	
+	LaptopListEntity filter(LaptopFetchEntity e) throws ServiceException;
 
 }
