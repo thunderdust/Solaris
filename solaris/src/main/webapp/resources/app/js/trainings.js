@@ -10,6 +10,7 @@ $(document).ready(function() {
         		contentType : 'application/json',
         		data : function(d){
         			// send only data required by backend API
+                                d.searchParam = d.search.value;
         			delete(d.columns);
 				delete(d.order);
 				delete(d.search);
@@ -30,7 +31,7 @@ $(document).ready(function() {
         	  { data: 'date'}
         	],
         	select: "single",
-                filter: false,
+                filter: true,
                 paging: false
         });
 	};

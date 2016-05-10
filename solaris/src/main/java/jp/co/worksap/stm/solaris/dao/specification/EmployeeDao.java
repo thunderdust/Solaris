@@ -12,7 +12,11 @@ public interface EmployeeDao {
 	List<EmployeeDto> getByRole(String role, int start, int size)
 			throws IOException;
 
-	List<EmployeeDto> getAll() throws IOException;
+	List<EmployeeDto> getAll(int start, int size) throws IOException;
+	
+	List<EmployeeDto> filter(String searchParam, int start, int size) throws IOException;
+	
+	int getFilteredCount(String searchParam) throws IOException;
 
 	int getTotalCount(String role) throws IOException;
 

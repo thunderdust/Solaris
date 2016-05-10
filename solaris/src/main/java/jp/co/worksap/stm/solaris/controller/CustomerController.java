@@ -64,8 +64,8 @@ public class CustomerController {
 	}
 
 	@PreAuthorize("hasAuthority('ADMIN')||hasAuthority('SALES MANAGER')||hasAuthority('SALES REPRESENTATIVE')")
-	@RequestMapping(value = "/customers/updateCustomer", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
+	@RequestMapping(value = "/customers/updateCustomer", method = RequestMethod.POST)
 	public void updateCustomer(@RequestParam CustomerCreationEntity cce) {
 		cs.update(cce);
 	}

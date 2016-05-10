@@ -1,6 +1,7 @@
 package jp.co.worksap.stm.solaris.services.implementation;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -54,7 +55,7 @@ public class OrderServiceImplementation implements OrderService {
 		List<OrderDto> dtoList = null;
 		int count = 0;
 		try {
-			dtoList = od.getAll();
+			dtoList = od.getAll(entity.getStart(), entity.getLength());
 			count = od.getTotalCount();
 
 		} catch (IOException e) {
@@ -67,7 +68,7 @@ public class OrderServiceImplementation implements OrderService {
 			entities.add(newEntity);
 		}
 
-		return new OrderListEntity(entities, count, count, entity.getDraw());
+		return new OrderListEntity(entity.getDraw(), count, count, entities);
 	}
 
 	@Override
@@ -127,5 +128,24 @@ public class OrderServiceImplementation implements OrderService {
 			throw new ServiceException("Cannot delete order with id: "
 					+ id, e);
 		}
+	}
+
+	@Override
+	public OrderListEntity filter(OrderFetchEntity entity)
+			throws ServiceException {
+		List<OrderDto> customerList = null;
+		int count = 0;
+		try {
+			customerList = od.filter(entity.getSearchParam().toLowerCase(), entity.getStart(), entity.getLength());
+			count = od.getFilteredCount(entity.getSearchParam().toLowerCase());
+			
+		}catch (IOException e) {
+			throw new ServiceException("Error occured in filtering", e);
+		}
+		List<OrderEntity> entityList = new ArrayList<OrderEntity>();
+		for (OrderDto dto: customerList){
+			entityList.add(new OrderEntity(dto));
+		}
+		return new OrderListEntity(entity.getDraw(), count, count, entityList);
 	}
 }

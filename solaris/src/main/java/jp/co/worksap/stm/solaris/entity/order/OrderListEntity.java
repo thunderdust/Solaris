@@ -10,9 +10,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class OrderListEntity {
-
-	private List<OrderEntity> orderEntities;
 	private int draw;
 	private int recordsTotal;
 	private int recordsFiltered;
+	private List<OrderEntity> orderEntities;
 }

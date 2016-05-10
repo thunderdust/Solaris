@@ -18,6 +18,9 @@ public interface EmployeeService {
 
 	EmployeeListEntity getAll(EmployeeFetchAllEntity entity)
 			throws ServiceException;
+	
+	EmployeeListEntity filter(EmployeeFetchAllEntity entity)
+			throws ServiceException;
 
 	void insert(EmployeeCreationEntity e) throws ServiceException;
 

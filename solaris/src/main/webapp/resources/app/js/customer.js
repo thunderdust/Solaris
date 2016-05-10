@@ -91,6 +91,7 @@ $(document).ready(function() {
 				// Reset title and button name
 				$('#myModalLabel').html("Add new customer");
 				$('#customer-add-button').html("Add");
+				$('#email').prop('readonly',false);
 				//Remove error input class, reset compulsory input border color
 				resetCompulsoryInputStyle();
 		});
@@ -143,6 +144,7 @@ Solaris.addCustomer = function(evt) {
 	var formData = $('#customer-form').serializeObject();
 	var url = 'customers/' + currentDataMode + 'Customer';
 	console.log(url);
+	console.log(formData["birthday"]);
 
 	console.log(JSON.stringify(formData));
 	$.ajax({

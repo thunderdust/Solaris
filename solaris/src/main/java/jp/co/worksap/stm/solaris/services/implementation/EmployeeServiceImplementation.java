@@ -1,6 +1,7 @@
 package jp.co.worksap.stm.solaris.services.implementation;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import jp.co.worksap.stm.solaris.dao.specification.EmployeeDao;
@@ -83,7 +84,7 @@ public class EmployeeServiceImplementation implements EmployeeService {
 		List<EmployeeDto> dtoList = null;
 		int count = 0;
 		try {
-			dtoList = employeeDao.getAll();
+			dtoList = employeeDao.getAll(entity.getStart(), entity.getLength());
 			count = employeeDao.getTotalCount();
 
 		} catch (IOException e) {
@@ -140,5 +141,26 @@ public class EmployeeServiceImplementation implements EmployeeService {
 			throw new ServiceException(
 					"Failed to delete employee account with id: " + id, e);
 		}
+	}
+
+	@Override
+	public EmployeeListEntity filter(EmployeeFetchAllEntity entity)
+			throws ServiceException {
+		List<EmployeeDto> employeeList = null;
+		int count = 0;
+		try {
+			employeeList = employeeDao.filter(entity.getSearchParam().toLowerCase(), entity.getStart(), entity.getLength());
+			count = employeeDao.getFilteredCount(entity.getSearchParam().toLowerCase());
+			
+		}catch (IOException e) {
+			throw new ServiceException("Error occured in filtering", e);
+		}
+		List<EmployeeEntity> entityList = new ArrayList<EmployeeEntity>();
+		for (EmployeeDto dto: employeeList){
+			List<String> roles = roleService.getRolesByUserId(dto.getId());
+			EmployeeEntity newEntity = new EmployeeEntity(dto, roles);
+			entityList.add(newEntity);
+		}
+		return new EmployeeListEntity(entity.getDraw(), count, count, entityList);
 	}
 }

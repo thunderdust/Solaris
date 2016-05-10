@@ -1,6 +1,5 @@
 package jp.co.worksap.stm.solaris.controller;
 
-
 import jp.co.worksap.stm.solaris.entity.order.OrderCreationEntity;
 import jp.co.worksap.stm.solaris.entity.order.OrderFetchEntity;
 import jp.co.worksap.stm.solaris.entity.order.OrderListEntity;
@@ -16,10 +15,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.google.common.base.Strings;
 
 @Controller
 public class OrderController {
-	
+
 	@Autowired
 	private OrderService os;
 
@@ -39,10 +39,10 @@ public class OrderController {
 	@PreAuthorize("hasAuthority('SALES MANAGER')||hasAuthority('SALES REPRESENTATIVE')")
 	@RequestMapping(value = "/orders/updateOrder", method = RequestMethod.POST)
 	@ResponseBody
-	public void updateUserAccount(@RequestBody OrderCreationEntity oce) {
+	public void updateOrder(@RequestBody OrderCreationEntity oce) {
 		os.update(oce);
 	}
-	
+
 	@PreAuthorize("hasAuthority('ADMIN')||hasAuthority('SALES MANAGER')||hasAuthority('SALES REPRESENTATIVE')")
 	@RequestMapping(value = "/orders/deleteOrder", method = RequestMethod.DELETE)
 	@ResponseBody
@@ -53,11 +53,12 @@ public class OrderController {
 	@PreAuthorize("hasAuthority('ADMIN')||hasAuthority('SALES MANAGER')||hasAuthority('SALES REPRESENTATIVE')")
 	@RequestMapping(value = "/orders/getAllOrders", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
-	public OrderListEntity findAllUsers(@RequestBody OrderFetchEntity e) {
-		return os.getAll(e);
+	public OrderListEntity show(@RequestBody OrderFetchEntity e) {
+		// Show all if no search filter
+		if (Strings.isNullOrEmpty(e.getSearchParam())) {
+			return os.getAll(e);
+		} else {
+			return os.filter(e);
+		}
 	}
-
-
-	
-
 }

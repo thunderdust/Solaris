@@ -32,6 +32,11 @@ public class EmployeeDaoImplementation implements EmployeeDao {
 			+ "firstname = ?, lastname = ?, gender = ?, email = ?, contact_number = ?, time_joined = ? WHERE id = ?";
 	private static final String UPDATE_EMPLOYEE = "UPDATE EMPLOYEES SET "
 			+ "firstname = ?, lastname = ?, gender = ?, email = ?, contact_number = ?, time_joined = ? WHERE id = ?";
+	private static final String FILTER_BY_SEARCH = "SELECT * FROM EMPLOYEES WHERE "
+			+ "firstname LIKE ? OR lastname LIKE ? OR gender LIKE ? OR id LIKE ? OR email LIKE ? OR contact_number LIKE ? OR time_joined LIKE ?"
+			+ " LIMIT ? OFFSET ?";
+	private static final String FILTER_COUNT = "SELECT COUNT(*) FROM EMPLOYEES WHERE "
+			+ "firstname LIKE ? OR lastname LIKE ? OR gender LIKE ? OR id LIKE ? OR email LIKE ? OR contact_number LIKE ? OR time_joined LIKE ?";
 
 	@Override
 	public EmployeeDto getByID(String id) throws IOException {
@@ -54,7 +59,7 @@ public class EmployeeDaoImplementation implements EmployeeDao {
 	}
 
 	@Override
-	public List<EmployeeDto> getAll() throws IOException {
+	public List<EmployeeDto> getAll(int start, int size) throws IOException {
 		try {
 			// No role selection
 			return template.query(
@@ -210,6 +215,51 @@ public class EmployeeDaoImplementation implements EmployeeDao {
 				ps.setString(1, id);
 			});
 
+		} catch (DataAccessException e) {
+			throw new IOException(e);
+		}
+	}
+
+	@Override
+	public List<EmployeeDto> filter(String searchParam, int start, int size)
+			throws IOException {
+		try {
+			return template.query(
+					FILTER_BY_SEARCH,
+					(ps) -> {
+						ps.setString(1, "%" + searchParam + "%");
+						ps.setString(2, "%" + searchParam + "%");
+						ps.setString(3, "%" + searchParam + "%");
+						ps.setString(4, "%" + searchParam + "%");
+						ps.setString(5, "%" + searchParam + "%");
+						ps.setString(6, "%" + searchParam + "%");
+						ps.setString(7, "%" + searchParam + "%");
+						ps.setInt(8, size);
+						ps.setInt(9, start);
+					},
+					(rs, rownum) -> {
+						return new EmployeeDto(rs.getString("firstname"), rs
+								.getString("lastname"), rs.getString("gender"),
+								rs.getString("id"), rs.getString("email"), rs
+										.getString("contact_number"), rs
+										.getString("password"), rs
+										.getString("time_joined"));
+
+					});
+		} catch (DataAccessException e) {
+			throw new IOException(e);
+		}
+	}
+
+	@Override
+	public int getFilteredCount(String searchParam) throws IOException {
+		try {
+			return template.queryForObject(FILTER_COUNT, (rs, column) -> {
+				return rs.getInt(1);
+			},  "%" + searchParam + "%", "%" + searchParam + "%", "%"
+					+ searchParam + "%", "%" + searchParam + "%", "%"
+					+ searchParam + "%", "%" + searchParam + "%", "%"
+					+ searchParam + "%");
 		} catch (DataAccessException e) {
 			throw new IOException(e);
 		}

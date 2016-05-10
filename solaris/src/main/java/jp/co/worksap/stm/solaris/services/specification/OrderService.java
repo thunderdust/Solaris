@@ -12,6 +12,8 @@ public interface OrderService {
 
 	OrderListEntity getListByClientEmail(String email) throws ServiceException;
 
+	OrderListEntity filter(OrderFetchEntity entity) throws ServiceException;
+	
 	OrderListEntity getAll(OrderFetchEntity entity) throws ServiceException;
 
 	void insert(OrderCreationEntity e) throws ServiceException;
@@ -19,5 +21,4 @@ public interface OrderService {
 	void update(OrderCreationEntity e) throws ServiceException;
 
 	void deleteById(int id) throws ServiceException;
-
 }

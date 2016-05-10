@@ -5,11 +5,12 @@ $(document).ready(function() {
         	responsive : true,
         	'serverSide' : true,
         	'ajax' : {
-        		url : 'employees/findAllUsers',
+        		url : 'employees/show',
         		type : 'POST',
         		contentType : 'application/json',
         		data : function(d){
         			// send only data required by backend API
+        			d.searchParam = d.search.value;
         			delete(d.columns);
 					delete(d.order);
 					delete(d.search);
@@ -30,7 +31,8 @@ $(document).ready(function() {
         	  { data: 'gender'},
         	  { data: 'contact_number'}
         	],
-        	select: "single"
+        	select: "single",
+        	filter : true
         });
 
         // disable delete button if nothing selected

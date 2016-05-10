@@ -8,6 +8,8 @@ import lombok.NoArgsConstructor;
 @Data
 public class EmployeeFetchAllEntity {
 
+	private String searchParam;
 	private int draw;
-
+	private int start;
+	private int length;
 }
