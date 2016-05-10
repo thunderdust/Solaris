@@ -70,6 +70,7 @@ $(document).ready(function() {
 			$('#name').val(selectedData.name);
 			//$('#name').prop('readonly', true);
 			$('#product-add-modal #myModalLabel').data().mode = 'update';
+			$('#product-modal-title').html("Edit laptop information");
 			$('#brand option[data-display=' + selectedData.brand + ']').attr('selected', 'selected');
 			$('#publish_date').val(selectedData.publishDate);
 			$('#price').val(selectedData.price);
@@ -151,6 +152,7 @@ $(document).ready(function() {
 				$('#product-add-modal #myModalLabel').data().mode = 'add';
 				$('#product-form')[0].reset();
 				//Remove error input class, reset compulsory input border color
+				$('#product-modal-title').html("Add a new laptop");
 				resetCompulsoryInputStyle();
 		});
 		// set default add model 
