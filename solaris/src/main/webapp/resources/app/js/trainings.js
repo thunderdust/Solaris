@@ -31,7 +31,7 @@ $(document).ready(function() {
         	  { data: 'date'}
         	],
         	select: "single",
-                filter: true,
+                filter: false,
                 paging: false
         });
 	};

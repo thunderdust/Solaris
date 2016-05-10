@@ -1,24 +1,169 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>Solaris - Home</title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="stylesheet" href="resources/app/css/login.css" />
-<link rel="stylesheet" href="resources/app/css/shared.css" />
-<link rel="stylesheet" href="resources/lib/css/bootstrap.min.css" />
+	<title>Solaris - Home</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="resources/lib/css/bootstrap.min.css" />
+	<!--************************************************* SB Admin2 libs ******************************************************** -->
+	<!-- Bootstrap Core CSS -->
+	<link href="resources/lib/sb_admin2/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+	<!-- MetisMenu CSS -->
+	<link href="resources/lib/sb_admin2/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet"/>
+	<!-- Custom CSS -->
+	<link href="resources/lib/sb_admin2/dist/css/sb-admin-2.css" rel="stylesheet"/>
+	<!-- Morris Charts CSS -->
+	<link href="resources/lib/sb_admin2/bower_components/morrisjs/morris.css" rel="stylesheet"/>
+	<!-- Custom Fonts -->
+	<link href="resources/lib/sb_admin2/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+	<!--************************************************* SB Admin2 libs ******************************************************** -->
+	<link rel="stylesheet" href="resources/app/css/login.css" />
+	<link rel="stylesheet" href="resources/app/css/shared.css" />
 </head>
 <body>
 	<!-- Common header -->
 	<div th:replace="fragments/header :: header"></div>
-	<h2 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h2>
-	<h1>WELCOME TO SOLARIS</h1>
-	<form th:action="@{/logout}" method="post">
-		<input type="submit" class="btn btn-warning" value="Sign Out" />
-	</form>
+	<!-- h2 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h2 -->
+
+    <div id="wrapper">
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Dashboard</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-3 col-md-3">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-suitcase fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">25</div>
+                                    <div>Employees</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="/solaris/employees">
+                            <div class="panel-footer">
+                                <span class="pull-left">View Details</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3">
+                    <div class="panel panel-green">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-laptop fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">12</div>
+                                    <div>Laptop Products</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="/solaris/products">
+                            <div class="panel-footer">
+                                <span class="pull-left">View Details</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3">
+                    <div class="panel panel-yellow">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-shopping-cart fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">3</div>
+                                    <div>Orders</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="/solaris/orders">
+                            <div class="panel-footer">
+                                <span class="pull-left">View Details</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3">
+                    <div class="panel panel-red">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-money fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">20</div>
+                                    <div>Customers</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="/solaris/customers">
+                            <div class="panel-footer">
+                                <span class="pull-left">View Details</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <i class="fa fa-bar-chart-o fa-fw"></i> Sales Growth Overview Graph
+                            <div class="pull-right">
+                            </div>
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div id="morris-area-chart"></div>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-4 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+
+
 	<div class="navbar navbar-fixed-bottom solaris-footer">
 		<!-- Common footer -->
 		<div th:replace="fragments/footer :: footer"></div>
 	</div>
+
+	<!--************************************************* SB Admin2 libs ******************************************************** -->
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="resources/lib/sb_admin2/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+    <!-- Morris Charts JavaScript -->
+    <script src="resources/lib/sb_admin2/bower_components/raphael/raphael-min.js"></script>
+    <script src="resources/lib/sb_admin2/bower_components/morrisjs/morris.min.js"></script>
+    <script src="resources/lib/sb_admin2/js/morris-data.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="resources/lib/sb_admin2/dist/js/sb-admin-2.js"></script>
+    <!--************************************************* SB Admin2 libs ******************************************************** -->
 </body>
 </html>

@@ -256,7 +256,7 @@ public class EmployeeDaoImplementation implements EmployeeDao {
 		try {
 			return template.queryForObject(FILTER_COUNT, (rs, column) -> {
 				return rs.getInt(1);
-			},  "%" + searchParam + "%", "%" + searchParam + "%", "%"
+			}, "%" + searchParam + "%", "%" + searchParam + "%", "%"
 					+ searchParam + "%", "%" + searchParam + "%", "%"
 					+ searchParam + "%", "%" + searchParam + "%", "%"
 					+ searchParam + "%");
