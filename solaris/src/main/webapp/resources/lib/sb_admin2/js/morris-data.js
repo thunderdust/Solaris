@@ -10,23 +10,23 @@ $(function() {
             Customer: 4
         }, {
             period: '2015 Q3',
-            Deals: 10,
+            Deals: 8,
             Laptop: 14,
             Customer: 10
         }, {
             period: '2015 Q4',
-            Deals: 11,
+            Deals: 15,
             Laptop: 16,
             Customer: 12
         }, {
             period: '2016 Q1',
-            Deals: 12,
-            Laptop: 18,
+            Deals: 20,
+            Laptop: 22,
             Customer: 16
         }, {
             period: '2016 Q2',
-            Deals: 15,
-            Laptop: 22,
+            Deals: 22,
+            Laptop: 29,
             Customer: 20
         }],
         xkey: 'period',
