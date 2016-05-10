@@ -63,8 +63,9 @@ $(document).ready(function() {
 			var selectedData = Solaris.dataTable.row('.selected').data();
 			console.log(selectedData);
 			//$('#customer-add-modal #myModalLabel').data().mode = 'update';
-            // Change title
+            // Change title and button name
 			$('#myModalLabel').html("Edit customer information");
+			$('#customer-add-button').html("Update");
 			currentDataMode = 'update';
 			$('#name').val(selectedData.name);
 			$('#gender option[data-display=' + selectedData.gender + ']').attr('selected', 'selected');
@@ -87,8 +88,9 @@ $(document).ready(function() {
 				//$('#customer-add-modal #myModalLabel').data().mode = 'add';
 				currentDataMode = 'add';
 				$('#customer-form')[0].reset();
-				// Reset title
+				// Reset title and button name
 				$('#myModalLabel').html("Add new customer");
+				$('#customer-add-button').html("Add");
 				//Remove error input class, reset compulsory input border color
 				resetCompulsoryInputStyle();
 		});
