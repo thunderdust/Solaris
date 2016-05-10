@@ -31,7 +31,7 @@ jQuery.fn.serializeObject = function() {
 
 $.extend( $.fn.dataTable.Responsive, {
     searching: false,
-    ordering:  false
+    ordering:  true
 } );
 
 /* Full opacity */

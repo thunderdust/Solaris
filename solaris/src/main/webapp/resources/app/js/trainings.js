@@ -29,7 +29,9 @@ $(document).ready(function() {
         	  { data: 'score'},
         	  { data: 'date'}
         	],
-        	select: "single"
+        	select: "single",
+                filter: false,
+                paging: false
         });
 	};
 	initPage();
