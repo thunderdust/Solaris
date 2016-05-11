@@ -390,7 +390,7 @@ function drawProductCharts(){
                 type: 'pie'
             },
             title: {
-                text: 'Product Brand Composition'
+                text: 'Inventory Brand Composition'
             },
             subtitle: {
 	            text: 'Current brands distributions of product inventory'
@@ -536,6 +536,231 @@ function drawProductCharts(){
 
 
 function drawSalesCharts(){
+    
+    // Area chart
+	$('#sales-area-container').highcharts({
+        chart: {
+            type: 'area'
+        },
+        title: {
+            text: 'Sales Growth Overview'
+        },
+        xAxis: {
+            allowDecimals: false,
+            title: {
+                text: 'Month'
+            },
+            categories: Highcharts.getOptions().lang.shortMonths
+            
+        },
+        yAxis: {
+            title: {
+                text: ''
+            },
+            labels: {
+                formatter: function () {
+                    return this.value;
+                }
+            }
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.y}</b>'
+        },
+        plotOptions: {
+            area: {
+                pointStart: 0,
+                marker: {
+                    enabled: true,
+                    symbol: 'circle',
+                    radius: 2,
+                    states: {
+                        hover: {
+                            enabled: true
+                        }
+                    }
+                }
+            }
+        },
+        series: [{
+            name: 'Sales amount (K)',
+            data: [2.8, 5.9, 2.6, 15.2, 25.1]
+        }, {
+        	name: 'Number of laptops sold',
+            data: [2, 4, 2, 12, 18]
+        }, {
+            name: 'Order amount',
+            data: [2, 3, 2, 5, 7]
+        }]
+    });
+
+    /**************************** Pie chart ****************************/
+    $('#sales-bar-stack-container').highcharts({
+        chart: {
+            type: 'bar'
+        },
+        title: {
+            text: 'Brand distribution in monthly sales'
+        },
+        xAxis: {
+            categories: Highcharts.getOptions().lang.shortMonths
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Total number of laptops sold'
+            }
+        },
+        legend: {
+            reversed: true
+        },
+        plotOptions: {
+            series: {
+                stacking: 'normal'
+            }
+        },
+        series: [{
+            name: 'Apple',
+            data: [1, null, null, 2, 2]
+        }, {
+            name: 'Alienware',
+            data: [null, 1, null, 1, 1]
+        }, {
+            name: 'Asus',
+            data: [1, null, null, 2, 2]
+        }, {
+            name: 'Samsung',
+            data: [null, 2, 1, 4, 5]
+        }, {
+            name: 'Lenovo',
+            data: [null, 1, 1, 2, 5]
+        }, {
+            name: 'Dell',
+            data: [null, null, null, null, 2]
+        }, {
+            name: 'HP',
+            data: [null, null, null, null, null]
+        }, {
+            name: 'Acer',
+            data: [null, null, null, null, null]
+        }, {
+            name: 'LG',
+            data: [null, null, null, null, 1]
+        }, {
+            name: 'Sony',
+            data: [null, null, null, 1, null]
+        }, {
+            name: 'Toshiba',
+            data: [null, null, null, null, null]
+        }]
+    });
+
+
+    /* Sales 3d column chart */
+
+    $('#sales-column-container').highcharts({
+        chart: {
+            type: 'column',
+            options3d: {
+                enabled: true,
+                alpha: 10,
+                beta: 25,
+                depth: 70
+            }
+        },
+        title: {
+            text: 'Monthly Top 5 Sales Brand'
+        },
+        subtitle: {
+            text: '5 brands which sell the most products for current month'
+        },
+        plotOptions: {
+            column: {
+                depth: 30
+            }
+        },
+        xAxis: {
+            categories: ['Lenovo', 'Samsung', 'Dell', 'Asus', 'Apple']
+        },
+        yAxis: {
+            title: {
+                text: 'Number of laptops sold'
+            }
+        },
+        series: [{
+            name: 'Brands',
+            data: [5, 5, 2, 2, 2]
+        }]
+    });
+
+    // Heatmap chart
+    $('#sales-heatmap-container').highcharts({
+
+        chart: {
+            type: 'heatmap',
+            marginTop: 60,
+            marginBottom: 40,
+            plotBorderWidth: 1
+        },
+
+
+        title: {
+            text: 'Sales Frequency over weekdays'
+        },
+
+        subtitle: {
+            text: 'Number of sales made on each weekdays monthly'
+        },
+
+        xAxis: {
+            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May']
+        },
+
+        yAxis: {
+            categories: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+            title: null
+        },
+
+        colorAxis: {
+            min: 0,
+            minColor: '#FFFFFF',
+            maxColor: '#FF0000'
+        },
+
+        legend: {
+            align: 'right',
+            layout: 'vertical',
+            margin: 0,
+            verticalAlign: 'top',
+            y: 50,
+            symbolHeight: 280
+        },
+
+        tooltip: {
+            formatter: function () {
+                return '<b>' + this.series.xAxis.categories[this.point.x] + '</b> sold <br><b>' +
+                    this.point.value + '</b> items on <br><b>' + this.series.yAxis.categories[this.point.y] + '</b>';
+            }
+        },
+
+        series: [{
+            name: 'Sales Frequency over weekdays',
+            borderWidth: 1,
+            data: [
+	            	/* Jan */   [0, 0, 0], [0, 1, 0], [0, 2, 1], [0, 3, 1], [0, 4, 0], 
+	                /* Feb */   [1, 0, 1], [1, 1, 1], [1, 2, 2], [1, 3, 0], [1, 4, 0], 
+	                /* Mar */   [2, 0, 0], [2, 1, 0], [2, 2, 1], [2, 3, 0], [2, 4, 1], 
+	                /* Apr */   [3, 0, 1], [3, 1, 3], [3, 2, 3], [3, 3, 4], [3, 4, 1], 
+	                /* May */   [4, 0, 1], [4, 1, 2], [4, 2, 5], [4, 3, 7], [4, 4, 3]
+                  ],
+            dataLabels: {
+                enabled: true,
+                color: '#000000'
+            }
+        }]
+
+    });
+
+
 
 };
 

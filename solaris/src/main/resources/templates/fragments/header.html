@@ -30,6 +30,10 @@
 						href="/solaris/index"><span
 							class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
 							Dashboard <span class="sr-only">(current)</span></a></li>
+				    <li th:if="${session.roles.contains('ADMIN')}"><a
+						href="/solaris/reports"><span
+							class="glyphicon glyphicon-stats" aria-hidden="true"></span>
+							Reports <span class="sr-only">(current)</span></a></li>
 					<li th:if="${session.roles.contains('ADMIN')}"><a
 						href="/solaris/employees"><span
 							class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
@@ -38,10 +42,6 @@
 						href="/solaris/products"><span
 							class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
 							Products <span class="sr-only">(current)</span></a></li>
-					<li th:if="${session.roles.contains('ADMIN')}"><a
-						href="/solaris/reports"><span
-							class="glyphicon glyphicon-stats" aria-hidden="true"></span>
-							Reports <span class="sr-only">(current)</span></a></li>
 				    <li th:if="${session.roles.contains('ADMIN')}"><a
 						href="/solaris/customers"><span
 							class="glyphicon glyphicon-star" aria-hidden="true"></span>
