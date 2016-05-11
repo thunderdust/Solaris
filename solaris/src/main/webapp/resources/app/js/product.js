@@ -46,16 +46,19 @@ $(document).ready(function() {
 		Solaris.dataTable.on('select', function() {
 			$('#product-delete-modal-btn').prop('disabled', false);
 			$('#product-edit-modal-btn').prop('disabled', false);
+			$('#product-order-modal-btn').prop('disabled', false);
 		});
 
 		Solaris.dataTable.on('deselect', function() {
 			$('#product-delete-modal-btn').prop('disabled', true);
 			$('#product-edit-modal-btn').prop('disabled', true);
+			$('#product-order-modal-btn').prop('disabled', true);
 		});
 
 		Solaris.dataTable.on('draw', function() {
 			$('#product-delete-modal-btn').prop('disabled', true);
 			$('#product-edit-modal-btn').prop('disabled', true);
+			$('#product-order-modal-btn').prop('disabled', true);
 		});
 
 		/****************** Product [Add] modal setups ***************************/
@@ -146,7 +149,7 @@ $(document).ready(function() {
 			$('#warranty').val(selectedData.warranty);
 		});
 
-		 // reset data when modal hides
+		// reset data when modal hides
 		$('#product-add-modal').on(
 			'hidden.bs.modal', function() {
 				$('#product-add-modal #myModalLabel').data().mode = 'add';
@@ -163,6 +166,25 @@ $(document).ready(function() {
 	   $('#product-brand-filter').change(function() {
 	   	$('#product-table').dataTable().fnReloadAjax();
 	   });
+
+
+	   // Set up order form when click New Order button
+	   $('#product-order-modal-btn').on('click', function() {
+	   		var selectedData = Solaris.dataTable.row('.selected').data();
+	   		console.log(selectedData.name);
+
+			$('#laptop-name').val(selectedData.name);
+			$('#unit_price').val(selectedData.price);
+			// Get current user id, which is the seller
+			var user_id = $('#current-user-id').text();
+			$('#seller_id').val(user_id);
+	   });
+
+	   // reset data when new order modal hides
+		$('#order-add-modal').on(
+			'hidden.bs.modal', function() {
+				$('#order-form')[0].reset();
+		});
 	};
 
 	initPage();

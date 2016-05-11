@@ -759,11 +759,117 @@ function drawSalesCharts(){
         }]
 
     });
-
-
-
 };
 
 function drawCustomerCharts(){
 
+	/******** Customer charts **********/
+    // occupation pie chart 
+    $('#customer-pie-container').highcharts({
+        chart: {
+            type: 'pie',
+            options3d: {
+                enabled: true,
+                alpha: 45,
+                beta: 0
+            }
+        },
+        title: {
+            text: 'Customer occupation Composition'
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                depth: 35,
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.name}'
+                }
+            }
+        },
+        series: [{
+            type: 'pie',
+            name: 'Occupation share',
+            data: [
+                ['Engineers', 20.1],
+                ['Financial', 17.9],
+                ['Servicing', 17.0],
+                ['Consulting', 16.8],
+                {
+                    name: 'Students',
+                    y: 12.8,
+                    sliced: true,
+                    selected: true
+                },
+                ['Management', 8.5],
+                ['Art', 6.2],
+                ['Medical', 0.7]
+            ]
+        }]
+    });
+
+
+    // stacked column chart 
+    $('#customer-stacked-container').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'monthly customer number summary'
+        },
+        xAxis: {
+            categories: Highcharts.getOptions().lang.shortMonths
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Total customer count'
+            },
+            stackLabels: {
+                enabled: true,
+                style: {
+                    fontWeight: 'bold',
+                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                }
+            }
+        },
+        legend: {
+            align: 'right',
+            x: -30,
+            verticalAlign: 'top',
+            y: 25,
+            floating: true,
+            backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+            borderColor: '#CCC',
+            borderWidth: 1,
+            shadow: false
+        },
+        tooltip: {
+            headerFormat: '<b>{point.x}</b><br/>',
+            pointFormat: '{series.name}: {point.y}<br/>Total: {point.stackTotal}'
+        },
+        plotOptions: {
+            column: {
+                stacking: 'normal',
+                dataLabels: {
+                    enabled: true,
+                    color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white',
+                    style: {
+                        textShadow: '0 0 3px black'
+                    }
+                }
+            }
+        },
+        series: [{
+            name: 'customer with single order',
+            data: [2, 4, 6, 11, 23]
+        }, {
+            name: 'customer with multiple orders',
+            data: [0, 1, 3, 4, 7]
+        }]
+    });
 };

@@ -2,7 +2,8 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:remove="tag" th:fragment="commonhead">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="stylesheet" href="/solaris/resources/lib/css/bootstrap.min.css" />
+<link rel="stylesheet"
+	href="/solaris/resources/lib/css/bootstrap.min.css" />
 </head>
 <body>
 	<nav th:fragment="header" class="navbar navbar-default">
@@ -25,12 +26,12 @@
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 
-					<!-- ADMIN Menu -->
-					<li th:if="${session.roles.contains('ADMIN')}"><a
-						href="/solaris/index"><span
+					<li><a href="/solaris/index"><span
 							class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
 							Dashboard <span class="sr-only">(current)</span></a></li>
-				    <li th:if="${session.roles.contains('ADMIN')}"><a
+
+					<!-- ADMIN Menu -->
+					<li th:if="${session.roles.contains('ADMIN')}"><a
 						href="/solaris/reports"><span
 							class="glyphicon glyphicon-stats" aria-hidden="true"></span>
 							Reports <span class="sr-only">(current)</span></a></li>
@@ -42,7 +43,7 @@
 						href="/solaris/products"><span
 							class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
 							Products <span class="sr-only">(current)</span></a></li>
-				    <li th:if="${session.roles.contains('ADMIN')}"><a
+					<li th:if="${session.roles.contains('ADMIN')}"><a
 						href="/solaris/customers"><span
 							class="glyphicon glyphicon-star" aria-hidden="true"></span>
 							Customers <span class="sr-only">(current)</span></a></li>
@@ -129,11 +130,11 @@
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown" role="button" aria-haspopup="true"
 						aria-expanded="false"> <span class="glyphicon glyphicon-user"
-							aria-hidden="true"></span> <span th:inline="text">[[${#httpServletRequest.remoteUser}]]</span>
+							aria-hidden="true"></span> <span id="current-user-id" th:inline="text">[[${#httpServletRequest.remoteUser}]]</span>
 							<span class="caret"></span>
 					</a>
 						<ul class="dropdown-menu">
-							<li><a href="profile">My Profile</a></li>
+							<li><a> </a></li>
 							<li class="solaris-logout"><form th:action="@{/logout}"
 									method="post">
 									<input type="submit" class="solaris-logout" value="Sign Out" />
