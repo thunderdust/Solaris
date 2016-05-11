@@ -168,8 +168,8 @@ Solaris.addOrder = function(evt) {
 	}).done(function() {
 		console.log(currentDataMode + " order successfully");
 		$('#order-add-modal').modal('hide');
-		//$('#order-table').dataTable().fnReloadAjax();
-		location.reload(false);
+		$('#order-table').dataTable().fnReloadAjax();
+		$('#order-feedback-modal').modal('show');
 	   });
 };
 

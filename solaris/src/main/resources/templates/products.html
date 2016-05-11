@@ -515,33 +515,33 @@
 
 						<div class="form-group form-compulsory">
 							<label for="client_name">Customer Name<span> *</span></label> <input name="clientName"
-								type="text" class="form-control compulsory-input" id="client_name"
+								type="text" class="form-control compulsory-input-order" id="client_name"
 								placeholder="Customer Full Name" required="required" />
 						</div>
 
 						<div class="form-group form-compulsory">
 							<label for="client_email">Customer Email<span> *</span></label> <input name="clientEmail"
-								type="text" class="form-control compulsory-input" id="client_email"
+								type="text" class="form-control compulsory-input-order" id="client_email"
 								placeholder="Customer Email Address" required="required" />
 						</div>
 
 						<div class="form-group form-compulsory">
 							<label for="laptop-name">Product<span> *</span></label> <input
-								id="laptop-name" class="form-control compulsory-input" name="laptopName" type="text" 
+								id="laptop-name" class="form-control compulsory-input-order" name="laptopName" type="text" 
 								placeholder="Name of the laptop" required="required">
 							</input>
 						</div>
 
 						<div class="form-group form-compulsory">
 							<label for="quantity">Number of Purchase<span> *</span></label> <input
-								id="quantity" class="form-control compulsory-input" name="quantity" type="number" min="1"
+								id="quantity" class="form-control compulsory-input-order" name="quantity" type="number" min="1"
 								max="999" placeholder="Order quantity" required="required">
 							</input>
 						</div>
 
 						<div class="form-group form-compulsory">
 							<label for="unit_price">Unit Price<span> *</span></label> <input
-								id="unit_price" class="form-control compulsory-input" name="price" type="text" 
+								id="unit_price" class="form-control compulsory-input-order" name="price" type="text" 
 								placeholder="Price for one single product" required="required">
 							</input>
 						</div>
@@ -554,13 +554,13 @@
 
 						<div class="form-group form-compulsory">
 							<label for="created_date">Order Date<span> *</span></label> <input
-								name="createdDate" type="date" class="form-control compulsory-input"
+								name="createdDate" type="date" class="form-control compulsory-input-order"
 								id="created_date" placeholder="Date when make this order" required="required" />
 						</div>
 
 						<div class="form-group form-compulsory">
 							<label for="seller_id">Seller<span> *</span></label> <input
-								id="seller_id" class="form-control compulsory-input" name="sellerId" type="text" 
+								id="seller_id" class="form-control compulsory-input-order" name="sellerId" type="text" 
 								placeholder="Account name of the sales representative who is in charge of this order" required="required">
 							</input>
 						</div>
@@ -579,6 +579,32 @@
 				</div>
 			</div>
 		</div>
+	</div>
+
+    <!-- Order addition feedback -->
+	<div class="modal fade" id="order-feedback-modal" tabindex="-1" role="dialog"
+			aria-labelledby="myModalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h4 class="modal-title" id="myModalLabel">Order Added</h4>
+					</div>
+					<div class="modal-body">
+						<div class="modal-body-notification">
+					    	<img class="solaris-title" src="/solaris/resources/app/img/ruby.png" />
+					    	<span>Congratulations! Your order has been submitted.</span>
+						</div>
+						<hr/>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+					</div>
+				</div>
+			</div>
 	</div>
 
 	<div class="navbar navbar-fixed-bottom solaris-footer">

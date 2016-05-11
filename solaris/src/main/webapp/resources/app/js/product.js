@@ -167,6 +167,9 @@ $(document).ready(function() {
 	   	$('#product-table').dataTable().fnReloadAjax();
 	   });
 
+       $('#order-add-button').click(validateAddOrderForm);
+       //Hide order id input
+	   $('#order_id_div').hide();
 
 	   // Set up order form when click New Order button
 	   $('#product-order-modal-btn').on('click', function() {
@@ -219,6 +222,29 @@ function validateAddProductForm() {
 		alert("One or more required input fields are not filled, please check again.");
 	} else {
 		Solaris.addProduct();
+	}
+};
+
+function validateAddOrderForm() {
+	var compulsory_inputs = document.getElementsByClassName('compulsory-input-order');
+	var empty_count = 0;
+	for ( var key in compulsory_inputs) {
+		if (compulsory_inputs.hasOwnProperty(key) && key.length > 2) {
+         // Check for empty fields
+			if (!(compulsory_inputs[key]).value) {
+				console.log(key);
+			   // console.log((compulsory_inputs[key]).type);
+			   var missing_input = compulsory_inputs[key];
+			   compulsory_inputs[key].classList.add("error-border");
+			   empty_count++;
+		   } else {
+		   }
+	   }
+   }
+	if (empty_count > 0) {
+		alert("One or more required input fields are not filled, please check again.");
+	} else {
+		Solaris.addOrder();
 	}
 };
 
@@ -310,6 +336,31 @@ Solaris.deleteProduct = function(evt) {
 		$('#product-table').dataTable().fnReloadAjax();
 	});
 };
+
+
+Solaris.addOrder = function(evt) {
+	var formData = $('#order-form').serializeObject();
+		 
+	//var url = 'orders/' + $('#order-form #myModalLabel').data().mode + 'Order';
+	var url = 'orders/' + currentDataMode + 'Order';
+    console.log(url);
+	console.log('Form data: ' + JSON.stringify(formData));
+	$.ajax({
+		url : url,
+		data : JSON.stringify(formData),
+		type : 'POST',
+		contentType : "application/json",
+		xhrFields : {
+			withCredentials : true
+		}
+	}).done(function() {
+		console.log("add order successfully");
+		$('#product-table').dataTable().fnReloadAjax();
+		$('#order-add-modal').modal('hide');
+		$('#order-feedback-modal').modal('show');
+	   });
+};
+
 
 // JS is only used to add the <div>s
 var switches = document.querySelectorAll('input[type="checkbox"].ios-switch');
