@@ -1,5 +1,8 @@
-div.half-width-chart {
-	width: 100%;
-	height: 400px;  
-	margin: 0 auto;
+div.report-section-container {
+	
+	border-radius: 4px;
+	padding: 5px;
+	border: 1px solid #ccc;
+	margin-bottom: 10px;
+	
 }
