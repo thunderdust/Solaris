@@ -8,8 +8,8 @@ import jp.co.worksap.stm.solaris.dao.specification.EmployeeDao;
 import jp.co.worksap.stm.solaris.dto.EmployeeDto;
 import jp.co.worksap.stm.solaris.entity.employee.EmployeeCreationEntity;
 import jp.co.worksap.stm.solaris.entity.employee.EmployeeEntity;
-import jp.co.worksap.stm.solaris.entity.employee.EmployeeFetchAllEntity;
 import jp.co.worksap.stm.solaris.entity.employee.EmployeeFetchByRoleEntity;
+import jp.co.worksap.stm.solaris.entity.employee.EmployeeFetchEntity;
 import jp.co.worksap.stm.solaris.entity.employee.EmployeeListEntity;
 import jp.co.worksap.stm.solaris.exceptions.ServiceException;
 import jp.co.worksap.stm.solaris.services.specification.EmployeeService;
@@ -78,7 +78,7 @@ public class EmployeeServiceImplementation implements EmployeeService {
 	}
 
 	@Override
-	public EmployeeListEntity getAll(EmployeeFetchAllEntity entity)
+	public EmployeeListEntity getAll(EmployeeFetchEntity entity)
 			throws ServiceException {
 
 		List<EmployeeDto> dtoList = null;
@@ -144,7 +144,7 @@ public class EmployeeServiceImplementation implements EmployeeService {
 	}
 
 	@Override
-	public EmployeeListEntity filter(EmployeeFetchAllEntity entity)
+	public EmployeeListEntity filter(EmployeeFetchEntity entity)
 			throws ServiceException {
 		List<EmployeeDto> employeeList = null;
 		int count = 0;

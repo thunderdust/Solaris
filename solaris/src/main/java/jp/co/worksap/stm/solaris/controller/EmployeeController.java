@@ -2,6 +2,7 @@ package jp.co.worksap.stm.solaris.controller;
 
 import jp.co.worksap.stm.solaris.entity.employee.EmployeeCreationEntity;
 import jp.co.worksap.stm.solaris.entity.employee.EmployeeFetchAllEntity;
+import jp.co.worksap.stm.solaris.entity.employee.EmployeeFetchEntity;
 import jp.co.worksap.stm.solaris.entity.employee.EmployeeListEntity;
 import jp.co.worksap.stm.solaris.services.specification.EmployeeService;
 
@@ -45,7 +46,7 @@ public class EmployeeController {
 	@PreAuthorize("hasAuthority('ADMIN')")
 	@RequestMapping(value = "/employees/show", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
-	public EmployeeListEntity show(@RequestBody EmployeeFetchAllEntity e) {
+	public EmployeeListEntity show(@RequestBody EmployeeFetchEntity e) {
 		// Show all if no search filter
 		if (Strings.isNullOrEmpty(e.getSearchParam())) {
 			return employeeService.getAll(e);

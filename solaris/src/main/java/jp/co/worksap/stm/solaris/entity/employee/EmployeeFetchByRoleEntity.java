@@ -13,4 +13,5 @@ public class EmployeeFetchByRoleEntity {
 	private int draw;
 	private int start;
 	private int length;
+	private String searchParam;
 }

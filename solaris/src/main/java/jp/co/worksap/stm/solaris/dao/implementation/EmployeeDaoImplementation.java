@@ -20,7 +20,7 @@ public class EmployeeDaoImplementation implements EmployeeDao {
 	// SQL manipulation queries
 	private static final String FETCH_BY_ID = "SELECT * FROM EMPLOYEES WHERE id = ?";
 	private static final String FETCH = "SELECT * FROM EMPLOYEES LIMIT ? OFFSET ?";
-	private static final String FETCH_ALL = "SELECT * FROM EMPLOYEES";
+	private static final String FETCH_ALL = "SELECT * FROM EMPLOYEES LIMIT ? OFFSET ?";
 	private static final String FETCH_BY_ROLE = "SELECT * FROM EMPLOYEES WHERE role = ? LIMIT ? OFFSET ?";
 	private static final String COUNT_EMPLOYEE_BY_ROLE = "SELECT COUNT(*) FROM EMPLOYEES WHERE role = ?";
 	private static final String COUNT_EMPLOYEE = "SELECT COUNT(*) FROM EMPLOYEES";
@@ -64,6 +64,10 @@ public class EmployeeDaoImplementation implements EmployeeDao {
 			// No role selection
 			return template.query(
 					FETCH_ALL,
+					ps -> {
+						ps.setInt(1, size);
+						ps.setInt(2, start);
+					},
 					(rs, rownum) -> {
 						return new EmployeeDto(rs.getString("firstname"), rs
 								.getString("lastname"), rs.getString("gender"),

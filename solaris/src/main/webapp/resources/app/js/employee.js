@@ -11,18 +11,16 @@ $(document).ready(function() {
         		data : function(d){
         			// send only data required by backend API
         			d.searchParam = d.search.value;
+        			console.log('searchParam: ' + d.searchParam);
         			delete(d.columns);
 					delete(d.order);
 					delete(d.search);
-					d.roles = $('#employee-role-filter').val();
+					//d.roles = $('#employee-role-filter').val();
 					console.log(JSON.stringify(d));
 					return JSON.stringify(d);
         		},
         		// list of EmployeeEntity defined in EmployeeListEntity class
-        		dataSrc : "employeeEntities",
-        		xhrFields: {
-				      withCredentials: true
-				   }
+        		dataSrc : "employeeEntities"
         	},
         	columns : [
         	  { data: 'id'},
