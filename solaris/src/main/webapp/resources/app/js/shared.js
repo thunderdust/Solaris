@@ -65,7 +65,7 @@ function adjustFooterOpacity(duration, opacity){
 function checkScroll(){
 	
 	// Scroll to the page bottom 
-	if ($(window).scrollTop() + $(window).height() > $(document).height() - 100){	
+	if ($(window).scrollTop() + $(window).height() > $(document).height() - 80){	
 		$(window).unbind('scroll');
 		showFooter();
 	}

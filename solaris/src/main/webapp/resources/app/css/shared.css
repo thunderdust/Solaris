@@ -389,6 +389,44 @@ form#campus-form > div.form-group > label {
 	margin-left: 10px;
 }
 
+div.reminder-container {
+	text-align: left;
+	padding: 4px;
+	margin: 5px; 
+	border: 1px solid #5cb85c;
+	border-radius: 5px;
+}
+
+div.reminder-container > div.title {
+	background: #5cb85c;
+	color: #FFFFFF;
+	font-weight: bold;
+	font-size: 1.4em;
+	padding: 5px;
+	margin-bottom: 5px;
+}
+
+div.reminder-container > div.item-list {
+	margin-top: 10px;
+	list-style: none;
+	text-align: left !important;
+	padding: 2px;
+	font-size: 1em;
+}
+
+div.reminder-container > div.item-list > a {
+	text-decoration: none;
+	display: block;
+	margin: 4px;
+	color: #00B300;
+	font-weight: bold;
+}
+
+div.reminder-container > div.item-list > a:hover {
+	font-style: italic;
+}
+
+
 
 /***********************************************************/
 

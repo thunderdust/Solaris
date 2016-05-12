@@ -47,7 +47,8 @@ $(document).ready(function() {
 			  { data : 'quantity'}, 
 			  { data : 'price'}, 
 			  { data : 'deliveryDeadline'}, 
-			  { data : 'createdDate'} 
+			  { data : 'createdDate'},
+			  { data : 'sellerId'} 
 			],
 			select : "single",
 			filter : true
