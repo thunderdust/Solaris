@@ -536,6 +536,62 @@ function drawProductCharts(){
 
 
 function drawSalesCharts(){
+
+	// Spider web
+	$('#sales-web-container').highcharts({
+
+        chart: {
+            polar: true,
+            type: 'line'
+        },
+
+        title: {
+            text: 'Target Achievement Overview',
+            x: -80
+        },
+
+        pane: {
+            size: '80%'
+        },
+
+        xAxis: {
+            categories: ['Product Sales Amount', 'Order Amount', 'Sales Amount (k)', 'Customer Amount', 'Cusomter Growth'],
+            tickmarkPlacement: 'on',
+            lineWidth: 0
+        },
+
+        yAxis: {
+            gridLineInterpolation: 'polygon',
+            lineWidth: 0,
+            min: 0,
+            allowDecimals: true,
+        },
+
+        tooltip: {
+            shared: true,
+            pointFormat: '<span style="color:{series.color}">{series.name}: <b>{point.y:,.1f}</b><br/>'
+        },
+
+        legend: {
+            align: 'right',
+            verticalAlign: 'top',
+            y: 70,
+            layout: 'vertical',
+            marginBottom: '10px'
+        },
+
+        series: [{
+            name: 'Target Amount',
+            data: [25, 25, 27, 40, 25],
+            pointPlacement: 'on'
+        }, {
+            name: 'Current Amount',
+            data: [18, 19, 25.1, 30, 15],
+            pointPlacement: 'on'
+        }]
+
+    });
+
     
     // Area chart
 	$('#sales-area-container').highcharts({

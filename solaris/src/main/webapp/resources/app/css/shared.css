@@ -16,7 +16,6 @@ div.container {
 	padding-bottom: 80px;
 }
 
-
 .solaris-footer {
 	color: #ffffff;
 	background-color: #337ab7;
@@ -25,7 +24,8 @@ div.container {
 	font-style: italic;
 	text-decoration: underline;
 	padding-top: 10px;
-	margin-top: 10px;
+	margin-top: 20px;
+	width: 100%;
 }
 
 /* specifically customized style for logout form inside the dropdown menu */
