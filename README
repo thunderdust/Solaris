@@ -1,0 +1,18 @@
+Solaris: A probation training project @ Works Applications 
+Author: Liu Weiran
+____________________________________________________________________________________________________________________________________
+
+Solaris is a system for improving sales activities of laptop selling business.
+It is based on Java Spring Boot. It is responsive.
+
+Used libs:
+
+[jquery] https://jquery.com/
+[bootstrap css] http://getbootstrap.com/
+[boostrap switch] http://www.bootstrap-switch.org/
+[font awesome] http://fontawesome.io/
+[data table] https://datatables.net/
+[select 2] https://select2.github.io/
+[high charts] http://www.highcharts.com/
+[tinymce] https://www.tinymce.com/
+
